@@ -2,6 +2,7 @@ import type { TurnContext } from '../turn-context.js';
 import type { ImmigrationRules, Scenario } from '../../contracts/scenario.js';
 import { balanceOf, nextId, quantityOf, type Good, type Resident } from '../state.js';
 import { createHousehold, findVacantHome, householdMembers, householdFoodDays, pruneHouseholds } from './households.js';
+import { livingMembersByHousehold } from '../lookups.js';
 import { applyDepartureLifecycle } from './lifecycle.js';
 import { canReceiveNewcomer } from './construction.js';
 
@@ -153,9 +154,10 @@ export function populationPressurePhase(ctx: TurnContext, _scenario: Scenario): 
 
 function spareCapacity(ctx: TurnContext): number {
   let spare = 0;
+  const membersByHousehold = livingMembersByHousehold(ctx.state);
   for (const household of ctx.state.households.values()) {
     if (household.dissolvedDay !== null) continue;
-    spare += Math.max(0, household.capacity - householdMembers(ctx, household.id).length);
+    spare += Math.max(0, household.capacity - (membersByHousehold.get(household.id)?.length ?? 0));
   }
   return spare;
 }

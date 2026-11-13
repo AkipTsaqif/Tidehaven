@@ -1,6 +1,7 @@
 import type { TurnContext } from '../turn-context.js';
 import type { Scenario } from '../../contracts/scenario.js';
 import { nextId, quantityOf, type Good, type Household, type Resident, type WorldState } from '../state.js';
+import { livingMembersByHousehold } from '../lookups.js';
 
 /**
  * Household membership and care. Dependants are never left unassigned: when a caregiver dies or
@@ -37,13 +38,24 @@ export function householdFoodDays(ctx: TurnContext, householdId: number): number
 
 /** Pure form used by prompt building and diagnostics (no turn context needed). */
 export function householdFoodDaysFor(state: WorldState, scenario: Scenario, householdId: number): number {
-  const members = [...state.residents.values()].filter((r) => r.householdId === householdId && r.status === 'living');
-  if (members.length === 0) return 0;
+  let memberCount = 0;
+  for (const r of state.residents.values()) if (r.householdId === householdId && r.status === 'living') memberCount += 1;
+  return householdFoodDaysForCount(state, scenario, householdId, memberCount);
+}
+
+/** `householdFoodDaysFor` when the caller already knows the household's living member count. */
+export function householdFoodDaysForCount(
+  state: WorldState,
+  scenario: Scenario,
+  householdId: number,
+  memberCount: number,
+): number {
+  if (memberCount === 0) return 0;
   let food = 0;
   for (const good of scenario.economy.mealGoods as readonly Good[]) {
     food += quantityOf(state, 'household', householdId, good);
   }
-  return Math.floor(food / Math.max(1, members.length * scenario.economy.foodNeedPerDay));
+  return Math.floor(food / Math.max(1, memberCount * scenario.economy.foodNeedPerDay));
 }
 
 export function moveResident(ctx: TurnContext, residentId: number, householdId: number): boolean {
@@ -191,8 +203,10 @@ export function rehouseOrphans(ctx: TurnContext): void {
 
 /** Household dissolution when the last member leaves. */
 export function pruneHouseholds(ctx: TurnContext): void {
+  // Dissolving a household does not move anyone, so one membership snapshot serves the whole loop.
+  const membersByHousehold = livingMembersByHousehold(ctx.state);
   for (const household of ctx.state.households.values()) {
     if (household.dissolvedDay !== null) continue;
-    if (householdMembers(ctx, household.id).length === 0) household.dissolvedDay = ctx.day;
+    if (!membersByHousehold.has(household.id)) household.dissolvedDay = ctx.day;
   }
 }

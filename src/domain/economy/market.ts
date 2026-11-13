@@ -3,6 +3,7 @@ import type { TurnContext } from '../turn-context.js';
 import { GOODS, type Good, type OwnerType, type Resident } from '../state.js';
 import { availableOf, quantityOf } from '../state.js';
 import { chargeBusinessLevy, chargeRetailFee } from './ledger.js';
+import { activeEmploymentByBusiness, livingMembersByHousehold } from '../lookups.js';
 
 /**
  * Market: households provision, businesses buy inputs and offer output, residents may place personal
@@ -65,11 +66,11 @@ export function runMarket(ctx: TurnContext, plans: Map<number, ActorPlan>): Mark
 
   // ---------------------------------------------------------- households provision
   const householdNeed = new Map<number, number>();
+  // Provisioning moves money, never people, so one membership snapshot serves every household.
+  const membersByHousehold = livingMembersByHousehold(ctx.state);
   for (const household of ctx.state.households.values()) {
     if (household.dissolvedDay !== null) continue;
-    const members = [...ctx.state.residents.values()].filter(
-      (r) => r.householdId === household.id && r.status === 'living',
-    );
+    const members = membersByHousehold.get(household.id) ?? [];
     if (members.length === 0) continue;
     const need = members.length * ctx.scenario.economy.foodNeedPerDay;
     householdNeed.set(household.id, need);
@@ -158,15 +159,15 @@ export function runMarket(ctx: TurnContext, plans: Map<number, ActorPlan>): Mark
   }
 
   // ---------------------------------------------------------- business input demand
+  // Placing orders changes no contracts.
+  const staffByBusiness = activeEmploymentByBusiness(ctx.state);
   for (const business of ctx.state.businesses.values()) {
     if (business.status !== 'open') continue;
     const recipe = ctx.scenario.economy.recipes[business.kind];
     if (!recipe) continue;
     for (const [good, perBatch] of Object.entries(recipe.inputs ?? {})) {
       if (perBatch <= 0) continue;
-      const staff = [...ctx.state.contracts.values()].filter(
-        (c) => c.kind === 'employment' && c.status === 'active' && c.businessId === business.id,
-      ).length;
+      const staff = staffByBusiness.get(business.id)?.length ?? 0;
       const target = perBatch * Math.max(3, staff + 1);
       const have = availableOf(ctx.state, 'business', business.id, good as Good);
       if (have >= target) continue;
@@ -434,14 +435,14 @@ export function bumpBusinessRevenue(ctx: TurnContext, businessId: number, cents:
 }
 
 export function distributeDividends(ctx: TurnContext): void {
+  // Dividends and capital calls move money only; contracts are unchanged throughout.
+  const staffByBusiness = activeEmploymentByBusiness(ctx.state);
   for (const business of ctx.state.businesses.values()) {
     if (business.status !== 'open') continue;
     let cash = ctx.state.accounts.get(`business:${business.id}`)?.balanceCents ?? 0;
     // Reserve: enough to cover the next fortnight of payroll, so a slow week cannot cause arrears.
     let wageBill = 0;
-    for (const contract of ctx.state.contracts.values()) {
-      if (contract.kind !== 'employment' || contract.status !== 'active') continue;
-      if (contract.businessId !== business.id) continue;
+    for (const contract of staffByBusiness.get(business.id) ?? []) {
       const wage = typeof contract.terms.wageCents === 'number' ? contract.terms.wageCents : 300;
       wageBill += wage;
     }
@@ -632,6 +633,8 @@ function consumeAndSpoil(ctx: TurnContext, householdNeed: Map<number, number>): 
   for (const [householdId, need] of householdNeed) {
     granaryTopUp(ctx, householdId, need);
   }
+  // Eating changes stock and hunger counters, never household membership or life status.
+  const membersByHousehold = livingMembersByHousehold(ctx.state);
   for (const [householdId, need] of householdNeed) {
     let remaining = need;
     for (const good of order) {
@@ -647,9 +650,7 @@ function consumeAndSpoil(ctx: TurnContext, householdNeed: Map<number, number>): 
       });
       remaining -= eat;
     }
-    const members = [...ctx.state.residents.values()].filter(
-      (r) => r.householdId === householdId && r.status === 'living',
-    );
+    const members = membersByHousehold.get(householdId) ?? [];
     if (remaining > 0) {
       shortage = true;
       for (const resident of members) {

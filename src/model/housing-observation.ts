@@ -1,6 +1,7 @@
 import type { Scenario } from '../contracts/scenario.js';
 import { isAdult } from '../domain/clock.js';
 import type { Proposal, WorldState } from '../domain/state.js';
+import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 
 export interface HousingObservationInput {
   state: WorldState;
@@ -9,6 +10,8 @@ export interface HousingObservationInput {
   day: number;
   maxHosts?: number;
   maxRequests?: number;
+  /** Shared lookups for the same state and day; built on demand when absent or stale. */
+  lookups?: ObservationLookups;
 }
 
 export interface HousingHostObservation {
@@ -46,12 +49,16 @@ export function buildHousingObservation(input: HousingObservationInput): Housing
   const maxRequests = boundedLimit(input.maxRequests, 16);
   const hosts: HousingHostObservation[] = [];
   const usableHostIds: number[] = [];
+  const lookups =
+    input.lookups && input.lookups.state === state && input.lookups.day === day
+      ? input.lookups
+      : buildObservationLookups(state, day);
 
   for (const household of [...state.households.values()].sort((a, b) => a.id - b.id)) {
     if (hosts.length >= maxHosts || household.dissolvedDay !== null || household.buildingId === null) continue;
     const building = state.buildings.get(household.buildingId);
     if (!building || building.kind !== 'home' || building.destroyedDay !== null) continue;
-    const members = [...state.residents.values()].filter((resident) => resident.status === 'living' && resident.householdId === household.id);
+    const members = lookups.membersByHousehold.get(household.id) ?? [];
     const hostIds = members
       .filter((resident) => isAdult(resident.bornDay, day, scenario.calendar))
       .map((resident) => resident.id)

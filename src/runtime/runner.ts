@@ -10,6 +10,7 @@ import { baselinePlan } from '../model/fallback.js';
 import type { DecisionOutcome, DecisionSource } from '../model/jobs.js';
 import type { ActorPrompt, PromptEvent } from '../model/prompts.js';
 import { buildActorPrompt } from '../model/prompts.js';
+import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 import { planJsonSchema, type ActorPlan } from '../contracts/actions.js';
 import type { Db } from '../storage/database.js';
 import {
@@ -101,6 +102,11 @@ export class Runner {
   private startedAt: string | null = null;
   private currentPhase = 'idle';
   private jobsPending = 0;
+  /**
+   * Prompt lookups for one collection round. Cleared at the start of every round: `adoptState`
+   * publishes the next day into the same object, so object identity alone cannot detect a change.
+   */
+  private promptLookups: ObservationLookups | null = null;
   private lastCommittedDay: number;
   /** Cancels in-flight provider work (and retry waits) when shutdown or a pause begins. */
   private abortController = new AbortController();
@@ -499,6 +505,7 @@ export class Runner {
    */
   private async collectPlans(day: number, turn: TurnRow): Promise<Map<number, ActorPlan>> {
     const plans = new Map<number, ActorPlan>();
+    this.promptLookups = null;
     const actors = this.eligibleActors();
     this.jobsPending = actors.length;
     this.currentPhase = 'collect';
@@ -785,7 +792,13 @@ export class Runner {
 
   private buildPrompt(resident: Resident, day: number, events: PromptEvent[]): ActorPrompt {
     const limits = this.deps.config.defaults.model;
+    // The live state is not mutated during collection (resolution runs on the staged copy), so one
+    // lookup build serves every prompt of the round, including dialogue replies.
+    if (this.promptLookups === null || this.promptLookups.state !== this.state || this.promptLookups.day !== day) {
+      this.promptLookups = buildObservationLookups(this.state, day);
+    }
     return buildActorPrompt({
+      lookups: this.promptLookups,
       state: this.state,
       scenario: this.deps.scenario,
       resident,

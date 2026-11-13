@@ -5,6 +5,7 @@ import { availableOf, quantityOf } from '../state.js';
 import { payWage, wagesDue, sectorTotal } from './ledger.js';
 import { collectWorkers, hireWorker, strikeActive, type WorkerAssignment } from './employment.js';
 import { markBusinessInsolvent } from './businesses.js';
+import { activeEmploymentByBusiness, activeEmploymentByResident } from '../lookups.js';
 
 /**
  * Production. Labour (lp) + inputs -> outputs, using scenario recipes. Models cannot change recipes
@@ -277,10 +278,15 @@ export function layoffs(ctx: TurnContext): void {
 }
 
 export function autoHire(ctx: TurnContext): void {
+  // Snapshots taken before any hire: the candidate list is computed once, as before, and per-business
+  // staff counts re-check each contract's live status, so a contract ended earlier in this loop (labour
+  // reallocation) is excluded exactly as a fresh scan would exclude it.
+  const employed = activeEmploymentByResident(ctx.state, ctx.day);
+  const staffByBusiness = activeEmploymentByBusiness(ctx.state);
   const unemployed = [...ctx.state.residents.values()]
     .filter((r) => r.status === 'living')
     .filter((r) => r.bornDay <= ctx.day - ctx.scenario.calendar.adultDays)
-    .filter((r) => !isEmployed(ctx, r.id))
+    .filter((r) => !employed.has(r.id))
     .sort((a, b) => (b.traits.diligence ?? 0) - (a.traits.diligence ?? 0) || a.id - b.id);
   if (unemployed.length === 0) return;
 
@@ -290,11 +296,10 @@ export function autoHire(ctx: TurnContext): void {
     if (unemployed.length === 0) break;
     const building = business.buildingId === null ? null : ctx.state.buildings.get(business.buildingId);
     const capacity = Math.max(1, building?.capacity ?? 2);
-    const staff = [...ctx.state.contracts.values()].filter(
+    // Only this business's own iteration can add a contract for it, and that happens after this count.
+    const staff = (staffByBusiness.get(business.id) ?? []).filter(
       (c) =>
-        c.kind === 'employment' &&
         c.status === 'active' &&
-        c.businessId === business.id &&
         // A dead or departed worker supplies no labour and must not hold a staffing slot.
         ctx.state.residents.get(c.aId)?.status === 'living',
     ).length;
@@ -396,18 +401,6 @@ function poachableWorker(ctx: TurnContext, targetBusinessId: number): Resident |
     detail: { fromBusinessId: chosen.business.id },
   });
   return chosen.resident;
-}
-
-function isEmployed(ctx: TurnContext, residentId: number): boolean {
-  if (ctx.state.residents.get(residentId)?.status !== 'living') return false;
-  for (const contract of ctx.state.contracts.values()) {
-    if (contract.kind !== 'employment' || contract.status !== 'active') continue;
-    if (contract.aId !== residentId) continue;
-    // An expired contract is not employment even if the schedule phase has not run yet.
-    if (contract.endDay !== null && contract.endDay < ctx.day) continue;
-    return true;
-  }
-  return false;
 }
 
 /**

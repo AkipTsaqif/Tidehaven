@@ -18,6 +18,7 @@ import { silentLogger } from '../runtime/telemetry.js';
 import { writeCheckpoint } from '../storage/checkpoints.js';
 import { readArchive, listArchives, runRetention } from './retention.js';
 import { isAdult } from '../domain/clock.js';
+import { buildObservationLookups } from '../domain/lookups.js';
 
 /**
  * Long-run soak: drives N simulated days against the in-process scripted provider, checking every
@@ -121,6 +122,8 @@ export async function runSoak(config: AppConfig, args: string[], out: (line: str
 
   for (let day = 1; day <= options.days; day += 1) {
     const plans = new Map<number, ActorPlan>();
+    // Decisions never mutate state, so one lookup build serves every prompt of the day (as in the runner).
+    const lookups = buildObservationLookups(state, day);
     for (const resident of state.residents.values()) {
       if (resident.status !== 'living') continue;
       if (!isAdult(resident.bornDay, day, scenario.calendar)) continue;
@@ -133,6 +136,7 @@ export async function runSoak(config: AppConfig, args: string[], out: (line: str
         events: [],
         maxBytes: 4096,
         maxRecords: 3,
+        lookups,
       });
       const outcome = await source.decide({ day, actorId: resident.id, prompt, schema: {} });
       plans.set(resident.id, {

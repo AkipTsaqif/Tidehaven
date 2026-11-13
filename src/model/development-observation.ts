@@ -1,11 +1,18 @@
 import type { Scenario } from '../contracts/scenario.js';
 import type { Resident, WorldState } from '../domain/state.js';
 import { liveBuildingCount, openBusinessCount } from '../domain/growth-limits.js';
+import { activeEmploymentByBusiness, type ObservationLookups } from '../domain/lookups.js';
 
 /** Public production/physical capacity and the actor's own building permissions, not other wallets. */
-export function developmentObservation(state: WorldState, scenario: Scenario, actor: Resident): Record<string, unknown> | null {
+export function developmentObservation(
+  state: WorldState,
+  scenario: Scenario,
+  actor: Resident,
+  lookups?: ObservationLookups,
+): Record<string, unknown> | null {
   const rules = scenario.growth;
   if (!rules) return null;
+  const staffByBusiness = lookups && lookups.state === state ? lookups.staffByBusiness : activeEmploymentByBusiness(state);
   const councillor = [...state.offices.values()].some((o) =>
     o.holderId === actor.id && (o.office === 'councillor' || o.office === 'magistrate') &&
     (o.untilDay === null || o.untilDay >= state.day),
@@ -16,8 +23,7 @@ export function developmentObservation(state: WorldState, scenario: Scenario, ac
     .slice(0, 16)
     .map((business) => {
       const building = business.buildingId === null ? undefined : state.buildings.get(business.buildingId);
-      const staff = [...state.contracts.values()].filter((c) =>
-        c.kind === 'employment' && c.status === 'active' && c.businessId === business.id &&
+      const staff = (staffByBusiness.get(business.id) ?? []).filter((c) =>
         state.residents.get(c.aId)?.status === 'living',
       ).length;
       return {

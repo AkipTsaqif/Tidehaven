@@ -2,6 +2,7 @@ import type { ActorPlan } from '../../contracts/actions.js';
 import type { TurnContext } from '../turn-context.js';
 import { nextId, OFFICES, type Office, type Resident } from '../state.js';
 import { educationYears } from '../society/education.js';
+import { livingMembersByHousehold, residentsWithActiveEmployment } from '../lookups.js';
 
 /**
  * Civic institutions: annual elections, office vacancies and succession, factions, and bounded public
@@ -81,12 +82,12 @@ export function civicPhase(ctx: TurnContext, plans: Map<number, ActorPlan>): Civ
   const treasury = ctx.state.accounts.get('treasury:0')?.balanceCents ?? 0;
   let reliefBudget = Math.floor(treasury / 50); // at most 2% of the treasury per day, town-wide
   if (treasury > 10_000) {
+    // Relief moves money only; membership is unchanged during the loop.
+    const membersByHousehold = livingMembersByHousehold(ctx.state);
     for (const household of ctx.state.households.values()) {
       if (household.dissolvedDay !== null) continue;
       if (reliefBudget <= 0) break;
-      const members = [...ctx.state.residents.values()].filter(
-        (r) => r.householdId === household.id && r.status === 'living',
-      );
+      const members = membersByHousehold.get(household.id) ?? [];
       if (members.length === 0) continue;
       const hungry = members.filter((m) => m.hungerDays > 0).length;
       if (hungry === 0) continue;
@@ -129,10 +130,11 @@ export function childAllowance(ctx: TurnContext): number {
   const treasury = ctx.state.accounts.get('treasury:0')?.balanceCents ?? 0;
   if (treasury < 5_000) return 0;
   let paid = 0;
+  const membersByHousehold = livingMembersByHousehold(ctx.state);
   for (const household of ctx.state.households.values()) {
     if (household.dissolvedDay !== null) continue;
-    const children = [...ctx.state.residents.values()].filter(
-      (r) => r.householdId === household.id && r.status === 'living' && r.bornDay > ctx.day - ctx.scenario.calendar.adultDays,
+    const children = (membersByHousehold.get(household.id) ?? []).filter(
+      (r) => r.bornDay > ctx.day - ctx.scenario.calendar.adultDays,
     ).length;
     if (children === 0) continue;
     const amount = Math.min(children * perChild, treasury - paid);
@@ -167,15 +169,11 @@ export function publicWorks(ctx: TurnContext): number {
   );
   let hired = 0;
   if (staff.length < capacity) {
+    const employed = residentsWithActiveEmployment(ctx.state);
     const unemployed = [...ctx.state.residents.values()]
       .filter((r) => r.status === 'living')
       .filter((r) => r.bornDay <= ctx.day - ctx.scenario.calendar.adultDays)
-      .filter(
-        (r) =>
-          ![...ctx.state.contracts.values()].some(
-            (c) => c.kind === 'employment' && c.status === 'active' && c.aId === r.id,
-          ),
-      )
+      .filter((r) => !employed.has(r.id))
       .sort((a, b) => (b.traits.diligence ?? 0) - (a.traits.diligence ?? 0) || a.id - b.id);
     const candidate = unemployed[0];
     if (candidate) {

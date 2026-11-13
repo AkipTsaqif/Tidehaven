@@ -3,6 +3,7 @@ import type { TurnContext } from '../turn-context.js';
 import { labourCapacity, lifeStage } from '../clock.js';
 import type { Business, Contract, Resident, WorldState } from '../state.js';
 import { balanceOf, nextId } from '../state.js';
+import { activeEmploymentByResident } from '../lookups.js';
 
 /**
  * Employment: who works where, for how long, and what happens when a business cannot pay.
@@ -87,9 +88,11 @@ export function strikeActive(ctx: TurnContext, businessId: number): boolean {
 
 export function collectWorkers(ctx: TurnContext, plans: Map<number, ActorPlan>): Map<number, WorkerAssignment[]> {
   const byBusiness = new Map<number, WorkerAssignment[]>();
+  // This loop reads contracts but never changes them, so one snapshot answers every resident.
+  const employment = activeEmploymentByResident(ctx.state, ctx.day);
   for (const resident of ctx.state.residents.values()) {
     if (resident.status !== 'living') continue;
-    const contract = activeEmploymentContract(ctx.state, ctx.day, resident.id);
+    const contract = employment.get(resident.id) ?? null;
     if (!contract || contract.businessId === null) continue;
     const business = ctx.state.businesses.get(contract.businessId);
     if (!business || business.status !== 'open') continue;

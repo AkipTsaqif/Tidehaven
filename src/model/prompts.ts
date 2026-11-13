@@ -1,9 +1,9 @@
 import type { Scenario } from '../contracts/scenario.js';
 import type { WorldState, Resident } from '../domain/state.js';
 import { lifeStage } from '../domain/clock.js';
-import { householdFoodDaysFor } from '../domain/society/households.js';
-import { activeEmploymentContract } from '../domain/economy/employment.js';
+import { householdFoodDaysForCount } from '../domain/society/households.js';
 import { balanceOf, quantityOf } from '../domain/state.js';
+import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 import { DEVELOPMENT_GUIDE, developmentObservation } from './development-observation.js';
 import { buildHousingObservation } from './housing-observation.js';
 
@@ -34,6 +34,11 @@ export interface ActorPromptInput {
   events: PromptEvent[];
   maxBytes: number;
   maxRecords: number;
+  /**
+   * Shared lookups for a batch of prompts built against the same unchanged state and day. Optional:
+   * when absent or built for a different state/day, the prompt builds its own.
+   */
+  lookups?: ObservationLookups;
 }
 
 export interface ActorPrompt {
@@ -70,8 +75,12 @@ const BUILD_GUIDE = [
 
 export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
   const { state, scenario, resident, day } = input;
+  const lookups =
+    input.lookups && input.lookups.state === state && input.lookups.day === day
+      ? input.lookups
+      : buildObservationLookups(state, day);
   const household = resident.householdId === null ? null : state.households.get(resident.householdId);
-  const contract = activeEmploymentContract(state, day, resident.id);
+  const contract = lookups.employmentByResident.get(resident.id) ?? null;
   const job =
     contract === null || contract?.businessId === null || contract?.businessId === undefined
       ? null
@@ -89,14 +98,14 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     skills: resident.skills,
   };
 
+  const householdMembers = household ? (lookups.membersByHousehold.get(household.id) ?? []) : [];
   const householdInfo = household
     ? {
         id: household.id,
         name: household.name,
-        foodDays: householdFoodDaysFor(state, scenario, household.id),
+        foodDays: householdFoodDaysForCount(state, scenario, household.id, householdMembers.length),
         cashCents: balanceOf(state, 'household', household.id),
-        members: [...state.residents.values()]
-          .filter((r) => r.householdId === household.id && r.status === 'living')
+        members: householdMembers
           .map((r) => ({ id: r.id, name: r.name, age: Math.floor((day - r.bornDay) / scenario.calendar.daysPerYear) })),
       }
     : null;
@@ -115,10 +124,10 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
       trust: r.trust,
     }));
 
-  const housing = housingInfo(input);
-  const development = developmentObservation(state, scenario, resident);
+  const housing = housingInfo(input, lookups);
+  const development = developmentObservation(state, scenario, resident, lookups);
   const sharing = scenario.growth?.housingSharing === 'consent'
-    ? buildHousingObservation({ state, scenario, actorId: resident.id, day, maxHosts: 8, maxRequests: 8 }) : null;
+    ? buildHousingObservation({ state, scenario, actorId: resident.id, day, maxHosts: 8, maxRequests: 8, lookups }) : null;
 
   const prices = Object.fromEntries(state.prices.entries());
   const visibleEvents = input.events
@@ -195,18 +204,14 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
  * Public housing facts, only for scenarios with construction rules: the actor's roof, free homes, and
  * open building sites with their progress. Everything here is visible to any resident walking the town.
  */
-function housingInfo(input: ActorPromptInput): Record<string, unknown> | null {
+function housingInfo(input: ActorPromptInput, lookups: ObservationLookups): Record<string, unknown> | null {
   const { state, scenario, resident } = input;
   const rules = scenario.construction;
   if (!rules) return null;
   const household = resident.householdId === null ? null : state.households.get(resident.householdId);
   const home = household === null || household === undefined || household.buildingId === null ? null : state.buildings.get(household.buildingId);
-  const members = household
-    ? [...state.residents.values()].filter((r) => r.householdId === household.id && r.status === 'living').length
-    : 0;
-  const occupied = new Set(
-    [...state.households.values()].filter((h) => h.dissolvedDay === null && h.buildingId !== null).map((h) => h.buildingId),
-  );
+  const members = household ? (lookups.membersByHousehold.get(household.id)?.length ?? 0) : 0;
+  const occupied = lookups.occupiedBuildingIds;
   const freeHomes = [...state.buildings.values()].filter(
     (b) => b.kind === 'home' && b.destroyedDay === null && !occupied.has(b.id),
   ).length;
