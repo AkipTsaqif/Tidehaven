@@ -32,7 +32,8 @@ Day counter starts at 1. `dayIndex` is authoritative; wall-clock is never used f
 5. `dialogue` — up to 2 reciprocal rounds for at most 4 conversations/day.
 6. `protect` — protective care, evacuation, emergency shelter, relief.
 7. `household` — household agreements: partnership, separation, conception, intra-household transfers.
-8. `labour` — hires, fires, job assignment, strike effects on available labour.
+8. `labour` — residents' job applications and resignations, then automatic hires and layoffs,
+   strike effects on available labour.
 9. `produce` — labour + inputs → outputs per recipe; spoilage.
 10. `market` — household provisioning (default basket), buy/sell order matching, price updates.
 11. `civic` — taxes/public spending, elections, faction actions, petitions.
@@ -119,6 +120,20 @@ Wages (per worker-day): unskilled **420**, skilled **520**, official **600**. Pa
 labour actually supplied (`wage × lp / 100`). A worker keeps a **10 %** personal allowance; the rest is
 paid to their household. Personal balances above **3 000** cents are moved into the household at market
 time, so nobody starves while holding pocket money.
+
+Choosing work. Residents pick their own workplace; automatic hiring fills what they leave open:
+
+- `seek_work` with `businessId` applies to that business, before automatic hiring each day. It is
+  accepted when the business is open, its premises are usable (not private, not destroyed, condition at
+  least 30 %), it has a free place, the applicant is a living, non-imprisoned adult, and the payer
+  (business, or treasury for town services) holds at least 5 days of the wage. An employed applicant
+  who is accepted switches jobs in one step; one who is refused keeps their current job. Applications
+  resolve in resident-id order, so the last free place is never decided by the order replies arrived.
+- `quit_job` ends the current job that day. Neither automatic hiring nor the Town Yard re-hires that
+  resident the same day.
+- `seek_work` without a business, or no work action at all, leaves placement to automatic hiring.
+- Adults see a public JOB BOARD in their prompt: up to 12 open workplaces with free places, the daily
+  wage and the current shortage of their goods, most-needed first.
 
 Employment rules: businesses hire when their output is in shortage (or revenue supports the wage) and
 their cash covers five days of wages; they release their newest worker when revenue cannot cover a third
