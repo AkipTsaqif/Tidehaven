@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { cents, getJson } from '../api.js';
+import { ageYears, getJson } from '../api.js';
 import { Resident } from './Resident.js';
 
 interface ResidentRow {
@@ -21,7 +21,7 @@ interface ResidentsResponse {
   offset: number;
 }
 
-export function Residents({ revision = 0 }: { revision?: number }) {
+export function Residents({ revision = 0, today = 0 }: { revision?: number; today?: number }) {
   const [search, setSearch] = useState('');
   const [status, setStatus] = useState('living');
   const [selected, setSelected] = useState<number | null>(null);
@@ -44,7 +44,7 @@ export function Residents({ revision = 0 }: { revision?: number }) {
   }, [search, status, revision]);
 
   if (selected !== null) {
-    return <Resident residentId={selected} revision={revision} onBack={() => setSelected(null)} />;
+    return <Resident residentId={selected} revision={revision} today={today} onBack={() => setSelected(null)} />;
   }
 
   return (
@@ -73,6 +73,7 @@ export function Residents({ revision = 0 }: { revision?: number }) {
             <tr>
               <th>Name</th>
               <th>Sex</th>
+              <th>Age</th>
               <th>Household</th>
               <th>Health</th>
               <th>Hunger</th>
@@ -84,6 +85,7 @@ export function Residents({ revision = 0 }: { revision?: number }) {
               <tr key={resident.id} className="clickable" onClick={() => setSelected(resident.id)}>
                 <td>{resident.name}</td>
                 <td className="muted">{resident.sex}</td>
+                <td>{ageYears(resident.bornDay, today)}</td>
                 <td>{resident.householdId ?? '—'}</td>
                 <td className={resident.healthState === 'healthy' ? '' : 'warn-text'}>{resident.healthState}</td>
                 <td>{resident.hungerDays}</td>
@@ -94,9 +96,9 @@ export function Residents({ revision = 0 }: { revision?: number }) {
         </table>
       </div>
       <div className="muted small">
-        Ages are simulated days; 365 days = one year, 6 570 days = adulthood. Cash is shown in units (100 cents).
+        Ages are in simulated years (365 days each); adulthood is at 18. Money is shown in dollars.
       </div>
-      <div className="muted small">Tip: open a resident to see assets ({cents(0)}-based), memories, cases, and genealogy.</div>
+      <div className="muted small">Tip: open a resident to see assets, memories, cases, and genealogy.</div>
     </section>
   );
 }

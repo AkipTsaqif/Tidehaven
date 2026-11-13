@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { cents, getJson } from '../api.js';
+import { ageYears, calendarDay, cents, getJson } from '../api.js';
 
 interface ResidentDetail {
   id: number;
@@ -45,20 +45,26 @@ interface Genealogy {
 export function Resident({
   residentId,
   revision = 0,
+  today = 0,
   onBack,
 }: {
   residentId: number;
   revision?: number;
+  today?: number;
   onBack: () => void;
 }) {
   const [detail, setDetail] = useState<ResidentDetail | null>(null);
   const [tree, setTree] = useState<Genealogy | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // Clear only when switching residents; a new day refreshes in place instead of flashing "Loading".
   useEffect(() => {
-    let current = true;
     setDetail(null);
     setTree(null);
+  }, [residentId]);
+
+  useEffect(() => {
+    let current = true;
     getJson<ResidentDetail>(`/api/residents/${residentId}`)
       .then((next) => {
         if (current) setDetail(next);
@@ -92,7 +98,8 @@ export function Resident({
           <h2>Identity</h2>
           <Row label="id" value={detail.id} />
           <Row label="sex" value={detail.sex} />
-          <Row label="born day" value={detail.bornDay} />
+          <Row label="age" value={`${ageYears(detail.bornDay, detail.deathDay ?? detail.emigratedDay ?? today)} years`} />
+          <Row label="born" value={bornLabel(detail.bornDay)} />
           <Row label="origin" value={detail.origin} />
           <Row label="household" value={detail.householdId ?? '—'} />
           <Row label="partner" value={detail.partnerId ?? '—'} />
@@ -106,7 +113,7 @@ export function Resident({
           <h2>Health and money</h2>
           <Row label="health" value={detail.healthState} />
           <Row label="hungry days" value={detail.hungerDays} />
-          <Row label="cash" value={`${cents(detail.cashCents)} units`} />
+          <Row label="cash" value={`${cents(detail.cashCents)}`} />
           <Row label="job" value={detail.employment?.businessName ?? 'unemployed'} />
           {detail.health.map((item, index) => (
             <Row key={index} label="illness" value={`${item.disease} (${item.state})`} />
@@ -229,4 +236,13 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
       <span>{value}</span>
     </div>
   );
+}
+
+/**
+ * Days count from the town's founding (day 0). A founder who was 25 at founding was born 9,125 days
+ * (25 years) before it, so the raw value is negative; show it as a date instead.
+ */
+function bornLabel(bornDay: number): string {
+  if (bornDay >= 0) return calendarDay(bornDay);
+  return `${calendarDay(bornDay)} (day ${bornDay})`;
 }

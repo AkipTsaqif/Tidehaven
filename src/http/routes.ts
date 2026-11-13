@@ -17,6 +17,7 @@ import {
   townView,
 } from '../application/queries.js';
 import { completeCommand, enqueueCommand } from '../storage/commands-repo.js';
+import { metricHistory } from '../application/history.js';
 import type { RunnerSnapshot } from '../runtime/runner.js';
 
 /**
@@ -143,6 +144,14 @@ export function registerRoutes(app: FastifyInstance, deps: RouteDeps): void {
       offset: num(query.offset),
       search: query.search,
     });
+  });
+
+  // Chart history: ?days=N for the last N days, or ?days=all for the whole (sampled) history.
+  app.get('/api/metrics/history', async (request) => {
+    const query = request.query as Record<string, string | undefined>;
+    const raw = query.days ?? '365';
+    const windowDays = raw === 'all' ? null : Math.max(1, Math.min(10_000_000, Math.trunc(num(raw, 365) ?? 365)));
+    return metricHistory(db, worldId, windowDays);
   });
 
   app.get('/api/metrics', async (request) => {

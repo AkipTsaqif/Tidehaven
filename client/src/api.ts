@@ -109,9 +109,25 @@ export interface StatusSnapshotView {
   recovery: string | null;
 }
 
+/** Money is stored as integer cents; show it as dollars: 1234 -> "$12.34", -50 -> "-$0.50". */
 export function cents(value: number | undefined | null): string {
-  if (value === undefined || value === null) return '—';
-  return (value / 100).toFixed(2);
+  if (value === undefined || value === null || !Number.isFinite(value)) return '—';
+  const sign = value < 0 ? '-' : '';
+  const dollars = (Math.abs(value) / 100).toFixed(2);
+  const [whole = '0', fraction = '00'] = dollars.split('.');
+  return `${sign}$${whole.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}.${fraction}`;
+}
+
+/** Days since founding are shown as a calendar: day 400 -> "Year 2, day 35" (365-day years). */
+export function calendarDay(day: number, daysPerYear = 365): string {
+  if (!Number.isFinite(day)) return '—';
+  if (day < 0) return `${Math.ceil(-day / daysPerYear)} years before founding`;
+  return `Year ${Math.floor(day / daysPerYear) + 1}, day ${(day % daysPerYear) + 1}`;
+}
+
+/** Age in whole years on a given day (365-day years). */
+export function ageYears(bornDay: number, today: number, daysPerYear = 365): number {
+  return Math.max(0, Math.floor((today - bornDay) / daysPerYear));
 }
 
 export function bytes(value: number | null | undefined): string {

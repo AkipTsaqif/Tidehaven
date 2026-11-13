@@ -38,7 +38,7 @@ export function buildNewspaperDigest(ctx: TurnContext, events: EventInsert[]): A
     }
   }
   lines.push('');
-  lines.push('Market prices (cents): ' + Object.fromEntries(ctx.state.prices.entries()));
+  lines.push('Market prices: ' + formatPrices(ctx.state.prices));
   lines.push('Reported facts only; allegations are not verdicts.');
 
   return {
@@ -48,6 +48,14 @@ export function buildNewspaperDigest(ctx: TurnContext, events: EventInsert[]): A
     eventIds: events.map((e) => e.id),
     generatedBy: 'digest',
   };
+}
+
+/** `bread $1.50 · fish $1.80 · …`, sorted by good so the digest text is deterministic. */
+export function formatPrices(prices: ReadonlyMap<string, number>): string {
+  const parts = [...prices.entries()]
+    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+    .map(([good, cents]) => `${good} $${(cents / 100).toFixed(2)}`);
+  return parts.length > 0 ? parts.join(' · ') : 'none recorded';
 }
 
 function label(event: EventInsert): string {

@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { cents, getJson } from '../api.js';
+import { Chart, RangePicker, useLinesWithPrefix } from '../charts.js';
 
 interface TownResponse {
   prices: { good: string; price_cents: number }[];
@@ -12,6 +13,7 @@ interface TownResponse {
 }
 
 export function Town({ revision = 0 }: { revision?: number }) {
+  const prices = useLinesWithPrefix('prices');
   const [data, setData] = useState<TownResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
@@ -85,6 +87,13 @@ export function Town({ revision = 0 }: { revision?: number }) {
           </tbody>
         </table>
       </Panel>
+
+      <RangePicker />
+      <div className="chart-grid">
+        <Chart title="Households" lines={[{ metric: 'households', label: 'households' }]} />
+        <Chart title="Open businesses" lines={[{ metric: 'businessesOpen', label: 'open' }]} />
+        <Chart title="Prices" format="money" lines={prices} />
+      </div>
 
       <Panel title="Market">
         <table>

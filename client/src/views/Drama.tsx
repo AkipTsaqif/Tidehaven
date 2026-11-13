@@ -106,7 +106,7 @@ export function Drama({ revision = 0 }: { revision?: number }) {
           <ul className="list">
             {data.estates.map((estate) => (
               <li key={estate.id}>
-                resident {estate.deceasedId} · {estate.status} · {cents(estate.totalCents)} units
+                resident {estate.deceasedId} · {estate.status} · {cents(estate.totalCents)}
               </li>
             ))}
           </ul>
@@ -150,7 +150,7 @@ export function Drama({ revision = 0 }: { revision?: number }) {
           {data.sentences.map((sentence) => (
             <li key={sentence.id}>
               case #{sentence.caseId}: {sentence.kind}
-              {sentence.amountCents ? ` ${cents(sentence.amountCents)} units` : ''}
+              {sentence.amountCents ? ` ${cents(sentence.amountCents)}` : ''}
               {sentence.days ? ` ${sentence.days} days` : ''} · {sentence.status}
               {sentence.endDay ? ` (until day ${sentence.endDay})` : ''}
             </li>

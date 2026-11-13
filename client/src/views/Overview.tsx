@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import { bytes, cents, getJson, type StatusSnapshotView } from '../api.js';
+import { bytes, calendarDay, cents, getJson, type StatusSnapshotView } from '../api.js';
+import { Chart, RangePicker } from '../charts.js';
 
 interface OverviewResponse {
   overview: {
@@ -42,10 +43,13 @@ export function Overview({ status, revision = 0 }: { status: StatusSnapshotView 
   const overview = data?.overview;
   const metrics = overview?.latestMetrics ?? {};
 
+  const day = overview?.world.day ?? status?.world?.day;
   return (
-    <section className="grid">
+    <section className="stack">
+    <div className="grid">
       <Card title="Simulated date">
-        <div className="big">Day {overview?.world.day ?? status?.world?.day ?? '—'}</div>
+        <div className="big">{day === undefined ? '—' : calendarDay(day)}</div>
+        <div className="muted small">day {day ?? '—'} since founding</div>
         <div className="muted">
           {overview?.world.phase ?? '—'} · rules {overview?.world.rulesVersion ?? '—'}
         </div>
@@ -71,12 +75,12 @@ export function Overview({ status, revision = 0 }: { status: StatusSnapshotView 
       </Card>
 
       <Card title="Economy">
-        <Row label="treasury" value={`${cents(overview?.money.treasuryCents ?? status?.world?.treasuryCents)} units`} />
-        <Row label="money supply" value={`${cents(overview?.money.totalCents ?? status?.world?.moneySupplyCents)} units`} />
+        <Row label="treasury" value={`${cents(overview?.money.treasuryCents ?? status?.world?.treasuryCents)}`} />
+        <Row label="money supply" value={`${cents(overview?.money.totalCents ?? status?.world?.moneySupplyCents)}`} />
         <Row label="household cash" value={cents(overview?.money.householdCents)} />
         <Row label="business cash" value={cents(overview?.money.businessCents)} />
         <Row label="open businesses" value={overview?.businesses.open ?? status?.world?.businesses ?? 0} />
-        <Row label="unmet food demand" value={String(metrics.unmetDemand ?? '—')} />
+        <Row label="unmet food demand" value={foodShortfall(metrics.unmetDemand)} />
       </Card>
 
       <Card title="Throughput">
@@ -103,8 +107,27 @@ export function Overview({ status, revision = 0 }: { status: StatusSnapshotView 
         <Row label="invariants" value={status?.invariants.ok ? 'ok' : 'FAILED'} />
         <Row label="drama level" value={overview?.world.drama ?? '—'} />
       </Card>
+    </div>
+
+      <RangePicker />
+      <div className="chart-grid">
+        <Chart title="Population" lines={[{ metric: 'population', label: 'living' }, { metric: 'hunger', label: 'hungry' }]} />
+        <Chart title="Treasury" format="money" lines={[{ metric: 'treasuryCents', label: 'treasury' }]} />
+        <Chart title="Food in town" lines={[{ metric: 'goods.grain', label: 'grain' }, { metric: 'goods.fish', label: 'fish' }, { metric: 'goods.bread', label: 'bread' }]} />
+        <Chart title="Open businesses" lines={[{ metric: 'businessesOpen', label: 'open' }]} />
+      </div>
+      <div className="muted small">Every metric is charted on the Charts tab.</div>
     </section>
   );
+}
+
+/** `{grain: 3, bread: 1}` -> "grain 3 · bread 1"; nothing missing -> "none". */
+function foodShortfall(value: unknown): string {
+  if (typeof value !== 'object' || value === null) return 'none';
+  const parts = Object.entries(value as Record<string, unknown>)
+    .filter(([, units]) => typeof units === 'number' && units > 0)
+    .map(([good, units]) => `${good} ${String(units)}`);
+  return parts.length > 0 ? parts.join(' · ') : 'none';
 }
 
 function Card({ title, children }: { title: string; children: ReactNode }) {

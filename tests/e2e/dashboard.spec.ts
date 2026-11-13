@@ -113,6 +113,28 @@ test.describe('Tidehaven dashboard', () => {
     await expect(page.getByText('Population target (soft)').first()).toBeVisible();
   });
 
+  test('charts every metric, switches to the whole history, and shows money in dollars', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Charts' }).click();
+    await expect(page.getByRole('img', { name: 'Population chart' })).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByRole('img', { name: 'Treasury chart' })).toBeVisible();
+    await expect(page.getByRole('img', { name: 'Goods in town chart' })).toBeVisible();
+    await page.getByRole('button', { name: 'All', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByRole('img', { name: 'Population chart' })).toBeVisible();
+    // Money is shown as dollars and the unit word is gone.
+    const treasury = page.locator('.chart-panel', { hasText: 'Treasury' }).first();
+    await expect(treasury).toContainText('$');
+    await page.getByRole('button', { name: 'Overview' }).click();
+    await expect(page.locator('.card', { hasText: 'Economy' }).first()).toContainText('$');
+    await expect(page.locator('.card', { hasText: 'Economy' }).first()).not.toContainText('units');
+    // Founders show an age in years, not a negative "born day".
+    await page.getByRole('button', { name: 'Residents' }).click();
+    await page.locator('tbody tr.clickable').first().click();
+    await expect(page.locator('.card', { hasText: 'Identity' }).first()).toContainText(/\d+ years/);
+    await expect(page.locator('.card', { hasText: 'Identity' }).first()).toContainText('before founding');
+  });
+
   test('shows a causal chain from a known event back to a resident', async ({ request }) => {
     // The fixture town always records actor-attributed events (employment, births, deaths). Require one
     // rather than skipping the substantive assertions when none is found.

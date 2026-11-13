@@ -59,7 +59,7 @@ export function overview(db: Db, worldId: number): Record<string, unknown> | nul
   );
   const businesses = db.get<{ open: number; closed: number }>(
     `select sum(case when status = 'open' then 1 else 0 end) as open,
-            sum(case when status !== 'open' then 1 else 0 end) as closed
+            sum(case when status != 'open' then 1 else 0 end) as closed
        from businesses where world_id = ?`,
     [worldId],
   );
@@ -83,7 +83,7 @@ export function overview(db: Db, worldId: number): Record<string, unknown> | nul
   );
   const events = db.get<{ count: number }>(`select count(*) as count from events where world_id = ?`, [worldId]);
   const openCases = db.get<{ count: number }>(
-    `select count(*) as count from cases where world_id = ? and status !== 'closed'`,
+    `select count(*) as count from cases where world_id = ? and status != 'closed'`,
     [worldId],
   );
   const unrest = db.get<{ count: number }>(
