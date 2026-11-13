@@ -102,14 +102,17 @@ stock change fails the production commit gate rather than only a harness check).
 
 The runner pauses at day boundaries only. Reasons: `configuration`, `authentication`, `quota`,
 `provider_down`, `disk_pressure`, `storage_budget`, `invariant_failure`, `engine_error`,
-`population_ceiling`, `town_empty`, `operator`. A pause is written to `data/pause.json`, broadcast over
+`population_ceiling`, `town_empty`, `operator`. A pause is written to `data/<scenario>/pause.json`, broadcast over
 SSE, and never fabricates a day. While paused the process keeps serving the dashboard, so the operator
 can inspect, fix configuration, and resume.
 
 ## Storage layout
 
+One folder per scenario by default (`data/tidehaven/`, `data/eden/`, ...); `TIDEHAVEN_DATA_DIR`
+overrides it. Each folder holds one town:
+
 ```
-data/
+data/<scenario>/
   tidehaven.sqlite       authoritative state (WAL)
   tidehaven.sqlite-wal   WAL
   backups/               verified SQLite online backups (rotating)

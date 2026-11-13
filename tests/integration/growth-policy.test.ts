@@ -1,3 +1,7 @@
+import { copyFileSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { assertNoLegacyTown } from '../../src/application/legacy-data.js';
 import { describe, expect, it } from 'vitest';
 import { loadConfig, ConfigError } from '../../src/config.js';
 import { loadScenario } from '../../src/application/scenario.js';
@@ -125,5 +129,36 @@ describe('optional population policy', () => {
     expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '0' } })).toThrow(ConfigError);
     expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '1000001' } })).toThrow(ConfigError);
     expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '2.5' } })).toThrow(ConfigError);
+  });
+});
+
+describe('default data directory', () => {
+  it('puts each scenario in its own folder under data/ unless TIDEHAVEN_DATA_DIR is set', () => {
+    const root = loadConfig({ env: {} }).projectRoot;
+    expect(loadConfig({ env: {} }).dataDir).toBe(join(root, 'data', 'tidehaven'));
+    expect(loadConfig({ env: { TIDEHAVEN_SCENARIO: 'eden' } }).dataDir).toBe(join(root, 'data', 'eden'));
+    expect(loadConfig({ env: { TIDEHAVEN_SCENARIO: 'eden' } }).dataDirExplicit).toBe(false);
+    const custom = loadConfig({ env: { TIDEHAVEN_SCENARIO: 'eden', TIDEHAVEN_DATA_DIR: 'D:/towns/one' } });
+    expect(custom.dataDir).toBe('D:/towns/one');
+    expect(custom.dataDirExplicit).toBe(true);
+  });
+
+  it('refuses to start fresh while an unmoved town sits at the old location', () => {
+    const root = mkdtempSync(join(tmpdir(), 'tidehaven-legacy-'));
+    try {
+      mkdirSync(join(root, 'config'));
+      copyFileSync(join(process.cwd(), 'config', 'defaults.json'), join(root, 'config', 'defaults.json'));
+      mkdirSync(join(root, 'data'));
+      writeFileSync(join(root, 'data', 'tidehaven.sqlite'), '');
+      const config = loadConfig({ env: {}, root });
+      expect(() => assertNoLegacyTown(config)).toThrow(/old data location/);
+      // An explicit folder, or a town already moved into data/<scenario>, is fine.
+      expect(() => assertNoLegacyTown(loadConfig({ env: { TIDEHAVEN_DATA_DIR: join(root, 'data') }, root }))).not.toThrow();
+      mkdirSync(join(root, 'data', 'tidehaven'));
+      writeFileSync(join(root, 'data', 'tidehaven', 'tidehaven.sqlite'), '');
+      expect(() => assertNoLegacyTown(config)).not.toThrow();
+    } finally {
+      rmSync(root, { recursive: true, force: true });
+    }
   });
 });

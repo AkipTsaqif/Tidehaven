@@ -12,6 +12,7 @@ import { resumeScenario } from './application/saved-scenario.js';
 import { createTown } from './application/bootstrap.js';
 import { makeStatus, readPauseFile } from './application/status.js';
 import { databasePath, savedWorldExists } from './application/diagnostics.js';
+import { assertNoLegacyTown } from './application/legacy-data.js';
 import { readWorld, loadState, type WorldRow } from './storage/repositories.js';
 import { openDatabase, type Db } from './storage/database.js';
 import { latestSchemaVersion, migrate, needsMigration } from './storage/migrate.js';
@@ -63,6 +64,8 @@ async function main(): Promise<void> {
 
   const fixture = process.env.TIDEHAVEN_FIXTURE === '1';
   const config = loadConfig({ fixtureProvider: fixture });
+  // Never found a fresh town in the new per-scenario folder while the old town sits one level up.
+  assertNoLegacyTown(config);
   const logger = createLogger({
     level: config.defaults.runtime.logLevel,
     logDir: join(config.dataDir, 'logs'),

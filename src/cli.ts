@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 import { loadConfig, ConfigError, type AppConfig } from './config.js';
+import { assertNoLegacyTown } from './application/legacy-data.js';
+
+/** Every CLI command reads the same per-scenario folder, and refuses an unmoved legacy town. */
+function loadTownConfig(options: { allowProbe?: boolean } = {}): AppConfig {
+  const config = loadConfig(options);
+  assertNoLegacyTown(config);
+  return config;
+}
 import { doctor, formatBytes } from './application/diagnostics.js';
 import { offlineStatus } from './application/status.js';
 import type { StatusSnapshot } from './contracts/api.js';
@@ -109,7 +117,7 @@ export function formatStatus(status: StatusSnapshot): string {
 }
 
 async function cmdStatus(args: string[], io: CliIO): Promise<number> {
-  const config = loadConfig();
+  const config = loadTownConfig();
   const status = offlineStatus(config, VERSION);
   if (hasFlag(args, '--json')) {
     io.out(JSON.stringify(status, null, 2));
@@ -121,7 +129,7 @@ async function cmdStatus(args: string[], io: CliIO): Promise<number> {
 
 async function cmdDoctor(args: string[], io: CliIO): Promise<number> {
   const probe = hasFlag(args, '--probe');
-  const config = loadConfig({ allowProbe: probe });
+  const config = loadTownConfig({ allowProbe: probe });
   const report = await doctor(config);
   if (hasFlag(args, '--json')) {
     io.out(JSON.stringify(report, null, 2));
@@ -169,20 +177,20 @@ export async function runCli(argv: string[], io: CliIO = defaultIO): Promise<num
     case 'doctor':
       return cmdDoctor(args, io);
     case 'backup': {
-      const config = loadConfig();
+      const config = loadTownConfig();
       const { backupTown } = await import('./application/commands.js');
       const result = await backupTown(config, makeLoggerFor(config, false));
       io.out(result.message);
       return result.ok ? 0 : 2;
     }
     case 'soak': {
-      const config = loadConfig();
+      const config = loadTownConfig();
       const { runSoak } = await import('./application/soak.js');
       const result = await runSoak(config, args, io.out);
       return result ? 0 : 2;
     }
     case 'probe': {
-      const config = loadConfig({ allowProbe: true });
+      const config = loadTownConfig({ allowProbe: true });
       const { probeProvider } = await import('./model/probe.js');
       const db = openExistingTownDatabase(config);
       try {

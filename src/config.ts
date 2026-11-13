@@ -101,6 +101,8 @@ export interface AppConfig {
   fixtureProvider: boolean;
   /** Scenario file, relative to the project root (default `scenarios/tidehaven.json`). */
   scenarioFile: string;
+  /** True when TIDEHAVEN_DATA_DIR was set; false when the per-scenario default is in use. */
+  dataDirExplicit: boolean;
   /** Explicit founding-only override from TIDEHAVEN_POPULATION_POLICY. */
   populationPolicyOverride: boolean | undefined;
 }
@@ -158,8 +160,13 @@ function readEnvCeiling(env: NodeJS.ProcessEnv, key: string): number | null | un
   return value === undefined ? undefined : value;
 }
 
-function resolveDataDir(root: string, raw: string | undefined): string {
-  if (!raw || raw.trim() === '') return join(root, 'data');
+/** Parent of the per-scenario default data directories: `<project>/data/<scenario>`. */
+export function defaultDataRoot(root: string): string {
+  return join(root, 'data');
+}
+
+function resolveDataDir(root: string, raw: string | undefined, scenarioName: string): string {
+  if (!raw || raw.trim() === '') return join(defaultDataRoot(root), scenarioName);
   return isAbsolute(raw) ? raw : resolve(root, raw);
 }
 
@@ -263,7 +270,8 @@ export function loadConfig(options: LoadConfigOptions = {}): AppConfig {
 
   return {
     projectRoot: root,
-    dataDir: resolveDataDir(root, env.TIDEHAVEN_DATA_DIR),
+    dataDir: resolveDataDir(root, env.TIDEHAVEN_DATA_DIR, scenarioName),
+    dataDirExplicit: (env.TIDEHAVEN_DATA_DIR ?? '').trim() !== '',
     host: defaults.runtime.host,
     port,
     defaults,

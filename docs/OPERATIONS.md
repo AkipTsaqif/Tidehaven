@@ -18,7 +18,7 @@
    | `TIDEHAVEN_MODEL` | model identifier, e.g. a cheap small model |
    | `TIDEHAVEN_SCENARIO` | optional founding scenario name from `scenarios/` (default `tidehaven`; `eden` = Adam and Eve only) |
    | `TIDEHAVEN_WORLD_NAME` | optional town name, applied when the town is founded |
-   | `TIDEHAVEN_DATA_DIR` | optional absolute data directory (default `./data`) |
+   | `TIDEHAVEN_DATA_DIR` | optional data directory (default `./data/<scenario>`, e.g. `./data/eden`) |
    | `TIDEHAVEN_PORT` | optional dashboard port (default `4317`) |
    | `TIDEHAVEN_MAX_OUTPUT_TOKENS` | optional output token allowance per request (default `800`; reasoning models need more) |
    | `TIDEHAVEN_MIN_FREE_MB` | optional free-space floor before a `disk_pressure` pause (default `5120`) |
@@ -56,14 +56,14 @@ browser is closed.
 
 ```bash
 npm run status    # simulated date, day phase, pause reason, population, usage summary
-npm run backup    # consistent SQLite backup into data/backups/
+npm run backup    # consistent SQLite backup into data/<scenario>/backups/
 npm run doctor    # configuration and storage checks
 npm run verify    # typecheck + lint + tests + production build
 ```
 
 ## Pause reasons and recovery
 
-Paused states are also written to `data/pause.json` with the reason and last committed day.
+Paused states are also written to `data/<scenario>/pause.json` with the reason and last committed day.
 
 | Reason | Meaning | Recovery |
 |---|---|---|
@@ -72,12 +72,12 @@ Paused states are also written to `data/pause.json` with the reason and last com
 | `provider_down` | broad outage / fallback rate over threshold | wait, then Resume |
 | `disk_pressure` | free space below the minimum | free space or point `TIDEHAVEN_DATA_DIR` at another volume |
 | `storage_budget` | project data exceeded the storage budget | archive/export or raise the budget explicitly |
-| `invariant_failure` | accounting/goods invariant broke | do not delete data — inspect `data/diagnostics/` |
+| `invariant_failure` | accounting/goods invariant broke | do not delete data — inspect `data/<scenario>/diagnostics/` |
 | `population_ceiling` | host safety ceiling (500) reached | lower the target or accept the pause |
 | `town_empty` | no residents and no possible immigration | adjust target/immigration settings |
 | `operator` | you paused it | click Resume |
 
-Never delete `data/tidehaven.sqlite` to "fix" a pause: restore a backup from `data/backups/` into a
+Never delete `data/<scenario>/tidehaven.sqlite` to "fix" a pause: restore a backup from `data/<scenario>/backups/` into a
 separate directory first and compare.
 
 ## Backup and restore
@@ -89,7 +89,7 @@ separate directory first and compare.
 
 ## Logs
 
-JSON lines in `data/logs/tidehaven-YYYYMMDD.log`, rotated daily and bounded in count and size.
+JSON lines in `data/<scenario>/logs/tidehaven-YYYYMMDD.log`, rotated daily and bounded in count and size.
 Every log record includes world/day/phase/job identifiers when applicable; credentials and raw
 prompts are never logged.
 
