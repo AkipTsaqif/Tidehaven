@@ -1,0 +1,20 @@
+type: feature
+context: domain
+id: e01
+title: Resource-funded town growth
+status: implemented
+scope: specs/product/SCOPE_LATEST.yaml
+impact: specs/IMPACT_LATEST.md
+stories:
+  - id: e01s01
+    title: Optional population policy with finite host safety
+    status: passing
+  - id: e01s02
+    title: Residential sharing by explicit household consent
+    status: passing
+  - id: e01s03
+    title: Funded workplace construction and capacity expansion
+    status: passing
+  - id: e01s04
+    title: Model visibility and end-to-end growth acceptance
+    status: passing

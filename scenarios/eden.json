@@ -1,0 +1,589 @@
+{
+  "version": "eden-growth-1",
+  "description": "Eden: Adam and Eve begin in one cottage. Newcomers may share spare beds only with every adult host consenting, or camp and build. Residents can fund new workplaces and physical extensions using labour, materials and capital.",
+  "immigration": {
+    "startDay": 90,
+    "initialIntervalDays": 28,
+    "minIntervalDays": 7,
+    "stepDays": 3
+  },
+  "construction": {
+    "homeCapacity": 5,
+    "labourDays": 12,
+    "timberUnits": 12,
+    "fellPerDay": 2,
+    "maxActiveSites": 20,
+    "maxCamps": 40
+  },
+  "calendar": {
+    "daysPerYear": 365,
+    "adultDays": 6570,
+    "elderDays": 23725,
+    "pregnancyDays": 280,
+    "weekDays": 7
+  },
+  "economy": {
+    "foodNeedPerDay": 1,
+    "mealGoods": [
+      "grain",
+      "fish",
+      "bread"
+    ],
+    "spoilageBps": {
+      "fish": 150,
+      "bread": 150
+    },
+    "spoilageMinStock": 1,
+    "wages": {
+      "unskilled": 420,
+      "skilled": 520,
+      "official": 600
+    },
+    "incomeTaxBps": 1200,
+    "personalAllowanceBps": 1000,
+    "maxIncomeTaxBps": 2500,
+    "businessLevyBps": 1500,
+    "salesTaxBps": 0,
+    "retailFeeBps": 800,
+    "toolWearWorkerDays": 120,
+    "skillsPerWorkDay": 2,
+    "educationPerSchoolDay": 1,
+    "schoolCapacity": 12,
+    "treasuryCents": 40000,
+    "businessStartCashCents": 5000,
+    "townBusinessStartCashCents": 2000,
+    "householdReserveDays": 21,
+    "householdCashCents": 2000,
+    "externalCashCents": 0,
+    "externalCapacityUnits": 40,
+    "priceBoundsBps": {
+      "low": 7000,
+      "high": 15000
+    },
+    "priceStepBps": 800,
+    "referencePrices": {
+      "grain": {
+        "price": 120,
+        "import": 150,
+        "export": 90
+      },
+      "fish": {
+        "price": 180,
+        "import": 220,
+        "export": 130
+      },
+      "bread": {
+        "price": 150,
+        "import": 190,
+        "export": 110
+      },
+      "timber": {
+        "price": 200,
+        "import": 240,
+        "export": 150
+      },
+      "tools": {
+        "price": 900,
+        "import": 1050,
+        "export": 700
+      },
+      "medicine": {
+        "price": 700,
+        "import": 800,
+        "export": 520
+      },
+      "cloth": {
+        "price": 400,
+        "import": 460,
+        "export": 300
+      }
+    },
+    "recipes": {
+      "farm": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "grain": 8
+        },
+        "wageClass": "unskilled"
+      },
+      "fishery": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "fish": 6
+        },
+        "wageClass": "unskilled"
+      },
+      "bakery": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "grain": 2
+        },
+        "outputs": {
+          "bread": 8
+        },
+        "wageClass": "skilled"
+      },
+      "timber_camp": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "timber": 5
+        },
+        "wageClass": "unskilled"
+      },
+      "workshop": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "timber": 1
+        },
+        "outputs": {
+          "tools": 2
+        },
+        "wageClass": "skilled"
+      },
+      "clinic": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "medicine": 1
+        },
+        "outputs": {},
+        "service": "treatment",
+        "wageClass": "skilled"
+      },
+      "shop": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "retail",
+        "wageClass": "unskilled"
+      },
+      "guard_house": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "security",
+        "wageClass": "skilled"
+      },
+      "court": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "justice",
+        "wageClass": "official"
+      },
+      "council": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "governance",
+        "wageClass": "official"
+      },
+      "public_works": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "works",
+        "wageClass": "unskilled"
+      }
+    },
+    "serviceCapacityPerLabour": {
+      "clinic": {
+        "treatment": 4
+      },
+      "shop": {
+        "retail": 9999
+      },
+      "guard_house": {
+        "security": 2
+      },
+      "court": {
+        "justice": 1
+      },
+      "council": {
+        "governance": 1
+      },
+      "public_works": {
+        "works": 1
+      }
+    },
+    "householdBasketWeights": {
+      "grain": 0,
+      "fish": 45,
+      "bread": 55
+    },
+    "householdToolsPerResidentPerYear": 4,
+    "clinicMedicinePerDay": 1,
+    "dividendReserveCents": 4000,
+    "wealthLevyThresholdCents": 20000,
+    "wealthLevyBps": 100,
+    "childAllowanceCentsPerDay": 60,
+    "externalCreditLimitCents": 2000000,
+    "personalFloatCents": 3000,
+    "citizensDividendCents": 300,
+    "dividendTreasuryThresholdCents": 200000
+  },
+  "town": {
+    "buildings": [
+      {
+        "id": 1,
+        "name": "Eden Cottage",
+        "kind": "home",
+        "capacity": 6
+      },
+      {
+        "id": 6,
+        "name": "Eden Fishery",
+        "kind": "fishery",
+        "capacity": 4
+      },
+      {
+        "id": 7,
+        "name": "Eden Bakery",
+        "kind": "bakery",
+        "capacity": 4
+      },
+      {
+        "id": 8,
+        "name": "Eden Farm",
+        "kind": "farm",
+        "capacity": 6
+      },
+      {
+        "id": 9,
+        "name": "Eden Workshop",
+        "kind": "workshop",
+        "capacity": 4
+      },
+      {
+        "id": 10,
+        "name": "Eden Timber Camp",
+        "kind": "timber_camp",
+        "capacity": 4
+      },
+      {
+        "id": 11,
+        "name": "Eden Shop",
+        "kind": "shop",
+        "capacity": 3
+      },
+      {
+        "id": 12,
+        "name": "Eden Clinic",
+        "kind": "clinic",
+        "capacity": 3
+      },
+      {
+        "id": 13,
+        "name": "Eden Watch",
+        "kind": "guard_house",
+        "capacity": 3
+      },
+      {
+        "id": 14,
+        "name": "Eden Hall",
+        "kind": "court",
+        "capacity": 3
+      },
+      {
+        "id": 15,
+        "name": "Eden Yard",
+        "kind": "public_works",
+        "capacity": 6
+      }
+    ],
+    "households": [
+      {
+        "id": 1,
+        "name": "Eden",
+        "building": 1
+      }
+    ],
+    "businesses": [
+      {
+        "name": "Eden Farm",
+        "kind": "farm",
+        "building": 8,
+        "owner": null
+      },
+      {
+        "name": "Eden Fishery",
+        "kind": "fishery",
+        "building": 6,
+        "owner": null
+      },
+      {
+        "name": "Eden Bakery",
+        "kind": "bakery",
+        "building": 7,
+        "owner": null
+      },
+      {
+        "name": "Eden Workshop",
+        "kind": "workshop",
+        "building": 9,
+        "owner": null
+      },
+      {
+        "name": "Eden Timber Camp",
+        "kind": "timber_camp",
+        "building": 10,
+        "owner": null
+      },
+      {
+        "name": "Eden Shop",
+        "kind": "shop",
+        "building": 11,
+        "owner": null
+      },
+      {
+        "name": "Eden Clinic",
+        "kind": "clinic",
+        "building": 12,
+        "owner": null
+      },
+      {
+        "name": "Eden Watch",
+        "kind": "guard_house",
+        "building": 13,
+        "owner": null
+      },
+      {
+        "name": "Eden Hall",
+        "kind": "court",
+        "building": 14,
+        "owner": null
+      },
+      {
+        "name": "Eden Yard",
+        "kind": "public_works",
+        "building": 15,
+        "owner": null
+      }
+    ],
+    "residents": [
+      {
+        "name": "Adam",
+        "sex": "male",
+        "age": 25,
+        "household": 1,
+        "job": "Eden Farm",
+        "traits": {
+          "diligence": 70,
+          "sociability": 55,
+          "ambition": 50,
+          "honesty": 75,
+          "temper": 35
+        }
+      },
+      {
+        "name": "Eve",
+        "sex": "female",
+        "age": 23,
+        "household": 1,
+        "job": "Eden Fishery",
+        "traits": {
+          "diligence": 68,
+          "sociability": 65,
+          "ambition": 55,
+          "honesty": 70,
+          "temper": 30
+        }
+      }
+    ],
+    "councilSeats": 1
+  },
+  "growth": {
+    "populationPolicyEnabled": false,
+    "housingSharing": "consent",
+    "maxBuildings": 20000,
+    "maxBusinesses": 10000,
+    "maxActiveProjects": 40,
+    "maxProjects": 10000,
+    "maxPendingHousingRequests": 128,
+    "housingRequestDays": 7,
+    "workplaceTemplates": {
+      "farm": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "fishery": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "bakery": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "timber_camp": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "workshop": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "shop": {
+        "capacity": 3,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "clinic": {
+        "capacity": 3,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "guard_house": {
+        "capacity": 3,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "court": {
+        "capacity": 3,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      },
+      "public_works": {
+        "capacity": 4,
+        "labourDays": 12,
+        "materials": {
+          "timber": 4
+        },
+        "constructionCostCents": 300,
+        "startupCapitalCents": 1500
+      }
+    },
+    "expansionTemplates": {
+      "farm": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "fishery": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "bakery": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "timber_camp": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "workshop": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "shop": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "clinic": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "guard_house": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "court": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "public_works": {
+        "capacityCeiling": 100,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 200
+      },
+      "home": {
+        "capacityCeiling": 20,
+        "labourDaysPerCapacity": 2,
+        "materialsPerCapacity": {
+          "timber": 1
+        },
+        "constructionCostCentsPerCapacity": 100
+      }
+    }
+  }
+}

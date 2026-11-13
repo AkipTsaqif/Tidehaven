@@ -1,0 +1,749 @@
+{
+  "version": "tidehaven-1",
+  "description": "Founding town of Tidehaven: 25 residents, five households, a farm/fishery/bakery economy with civic services.",
+  "calendar": {
+    "daysPerYear": 365,
+    "adultDays": 6570,
+    "elderDays": 23725,
+    "pregnancyDays": 280,
+    "weekDays": 7
+  },
+  "economy": {
+    "foodNeedPerDay": 1,
+    "mealGoods": [
+      "grain",
+      "fish",
+      "bread"
+    ],
+    "spoilageBps": {
+      "fish": 150,
+      "bread": 150
+    },
+    "spoilageMinStock": 1,
+    "wages": {
+      "unskilled": 420,
+      "skilled": 520,
+      "official": 600
+    },
+    "incomeTaxBps": 1200,
+    "personalAllowanceBps": 1000,
+    "maxIncomeTaxBps": 2500,
+    "businessLevyBps": 1500,
+    "salesTaxBps": 0,
+    "retailFeeBps": 800,
+    "toolWearWorkerDays": 120,
+    "skillsPerWorkDay": 2,
+    "educationPerSchoolDay": 1,
+    "schoolCapacity": 12,
+    "treasuryCents": 40000,
+    "businessStartCashCents": 5000,
+    "townBusinessStartCashCents": 2000,
+    "householdReserveDays": 21,
+    "householdCashCents": 2000,
+    "externalCashCents": 0,
+    "externalCapacityUnits": 40,
+    "priceBoundsBps": {
+      "low": 7000,
+      "high": 15000
+    },
+    "priceStepBps": 800,
+    "referencePrices": {
+      "grain": {
+        "price": 120,
+        "import": 150,
+        "export": 90
+      },
+      "fish": {
+        "price": 180,
+        "import": 220,
+        "export": 130
+      },
+      "bread": {
+        "price": 150,
+        "import": 190,
+        "export": 110
+      },
+      "timber": {
+        "price": 200,
+        "import": 240,
+        "export": 150
+      },
+      "tools": {
+        "price": 900,
+        "import": 1050,
+        "export": 700
+      },
+      "medicine": {
+        "price": 700,
+        "import": 800,
+        "export": 520
+      },
+      "cloth": {
+        "price": 400,
+        "import": 460,
+        "export": 300
+      }
+    },
+    "recipes": {
+      "farm": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "grain": 8
+        },
+        "wageClass": "unskilled"
+      },
+      "fishery": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "fish": 6
+        },
+        "wageClass": "unskilled"
+      },
+      "bakery": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "grain": 2
+        },
+        "outputs": {
+          "bread": 8
+        },
+        "wageClass": "skilled"
+      },
+      "timber_camp": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {
+          "timber": 5
+        },
+        "wageClass": "unskilled"
+      },
+      "workshop": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "timber": 1
+        },
+        "outputs": {
+          "tools": 2
+        },
+        "wageClass": "skilled"
+      },
+      "clinic": {
+        "labourPerBatch": 100,
+        "inputs": {
+          "medicine": 1
+        },
+        "outputs": {},
+        "service": "treatment",
+        "wageClass": "skilled"
+      },
+      "shop": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "retail",
+        "wageClass": "unskilled"
+      },
+      "guard_house": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "security",
+        "wageClass": "skilled"
+      },
+      "court": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "justice",
+        "wageClass": "official"
+      },
+      "council": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "governance",
+        "wageClass": "official"
+      },
+      "public_works": {
+        "labourPerBatch": 100,
+        "inputs": {},
+        "outputs": {},
+        "service": "works",
+        "wageClass": "unskilled"
+      }
+    },
+    "serviceCapacityPerLabour": {
+      "clinic": {
+        "treatment": 4
+      },
+      "shop": {
+        "retail": 9999
+      },
+      "guard_house": {
+        "security": 2
+      },
+      "court": {
+        "justice": 1
+      },
+      "council": {
+        "governance": 1
+      },
+      "public_works": {
+        "works": 1
+      }
+    },
+    "householdBasketWeights": {
+      "grain": 0,
+      "fish": 45,
+      "bread": 55
+    },
+    "householdToolsPerResidentPerYear": 4,
+    "clinicMedicinePerDay": 1,
+    "dividendReserveCents": 4000,
+    "wealthLevyThresholdCents": 20000,
+    "wealthLevyBps": 100,
+    "childAllowanceCentsPerDay": 60,
+    "externalCreditLimitCents": 2000000,
+    "personalFloatCents": 3000,
+    "citizensDividendCents": 300,
+    "dividendTreasuryThresholdCents": 200000
+  },
+  "town": {
+    "buildings": [
+      {
+        "id": 1,
+        "name": "Tidelow Cottage",
+        "kind": "home",
+        "capacity": 5
+      },
+      {
+        "id": 2,
+        "name": "Millhouse",
+        "kind": "home",
+        "capacity": 5
+      },
+      {
+        "id": 3,
+        "name": "Greenrows Cottage",
+        "kind": "home",
+        "capacity": 6
+      },
+      {
+        "id": 4,
+        "name": "Ironyard Cottage",
+        "kind": "home",
+        "capacity": 5
+      },
+      {
+        "id": 5,
+        "name": "Hallward House",
+        "kind": "home",
+        "capacity": 6
+      },
+      {
+        "id": 6,
+        "name": "Tidelow Fishery",
+        "kind": "fishery",
+        "capacity": 4
+      },
+      {
+        "id": 7,
+        "name": "Millhouse Bakery",
+        "kind": "bakery",
+        "capacity": 4
+      },
+      {
+        "id": 8,
+        "name": "Greenrows Farm",
+        "kind": "farm",
+        "capacity": 6
+      },
+      {
+        "id": 9,
+        "name": "Ironyard Workshop",
+        "kind": "workshop",
+        "capacity": 4
+      },
+      {
+        "id": 10,
+        "name": "Northreach Timber Camp",
+        "kind": "timber_camp",
+        "capacity": 4
+      },
+      {
+        "id": 11,
+        "name": "Harbour Shop",
+        "kind": "shop",
+        "capacity": 3
+      },
+      {
+        "id": 12,
+        "name": "Tidehaven Clinic",
+        "kind": "clinic",
+        "capacity": 3
+      },
+      {
+        "id": 13,
+        "name": "Guard House",
+        "kind": "guard_house",
+        "capacity": 3
+      },
+      {
+        "id": 14,
+        "name": "Town Hall",
+        "kind": "court",
+        "capacity": 3
+      },
+      {
+        "id": 15,
+        "name": "Town Yard",
+        "kind": "public_works",
+        "capacity": 6
+      }
+    ],
+    "households": [
+      {
+        "id": 1,
+        "name": "Tidelow",
+        "building": 1
+      },
+      {
+        "id": 2,
+        "name": "Millhouse",
+        "building": 2
+      },
+      {
+        "id": 3,
+        "name": "Greenrows",
+        "building": 3
+      },
+      {
+        "id": 4,
+        "name": "Ironyard",
+        "building": 4
+      },
+      {
+        "id": 5,
+        "name": "Hallward",
+        "building": 5
+      }
+    ],
+    "businesses": [
+      {
+        "name": "Tidelow Fishery",
+        "kind": "fishery",
+        "building": 6,
+        "owner": null
+      },
+      {
+        "name": "Millhouse Bakery",
+        "kind": "bakery",
+        "building": 7,
+        "owner": null
+      },
+      {
+        "name": "Greenrows Farm",
+        "kind": "farm",
+        "building": 8,
+        "owner": null
+      },
+      {
+        "name": "Ironyard Workshop",
+        "kind": "workshop",
+        "building": 9,
+        "owner": "Bram Vane"
+      },
+      {
+        "name": "Northreach Timber",
+        "kind": "timber_camp",
+        "building": 10,
+        "owner": "Dorn Ash"
+      },
+      {
+        "name": "Harbour Shop",
+        "kind": "shop",
+        "building": 11,
+        "owner": null
+      },
+      {
+        "name": "Tidehaven Clinic",
+        "kind": "clinic",
+        "building": 12,
+        "owner": null
+      },
+      {
+        "name": "Tidehaven Guard",
+        "kind": "guard_house",
+        "building": 13,
+        "owner": null
+      },
+      {
+        "name": "Town Hall",
+        "kind": "court",
+        "building": 14,
+        "owner": null
+      },
+      {
+        "name": "Town Yard",
+        "kind": "public_works",
+        "building": 15,
+        "owner": null
+      }
+    ],
+    "residents": [
+      {
+        "name": "Mara Ellery",
+        "sex": "female",
+        "age": 34,
+        "household": 1,
+        "job": "Tidelow Fishery",
+        "traits": {
+          "diligence": 70,
+          "sociability": 60,
+          "ambition": 40,
+          "honesty": 75,
+          "temper": 30
+        }
+      },
+      {
+        "name": "Coll Ellery",
+        "sex": "male",
+        "age": 36,
+        "household": 1,
+        "job": "Tidelow Fishery",
+        "traits": {
+          "diligence": 75,
+          "sociability": 55,
+          "ambition": 45,
+          "honesty": 80,
+          "temper": 35
+        }
+      },
+      {
+        "name": "Ren Ellery",
+        "sex": "female",
+        "age": 12,
+        "household": 1,
+        "job": null,
+        "traits": {
+          "diligence": 55,
+          "sociability": 70,
+          "ambition": 50,
+          "honesty": 70,
+          "temper": 25
+        }
+      },
+      {
+        "name": "Pip Ellery",
+        "sex": "female",
+        "age": 7,
+        "household": 1,
+        "job": null,
+        "traits": {
+          "diligence": 40,
+          "sociability": 65,
+          "ambition": 45,
+          "honesty": 60,
+          "temper": 30
+        }
+      },
+      {
+        "name": "Tam Ellery",
+        "sex": "male",
+        "age": 3,
+        "household": 1,
+        "job": null,
+        "traits": {
+          "diligence": 30,
+          "sociability": 50,
+          "ambition": 40,
+          "honesty": 55,
+          "temper": 45
+        }
+      },
+      {
+        "name": "Rowan Pike",
+        "sex": "male",
+        "age": 41,
+        "household": 2,
+        "job": "Millhouse Bakery",
+        "traits": {
+          "diligence": 80,
+          "sociability": 50,
+          "ambition": 60,
+          "honesty": 70,
+          "temper": 40
+        }
+      },
+      {
+        "name": "Nessa Pike",
+        "sex": "female",
+        "age": 39,
+        "household": 2,
+        "job": "Millhouse Bakery",
+        "traits": {
+          "diligence": 78,
+          "sociability": 62,
+          "ambition": 55,
+          "honesty": 72,
+          "temper": 35
+        }
+      },
+      {
+        "name": "Corin Pike",
+        "sex": "male",
+        "age": 24,
+        "household": 2,
+        "job": "Harbour Shop",
+        "traits": {
+          "diligence": 60,
+          "sociability": 80,
+          "ambition": 70,
+          "honesty": 65,
+          "temper": 30
+        }
+      },
+      {
+        "name": "Bel Pike",
+        "sex": "female",
+        "age": 11,
+        "household": 2,
+        "job": null,
+        "traits": {
+          "diligence": 45,
+          "sociability": 60,
+          "ambition": 55,
+          "honesty": 65,
+          "temper": 35
+        }
+      },
+      {
+        "name": "Wen Pike",
+        "sex": "male",
+        "age": 71,
+        "household": 2,
+        "job": null,
+        "traits": {
+          "diligence": 35,
+          "sociability": 55,
+          "ambition": 25,
+          "honesty": 80,
+          "temper": 40
+        }
+      },
+      {
+        "name": "Alec Stur",
+        "sex": "male",
+        "age": 44,
+        "household": 3,
+        "job": "Greenrows Farm",
+        "traits": {
+          "diligence": 85,
+          "sociability": 45,
+          "ambition": 50,
+          "honesty": 75,
+          "temper": 30
+        }
+      },
+      {
+        "name": "Junia Stur",
+        "sex": "female",
+        "age": 42,
+        "household": 3,
+        "job": "Greenrows Farm",
+        "traits": {
+          "diligence": 82,
+          "sociability": 58,
+          "ambition": 48,
+          "honesty": 78,
+          "temper": 32
+        }
+      },
+      {
+        "name": "Oren Stur",
+        "sex": "male",
+        "age": 17,
+        "household": 3,
+        "job": null,
+        "traits": {
+          "diligence": 65,
+          "sociability": 55,
+          "ambition": 60,
+          "honesty": 70,
+          "temper": 50
+        }
+      },
+      {
+        "name": "Sena Stur",
+        "sex": "female",
+        "age": 9,
+        "household": 3,
+        "job": null,
+        "traits": {
+          "diligence": 45,
+          "sociability": 62,
+          "ambition": 40,
+          "honesty": 68,
+          "temper": 30
+        }
+      },
+      {
+        "name": "Hal Stur",
+        "sex": "male",
+        "age": 68,
+        "household": 3,
+        "job": "Greenrows Farm",
+        "traits": {
+          "diligence": 55,
+          "sociability": 50,
+          "ambition": 30,
+          "honesty": 82,
+          "temper": 38
+        }
+      },
+      {
+        "name": "Bram Vane",
+        "sex": "male",
+        "age": 29,
+        "household": 4,
+        "job": "Ironyard Workshop",
+        "traits": {
+          "diligence": 72,
+          "sociability": 48,
+          "ambition": 65,
+          "honesty": 60,
+          "temper": 45
+        }
+      },
+      {
+        "name": "Isla Vane",
+        "sex": "female",
+        "age": 27,
+        "household": 4,
+        "job": "Ironyard Workshop",
+        "traits": {
+          "diligence": 74,
+          "sociability": 52,
+          "ambition": 58,
+          "honesty": 66,
+          "temper": 40
+        }
+      },
+      {
+        "name": "Fen Vane",
+        "sex": "male",
+        "age": 31,
+        "household": 4,
+        "job": "Northreach Timber",
+        "traits": {
+          "diligence": 68,
+          "sociability": 44,
+          "ambition": 55,
+          "honesty": 58,
+          "temper": 55
+        }
+      },
+      {
+        "name": "Cass Vane",
+        "sex": "male",
+        "age": 5,
+        "household": 4,
+        "job": null,
+        "traits": {
+          "diligence": 35,
+          "sociability": 58,
+          "ambition": 45,
+          "honesty": 60,
+          "temper": 40
+        }
+      },
+      {
+        "name": "Maud Vane",
+        "sex": "female",
+        "age": 66,
+        "household": 4,
+        "job": null,
+        "traits": {
+          "diligence": 40,
+          "sociability": 64,
+          "ambition": 28,
+          "honesty": 84,
+          "temper": 34
+        }
+      },
+      {
+        "name": "Silas Rook",
+        "sex": "male",
+        "age": 52,
+        "household": 5,
+        "job": "Town Hall",
+        "traits": {
+          "diligence": 70,
+          "sociability": 75,
+          "ambition": 80,
+          "honesty": 62,
+          "temper": 35
+        }
+      },
+      {
+        "name": "Pella Rook",
+        "sex": "female",
+        "age": 49,
+        "household": 5,
+        "job": "Tidehaven Clinic",
+        "traits": {
+          "diligence": 76,
+          "sociability": 68,
+          "ambition": 45,
+          "honesty": 85,
+          "temper": 28
+        }
+      },
+      {
+        "name": "Ilsa Rook",
+        "sex": "female",
+        "age": 22,
+        "household": 5,
+        "job": "Tidehaven Guard",
+        "traits": {
+          "diligence": 66,
+          "sociability": 60,
+          "ambition": 62,
+          "honesty": 74,
+          "temper": 52
+        }
+      },
+      {
+        "name": "Wen Rook",
+        "sex": "male",
+        "age": 15,
+        "household": 5,
+        "job": null,
+        "traits": {
+          "diligence": 50,
+          "sociability": 66,
+          "ambition": 54,
+          "honesty": 64,
+          "temper": 42
+        }
+      },
+      {
+        "name": "Dorn Ash",
+        "sex": "male",
+        "age": 58,
+        "household": 5,
+        "job": "Northreach Timber",
+        "traits": {
+          "diligence": 64,
+          "sociability": 46,
+          "ambition": 40,
+          "honesty": 70,
+          "temper": 48
+        }
+      }
+    ],
+    "councilSeats": 3
+  }
+}

@@ -1,0 +1,28 @@
+type: feature
+context: domain
+feature_name: Resource-funded town growth
+problem_statement: >-
+  Eden's farm and workplace capacity are fixed by the founding map. Newcomer settlement
+  ignores occupied spare beds and gives each immigrant a five-person house. Growth must
+  use funded construction and non-romantic, consent-based household sharing instead.
+constraints:
+  - Engine owns resource accounting, timing, consent, capacity and outcomes.
+  - No unlimited resources or removal of technical host, request, entity or storage safety caps.
+  - Deterministic results from stored decisions and state; no wall-clock domain behavior.
+  - No mutation of saved towns or .env during development.
+  - Preserve legacy behavior when new rules are not enabled, where practical.
+out_of_scope:
+  - Free construction, infinite food or money, arbitrary model-authored rules.
+  - Forced cohabitation, forced romantic pairing, or relaxed kinship restrictions.
+  - Automatic resets or silent migrations of gameplay rules for existing towns.
+key_decisions:
+  - decision: Resource-funded expansion
+    rationale: User chose construction and expansion constrained by labour, materials and capital.
+  - decision: Share by consent
+    rationale: User chose use of spare bedrooms only after host agreement; otherwise camp and build.
+  - decision: Optional soft population policy, finite technical guardrails
+    rationale: User approved removing the fixed 120-person policy ceiling, not hardware safety bounds.
+implementation_notes:
+  - Conservative host agreement means all current adult household members, with current space rechecked.
+  - Sharing is residential only and must never create partnership or parentage.
+  - Do not replace the population target with a huge numeric sentinel.

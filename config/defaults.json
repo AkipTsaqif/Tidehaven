@@ -1,0 +1,59 @@
+{
+  "simulation": {
+    "populationTarget": 120,
+    "populationPolicyEnabled": true,
+    "hostCeiling": 500,
+    "drama": "dramatic",
+    "worldName": "Tidehaven",
+    "seedPhrase": "tidehaven-founding"
+  },
+  "calendar": {
+    "daysPerYear": 365,
+    "adultDays": 6570,
+    "elderDays": 23725,
+    "pregnancyDays": 280,
+    "weekDays": 7
+  },
+  "model": {
+    "concurrency": 8,
+    "queueCapacity": 256,
+    "requestTimeoutMs": 60000,
+    "maxDispatchesPerJob": 3,
+    "maxInputTokens": 3000,
+    "maxOutputTokens": 800,
+    "dialogueRounds": 2,
+    "conversationsPerDay": 4,
+    "memoriesPerPrompt": 20,
+    "reflectionsPerDay": 5,
+    "promptMaxBytes": 24000,
+    "responseMaxBytes": 262144,
+    "fallbackPauseRateBps": 5000,
+    "retryBaseDelayMs": 1000,
+    "maxRetryDelayMs": 30000
+  },
+  "ceilings": {
+    "dailyTokens": null,
+    "monthlyTokens": null,
+    "dailyRequests": null,
+    "monthlyRequests": null,
+    "monthlyResetDayOfMonth": 1,
+    "monthlyResetUtcHour": 0
+  },
+  "storage": {
+    "budgetBytes": 10737418240,
+    "minFreeBytes": 5368709120,
+    "backups": 3,
+    "logFiles": 14,
+    "checkpointIntervalDays": 30,
+    "rawPayloadRetentionDays": 30,
+    "detailRetentionDays": 365,
+    "archiveChunkDays": 90
+  },
+  "runtime": {
+    "host": "127.0.0.1",
+    "port": 4317,
+    "drainBudgetMs": 10000,
+    "logLevel": "info",
+    "statusPollMs": 1000
+  }
+}

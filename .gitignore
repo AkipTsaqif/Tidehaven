@@ -1,0 +1,23 @@
+# Runtime data, secrets, build output
+node_modules/
+dist/
+data/
+data-*/
+test-results/
+playwright-report/
+.npm-cache/
+.playwright/
+coverage/
+*.log
+
+# Environment (never commit credentials)
+.env
+.env.local
+.env.*.local
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tsbuildinfo

@@ -1,0 +1,49 @@
+{
+  "name": "tidehaven",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Persistent island-town society simulator with deterministic rules and LLM residents",
+  "engines": {
+    "node": ">=26.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs && vite build",
+    "build:server": "tsc -p tsconfig.json",
+    "build:client": "vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p client/tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:soak": "node --env-file-if-exists=.env dist/cli.js soak",
+    "verify": "node scripts/verify.mjs",
+    "start": "node --env-file-if-exists=.env dist/main.js start",
+    "dev": "vite",
+    "status": "node --env-file-if-exists=.env dist/cli.js status",
+    "doctor": "node --env-file-if-exists=.env dist/cli.js doctor",
+    "backup": "node --env-file-if-exists=.env dist/cli.js backup"
+  },
+  "dependencies": {
+    "@fastify/static": "10.1.10",
+    "fastify": "5.12.8",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@playwright/test": "1.65.0",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "eslint": "9.39.5",
+    "fast-check": "4.10.2",
+    "globals": "^14.0.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "7.3.8",
+    "vitest": "5.1.0"
+  }
+}

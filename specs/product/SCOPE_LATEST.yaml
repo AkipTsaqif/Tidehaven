@@ -1,0 +1,28 @@
+type: feature
+context: domain
+feature_name: Resource-funded town growth
+problem_statement: >-
+  Eden's fixed workplace map constrains food production, and assigning one household and
+  five-person house to every immigrant wastes housing. The user wants model-proposed,
+  resource-funded expansion and household sharing by consent, not free infinite resources.
+in_scope:
+  - Model-proposed new workplaces and capacity expansions with real labour, materials, and capital.
+  - Consent-based use of spare residential space; no forced move-in with Adam and Eve.
+  - Camping and construction when no consenting home is available.
+  - An explicit option to disable the soft population target, without removing host safety limits.
+  - Visible operational safety limits and deterministic, resource-validating domain resolution.
+  - Persistence, replay, privacy, accounting, and actual production-growth acceptance tests.
+out_of_scope:
+  - Unlimited money, goods, labour, API calls, memory, disk, or population.
+  - Removing finite capacity from a physical building without constructing an expansion.
+  - Forced household sharing, relaxation of kinship restrictions, or automatic deletion of residents.
+  - Automatic reset or alteration of the user's saved town or credentials.
+confirmed_choices:
+  growth: Resource-funded expansion
+  household_sharing: Share by consent
+constraints:
+  - Preserve original scenario behavior where practical.
+  - Every model proposal is revalidated by the deterministic engine.
+  - Keep bounded work, safe-integer money and goods, and recorded transfers and flows.
+  - Use numbered migrations for schema changes; never edit applied migrations.
+  - No real-model calls during implementation or tests.

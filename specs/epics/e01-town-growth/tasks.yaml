@@ -1,0 +1,58 @@
+type: feature
+context: domain
+status: passing
+tasks:
+  - id: e01s01
+    description: Explicit optional soft population policy, finite host guardrails, storage and controls.
+    risk: P0
+    security: low
+    status: passing
+    verify: npm test -- tests/integration/growth-policy.test.ts
+    allure:
+      severity: critical
+      categories: [Domain, Persistence, Population]
+  - id: e01s02
+    description: Request and unanimous current-adult consent for non-romantic household sharing.
+    risk: P0
+    security: medium
+    status: passing
+    verify: npm test -- tests/integration/housing-sharing.test.ts
+    extra_checks:
+      - No new security findings in affected paths.
+      - No unrelated private facts exposed to proposed guests or hosts.
+    allure:
+      severity: critical
+      categories: [Domain, Consent, Security Review]
+  - id: e01s03
+    description: New workplaces and funded extensions with completion, ownership and resource validation.
+    risk: P0
+    security: medium
+    status: passing
+    verify: npm test -- tests/integration/workplace-growth.test.ts
+    extra_checks:
+      - No new security findings in affected paths.
+      - Additional completed capacity produces more food only with actual workers and inputs.
+    allure:
+      severity: critical
+      categories: [Domain, Accounting, Construction, Security Review]
+  - id: e01s04
+    description: Bounded model observations, operator visibility, new Eden rules and integrated acceptance.
+    risk: P1
+    security: low
+    status: passing
+    verify: npm test -- tests/integration/town-growth.test.ts
+    allure:
+      severity: high
+      categories: [Integration, Growth, Privacy]
+  - id: verification
+    description: Full regression gates and independent review, with measured acceptance report.
+    risk: P0
+    security: medium
+    status: passing
+    verify: npm run verify && npm run test:e2e
+    extra_checks:
+      - No new security findings in affected paths.
+      - Use D drive for test temp and local .playwright browser path.
+    allure:
+      severity: critical
+      categories: [Regression, Browser, Security Review]
