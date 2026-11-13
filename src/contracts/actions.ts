@@ -27,6 +27,7 @@ export const PRIMARY_KINDS = [
   'build_workplace',
   'expand_building',
   'work_construction',
+  'quit_job',
 ] as const;
 
 export const SOCIAL_KINDS = [

@@ -1,5 +1,6 @@
 import type { ActorPlan } from '../../contracts/actions.js';
 import type { TurnContext } from '../turn-context.js';
+import { quitToday } from '../economy/job-market.js';
 import { nextId, OFFICES, type Office, type Resident } from '../state.js';
 import { educationYears } from '../society/education.js';
 import { livingMembersByHousehold, residentsWithActiveEmployment } from '../lookups.js';
@@ -174,6 +175,8 @@ export function publicWorks(ctx: TurnContext): number {
       .filter((r) => r.status === 'living')
       .filter((r) => r.bornDay <= ctx.day - ctx.scenario.calendar.adultDays)
       .filter((r) => !employed.has(r.id))
+      // The job guarantee is an offer, not conscription: someone who quit today chose not to work.
+      .filter((r) => !quitToday(ctx, r.id))
       .sort((a, b) => (b.traits.diligence ?? 0) - (a.traits.diligence ?? 0) || a.id - b.id);
     const candidate = unemployed[0];
     if (candidate) {

@@ -4,6 +4,7 @@ import { balanceOf, nextId, type Business, type Good, type Resident } from '../s
 import { availableOf, quantityOf } from '../state.js';
 import { payWage, wagesDue, sectorTotal } from './ledger.js';
 import { collectWorkers, hireWorker, strikeActive, type WorkerAssignment } from './employment.js';
+import { quitToday } from './job-market.js';
 import { markBusinessInsolvent } from './businesses.js';
 import { activeEmploymentByBusiness, activeEmploymentByResident } from '../lookups.js';
 
@@ -287,6 +288,8 @@ export function autoHire(ctx: TurnContext): void {
     .filter((r) => r.status === 'living')
     .filter((r) => r.bornDay <= ctx.day - ctx.scenario.calendar.adultDays)
     .filter((r) => !employed.has(r.id))
+    // Someone who just quit chose not to work; do not hand them straight back a job today.
+    .filter((r) => !quitToday(ctx, r.id))
     .sort((a, b) => (b.traits.diligence ?? 0) - (a.traits.diligence ?? 0) || a.id - b.id);
   if (unemployed.length === 0) return;
 

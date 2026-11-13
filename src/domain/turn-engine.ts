@@ -6,6 +6,7 @@ import { createTurnContext, type TurnContext } from './turn-context.js';
 import type { WorldState } from './state.js';
 import { population } from './state.js';
 import { runProduction, type ProductionOutcome } from './economy/production.js';
+import { jobMarketPhase, type JobMarketReport } from './economy/job-market.js';
 import { runMarket, type MarketReport } from './economy/market.js';
 import { runTrade, type TradeReport } from './economy/trade.js';
 import { populationPressurePhase } from './society/population.js';
@@ -52,6 +53,7 @@ export interface DayResult {
     primary: PrimaryReport;
     construction: ConstructionReport;
     development: DevelopmentReport;
+    jobs: JobMarketReport;
   };
 }
 
@@ -91,6 +93,9 @@ export function runDay(input: DayInput): DayResult {
   const construction = constructionPhase(ctx, plans);
   const development = developmentPhase(ctx, plans, state.development,
     scenario.growth ? developmentRules(scenario.growth) : undefined);
+
+  // Residents' own job applications and resignations, before automatic hiring fills what is left.
+  const jobs = jobMarketPhase(ctx, plans);
 
   const production = runProduction(ctx, plans);
 
@@ -134,7 +139,7 @@ export function runDay(input: DayInput): DayResult {
     ctx,
     invariants,
     metrics,
-    reports: { production, market, trade, hazard, civic, conflict, unrest, justice, health, primary, construction, development },
+    reports: { production, market, trade, hazard, civic, conflict, unrest, justice, health, primary, construction, development, jobs },
   };
 }
 

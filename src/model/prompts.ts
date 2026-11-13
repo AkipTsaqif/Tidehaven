@@ -5,6 +5,7 @@ import { householdFoodDaysForCount } from '../domain/society/households.js';
 import { balanceOf, quantityOf } from '../domain/state.js';
 import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 import { DEVELOPMENT_GUIDE, developmentObservation } from './development-observation.js';
+import { JOB_GUIDE, jobListings } from './job-listings.js';
 import { buildHousingObservation } from './housing-observation.js';
 
 /**
@@ -48,11 +49,12 @@ export interface ActorPrompt {
   bytes: number;
 }
 
-export const PROMPT_VERSION = 'resident-plan-v1';
+export const PROMPT_VERSION = 'resident-plan-v2';
 
 const ACTION_GUIDE = [
   'Choose exactly one primary action:',
-  '  work (do your paid job), rest, study, seek_work, shop, civic (unpaid public duty), care (look after someone),',
+  '  work (do your paid job), rest, study, seek_work (businessId = where to apply), quit_job, shop, civic (unpaid',
+  '  public duty), care (look after someone),',
   '  request_relief, found_business (needs buildingId), invest, migrate (leave Tidehaven),',
   'Choose at most one social action (or null):',
   '  courtship, affair, conceive, divorce, accept (accept a pending proposal), refuse, talk, befriend, feud,',
@@ -111,8 +113,16 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     : null;
 
   const work = job
-    ? { businessId: job.id, name: job.name, kind: job.kind, wageClass: contract?.terms.wageClass ?? 'unskilled' }
+    ? {
+        businessId: job.id,
+        name: job.name,
+        kind: job.kind,
+        wageClass: contract?.terms.wageClass ?? 'unskilled',
+        wageCents: typeof contract?.terms.wageCents === 'number' ? contract.terms.wageCents : null,
+      }
     : null;
+  const adult = lifeStage(resident.bornDay, day, scenario.calendar) !== 'child';
+  const board = adult ? jobListings(state, scenario, lookups) : [];
 
   const relationships = [...state.relationships.values()]
     .filter((r) => r.aId === resident.id || r.bId === resident.id)
@@ -148,6 +158,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     'WORK',
     JSON.stringify(work),
     '',
+    ...(adult ? ['JOB BOARD (open places)', board.length > 0 ? JSON.stringify(board) : '(no open places today)', ''] : []),
     'RELATIONSHIPS',
     JSON.stringify(relationships),
     '',
@@ -165,6 +176,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     '',
     'RULES THAT BIND YOU',
     ACTION_GUIDE,
+    ...(adult ? [JOB_GUIDE] : []),
     ...(housing === null ? [] : [BUILD_GUIDE]),
     ...(development === null ? [] : [DEVELOPMENT_GUIDE]),
     ...(sharing === null ? [] : [
