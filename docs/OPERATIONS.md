@@ -24,7 +24,7 @@
    | `TIDEHAVEN_MIN_FREE_MB` | optional free-space floor before a `disk_pressure` pause (default `5120`) |
    | `TIDEHAVEN_POPULATION_TARGET` | optional initial soft target (default `120`) |
    | `TIDEHAVEN_POPULATION_POLICY` | founding-only `soft_target` or `disabled` (scenario/default applies when unset) |
-   | `TIDEHAVEN_HOST_CEILING` | optional finite host ceiling, integer `1..10000` (default `500`) |
+   | `TIDEHAVEN_HOST_CEILING` | optional finite host ceiling, integer `1..1000000` (default `500`) |
 3. Build:
    ```bash
    npm run build

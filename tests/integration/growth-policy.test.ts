@@ -120,9 +120,10 @@ describe('optional population policy', () => {
   it('validates founding policy and host-ceiling environment overrides', () => {
     expect(loadConfig({ env: {} }).defaults.simulation.populationPolicyEnabled).toBe(true);
     expect(loadConfig({ env: { TIDEHAVEN_POPULATION_POLICY: 'disabled' } }).populationPolicyOverride).toBe(false);
-    expect(loadConfig({ env: { TIDEHAVEN_POPULATION_POLICY: 'soft_target', TIDEHAVEN_HOST_CEILING: '10000' } }).defaults.simulation.hostCeiling).toBe(10000);
+    expect(loadConfig({ env: { TIDEHAVEN_POPULATION_POLICY: 'soft_target', TIDEHAVEN_HOST_CEILING: '1000000' } }).defaults.simulation.hostCeiling).toBe(1_000_000);
     expect(() => loadConfig({ env: { TIDEHAVEN_POPULATION_POLICY: 'invalid' } })).toThrow(ConfigError);
     expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '0' } })).toThrow(ConfigError);
-    expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '10001' } })).toThrow(ConfigError);
+    expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '1000001' } })).toThrow(ConfigError);
+    expect(() => loadConfig({ env: { TIDEHAVEN_HOST_CEILING: '2.5' } })).toThrow(ConfigError);
   });
 });

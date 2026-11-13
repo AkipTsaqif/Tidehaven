@@ -1,5 +1,6 @@
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
+import { MAX_HOST_CEILING } from '../domain/growth-limits.js';
 import type { Db } from '../storage/database.js';
 import type { Logger } from '../runtime/telemetry.js';
 import type { SseHub } from './sse.js';
@@ -35,7 +36,7 @@ export interface RouteDeps {
 }
 
 const pauseSchema = z.object({}).strict();
-const targetSchema = z.object({ value: z.number().int().min(0).max(10_000) }).strict();
+const targetSchema = z.object({ value: z.number().int().min(0).max(MAX_HOST_CEILING) }).strict();
 const populationPolicySchema = z.object({ enabled: z.boolean() }).strict();
 const settingSchema = z
   .object({

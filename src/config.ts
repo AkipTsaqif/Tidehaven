@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
+import { MAX_HOST_CEILING } from './domain/growth-limits.js';
 
 /**
  * Configuration loading.
@@ -20,7 +21,7 @@ const defaultsSchema = z.object({
   simulation: z.object({
     populationTarget: z.number().int().min(0),
     populationPolicyEnabled: z.boolean(),
-    hostCeiling: z.number().int().min(1).max(10_000),
+    hostCeiling: z.number().int().min(1).max(MAX_HOST_CEILING),
     drama: z.enum(['calm', 'dramatic', 'volatile']),
     worldName: z.string().min(1),
     seedPhrase: z.string().min(1),
@@ -201,8 +202,8 @@ export function loadConfig(options: LoadConfigOptions = {}): AppConfig {
     defaults.simulation.populationTarget = target;
   }
   if (hostCeiling !== undefined) {
-    if (hostCeiling < 1 || hostCeiling > 10_000) {
-      throw new ConfigError('TIDEHAVEN_HOST_CEILING must be an integer between 1 and 10000', [String(hostCeiling)]);
+    if (hostCeiling < 1 || hostCeiling > MAX_HOST_CEILING) {
+      throw new ConfigError(`TIDEHAVEN_HOST_CEILING must be an integer between 1 and ${MAX_HOST_CEILING}`, [String(hostCeiling)]);
     }
     defaults.simulation.hostCeiling = hostCeiling;
   }

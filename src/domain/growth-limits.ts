@@ -1,5 +1,8 @@
 import type { WorldState } from './state.js';
 
+/** Largest host safety ceiling (living residents) an operator may configure. */
+export const MAX_HOST_CEILING = 1_000_000;
+
 /**
  * Safety limits count what is in use, not everything that ever existed. A closed business or an
  * abandoned/destroyed site holds no capacity, so it does not block new growth decades later.
