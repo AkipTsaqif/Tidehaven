@@ -3,6 +3,7 @@ import type { TurnContext } from '../turn-context.js';
 import { lifeStage } from '../clock.js';
 import { balanceOf, nextId, relationshipKey, type Relationship, type Resident } from '../state.js';
 import { createHousehold, householdFoodDays, householdMembers, moveResident, findVacantHome } from './households.js';
+import { moodConceptionPercent } from './happiness.js';
 
 /**
  * Household and relationship phase: courtship, affairs, conception, divorce, friendship, feuds.
@@ -371,7 +372,8 @@ function attemptConception(ctx: TurnContext, a: Resident, b: Resident): void {
   const rng = ctx.rngFor(mother.id, `conception:${father.id}`);
   const age = ctx.day - mother.bornDay;
   const ageBonus = Math.max(0, Math.floor(((35 * ctx.scenario.calendar.daysPerYear - age) / 1_000) * 1_500));
-  const chance = Math.min(6_000, 2_500 + ageBonus);
+  // Mood (growth towns only): unhappy couples are less likely to start a family.
+  const chance = Math.floor((Math.min(6_000, 2_500 + ageBonus) * moodConceptionPercent(ctx, mother, father)) / 100);
   const healthPenalty = mother.hungerDays > 0 ? 50_000 : 0;
   if (!rng.chancePpm(Math.max(0, chance - healthPenalty))) {
     ctx.emit({

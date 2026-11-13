@@ -35,6 +35,7 @@ interface ResidentDetail {
   children: { id: number; name: string }[];
   parents: { id: number; name: string }[];
   grievances: { kind: string; severity: number; reason: string }[];
+  mood?: { score: number; feeling: string; factors: Record<string, number> };
 }
 
 interface Genealogy {
@@ -94,6 +95,7 @@ export function Resident({
       </div>
 
       <div className="grid">
+        {detail.mood ? <MoodCard mood={detail.mood} /> : null}
         <div className="card">
           <h2>Identity</h2>
           <Row label="id" value={detail.id} />
@@ -245,4 +247,34 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
 function bornLabel(bornDay: number): string {
   if (bornDay >= 0) return calendarDay(bornDay);
   return `${calendarDay(bornDay)} (day ${bornDay})`;
+}
+
+const FACTOR_LABELS: Record<string, string> = {
+  food: 'food', home: 'home', work: 'work', money: 'money', family: 'family',
+  friends: 'friends & feuds', health: 'health', grievances: 'grievances',
+};
+
+/** Score out of 100 and every reason behind it, biggest first. */
+function MoodCard({ mood }: { mood: { score: number; feeling: string; factors: Record<string, number> } }) {
+  const factors = Object.entries(mood.factors).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+  return (
+    <div className="card">
+      <h2>Happiness</h2>
+      <div className="big">
+        {mood.score}
+        <span className="muted"> / 100 · {mood.feeling}</span>
+      </div>
+      <div className="mood-bar" aria-label={`happiness ${mood.score} of 100`}>
+        <div style={{ width: `${mood.score}%` }} />
+      </div>
+      {factors.map(([name, value]) => (
+        <Row
+          key={name}
+          label={FACTOR_LABELS[name] ?? name}
+          value={<span className={value < 0 ? 'warn-text' : ''}>{value > 0 ? `+${value}` : value}</span>}
+        />
+      ))}
+      <div className="muted small">Starts at 50; each line adds or subtracts.</div>
+    </div>
+  );
 }

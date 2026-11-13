@@ -18,6 +18,9 @@ import {
 } from '../application/queries.js';
 import { completeCommand, enqueueCommand } from '../storage/commands-repo.js';
 import { metricHistory } from '../application/history.js';
+import { buildHappinessContext, moodLabel, scoreHappiness } from '../domain/society/happiness.js';
+import type { WorldState } from '../domain/state.js';
+import type { Scenario } from '../contracts/scenario.js';
 import type { RunnerSnapshot } from '../runtime/runner.js';
 
 /**
@@ -34,6 +37,8 @@ export interface RouteDeps {
   requestPause(reason: string): void;
   requestResume(): void;
   version: string;
+  /** The runner's committed world, for live derived values (mood). Absent in read-only tools. */
+  liveWorld?: () => { state: WorldState; scenario: Scenario } | null;
 }
 
 const pauseSchema = z.object({}).strict();
@@ -84,6 +89,15 @@ export function registerRoutes(app: FastifyInstance, deps: RouteDeps): void {
       return;
     }
     const detail = residentDetail(db, worldId, id);
+    // Mood with its reasons, computed from the live (committed) state; never stored in display-only towns.
+    const live = deps.liveWorld?.();
+    if (detail && live) {
+      const resident = live.state.residents.get(id);
+      if (resident && resident.status === 'living') {
+        const result = scoreHappiness(buildHappinessContext(live.state, live.state.day), resident, live.scenario.calendar);
+        (detail as Record<string, unknown>).mood = { ...result, feeling: moodLabel(result.score) };
+      }
+    }
     if (!detail) {
       reply.code(404).send({ error: 'not_found' });
       return;

@@ -7,6 +7,7 @@ import type { WorldState } from './state.js';
 import { population } from './state.js';
 import { runProduction, type ProductionOutcome } from './economy/production.js';
 import { jobMarketPhase, type JobMarketReport } from './economy/job-market.js';
+import { happinessHasEffects, happinessPhase } from './society/happiness.js';
 import { runMarket, type MarketReport } from './economy/market.js';
 import { runTrade, type TradeReport } from './economy/trade.js';
 import { populationPressurePhase } from './society/population.js';
@@ -129,10 +130,19 @@ export function runDay(input: DayInput): DayResult {
   // 13. External trade (weekly).
   const trade = runTrade(ctx);
 
+  // Happiness is scored last, after arrivals, births and the weekly ship, so every resident alive at
+  // the end of the day has a value, and tomorrow's choices and effects see today's whole life.
+  const happiness = happinessPhase(ctx);
+
   // 14. Invariants.
   const invariants = checkInvariants(state);
 
   const metrics = buildMetrics(ctx, invariants, { production, market, trade, health, conflict, unrest });
+  // Happiness metrics only in towns that feel it, so display-only towns keep identical stored metrics.
+  if (happinessHasEffects(ctx)) {
+    metrics.happinessAverage = happiness.average;
+    metrics.happinessMiserable = happiness.miserable;
+  }
 
   return {
     day,

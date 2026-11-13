@@ -259,6 +259,8 @@ async function main(): Promise<void> {
         requestPause: (reason) => runner.pause('operator', reason),
         requestResume: () => runner.resume(),
         version: VERSION,
+        // `state` is the runner's published state: adoptState updates it in place after each commit.
+        liveWorld: () => ({ state, scenario }),
       });
     },
   });

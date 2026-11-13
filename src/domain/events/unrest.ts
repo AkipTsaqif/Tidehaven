@@ -1,4 +1,5 @@
 import type { ActorPlan } from '../../contracts/actions.js';
+import { moodJoinsProtest } from '../society/happiness.js';
 import type { TurnContext } from '../turn-context.js';
 import type { MarketReport } from '../economy/market.js';
 import { nextId, quantityOf, type Good } from '../state.js';
@@ -117,7 +118,8 @@ export function unrestPhase(ctx: TurnContext, plans: Map<number, ActorPlan>, mar
       }
       if (intent.kind === 'protest_call') {
         const support = [...ctx.state.residents.values()].filter(
-          (r) => r.status === 'living' && totalGrievance(ctx, r.id) >= 20,
+          // Grievances bring people out; in growth towns, plain unhappiness does too.
+          (r) => r.status === 'living' && (totalGrievance(ctx, r.id) >= 20 || moodJoinsProtest(ctx, r)),
         );
         if (support.length < 3) continue;
         const id = nextId(ctx.state, 'unrest');

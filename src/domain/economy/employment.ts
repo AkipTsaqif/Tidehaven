@@ -3,6 +3,7 @@ import type { TurnContext } from '../turn-context.js';
 import { labourCapacity, lifeStage } from '../clock.js';
 import type { Business, Contract, Resident, WorldState } from '../state.js';
 import { balanceOf, nextId } from '../state.js';
+import { moodLabourPercent } from '../society/happiness.js';
 import { activeEmploymentByResident } from '../lookups.js';
 
 /**
@@ -56,7 +57,8 @@ export function effectiveLabour(
     // Non-work primaries still leave a partial working day unless the resident explicitly rests.
     capacity = primary.kind === 'rest' ? 0 : Math.floor((capacity * 30) / 100);
   }
-  return capacity;
+  // Mood (growth towns only): miserable people work less, thriving people a little more.
+  return Math.floor((capacity * moodLabourPercent(ctx, resident)) / 100);
 }
 
 export function activeEmploymentContract(

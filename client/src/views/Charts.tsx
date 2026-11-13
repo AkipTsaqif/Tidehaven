@@ -35,6 +35,13 @@ export function Charts() {
           ]}
         />
         <Chart title="Labour capacity" lines={[{ metric: 'labourCapacityTotal', label: 'labour points' }]} />
+        <Chart
+          title="Happiness"
+          lines={[
+            { metric: 'happinessAverage', label: 'average (0-100)' },
+            { metric: 'happinessMiserable', label: 'miserable people' },
+          ]}
+        />
       </div>
 
       <h3 className="section-title">Money</h3>

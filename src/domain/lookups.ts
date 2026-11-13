@@ -1,4 +1,5 @@
 import type { Contract, Resident, WorldState } from './state.js';
+import type { HappinessContext } from './society/happiness.js';
 
 /**
  * One-pass lookup tables for hot loops.
@@ -61,6 +62,8 @@ export interface ObservationLookups {
   occupiedBuildingIds: Set<number | null>;
   /** Active employment contracts per business (any end day; callers apply their own filters). */
   staffByBusiness: Map<number, Contract[]>;
+  /** Per-day happiness tables, built on first use and shared by every prompt that round. */
+  happiness?: HappinessContext;
 }
 
 export function buildObservationLookups(state: WorldState, day: number): ObservationLookups {

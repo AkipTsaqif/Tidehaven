@@ -6,6 +6,7 @@ import { balanceOf, quantityOf } from '../domain/state.js';
 import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 import { DEVELOPMENT_GUIDE, developmentObservation } from './development-observation.js';
 import { JOB_GUIDE, jobListings } from './job-listings.js';
+import { buildHappinessContext, moodLabel, scoreHappiness } from '../domain/society/happiness.js';
 import { buildHousingObservation } from './housing-observation.js';
 
 /**
@@ -98,6 +99,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     cashCents: balanceOf(state, 'resident', resident.id),
     traits: resident.traits,
     skills: resident.skills,
+    mood: moodFor(lookups, scenario, resident),
   };
 
   const householdMembers = household ? (lookups.membersByHousehold.get(household.id) ?? []) : [];
@@ -248,4 +250,19 @@ function housingInfo(input: ActorPromptInput, lookups: ObservationLookups): Reco
       capacity: rules.homeCapacity,
     },
   };
+}
+
+/**
+ * The resident's own mood and its biggest reasons, so the model can act on how its life is going.
+ * Only their own life: no other resident's happiness is ever shown.
+ */
+function moodFor(lookups: ObservationLookups, scenario: Scenario, resident: Resident): Record<string, unknown> {
+  lookups.happiness ??= buildHappinessContext(lookups.state, lookups.day);
+  const { score, factors } = scoreHappiness(lookups.happiness, resident, scenario.calendar);
+  const reasons = Object.entries(factors)
+    .filter(([, value]) => value !== 0)
+    .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
+    .slice(0, 4)
+    .map(([name, value]) => `${name} ${value > 0 ? '+' : ''}${value}`);
+  return { happiness: score, feeling: moodLabel(score), reasons };
 }

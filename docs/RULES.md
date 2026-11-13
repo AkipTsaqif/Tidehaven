@@ -191,6 +191,42 @@ treasury holds at least twenty days of unskilled wages.
 - Recorded wills are written with the `write_will` primary action (heir id + basis-point share), and
   `found_business` / `migrate` primary actions execute in the daily pipeline.
 
+## 7a. Happiness
+
+Every living resident has a happiness score from 0 to 100. It starts at 50, and each part of their
+life adds or subtracts:
+
+| Part | Effect |
+|---|---|
+| food | +10 when fed; −8 per hungry day (down to −30) |
+| home | +6 with a roof; −8 when the home is over capacity; −15 when camping |
+| work | adults only: +8 employed, −10 unemployed |
+| money | household cash per member plus own cash: +8 at $60+, +3 at $15+, −3 below, −8 at nothing |
+| family | +8 living partner; +3 not living alone; −4 an adult living alone |
+| friends | +3 per friendship (up to +10); −6 per feud (down to −15) |
+| health | +4 healthy; −4 recovering; −8 disabled; −10 infectious; −12 injured |
+| grievances | −1 per 4 points of open grievance (down to −25) |
+
+Bands: 80+ thriving, 60+ content, 40+ getting by, 20+ unhappy, below 20 miserable.
+
+Every town shows it: the resident's own prompt gets their score, feeling and top four reasons (never
+anyone else's), and the resident page shows the full breakdown.
+
+Only towns founded with growth rules (`scenario.growth`) also feel it. Those towns store the score at
+the end of each day (after trade, so newcomers and newborns are scored) and it changes behaviour:
+
+- **Work effort:** below 20, 80 % of normal labour; below 40, 92 %; 80 and above, 110 %.
+- **Leaving:** below 15, a 0.6 % daily chance of emigrating; below 25, 0.2 %. At most one such
+  departure per day. The usual departure rule applies, so nobody leaves dependent children behind.
+- **Children:** conception chance ×50 % when either partner is below 25, ×80 % below 40, ×115 % at 75+.
+- **Protest:** anyone below 35 counts as a supporter when someone calls a protest, as well as people
+  with grievances of 20 or more.
+- Charts show the town average and the number of miserable people (`happinessAverage`,
+  `happinessMiserable`).
+
+Towns without growth rules (the default 25-person Tidehaven) store no score and none of these rules
+apply, so their saved states, daily results and replays are unchanged.
+
 ## 8. Health and mortality
 
 Health states: `healthy`, `exposed`, `infectious`, `recovering`, `injured`, `disabled`, `dead`.

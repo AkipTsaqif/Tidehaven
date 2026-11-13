@@ -5,6 +5,7 @@ import { createHousehold, findVacantHome, householdMembers, householdFoodDays, p
 import { livingMembersByHousehold } from '../lookups.js';
 import { applyDepartureLifecycle } from './lifecycle.js';
 import { canReceiveNewcomer } from './construction.js';
+import { moodEmigrationBps } from './happiness.js';
 
 /**
  * Population pressure. The target is a soft social goal, never a quota:
@@ -148,8 +149,23 @@ export function populationPressurePhase(ctx: TurnContext, _scenario: Scenario): 
       }
     }
   }
+  report.emigrated += moodEmigration(ctx);
   pruneHouseholds(ctx);
   return report;
+}
+
+/**
+ * Growth towns only: a miserable adult may decide to leave. Uses the same departure rule as any other
+ * emigration, so nobody walks out on dependent children. Bounded to one departure per day.
+ */
+function moodEmigration(ctx: TurnContext): number {
+  for (const resident of [...ctx.state.residents.values()].sort((a, b) => a.id - b.id)) {
+    if (resident.status !== 'living' || resident.bornDay > ctx.day - ctx.scenario.calendar.adultDays) continue;
+    const bps = moodEmigrationBps(ctx, resident);
+    if (bps <= 0 || !ctx.rngFor(resident.id, 'mood-emigration').chanceBps(bps)) continue;
+    if (emigrateResident(ctx, resident.id, 'unhappy with life on the island')) return 1;
+  }
+  return 0;
 }
 
 function spareCapacity(ctx: TurnContext): number {
