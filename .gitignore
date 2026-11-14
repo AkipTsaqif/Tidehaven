@@ -24,3 +24,6 @@ Thumbs.db
 
 # Local agent tool settings
 .pi/
+
+# Rebuildable sprite-production output (source recipes and review sheets are tracked)
+art/generated/

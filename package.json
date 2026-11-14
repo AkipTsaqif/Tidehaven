@@ -11,6 +11,8 @@
     "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs && vite build",
     "build:server": "tsc -p tsconfig.json",
     "build:client": "vite build",
+    "art:build": "node scripts/art-build.mjs",
+    "art:test": "node scripts/art-test.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p client/tsconfig.json",
     "lint": "eslint .",
     "test": "vitest run",
