@@ -21,3 +21,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.tsbuildinfo
+
+# Local agent tool settings
+.pi/
