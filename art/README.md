@@ -40,6 +40,10 @@ npm run art:build -- --scenario tidehaven --biome arid --out art/generated/arid
 
 # Full 164-asset test across four biomes against the real Aseprite:
 npm run art:test
+
+# After changing sprites: rebuild all biomes, then repack the dashboard Map tab atlas (committed):
+python scripts/art-review.py build
+python scripts/art-atlas.py
 ```
 
 Each complete build writes `art/generated/<scenario>/manifest.json` plus 41 assets. Use the manifest,

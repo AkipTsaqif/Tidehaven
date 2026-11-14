@@ -123,6 +123,21 @@ data/<scenario>/
   world.json             small mirror for offline `npm run status`
 ```
 
+## Town map (dashboard)
+
+The Map tab is an observer view served by `GET /api/map` (`src/application/map-query.ts`). It is
+read-only and stores nothing: lot positions are derived each request by `src/application/map-layout.ts`
+from the world seed and building ids. The island is a fixed function of the seed. Candidate lots
+have one fixed order (centre first, seeded jitter). Buildings take the first free usable lot in id
+order, so a building's position depends only on buildings with smaller ids. Buildings are never
+deleted and ids only grow, so existing buildings never move as the town grows. Fisheries (and
+fishery sites) need a shore lot. Camps (households without a building) fill the next free lots after
+all buildings. Each lot is 3x3 tiles of 32x16 px on a 4-tile pitch; the spare row is road or open
+ground, so lots cannot overlap. The biome uses the same formula as `art/biomes.lua`; Eden is tropical.
+Sprites come from the committed atlas in `client/public/map/`, packed by `scripts/art-atlas.py`.
+Changing the layout code reshuffles every town's map once. That is acceptable because nothing
+depends on map positions.
+
 ## Plan-to-code module map
 
 The approved plan lists module names; a few were consolidated to keep modules purpose-sized. The full
