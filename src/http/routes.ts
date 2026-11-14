@@ -18,6 +18,7 @@ import {
 } from '../application/queries.js';
 import { completeCommand, enqueueCommand } from '../storage/commands-repo.js';
 import { metricHistory } from '../application/history.js';
+import { mapView } from '../application/map-query.js';
 import { buildHappinessContext, moodLabel, scoreHappiness } from '../domain/society/happiness.js';
 import type { WorldState } from '../domain/state.js';
 import type { Scenario } from '../contracts/scenario.js';
@@ -71,6 +72,9 @@ export function registerRoutes(app: FastifyInstance, deps: RouteDeps): void {
   }));
 
   app.get('/api/town', async () => townView(db, worldId));
+
+  // Read-only town map; positions are derived, never stored (see application/map-layout.ts).
+  app.get('/api/map', async () => mapView(db, worldId));
 
   app.get('/api/residents', async (request) => {
     const query = request.query as Record<string, string | undefined>;

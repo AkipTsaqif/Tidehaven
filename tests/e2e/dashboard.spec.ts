@@ -113,6 +113,48 @@ test.describe('Tidehaven dashboard', () => {
     await expect(page.getByText('Population target (soft)').first()).toBeVisible();
   });
 
+  test('draws the town map, zooms, and shows building details on click', async ({ page, request }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(String(error)));
+    const map = (await (await request.get('/api/map')).json()) as { lots: { name: string }[] };
+    expect(map.lots.length).toBeGreaterThan(0);
+
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Map' }).click();
+    const viewport = page.locator('.map-viewport');
+    await expect(viewport).toBeVisible();
+    await expect(page.getByText(/\d+ buildings/)).toBeVisible();
+    // The canvas really has pixels drawn: sample its centre after the sprite atlas loads.
+    await expect
+      .poll(async () =>
+        page.locator('.map-canvas').evaluate((canvas: HTMLCanvasElement) => {
+          const ctx = canvas.getContext('2d');
+          if (!ctx || canvas.width === 0) return 0;
+          const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const colours = new Set<number>();
+          for (let i = 0; i < data.length; i += 4 * 97) colours.add((data[i]! << 16) | (data[i + 1]! << 8) | data[i + 2]!);
+          return colours.size;
+        }),
+      )
+      .toBeGreaterThan(20);
+
+    await page.getByRole('button', { name: 'Zoom in' }).click();
+    await page.getByRole('button', { name: 'Fit' }).click();
+    // Click lots until one opens its detail panel (buildings sit near the centre after Fit).
+    const box = (await viewport.boundingBox())!;
+    let opened = false;
+    for (let step = 0; step < 40 && !opened; step += 1) {
+      const x = box.x + box.width / 2 + ((step % 8) - 4) * 24;
+      const y = box.y + box.height / 2 + (Math.floor(step / 8) - 2) * 18;
+      await page.mouse.click(x, y);
+      opened = (await page.locator('.map-details h2').innerText()).toUpperCase() !== 'MAP';
+    }
+    expect(opened).toBe(true);
+    const title = (await page.locator('.map-details h2').innerText()).toLowerCase();
+    expect(map.lots.some((lot) => lot.name.toLowerCase() === title)).toBe(true);
+    expect(errors).toEqual([]);
+  });
+
   test('charts every metric, switches to the whole history, and shows money in dollars', async ({ page }) => {
     await page.goto('/');
     await page.getByRole('button', { name: 'Charts' }).click();
