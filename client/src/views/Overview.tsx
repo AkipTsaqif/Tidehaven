@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { bytes, calendarDay, cents, getJson, type StatusSnapshotView } from '../api.js';
 import { Chart, RangePicker } from '../charts.js';
+import { MiniMap } from './MiniMap.js';
 
 interface OverviewResponse {
   overview: {
@@ -46,6 +47,10 @@ export function Overview({ status, revision = 0 }: { status: StatusSnapshotView 
   const day = overview?.world.day ?? status?.world?.day;
   return (
     <section className="stack">
+    <div className="card overview-map">
+      <h2>Town map</h2>
+      <MiniMap revision={revision} />
+    </div>
     <div className="grid">
       <Card title="Simulated date">
         <div className="big">{day === undefined ? '—' : calendarDay(day)}</div>

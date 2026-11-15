@@ -475,3 +475,28 @@ button:disabled {
 .map-facts dd {
   margin: 0;
 }
+
+/* Overview mini-map: view only. */
+.minimap-frame {
+  position: relative;
+  height: clamp(260px, 38vh, 420px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0d2a33;
+}
+
+.minimap-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  /* View only: no drag, click, hover or wheel capture; the page scrolls normally over it. */
+  pointer-events: none;
+  user-select: none;
+}
+
+.minimap-caption {
+  margin-top: 0.5rem;
+}

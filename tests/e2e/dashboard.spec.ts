@@ -116,8 +116,10 @@ test.describe('Tidehaven dashboard', () => {
   test('draws the town map, zooms, and shows building details on click', async ({ page, request }) => {
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(String(error)));
-    const map = (await (await request.get('/api/map')).json()) as { lots: { name: string }[] };
+    const map = (await (await request.get('/api/map')).json()) as { lots: { name: string }[]; trees: unknown[]; roads: unknown[] };
     expect(map.lots.length).toBeGreaterThan(0);
+    expect(map.trees.length).toBeGreaterThan(0);
+    expect(map.roads.length).toBeGreaterThan(0);
 
     await page.goto('/');
     await page.getByRole('button', { name: 'Map' }).click();
@@ -152,6 +154,43 @@ test.describe('Tidehaven dashboard', () => {
     expect(opened).toBe(true);
     const title = (await page.locator('.map-details h2').innerText()).toLowerCase();
     expect(map.lots.some((lot) => lot.name.toLowerCase() === title)).toBe(true);
+    expect(errors).toEqual([]);
+  });
+
+  test('shows a view-only town map on the overview that cannot be dragged, clicked or zoomed', async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(String(error)));
+    await page.goto('/');
+    const frame = page.locator('.minimap-frame');
+    await expect(frame).toBeVisible();
+    const canvas = page.locator('.minimap-canvas');
+    const fingerprint = () => canvas.evaluate((c: HTMLCanvasElement) => {
+      const data = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data;
+      const colours = new Set<number>();
+      let hash = 0;
+      for (let i = 0; i < data.length; i += 97) {
+        hash = (hash * 31 + data[i]!) | 0;
+        colours.add((data[i]! << 16) | (data[i + 1]! << 8) | data[i + 2]!);
+      }
+      return { hash, colours: colours.size };
+    });
+    await expect.poll(async () => (await fingerprint()).colours).toBeGreaterThan(20);
+    const before = await fingerprint();
+    const box = (await frame.boundingBox())!;
+    const cx = box.x + box.width / 2;
+    const cy = box.y + box.height / 2;
+    await page.mouse.move(cx, cy);
+    await page.mouse.down();
+    await page.mouse.move(cx + 120, cy + 60, { steps: 6 });
+    await page.mouse.up();
+    await page.mouse.click(cx, cy);
+    await page.mouse.wheel(0, -600);
+    await page.waitForTimeout(300);
+    expect(await fingerprint()).toEqual(before);
+    await expect(canvas).toHaveCSS('pointer-events', 'none');
+    await expect(page.locator('.overview-map button')).toHaveCount(0);
+    // Clicking never opens building details anywhere on the overview.
+    await expect(page.locator('.map-details')).toHaveCount(0);
     expect(errors).toEqual([]);
   });
 
