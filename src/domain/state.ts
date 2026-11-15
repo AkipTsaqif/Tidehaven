@@ -9,6 +9,8 @@
  */
 
 import { emptyDevelopmentState, type DevelopmentState } from './development-types.js';
+import type { ReclaimedPatch } from './geography/land-field.js';
+import type { MapTerrain } from '../contracts/map.js';
 
 export const GOODS = ['grain', 'fish', 'bread', 'timber', 'tools', 'medicine', 'cloth'] as const;
 export type Good = (typeof GOODS)[number];
@@ -361,6 +363,10 @@ export interface WorldState {
   buildings: Map<number, Building>;
   businesses: Map<number, Business>;
   development: DevelopmentState;
+  /** Land added by completed reclamation projects: append-only, ordered by completion. */
+  reclaimed: ReclaimedPatch[];
+  /** Coastline shape chosen at founding. Read-only after founding; defaults to island. */
+  terrain: MapTerrain;
   accounts: Map<string, Account>;
   /** ownerKey|good -> quantity */
   inventories: Map<string, number>;
@@ -454,6 +460,8 @@ export function emptyState(params: {
     buildings: new Map(),
     businesses: new Map(),
     development: emptyDevelopmentState(),
+    reclaimed: [],
+    terrain: 'island',
     accounts: new Map(),
     inventories: new Map(),
     reserved: new Map(),

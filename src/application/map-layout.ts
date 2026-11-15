@@ -2,9 +2,9 @@
  * Deterministic town-map layout for the dashboard Map tab. Presentation only: nothing here is
  * stored, and nothing feeds back into the simulation.
  *
- * Grid. One tile is 32x16 screen pixels (classic 2:1). A building occupies a 3x3-tile lot; lots
- * sit on a 4-tile pitch, so the fourth row/column between lots is road or open ground and two lots can
- * never overlap. Tile (tx, ty) maps to screen ((tx - ty) * 16, (tx + ty) * 8) at its top vertex.
+ * Coordinates. One tile is 32x16 screen pixels. Each building reserves 3x3 tiles at an
+ * explicit seed-selected tile origin, with variable setbacks. No pitch-aligned building slots.
+ * Tile (tx,ty) projects to ((tx-ty)*16,(tx+ty)*8).
  *
  * Stability. The island is a fixed function of the world seed, and candidate lots form one fixed
  * order (nearest the centre first, with seeded jitter). Buildings are placed in id order, and each one
@@ -18,20 +18,17 @@
  * no trigonometry, wall clock or Math.random.
  */
 
+import { MAP_TERRAINS, type FoundingMapOptions, type StoredMapOptions, type MapTerrain } from '../contracts/map.js';
+import { IslandField, ISLAND_CENTRE_X, ISLAND_RADIUS, LOT_TILES, seedSalt, type ReclaimedPatch } from '../domain/geography/land-field.js';
+import { layoutTown, nextFreeLot, MAX_RING, type MapLayout, type LayoutBuilding, type PlacedLot, type PlacementClass } from '../domain/geography/layout.js';
+
+export { IslandField, ISLAND_CENTRE_X, ISLAND_RADIUS, LOT_TILES, layoutTown, nextFreeLot, MAX_RING };
+export type { ReclaimedPatch, MapLayout, LayoutBuilding, PlacedLot, PlacementClass };
+
 export const TILE_WIDTH = 32;
 export const TILE_HEIGHT = 16;
-export const LOT_TILES = 3;
-export const LOT_PITCH = 4;
-/** Main island radius in tiles: room for a few hundred lots before islets take the overflow. */
-export const ISLAND_RADIUS = 40;
-/**
- * The town starts near the island's east coast (a harbour town), so the island centre sits west of
- * the origin. The offset keeps lot (0, 0) on land for every seed (coast noise is at most +-0.325 of
- * the radius) while the shore stays a few lots away, which keeps fisheries close to the town.
- */
-export const ISLAND_CENTRE_X = -(ISLAND_RADIUS - 16);
-/** Hard search bound in lots from the centre; beyond it a building is reported as unplaced. */
-export const MAX_RING = 160;
+/** Most tiles an edge may widen to finish an islet (islets are a few tiles across). */
+const ISLET_EDGE_STEPS = 24;
 /** Terrain box side limit in tiles. */
 export const MAX_TERRAIN_SIDE = 768;
 
@@ -61,6 +58,24 @@ export function chooseBiome(scenarioVersion: string, seed: string, worldName?: s
   return BIOMES[Number(h % 4n)]!;
 }
 
+/** Resolve 'auto' once at founding; storing actual choices decouples restarts from environment. */
+export function resolveMapOptions(scenarioVersion: string, seed: string, options?: Partial<FoundingMapOptions>): StoredMapOptions {
+  const biome = isEden(scenarioVersion) ? 'tropical'
+    : options?.biome && options.biome !== 'auto' ? options.biome : chooseBiome(scenarioVersion, seed);
+  const terrain = options?.terrain === 'auto' ? MAP_TERRAINS[seedSalt(seed, 'terrain-choice') % MAP_TERRAINS.length]!
+    : options?.terrain ?? 'island';
+  return { biome, terrain };
+}
+
+/** Read stored visual choices; pre-setting saves stay on their legacy seed biome + island. */
+export function savedMapOptions(config: unknown, scenarioVersion: string, seed: string, worldName: string): StoredMapOptions {
+  const map = config && typeof config === 'object' && 'map' in config ? config.map : null;
+  const value = map && typeof map === 'object' ? map as Partial<StoredMapOptions> : {};
+  const terrain = MAP_TERRAINS.includes(value.terrain as MapTerrain) ? value.terrain! : 'island';
+  const biome = BIOMES.includes(value.biome as Biome) ? value.biome! : chooseBiome(scenarioVersion, seed, worldName);
+  return { biome: isEden(scenarioVersion) ? 'tropical' : biome, terrain };
+}
+
 /** Same presentation thresholds as `K.tier` in art/catalog.lua. Never a gameplay rule. */
 export function capacityTier(kind: string, capacity: number): 1 | 2 | 3 {
   const [small, medium] = kind === 'home' ? [6, 12] : [6, 20];
@@ -68,259 +83,9 @@ export function capacityTier(kind: string, capacity: number): 1 | 2 | 3 {
   return capacity <= medium ? 2 : 3;
 }
 
-// ---------------------------------------------------------------- seeded field
-
-function seedSalt(seed: string, label: string): number {
-  let hash = 0x811c9dc5;
-  const text = `${seed}#map#${label}`;
-  for (let i = 0; i < text.length; i += 1) {
-    hash ^= text.charCodeAt(i);
-    hash = Math.imul(hash, 0x01000193) >>> 0;
-  }
-  return hash >>> 0;
-}
-
-function hash2(salt: number, x: number, y: number): number {
-  let h = (salt ^ Math.imul(x | 0, 0x27d4eb2d) ^ Math.imul(y | 0, 0x165667b1)) >>> 0;
-  h = Math.imul(h ^ (h >>> 15), 0x85ebca6b) >>> 0;
-  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35) >>> 0;
-  return (h ^ (h >>> 16)) >>> 0;
-}
-
-function unit(salt: number, x: number, y: number): number {
-  return hash2(salt, x, y) / 4294967296;
-}
-
-function smooth(t: number): number {
-  return t * t * (3 - 2 * t);
-}
-
-/** Value noise in [0, 1) with smoothstep interpolation on a `scale`-tile lattice. */
-function valueNoise(salt: number, x: number, y: number, scale: number): number {
-  const gx = x / scale;
-  const gy = y / scale;
-  const x0 = Math.floor(gx);
-  const y0 = Math.floor(gy);
-  const fx = smooth(gx - x0);
-  const fy = smooth(gy - y0);
-  const a = unit(salt, x0, y0);
-  const b = unit(salt, x0 + 1, y0);
-  const c = unit(salt, x0, y0 + 1);
-  const d = unit(salt, x0 + 1, y0 + 1);
-  return (a + (b - a) * fx) * (1 - fy) + (c + (d - c) * fx) * fy;
-}
-
-const ISLET_CELL = 18;
-
-export class IslandField {
-  private readonly coast1: number;
-  private readonly coast2: number;
-  private readonly islet: number;
-  private readonly jitter: number;
-  private readonly lotLand = new Map<number, boolean>();
-
-  constructor(seed: string) {
-    this.coast1 = seedSalt(seed, 'coast-1');
-    this.coast2 = seedSalt(seed, 'coast-2');
-    this.islet = seedSalt(seed, 'islet');
-    this.jitter = seedSalt(seed, 'lot-order');
-  }
-
-  /** True when tile (tx, ty) is land. A fixed function of the seed: it never changes with town size. */
-  land(tx: number, ty: number): boolean {
-    const cx = tx + 0.5;
-    const cy = ty + 0.5;
-    const ox = cx - ISLAND_CENTRE_X;
-    const distance = Math.sqrt(ox * ox + cy * cy);
-    const main =
-      1 - distance / ISLAND_RADIUS +
-      0.45 * (valueNoise(this.coast1, cx, cy, 9) - 0.5) +
-      0.2 * (valueNoise(this.coast2, cx, cy, 4) - 0.5);
-    if (main > 0) return true;
-    // Islets beyond the main island: at most one per cell, kept inside its cell.
-    const kx = Math.floor(tx / ISLET_CELL);
-    const ky = Math.floor(ty / ISLET_CELL);
-    if (unit(this.islet, kx * 3, ky * 3) >= 0.55) return false;
-    const ix = kx * ISLET_CELL + 6 + unit(this.islet, kx * 3 + 1, ky * 3) * 6;
-    const iy = ky * ISLET_CELL + 6 + unit(this.islet, kx * 3, ky * 3 + 1) * 6;
-    const ixo = ix - ISLAND_CENTRE_X;
-    if (Math.sqrt(ixo * ixo + iy * iy) < ISLAND_RADIUS + 12) return false;
-    const radius = 2.5 + unit(this.islet, kx * 3 + 2, ky * 3 + 2) * 3.5;
-    const dx = cx - ix;
-    const dy = cy - iy;
-    return Math.sqrt(dx * dx + dy * dy) < radius + 1.2 * (valueNoise(this.coast2, cx, cy, 3) - 0.5);
-  }
-
-  /** A lot is buildable when all nine of its tiles are land. */
-  lotIsLand(lx: number, ly: number): boolean {
-    const key = lotKey(lx, ly);
-    const cached = this.lotLand.get(key);
-    if (cached !== undefined) return cached;
-    let ok = true;
-    for (let dy = 0; dy < LOT_TILES && ok; dy += 1) {
-      for (let dx = 0; dx < LOT_TILES && ok; dx += 1) {
-        if (!this.land(lx * LOT_PITCH + dx, ly * LOT_PITCH + dy)) ok = false;
-      }
-    }
-    this.lotLand.set(key, ok);
-    return ok;
-  }
-
-  /**
-   * A shore lot is land with sea along its high-i edge (screen lower-right), where the fishery
-   * sprite draws its own water strip and pier: the tile column just past the lot must be at least
-   * two-thirds water, and the lot's own centre tile on that side must touch it.
-   */
-  lotIsShore(lx: number, ly: number): boolean {
-    if (!this.lotIsLand(lx, ly)) return false;
-    const tx = lx * LOT_PITCH + LOT_TILES;
-    let water = 0;
-    for (let dy = 0; dy < LOT_TILES; dy += 1) {
-      if (!this.land(tx, ly * LOT_PITCH + dy)) water += 1;
-    }
-    return water >= 2 && !this.land(tx, ly * LOT_PITCH + 1);
-  }
-
-  orderScore(lx: number, ly: number): number {
-    const cx = lx + 0.375;
-    const cy = ly + 0.375;
-    return Math.sqrt(cx * cx + cy * cy) + unit(this.jitter, lx, ly) * 0.9;
-  }
-}
-
-function lotKey(lx: number, ly: number): number {
-  return (lx + 32768) * 65536 + (ly + 32768);
-}
-
-interface Candidate {
-  lx: number;
-  ly: number;
-  score: number;
-}
-
-/**
- * The single global lot order, extended ring by ring. A lot in ring r = max(|lx|, |ly|) has a score
- * of at least r - 0.375, so once rings 0..R exist, every candidate scoring below R + 0.625 is final.
- */
-class CandidateOrder {
-  private readonly order: Candidate[] = [];
-  private pool: Candidate[] = [];
-  private ring = -1;
-  private readonly field: IslandField;
-
-  constructor(field: IslandField) {
-    this.field = field;
-  }
-
-  at(index: number): Candidate | undefined {
-    while (index >= this.order.length) {
-      if (this.ring >= MAX_RING) return undefined;
-      this.extend();
-    }
-    return this.order[index];
-  }
-
-  private extend(): void {
-    const from = this.ring + 1;
-    this.ring = Math.min(MAX_RING, this.ring + 4);
-    for (let r = from; r <= this.ring; r += 1) {
-      for (let lx = -r; lx <= r; lx += 1) {
-        for (let ly = -r; ly <= r; ly += 1) {
-          if (Math.max(Math.abs(lx), Math.abs(ly)) !== r) continue;
-          this.pool.push({ lx, ly, score: this.field.orderScore(lx, ly) });
-        }
-      }
-    }
-    this.pool.sort((a, b) => a.score - b.score || a.lx - b.lx || a.ly - b.ly);
-    const limit = this.ring >= MAX_RING ? Number.POSITIVE_INFINITY : this.ring + 0.625;
-    let cut = 0;
-    while (cut < this.pool.length && this.pool[cut]!.score < limit) cut += 1;
-    for (let i = 0; i < cut; i += 1) this.order.push(this.pool[i]!);
-    this.pool = this.pool.slice(cut);
-  }
-}
-
-// ---------------------------------------------------------------- placement
-
-export type PlacementClass = 'land' | 'shore';
-
-export interface LayoutBuilding {
-  id: number;
-  placement: PlacementClass;
-}
-
-export interface PlacedLot {
-  lx: number;
-  ly: number;
-  /** Building id, or null for a camp. */
-  buildingId: number | null;
-  /** Household id for a camp, otherwise null. */
-  householdId: number | null;
-}
-
-export interface MapLayout {
-  lots: PlacedLot[];
-  unplacedBuildingIds: number[];
-  unplacedHouseholdIds: number[];
-  field: IslandField;
-}
-
-/**
- * Places buildings (sorted by id) and then camps. Shore buildings fall back to ordinary land when
- * no shore lot is left within the search bound, so a building is only unplaced if no land remains.
- */
-export function layoutTown(seed: string, buildings: LayoutBuilding[], campHouseholdIds: number[]): MapLayout {
-  const field = new IslandField(seed);
-  const order = new CandidateOrder(field);
-  const taken = new Set<number>();
-  const lots: PlacedLot[] = [];
-  const unplacedBuildingIds: number[] = [];
-  const unplacedHouseholdIds: number[] = [];
-  let landIndex = 0;
-  let shoreIndex = 0;
-
-  const nextLand = (): Candidate | undefined => {
-    for (;;) {
-      const candidate = order.at(landIndex);
-      if (!candidate) return undefined;
-      landIndex += 1;
-      if (!taken.has(lotKey(candidate.lx, candidate.ly)) && field.lotIsLand(candidate.lx, candidate.ly)) return candidate;
-    }
-  };
-  const nextShore = (): Candidate | undefined => {
-    for (;;) {
-      const candidate = order.at(shoreIndex);
-      if (!candidate) return undefined;
-      shoreIndex += 1;
-      if (!taken.has(lotKey(candidate.lx, candidate.ly)) && field.lotIsShore(candidate.lx, candidate.ly)) return candidate;
-    }
-  };
-
-  const sorted = [...buildings].sort((a, b) => a.id - b.id);
-  for (const building of sorted) {
-    const lot = (building.placement === 'shore' ? nextShore() : undefined) ?? nextLand();
-    if (!lot) {
-      unplacedBuildingIds.push(building.id);
-      continue;
-    }
-    taken.add(lotKey(lot.lx, lot.ly));
-    lots.push({ lx: lot.lx, ly: lot.ly, buildingId: building.id, householdId: null });
-  }
-  for (const householdId of [...campHouseholdIds].sort((a, b) => a - b)) {
-    const lot = nextLand();
-    if (!lot) {
-      unplacedHouseholdIds.push(householdId);
-      continue;
-    }
-    taken.add(lotKey(lot.lx, lot.ly));
-    lots.push({ lx: lot.lx, ly: lot.ly, buildingId: null, householdId });
-  }
-  return { lots, unplacedBuildingIds, unplacedHouseholdIds, field };
-}
-
 // ---------------------------------------------------------------- terrain
 
-/** Terrain codes: `~` deep sea, `-` shallow water, `.` beach, `g` ground, `#` road. */
+/** Terrain codes: `~` deep sea, `-` shallow water, `.` beach, `g` ground. */
 export interface TerrainBox {
   x0: number;
   y0: number;
@@ -344,13 +109,9 @@ function encodeRow(codes: string[]): string {
   return out;
 }
 
-function floorMod(value: number, modulus: number): number {
-  return ((value % modulus) + modulus) % modulus;
-}
-
 /**
- * Terrain around the main island and every occupied lot, with a margin. Roads run along the gaps
- * next to building lots; beaches are land beside the sea; shallows are sea beside land.
+ * Terrain around the main island and every occupied lot, with a margin. Beaches are land beside
+ * the sea; shallows are sea beside land. Walkable paths are returned separately by map-scenery.ts.
  */
 export function buildTerrain(layout: MapLayout, margin = 8): TerrainBox {
   const { field } = layout;
@@ -359,13 +120,37 @@ export function buildTerrain(layout: MapLayout, margin = 8): TerrainBox {
   let minY = -reach;
   let maxX = Math.max(ISLAND_CENTRE_X + reach, margin);
   let maxY = reach;
-  const buildingLots = new Set<number>();
   for (const lot of layout.lots) {
-    if (lot.buildingId !== null) buildingLots.add(lotKey(lot.lx, lot.ly));
-    minX = Math.min(minX, lot.lx * LOT_PITCH - margin);
-    minY = Math.min(minY, lot.ly * LOT_PITCH - margin);
-    maxX = Math.max(maxX, lot.lx * LOT_PITCH + LOT_PITCH + margin);
-    maxY = Math.max(maxY, lot.ly * LOT_PITCH + LOT_PITCH + margin);
+    minX = Math.min(minX, lot.tx - margin);
+    minY = Math.min(minY, lot.ty - margin);
+    maxX = Math.max(maxX, lot.tx + LOT_TILES + margin);
+    maxY = Math.max(maxY, lot.ty + LOT_TILES + margin);
+  }
+  // Reclaimed land is part of the island: the view must grow with it, or new land would be cut off.
+  for (const patch of field.patches) {
+    minX = Math.min(minX, patch.tx - margin);
+    minY = Math.min(minY, patch.ty - margin);
+    maxX = Math.max(maxX, patch.tx + patch.size + margin);
+    maxY = Math.max(maxY, patch.ty + patch.size + margin);
+  }
+  // An island is surrounded by sea, so no islet may be sliced by the edge of the view: keep widening
+  // a side while land touches it. Bounded (islets are small), and never for a mainland, which has no
+  // far shore to reach. The cap below still applies.
+  if (field.terrain === 'island') {
+    const touches = (fixed: 'x' | 'y', at: number, from: number, to: number): boolean => {
+      for (let v = from; v <= to; v += 1) {
+        if (fixed === 'x' ? field.land(at, v) : field.land(v, at)) return true;
+      }
+      return false;
+    };
+    for (let step = 0; step < ISLET_EDGE_STEPS; step += 1) {
+      let grew = false;
+      if (touches('x', minX, minY, maxY)) { minX -= 1; grew = true; }
+      if (touches('x', maxX, minY, maxY)) { maxX += 1; grew = true; }
+      if (touches('y', minY, minX, maxX)) { minY -= 1; grew = true; }
+      if (touches('y', maxY, minX, maxX)) { maxY += 1; grew = true; }
+      if (!grew) break;
+    }
   }
   maxX = Math.min(maxX, minX + MAX_TERRAIN_SIDE - 1);
   maxY = Math.min(maxY, minY + MAX_TERRAIN_SIDE - 1);
@@ -381,31 +166,19 @@ export function buildTerrain(layout: MapLayout, margin = 8): TerrainBox {
     }
   }
   const at = (x: number, y: number): number => mask[(y + 1) * stride + (x + 1)]!;
-  const hasBuilding = (lx: number, ly: number): boolean => buildingLots.has(lotKey(lx, ly));
 
   const rows: string[] = [];
   for (let y = 0; y < height; y += 1) {
     const codes: string[] = [];
     for (let x = 0; x < width; x += 1) {
-      const tx = minX + x;
-      const ty = minY + y;
       if (at(x, y)) {
-        const gapX = floorMod(tx, LOT_PITCH) === LOT_TILES;
-        const gapY = floorMod(ty, LOT_PITCH) === LOT_TILES;
-        const lx = Math.floor(tx / LOT_PITCH);
-        const ly = Math.floor(ty / LOT_PITCH);
-        let road = false;
-        if (gapX && gapY) road = hasBuilding(lx, ly) || hasBuilding(lx + 1, ly) || hasBuilding(lx, ly + 1) || hasBuilding(lx + 1, ly + 1);
-        else if (gapX) road = hasBuilding(lx, ly) || hasBuilding(lx + 1, ly);
-        else if (gapY) road = hasBuilding(lx, ly) || hasBuilding(lx, ly + 1);
-        if (road) codes.push('#');
-        else codes.push(at(x - 1, y) && at(x + 1, y) && at(x, y - 1) && at(x, y + 1) ? 'g' : '.');
+        codes.push(at(x - 1, y) && at(x + 1, y) && at(x, y - 1) && at(x, y + 1) ? 'g' : '.');
       } else {
         let nearLand = false;
         for (let dy = -1; dy <= 1 && !nearLand; dy += 1) {
           for (let dx = -1; dx <= 1 && !nearLand; dx += 1) if (at(x + dx, y + dy)) nearLand = true;
         }
-        codes.push(nearLand ? '-' : '~');
+        codes.push(field.terrain === 'river_plain' || nearLand ? '-' : '~');
       }
     }
     rows.push(encodeRow(codes));

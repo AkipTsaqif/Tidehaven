@@ -1,5 +1,6 @@
 import type { BindValue, Db } from './database.js';
-import { loadDevelopment, saveDevelopment } from './development-repo.js';
+import { loadDevelopment, loadReclaimed, saveDevelopment, saveReclaimed } from './development-repo.js';
+import { storedTerrain } from '../domain/geography/land-field.js';
 import {
   GOODS,
   type Business,
@@ -523,6 +524,10 @@ export function loadState(db: Db, world: WorldRow): WorldState {
   }
 
   loadDevelopment(db, state);
+  loadReclaimed(db, state);
+  // The coastline shape was chosen at founding and stored in the world's config; saves that predate
+  // the setting are islands, exactly as they always were.
+  state.terrain = storedTerrain(parseJson<unknown>(world.configJson, {}));
   return state;
 }
 
@@ -1275,6 +1280,7 @@ export function saveState(db: Db, state: WorldState, payload: SavePayload): { ev
 
     saveFlags(db, state);
     saveDevelopment(db, state);
+    saveReclaimed(db, state);
 
     for (const event of payload.events) {
       db.run(

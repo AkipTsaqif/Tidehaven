@@ -1,4 +1,6 @@
 import type { Scenario } from '../contracts/scenario.js';
+import type { FoundingMapOptions } from '../contracts/map.js';
+import { resolveMapOptions } from './map-layout.js';
 import type { Db } from '../storage/database.js';
 import { hashValue } from '../domain/hash.js';
 import { entitySalt } from '../domain/rng.js';
@@ -72,11 +74,17 @@ export function createTown(params: {
   hostCeiling: number;
   drama: WorldState['drama'];
   createdAt?: string;
+  mapOptions?: FoundingMapOptions;
 }): BootstrapResult {
   const { db, scenario, worldName, seed, populationTarget, hostCeiling, drama } = params;
   const populationPolicyEnabled = params.populationPolicyEnabled ?? true;
   const createdAt = params.createdAt ?? new Date().toISOString();
   const rulesVersion = rulesVersionFor(scenario);
+  const configJson = JSON.stringify({
+    scenarioVersion: scenario.version,
+    calendar: scenario.calendar,
+    map: resolveMapOptions(scenario.version, seed, params.mapOptions),
+  });
 
   const existing = db.get<{ id: number }>('select id from worlds order by id limit 1');
   if (existing) {
@@ -100,10 +108,7 @@ export function createTown(params: {
       populationTarget,
       populationPolicyEnabled ? 1 : 0,
       hostCeiling,
-      JSON.stringify({
-        scenarioVersion: scenario.version,
-        calendar: scenario.calendar,
-      }),
+      configJson,
     ],
   );
   const worldId = insert.lastInsertRowid;
@@ -125,7 +130,7 @@ export function createTown(params: {
     currentDay: 0,
     phase: 'idle',
     stateHash,
-    configJson: JSON.stringify({ scenarioVersion: scenario.version }),
+    configJson,
     createdAt,
   };
   return { world, state, created: true };

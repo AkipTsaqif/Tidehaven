@@ -123,6 +123,7 @@ async function main(): Promise<void> {
         config.defaults.simulation.populationPolicyEnabled,
       hostCeiling: config.defaults.simulation.hostCeiling,
       drama: config.defaults.simulation.drama,
+      mapOptions: config.foundingMap,
     });
     world = created.world;
     logger.info('town founded', {

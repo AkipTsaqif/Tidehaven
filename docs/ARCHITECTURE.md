@@ -132,8 +132,28 @@ have one fixed order (centre first, seeded jitter). Buildings take the first fre
 order, so a building's position depends only on buildings with smaller ids. Buildings are never
 deleted and ids only grow, so existing buildings never move as the town grows. Fisheries (and
 fishery sites) need a shore lot. Camps (households without a building) fill the next free lots after
-all buildings. Each lot is 3x3 tiles of 32x16 px on a 4-tile pitch; the spare row is road or open
-ground, so lots cannot overlap. The biome uses the same formula as `art/biomes.lua`; Eden is tropical.
+all buildings. Each lot reserves 3x3 tiles of 32x16 px at explicit `tx,ty` tile origins.
+Placement v2 considers every tile origin in a seed-jittered radial order, with variable 1–2 tile
+setbacks against earlier footprints (one tile is the narrowest a path can pass). There are no pitch-aligned slots or repeated street blocks.
+Full footprint checks keep lots on land; reserved cells keep lots and their access gaps apart.
+At founding, `TIDEHAVEN_BIOME` and `TIDEHAVEN_TERRAIN` resolve to actual choices stored under
+`worlds.config_json.map`. No schema migration is needed. `auto` biome uses the same formula as
+`art/biomes.lua`; Eden scenarios remain tropical. Terrain choices are island, mainland coast, and
+river plain (two meandering channels). `auto` terrain selects one by seed. Existing saves lacking this
+metadata keep their original seed-derived biome and island; restarts never apply environment overrides.
+These choices affect visuals only, not climate, recipes, transport costs, or other domain rules.
+
+`src/application/map-scenery.ts` derives narrow, branching paths and biome vegetation from the same
+seed. Paths avoid water and occupied footprints rather than filling every lot gap with road tiles.
+Tree candidates are seeded by spatial cell, with land, lot and path clearance; a new building can
+clear nearby trees without reshuffling the whole island. Scenery is decorative, not a source of timber
+or a routing rule for simulated residents. Search work and tree counts have explicit caps; the API
+reports omitted path connections. Paths use the irregular lot entrances and can branch or run diagonally
+through open land. Native pixel artwork stays isometrically oriented; buildings are not arbitrarily
+rotated. Placement v2 intentionally reshuffles the old visual layout once, then retains prefix stability
+for subsequent additions. The drawn terrain box grows to cover every reclaimed patch and, on islands, widens until no islet is sliced
+by its edge (bounded; the 768-tile cap still applies). Search is bounded to 360 tiles from the town origin; buildings with no
+remaining valid footprint are reported as unplaced rather than overlapping or drawing over water.
 Sprites come from the committed atlas in `client/public/map/`, packed by `scripts/art-atlas.py`.
 Changing the layout code reshuffles every town's map once. That is acceptable because nothing
 depends on map positions.

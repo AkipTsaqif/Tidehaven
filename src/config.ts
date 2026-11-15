@@ -3,6 +3,7 @@ import { dirname, isAbsolute, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { MAX_HOST_CEILING } from './domain/growth-limits.js';
+import { MAP_BIOMES, MAP_TERRAINS, type FoundingMapOptions } from './contracts/map.js';
 
 /**
  * Configuration loading.
@@ -105,6 +106,8 @@ export interface AppConfig {
   dataDirExplicit: boolean;
   /** Explicit founding-only override from TIDEHAVEN_POPULATION_POLICY. */
   populationPolicyOverride: boolean | undefined;
+  /** Applied only when founding; saved towns retain their stored landscape. */
+  foundingMap: FoundingMapOptions;
 }
 
 export class ConfigError extends Error {
@@ -264,6 +267,13 @@ export function loadConfig(options: LoadConfigOptions = {}): AppConfig {
     throw new ConfigError('TIDEHAVEN_SCENARIO must be a scenario name such as "tidehaven" or "eden"', [scenarioName]);
   }
 
+  const biome = (env.TIDEHAVEN_BIOME ?? '').trim().toLowerCase() || 'auto';
+  const terrain = (env.TIDEHAVEN_TERRAIN ?? '').trim().toLowerCase() || 'island';
+  const parsedMap = z.object({ biome: z.enum(['auto', ...MAP_BIOMES]), terrain: z.enum(['auto', ...MAP_TERRAINS]) })
+    .safeParse({ biome, terrain });
+  if (!parsedMap.success) throw new ConfigError('Invalid founding landscape: TIDEHAVEN_BIOME or TIDEHAVEN_TERRAIN',
+    parsedMap.error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`));
+
   const baseUrl = (env.TIDEHAVEN_API_BASE_URL ?? '').trim();
   const apiKeyRaw = (env.TIDEHAVEN_API_KEY ?? '').trim();
   const model = (env.TIDEHAVEN_MODEL ?? '').trim();
@@ -284,6 +294,7 @@ export function loadConfig(options: LoadConfigOptions = {}): AppConfig {
     fixtureProvider: options.fixtureProvider === true,
     scenarioFile: `scenarios/${scenarioName}.json`,
     populationPolicyOverride,
+    foundingMap: parsedMap.data,
   };
 }
 

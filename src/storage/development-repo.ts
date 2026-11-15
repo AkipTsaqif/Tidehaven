@@ -27,6 +27,27 @@ export function saveDevelopment(db: Db, state: WorldState): void {
   [`developmentNextId:${state.worldId}`, JSON.stringify(state.development.nextId), new Date().toISOString()]);
 }
 
+/** Append-only: existing rows are never rewritten, so a patch can never be silently moved. */
+export function saveReclaimed(db: Db, state: WorldState): void {
+  const stored = db.get<{ n: number }>('select count(*) as n from reclaimed_land where world_id = ?', [state.worldId])?.n ?? 0;
+  if (state.reclaimed.length < stored) throw new Error('Reclaimed land cannot shrink');
+  for (const patch of state.reclaimed.slice(stored)) {
+    db.run(
+      'insert into reclaimed_land (world_id, id, project_id, tx, ty, size, from_building_id, completed_day) values (?, ?, ?, ?, ?, ?, ?, ?)',
+      [state.worldId, patch.id, patch.projectId, patch.tx, patch.ty, patch.size, patch.fromBuildingId, patch.completedDay],
+    );
+  }
+}
+
+export function loadReclaimed(db: Db, state: WorldState): void {
+  state.reclaimed = db.all<{ id: number; project_id: number; tx: number; ty: number; size: number; from_building_id: number; completed_day: number }>(
+    'select id, project_id, tx, ty, size, from_building_id, completed_day from reclaimed_land where world_id = ? order by id', [state.worldId],
+  ).map((row) => ({
+    id: row.id, projectId: row.project_id, tx: row.tx, ty: row.ty, size: row.size,
+    fromBuildingId: row.from_building_id, completedDay: row.completed_day,
+  }));
+}
+
 export function loadDevelopment(db: Db, state: WorldState): void {
   for (const row of db.all<{ id: number; status: string; project_json: string }>(
     'select id, status, project_json from construction_projects where world_id = ? and archived = 0 order by id', [state.worldId],

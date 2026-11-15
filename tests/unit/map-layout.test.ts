@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
   IslandField,
-  LOT_PITCH,
   LOT_TILES,
   MAX_TERRAIN_SIDE,
   buildTerrain,
@@ -22,7 +21,7 @@ function buildings(count: number, shoreEvery = 0): LayoutBuilding[] {
 
 function positions(layout: ReturnType<typeof layoutTown>): Map<number, string> {
   const out = new Map<number, string>();
-  for (const lot of layout.lots) if (lot.buildingId !== null) out.set(lot.buildingId, `${lot.lx},${lot.ly}`);
+  for (const lot of layout.lots) if (lot.buildingId !== null) out.set(lot.buildingId, `${lot.tx},${lot.ty}`);
   return out;
 }
 
@@ -49,6 +48,14 @@ describe('map biome and tiers', () => {
 });
 
 describe('map layout', () => {
+  it('uses irregular offsets and variable gaps instead of pitch-aligned rows', () => {
+    const lots = layoutTown(SEED, buildings(40), []).lots;
+    expect(new Set(lots.map((lot) => ((lot.tx % 4) + 4) % 4)).size).toBe(4);
+    expect(new Set(lots.map((lot) => ((lot.ty % 4) + 4) % 4)).size).toBe(4);
+    const distances = lots.slice(1).map((lot, i) => Math.hypot(lot.tx - lots[i]!.tx, lot.ty - lots[i]!.ty));
+    expect(new Set(distances.map((d) => d.toFixed(1))).size).toBeGreaterThan(12);
+  });
+
   it('is deterministic for the same seed and different for another seed', () => {
     const a = positions(layoutTown(SEED, buildings(40, 7), []));
     const b = positions(layoutTown(SEED, buildings(40, 7), []));
@@ -74,7 +81,7 @@ describe('map layout', () => {
     const camps = withCamps.lots.filter((lot) => lot.householdId !== null);
     expect(camps.map((lot) => lot.householdId)).toEqual([1, 2, 3]);
     const taken = new Set([...ordered.values()]);
-    for (const camp of camps) expect(taken.has(`${camp.lx},${camp.ly}`)).toBe(false);
+    for (const camp of camps) expect(taken.has(`${camp.tx},${camp.ty}`)).toBe(false);
   });
 
   it('keeps every lot fully on land and never overlaps two lots', () => {
@@ -82,13 +89,25 @@ describe('map layout', () => {
     const field = new IslandField(SEED);
     const seen = new Set<string>();
     for (const lot of layout.lots) {
-      const key = `${lot.lx},${lot.ly}`;
+      const key = `${lot.tx},${lot.ty}`;
       expect(seen.has(key), `duplicate lot ${key}`).toBe(false);
       seen.add(key);
       for (let dy = 0; dy < LOT_TILES; dy += 1) {
         for (let dx = 0; dx < LOT_TILES; dx += 1) {
-          expect(field.land(lot.lx * LOT_PITCH + dx, lot.ly * LOT_PITCH + dy), `lot ${key} tile ${dx},${dy}`).toBe(true);
+          const tile = `${lot.tx + dx},${lot.ty + dy}`;
+          expect(seen.has(`tile:${tile}`), `overlapping footprint at ${tile}`).toBe(false);
+          seen.add(`tile:${tile}`);
+          expect(field.land(lot.tx + dx, lot.ty + dy), `lot ${key} tile ${dx},${dy}`).toBe(true);
         }
+      }
+    }
+    for (let i = 0; i < layout.lots.length; i += 1) {
+      const a = layout.lots[i]!;
+      for (let j = i + 1; j < layout.lots.length; j += 1) {
+        const b = layout.lots[j]!;
+        const gapX = Math.max(a.tx - (b.tx + LOT_TILES), b.tx - (a.tx + LOT_TILES));
+        const gapY = Math.max(a.ty - (b.ty + LOT_TILES), b.ty - (a.ty + LOT_TILES));
+        expect(Math.max(gapX, gapY), 'at least one free tile between lots').toBeGreaterThanOrEqual(1);
       }
     }
     expect(layout.unplacedBuildingIds).toEqual([]);
@@ -102,7 +121,7 @@ describe('map layout', () => {
     let onShore = 0;
     for (const lot of layout.lots) {
       if (lot.buildingId === null || !shoreIds.has(lot.buildingId)) continue;
-      if (field.lotIsShore(lot.lx, lot.ly)) onShore += 1;
+      if (field.lotIsShore(lot.tx, lot.ty)) onShore += 1;
     }
     expect(onShore).toBe(shoreIds.size);
   });
@@ -111,7 +130,7 @@ describe('map layout', () => {
     const layout = layoutTown(SEED, buildings(120), []);
     const distance = (id: number) => {
       const lot = layout.lots.find((l) => l.buildingId === id)!;
-      return Math.hypot(lot.lx, lot.ly);
+      return Math.hypot(lot.tx, lot.ty);
     };
     const early = [1, 2, 3, 4, 5].map(distance);
     const late = [116, 117, 118, 119, 120].map(distance);
@@ -133,10 +152,9 @@ describe('map layout', () => {
     for (const row of terrain.rows) {
       const total = [...row.matchAll(/(\D)(\d+)/g)].reduce((sum, m) => sum + Number(m[2]), 0);
       expect(total).toBe(terrain.width);
-      expect(row).toMatch(/^([~\-.g#]\d+)+$/);
+      expect(row).toMatch(/^([~\-.g]\d+)+$/);
     }
-    expect(terrain.rows.join('')).toContain('#');
-    // A town with no buildings has no roads at all.
-    expect(buildTerrain(layoutTown(SEED, [], [5])).rows.join('')).not.toContain('#');
+    // Roads are independent tile-space scenery; terrain no longer paints a grid of # tiles.
+    expect(terrain.rows.join('')).not.toContain('#');
   });
 });

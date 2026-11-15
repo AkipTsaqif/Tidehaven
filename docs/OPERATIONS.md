@@ -18,6 +18,8 @@
    | `TIDEHAVEN_MODEL` | model identifier, e.g. a cheap small model |
    | `TIDEHAVEN_SCENARIO` | optional founding scenario name from `scenarios/` (default `tidehaven`; `eden` = Adam and Eve only) |
    | `TIDEHAVEN_WORLD_NAME` | optional town name, applied when the town is founded |
+   | `TIDEHAVEN_BIOME` | founding-only `auto` (default), `tropical`, `temperate`, `arid`, `northern`; Eden scenarios always tropical |
+   | `TIDEHAVEN_TERRAIN` | founding-only `island` (default), `coast` (mainland shoreline), `river_plain` (winding rivers), or seed-selected `auto` |
    | `TIDEHAVEN_DATA_DIR` | optional data directory (default `./data/<scenario>`, e.g. `./data/eden`) |
    | `TIDEHAVEN_PORT` | optional dashboard port (default `4317`) |
    | `TIDEHAVEN_MAX_OUTPUT_TOKENS` | optional output token allowance per request (default `800`; reasoning models need more) |

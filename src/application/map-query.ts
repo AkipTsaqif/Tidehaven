@@ -1,19 +1,20 @@
 import type { Db } from '../storage/database.js';
 import {
   CATALOG_KINDS,
-  LOT_PITCH,
   LOT_TILES,
   SPECIAL_KINDS,
   TILE_HEIGHT,
   TILE_WIDTH,
-  buildTerrain,
   capacityTier,
-  chooseBiome,
+  savedMapOptions,
   layoutTown,
   type Biome,
   type LayoutBuilding,
   type TerrainBox,
 } from './map-layout.js';
+import { buildMapScene, type MapRoad, type MapTree } from './map-scenery.js';
+import type { MapTerrain } from '../contracts/map.js';
+import type { ReclaimedPatch } from '../domain/geography/land-field.js';
 
 /** Response bounds: the map stays readable and the payload small even for a huge town. */
 export const MAX_MAP_BUILDINGS = 5000;
@@ -22,8 +23,8 @@ export const MAX_MAP_CAMPS = 2000;
 export interface MapLot {
   /** `b<id>` for a building, `c<householdId>` for a camp. */
   key: string;
-  lx: number;
-  ly: number;
+  tx: number;
+  ty: number;
   /** Atlas frame `<kind>_<tier>`, or null when the kind has no sprite yet. */
   frame: string | null;
   kind: string;
@@ -44,9 +45,13 @@ export interface MapLot {
 export interface MapView {
   world: { name: string; seed: string; scenarioVersion: string; day: number } | null;
   biome: Biome;
-  tile: { width: number; height: number; lotTiles: number; lotPitch: number };
+  terrainShape: MapTerrain;
+  tile: { width: number; height: number; lotTiles: number };
   terrain: TerrainBox | null;
   lots: MapLot[];
+  roads: MapRoad[];
+  trees: MapTree[];
+  roadTargetsOmitted: number;
   unplaced: { buildings: number; camps: number };
   truncated: { buildings: number; camps: number };
 }
@@ -71,17 +76,15 @@ export function mapView(db: Db, worldId: number): MapView {
   );
   if (!world) {
     return {
-      world: null, biome: 'tropical', tile: tileInfo(), terrain: null, lots: [],
+      world: null, biome: 'tropical', terrainShape: 'island', tile: tileInfo(), terrain: null, lots: [], roads: [], trees: [], roadTargetsOmitted: 0,
       unplaced: { buildings: 0, camps: 0 }, truncated: { buildings: 0, camps: 0 },
     };
   }
-  let scenarioVersion = '';
-  try {
-    scenarioVersion = String((JSON.parse(world.config_json) as { scenarioVersion?: unknown }).scenarioVersion ?? '');
-  } catch {
-    scenarioVersion = '';
-  }
-  const biome = chooseBiome(scenarioVersion, world.seed, world.name);
+  let storedConfig: unknown = {};
+  try { storedConfig = JSON.parse(world.config_json); } catch { /* Legacy invalid metadata uses defaults. */ }
+  const scenarioVersion = storedConfig && typeof storedConfig === 'object' && 'scenarioVersion' in storedConfig
+    ? String(storedConfig.scenarioVersion ?? '') : '';
+  const { biome, terrain: terrainShape } = savedMapOptions(storedConfig, scenarioVersion, world.seed, world.name);
 
   const allBuildings = db.all<BuildingRow>(
     'select id, name, kind, capacity, condition_bps, destroyed_day from buildings where world_id = ? order by id limit ?',
@@ -142,7 +145,11 @@ export function mapView(db: Db, worldId: number): MapView {
     const target = planned.get(building.id) ?? building.kind;
     return { id: building.id, placement: target === 'fishery' || building.kind === 'fishery' ? 'shore' : 'land' };
   });
-  const layout = layoutTown(world.seed, layoutInput, shownCamps.map((camp) => camp.id));
+  // Reclaimed land is authoritative world state; the map only reads it.
+  const patches: ReclaimedPatch[] = db.all<{ id: number; project_id: number; tx: number; ty: number; size: number; from_building_id: number; completed_day: number }>(
+    'select id, project_id, tx, ty, size, from_building_id, completed_day from reclaimed_land where world_id = ? order by id', [worldId],
+  ).map((row) => ({ id: row.id, projectId: row.project_id, tx: row.tx, ty: row.ty, size: row.size, fromBuildingId: row.from_building_id, completedDay: row.completed_day }));
+  const layout = layoutTown(world.seed, layoutInput, shownCamps.map((camp) => camp.id), terrainShape, patches);
 
   const byId = new Map(buildings.map((building) => [building.id, building]));
   const campById = new Map(shownCamps.map((camp) => [camp.id, camp]));
@@ -156,7 +163,7 @@ export function mapView(db: Db, worldId: number): MapView {
       const spriteKind = special ?? (CATALOG_KINDS.has(building.kind) ? building.kind : null);
       const occupants = occupancy.get(building.id) ?? { households: 0, residents: 0 };
       lots.push({
-        key: `b${building.id}`, lx: lot.lx, ly: lot.ly,
+        key: `b${building.id}`, tx: lot.tx, ty: lot.ty,
         frame: spriteKind ? `${spriteKind}_${tier}` : null,
         kind: building.kind, tier, name: building.name, buildingId: building.id,
         capacity: building.capacity, conditionPct: Math.round(building.condition_bps / 100), destroyed,
@@ -167,7 +174,7 @@ export function mapView(db: Db, worldId: number): MapView {
     } else if (lot.householdId !== null) {
       const camp = campById.get(lot.householdId)!;
       lots.push({
-        key: `c${camp.id}`, lx: lot.lx, ly: lot.ly, frame: 'camp_1', kind: 'camp', tier: 1, name: camp.name,
+        key: `c${camp.id}`, tx: lot.tx, ty: lot.ty, frame: 'camp_1', kind: 'camp', tier: 1, name: camp.name,
         buildingId: null, capacity: camp.capacity, conditionPct: null, destroyed: false, plannedKind: null,
         business: null, residents: camp.members, households: 1,
       });
@@ -176,8 +183,9 @@ export function mapView(db: Db, worldId: number): MapView {
   return {
     world: { name: world.name, seed: world.seed, scenarioVersion, day: world.current_day },
     biome,
+    terrainShape,
     tile: tileInfo(),
-    terrain: buildTerrain(layout),
+    ...buildMapScene(world.seed, layout, biome),
     lots,
     unplaced: { buildings: layout.unplacedBuildingIds.length, camps: layout.unplacedHouseholdIds.length },
     truncated: { buildings: Math.max(0, totalBuildings - buildings.length), camps: camps.length - shownCamps.length },
@@ -185,5 +193,5 @@ export function mapView(db: Db, worldId: number): MapView {
 }
 
 function tileInfo() {
-  return { width: TILE_WIDTH, height: TILE_HEIGHT, lotTiles: LOT_TILES, lotPitch: LOT_PITCH };
+  return { width: TILE_WIDTH, height: TILE_HEIGHT, lotTiles: LOT_TILES };
 }

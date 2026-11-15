@@ -362,6 +362,7 @@ export function stateSnapshot(state: WorldState): Record<string, unknown> {
         projects: sortedRows(state.development.projects),
       },
     } : {}),
+    ...(state.reclaimed.length > 0 ? { reclaimed: state.reclaimed } : {}),
     accounts,
     inventories,
     reserved,

@@ -14,6 +14,17 @@ const atlas = JSON.parse(readFileSync('client/public/map/atlas.json', 'utf8')) a
 };
 
 describe('town map projection', () => {
+  it('returns empty scenery for a missing world', async () => {
+    const town = await seedTown({ seed: 'map-missing' });
+    try {
+      expect(mapView(town.db, town.worldId + 999)).toMatchObject({
+        world: null, terrain: null, lots: [], roads: [], trees: [], roadTargetsOmitted: 0,
+      });
+    } finally {
+      town.db.close();
+    }
+  });
+
   it('shows every building on a real town, with sprite frames the atlas actually has', async () => {
     const town = await seedTown({ seed: 'map-real-town' });
     try {
@@ -24,6 +35,10 @@ describe('town map projection', () => {
       expect(view.terrain?.rows.length).toBe(view.terrain?.height);
       expect(view.lots.filter((lot) => lot.buildingId !== null)).toHaveLength(live.length);
       expect(view.unplaced).toEqual({ buildings: 0, camps: 0 });
+      expect(view.roads.length).toBeGreaterThan(0);
+      expect(view.trees.length).toBeGreaterThan(0);
+      expect(view.trees.length).toBeLessThanOrEqual(1200);
+      expect(mapView(town.db, town.worldId)).toEqual(view);
       const frames = atlas.biomes[view.biome]!.frames;
       for (const lot of view.lots) {
         expect(lot.frame, `${lot.name} (${lot.kind})`).not.toBeNull();
@@ -55,7 +70,7 @@ describe('town map projection', () => {
   it('keeps existing buildings in place as the town builds more', async () => {
     const town = await seedTown({ seed: 'map-stable' });
     try {
-      const before = new Map(mapView(town.db, town.worldId).lots.map((lot) => [lot.key, `${lot.lx},${lot.ly}`]));
+      const before = new Map(mapView(town.db, town.worldId).lots.map((lot) => [lot.key, `${lot.tx},${lot.ty}`]));
       // Add buildings the way the engine does (new, higher ids), then persist through a normal day.
       const nextId = Math.max(...town.state.buildings.keys()) + 1;
       for (let n = 0; n < 6; n += 1) {
@@ -70,7 +85,7 @@ describe('town map projection', () => {
       for (const lot of after.lots) {
         if (!lot.key.startsWith('b')) continue;
         const was = before.get(lot.key);
-        if (was) expect(`${lot.lx},${lot.ly}`, lot.name).toBe(was);
+        if (was) expect(`${lot.tx},${lot.ty}`, lot.name).toBe(was);
       }
       expect(after.lots.filter((lot) => lot.name.startsWith('Test site'))).toHaveLength(6);
     } finally {
@@ -94,9 +109,12 @@ describe('town map projection', () => {
     try {
       const response = await server.app.inject({ method: 'GET', url: '/api/map' });
       expect(response.statusCode).toBe(200);
-      const body = response.json() as { lots: unknown[]; tile: { width: number; height: number } };
+      const body = response.json() as { lots: unknown[]; trees: unknown[]; roads: unknown[]; roadTargetsOmitted: number; tile: { width: number; height: number } };
       expect(body.tile).toMatchObject({ width: 32, height: 16 });
       expect(body.lots.length).toBeGreaterThan(0);
+      expect(body.trees.length).toBeGreaterThan(0);
+      expect(body.roads.length).toBeGreaterThan(0);
+      expect(body.roadTargetsOmitted).toBeGreaterThanOrEqual(0);
       // Observer view: no seed-independent secrets such as provider keys can appear here.
       expect(response.body).not.toMatch(/api[_-]?key/i);
     } finally {
