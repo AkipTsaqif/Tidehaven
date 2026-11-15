@@ -20,6 +20,20 @@ export const expansionTemplateSchema = z.object({
   constructionCostCentsPerCapacity: money,
 });
 
+/** Optional per-scenario overrides. Omit the whole block to use the engine defaults (reclamation is on). */
+export const reclamationOverridesSchema = z.object({
+  enabled: z.boolean().optional(),
+  patchTiles: z.number().int().min(3).max(64).optional(),
+  scarcityDistanceTiles: z.number().int().min(0).max(400).optional(),
+  labourDays: z.number().int().min(1).max(3650).optional(),
+  materials: materials.optional(),
+  constructionCostCents: money.optional(),
+  cooldownDays: z.number().int().min(0).max(3650).optional(),
+  maxActive: z.number().int().min(1).max(4).optional(),
+  maxTotal: z.number().int().min(1).max(1000).optional(),
+  dockClearanceTiles: z.number().int().min(0).max(32).optional(),
+}).strict();
+
 /** Gameplay expansion is elastic, but active and retained entity work stays finite. */
 export const growthSchema = z.object({
   populationPolicyEnabled: z.boolean(),
@@ -33,6 +47,7 @@ export const growthSchema = z.object({
   housingRequestDays: z.number().int().min(1).max(30),
   workplaceTemplates: z.record(z.string().regex(/^[a-z_]{1,40}$/), workplaceTemplateSchema),
   expansionTemplates: z.record(z.string().regex(/^[a-z_]{1,40}$/), expansionTemplateSchema),
+  reclamation: reclamationOverridesSchema.optional(),
 });
 
 export type GrowthRules = z.infer<typeof growthSchema>;

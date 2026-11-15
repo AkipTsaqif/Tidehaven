@@ -26,6 +26,7 @@ export const PRIMARY_KINDS = [
   'build_home',
   'build_workplace',
   'expand_building',
+  'reclaim_land',
   'work_construction',
   'quit_job',
 ] as const;

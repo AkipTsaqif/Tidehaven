@@ -5,6 +5,7 @@ import { householdFoodDaysForCount } from '../domain/society/households.js';
 import { balanceOf, quantityOf } from '../domain/state.js';
 import { buildObservationLookups, type ObservationLookups } from '../domain/lookups.js';
 import { DEVELOPMENT_GUIDE, developmentObservation } from './development-observation.js';
+import { RECLAMATION_GUIDE, reclamationObservation } from './reclamation-observation.js';
 import { JOB_GUIDE, jobListings } from './job-listings.js';
 import { buildHappinessContext, moodLabel, scoreHappiness } from '../domain/society/happiness.js';
 import { buildHousingObservation } from './housing-observation.js';
@@ -138,6 +139,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
 
   const housing = housingInfo(input, lookups);
   const development = developmentObservation(state, scenario, resident, lookups);
+  const reclamation = adult ? reclamationObservation(state, scenario, resident) : null;
   const sharing = scenario.growth?.housingSharing === 'consent'
     ? buildHousingObservation({ state, scenario, actorId: resident.id, day, maxHosts: 8, maxRequests: 8, lookups }) : null;
 
@@ -166,6 +168,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     '',
     ...(housing === null ? [] : ['HOUSING', JSON.stringify(housing), '']),
     ...(development === null ? [] : ['DEVELOPMENT', JSON.stringify(development), '']),
+    ...(reclamation === null ? [] : ['LAND RECLAMATION', JSON.stringify(reclamation), '']),
     ...(sharing === null ? [] : ['HOUSING AGREEMENTS', JSON.stringify(sharing), '']),
     'MARKET PRICES (cents)',
     JSON.stringify(prices),
@@ -181,6 +184,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
     ...(adult ? [JOB_GUIDE] : []),
     ...(housing === null ? [] : [BUILD_GUIDE]),
     ...(development === null ? [] : [DEVELOPMENT_GUIDE]),
+    ...(reclamation === null ? [] : [RECLAMATION_GUIDE]),
     ...(sharing === null ? [] : [
       'A single independent camping adult may request_housing with targetId=an adult host ID.',
       'Every adult host must accept_housing (targetId=proposalId), or refuse_housing. Silence is not agreement.',
@@ -209,7 +213,7 @@ export function buildActorPrompt(input: ActorPromptInput): ActorPrompt {
   return {
     system,
     user: boundedUser,
-    promptVersion: development !== null ? `${PROMPT_VERSION}+growth-v1` : housing === null ? PROMPT_VERSION : `${PROMPT_VERSION}+housing`,
+    promptVersion: reclamation !== null ? `${PROMPT_VERSION}+reclaim-v1` : development !== null ? `${PROMPT_VERSION}+growth-v1` : housing === null ? PROMPT_VERSION : `${PROMPT_VERSION}+housing`,
     bytes: Buffer.byteLength(system, 'utf8') + Buffer.byteLength(boundedUser, 'utf8'),
   };
 }

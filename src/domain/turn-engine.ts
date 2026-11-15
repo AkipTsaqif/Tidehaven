@@ -14,7 +14,7 @@ import { populationPressurePhase } from './society/population.js';
 import { constructionPhase, type ConstructionReport } from './society/construction.js';
 import { housingSharingPhase } from './society/housing-sharing.js';
 import { developmentPhase } from './society/development.js';
-import { developmentRules } from './development-rules.js';
+import { developmentRulesFor } from './development-rules.js';
 import type { DevelopmentReport } from './development-types.js';
 import { schedulePhase } from './society/demographics.js';
 import { demographyPhase } from './society/demographics.js';
@@ -92,8 +92,7 @@ export function runDay(input: DayInput): DayResult {
 
   // Home construction (scenarios with `construction` only): build_home labour, timber, completion.
   const construction = constructionPhase(ctx, plans);
-  const development = developmentPhase(ctx, plans, state.development,
-    scenario.growth ? developmentRules(scenario.growth) : undefined);
+  const development = developmentPhase(ctx, plans, state.development, developmentRulesFor(scenario.growth));
 
   // Residents' own job applications and resignations, before automatic hiring fills what is left.
   const jobs = jobMarketPhase(ctx, plans);

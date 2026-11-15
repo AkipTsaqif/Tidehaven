@@ -1,4 +1,5 @@
 import type { Good, OwnerType } from './state.js';
+import type { ReclamationOverrides } from './reclamation-rules.js';
 
 /** Material quantities are scenario-owned; omitted goods have a zero requirement. */
 export type DevelopmentMaterials = Partial<Record<Good, number>>;
@@ -35,11 +36,13 @@ export interface DevelopmentRules {
   maxTotalProjects: number;
   maxBusinesses: number;
   maxBuildings: number;
+  /** Land reclamation overrides; absent means engine defaults (feature on). */
+  reclamation?: ReclamationOverrides;
   /** Defaults to councillor and magistrate when omitted. */
   authorizedOffices?: readonly ('councillor' | 'magistrate')[];
 }
 
-export type DevelopmentProjectKind = 'workplace' | 'expansion';
+export type DevelopmentProjectKind = 'workplace' | 'expansion' | 'reclamation';
 export type DevelopmentProjectStatus = 'active' | 'completed' | 'cancelled' | 'abandoned';
 
 export interface DevelopmentMaterialLot {
@@ -79,6 +82,10 @@ export interface DevelopmentProject {
   completedDay: number | null;
   cancelledDay: number | null;
   cancellationReason: string | null;
+  /** Reclamation only: the square of sea that becomes land, chosen by the engine at start. */
+  reclaimTx?: number;
+  reclaimTy?: number;
+  reclaimSize?: number;
 }
 
 export interface DevelopmentState {

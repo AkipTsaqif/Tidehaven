@@ -6,6 +6,7 @@ import { bumpBusinessRevenue, marketPrice } from '../economy/market.js';
 import { personalLabour } from '../economy/employment.js';
 import { logRejected } from './relationships.js';
 import { liveBuildingCount, openBusinessCount } from '../growth-limits.js';
+import { completeReclamation, startReclamation, validateReclamation, type ReclamationHooks } from './reclamation.js';
 import {
   GOODS,
   availableOf,
@@ -83,8 +84,10 @@ export function developmentPhase(
 
   for (const actorPlan of ordered) {
     const action = actorPlan.plan.primary;
-    if (!action || (action.kind !== 'build_workplace' && action.kind !== 'expand_building')) continue;
-    const request: StartDevelopmentRequest = action.kind === 'build_workplace'
+    if (!action || (action.kind !== 'build_workplace' && action.kind !== 'expand_building' && action.kind !== 'reclaim_land')) continue;
+    const request: StartDevelopmentRequest = action.kind === 'reclaim_land'
+      ? { actorId: actorPlan.actorId, kind: 'reclamation' }
+      : action.kind === 'build_workplace'
       ? { actorId: actorPlan.actorId, kind: 'workplace', businessKind: action.businessKind ?? undefined }
       : {
           actorId: actorPlan.actorId,
@@ -147,6 +150,7 @@ export function startDevelopment(
   if (activeProjects(development).length >= rules.maxActiveProjects) return { ok: false, reason: 'active_project_cap_reached' };
 
   if (request.kind === 'workplace') return startWorkplace(ctx, development, rules, request);
+  if (request.kind === 'reclamation') return startReclamation(ctx, development, rules, request.actorId, reclamationHooks);
   return startExpansion(ctx, development, rules, request);
 }
 
@@ -433,6 +437,7 @@ function completeDevelopment(
   const project = development.projects.get(projectId);
   if (!project || project.status !== 'active') return { ok: false, reason: 'construction_project_unavailable', projectId };
   if (!materialsComplete(project) || project.appliedLabour < project.requiredLabour) return { ok: false, reason: 'construction_incomplete', projectId };
+  if (project.kind === 'reclamation') return completeReclamation(ctx, project, reclamationHooks);
   const building = ctx.state.buildings.get(project.targetBuildingId);
   if (!building) return { ok: false, reason: 'target_building_missing', projectId };
 
@@ -590,6 +595,7 @@ function validateProject(ctx: TurnContext, project: DevelopmentProject, rules: D
   } else if (project.ownerId !== project.sponsorId || !isLiving(ctx, project.ownerId)) {
     return 'owner_unavailable';
   }
+  if (project.kind === 'reclamation') return validateReclamation(ctx, project);
   const building = ctx.state.buildings.get(project.targetBuildingId);
   if (!building || building.destroyedDay !== null) return 'target_invalidated';
   if (project.kind === 'workplace') {
@@ -868,7 +874,7 @@ function escrowOccupied(ctx: TurnContext, escrowId: number): boolean {
 }
 
 function isDevelopmentAction(action: PrimaryAction | null): boolean {
-  return action !== null && (action.kind === 'build_workplace' || action.kind === 'expand_building' || action.kind === 'work_construction');
+  return action !== null && (action.kind === 'build_workplace' || action.kind === 'expand_building' || action.kind === 'reclaim_land' || action.kind === 'work_construction');
 }
 
 function isLiving(ctx: TurnContext, residentId: number): boolean {
@@ -938,3 +944,22 @@ function safeProduct(a: number, b: number): number | null {
   const value = a * b;
   return Number.isSafeInteger(value) ? value : null;
 }
+
+/** Reclamation reuses this module's funding, escrow and project helpers. Defined after them (hoisted). */
+const reclamationHooks: ReclamationHooks = {
+  authorized: authorizedOfficeHolder,
+  allocateProjectId,
+  escrowId: developmentEscrowId,
+  escrowOccupied,
+  normaliseMaterials,
+  fund(ctx, materials, escrowedCents, escrowId) {
+    // The fee goes to escrow (not 'construction cost', which a town payer would send to itself).
+    const funding = preflightFunding(ctx, 'treasury', 0, materials, 0, escrowedCents);
+    if (!funding.ok) return { ok: false, reason: funding.reason };
+    applyFunding(ctx, funding.sources, 'treasury', 0, escrowId, 0, escrowedCents);
+    return { ok: true, lots: funding.lots };
+  },
+  makeProject: (params) => makeProject(params),
+  daysToLabour,
+  finishMaterials,
+};
