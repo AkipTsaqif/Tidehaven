@@ -1,7 +1,37 @@
 # Tidehaven sprite-production kit
 
-Original crisp 2:1 isometric art, **32×16 base tiles**. This is a standalone asset pipeline, not yet a
-Map tab or the town's placement algorithm. It never writes simulation state or modifies saved towns.
+Original crisp 2:1 isometric art, **32×16 base tiles**. The production atlas is used by the Map tab and
+Overview mini-map. This authoring pipeline never writes simulation state or modifies saved towns.
+
+## New expansion handoff
+
+**Give the cheaper artist `art/NEW_SPRITES_HANDOFF.md`.** It contains the complete new asset inventory,
+geometry contracts, individual family briefs, commands, review steps and copy/paste task prompts.
+The executable recipes live in `art/expansion/`; all339identities ×4biomes build and every entry is still
+`draft`. Reviewed art exists for bridges, boats, fishing, water details and tower tiers 4–8 (996 PNGs).
+The 90 damage/repair identities per biome are still starter scaffolds. Do not enable new gameplay from artwork.
+
+**No Aseprite needed to use the reviewed art.** The PNGs are committed in `art/expansion/assets/`
+(`<biome>/<key>_<biome>.png`) with a SHA-256 manifest:
+
+```bash
+node scripts/art-expansion-package.mjs --check    # any machine: sizes, hashes, exact file set
+node scripts/art-expansion-package.mjs --export   # authoring machine after rebuilding the art
+```
+
+The packaged art is not in the production atlas: `art/expansion/catalog.json` keeps `draft` status and
+`scripts/art-atlas.py` rejects draft extras. Approval and multi-page atlas packing are separate steps.
+Per-family review decisions are in `art/expansion/*_REVIEW.md`.
+
+```bash
+node scripts/art-expansion.mjs --list --family towers
+node scripts/art-expansion.mjs --biome all
+python scripts/art-expansion-review.py snapshot baseline
+python scripts/art-expansion-review.py sheets --family towers
+```
+
+The legacy164assets below remain compatible and unchanged. Atlas v2 packs frames with individual
+sizes/pivots/footprints and transparent gutters; the dashboard also accepts the older v1 format.
 
 ## Files
 
@@ -51,8 +81,8 @@ not a directory glob: partial builds overwrite the manifest with only that reque
 files may still be present. For a delivery atlas always run the complete build.
 
 The manifest includes kind, tier, biome, pixel size, base tile size, fixed footprint, pivot and source
-filenames. No binary sprite-sheet atlas is generated yet; individual PNGs and their metadata can be
-packed later by the map renderer without changing recipes.
+filenames. `scripts/art-atlas.py` packs the production sprite-sheet atlases under `client/public/map/`.
+Expansion drafts stay separate until approved; the packer rejects draft entries in production extras.
 
 ## Integration with current Eden
 

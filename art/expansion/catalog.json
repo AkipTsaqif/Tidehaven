@@ -1,0 +1,8901 @@
+{
+  "version": 2,
+  "tileWidth": 32,
+  "tileHeight": 16,
+  "biomes": [
+    "tropical",
+    "temperate",
+    "arid",
+    "northern"
+  ],
+  "entries": [
+    {
+      "key": "bridge_timber_footbridge_near_bank_i_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_i_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_i_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_i_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_i_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_i_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_i_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_i_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_i_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_i_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_i_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_i_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_j_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_j_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_j_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_near_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_j_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_j_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_j_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_span_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_j_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_j_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_j_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_far_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_j_intact",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_j_construction",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_j_damaged",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_footbridge_pier_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_footbridge",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 5
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_i_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_i_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_i_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_i_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_i_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_i_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 6
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_i_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_i_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_i_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_pier_i_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_i_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_i_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_i_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_j_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_j_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_j_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_near_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_j_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_j_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_j_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_span_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 6
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_j_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_j_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_j_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_far_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 6
+        }
+      ]
+    },
+    {
+      "key": "bridge_timber_wagon_pier_j_intact",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_j_construction",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_j_damaged",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_timber_wagon_pier_j_rebuilding",
+      "family": "bridges",
+      "kind": "timber_wagon",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 6,
+      "access": [],
+      "supportTopZ": 4
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_i_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_i_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_i_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_i_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_i_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_i_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_i_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_i_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_i_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_pier_i_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_i_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_i_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_j_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_j_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_j_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_near_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_j_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_j_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_j_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_span_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_j_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_j_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_j_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_far_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_arch_pier_j_intact",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_j_construction",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_j_damaged",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_arch_pier_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_arch",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_i_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_i_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_i_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_i_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_i_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_i_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 10
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_i_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_i_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_i_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 0,
+          "j": 8,
+          "z": 0
+        },
+        {
+          "i": 32,
+          "j": 8,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_i_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_i_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_i_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_i_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 36,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "i",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_j_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_j_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_j_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_near_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "near_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 0
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_j_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_j_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_j_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_span_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "span",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 10
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_j_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_j_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_j_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_far_bank_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "far_bank",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [
+        {
+          "i": 8,
+          "j": 0,
+          "z": 0
+        },
+        {
+          "i": 8,
+          "j": 32,
+          "z": 10
+        }
+      ]
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_j_intact",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "intact",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_j_construction",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "construction",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_j_damaged",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "damaged",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "bridge_stone_viaduct_pier_j_rebuilding",
+      "family": "bridges",
+      "kind": "stone_viaduct",
+      "tier": 1,
+      "footprint": {
+        "i": 1,
+        "j": 2
+      },
+      "width": 56,
+      "height": 80,
+      "pivot": {
+        "x": 20,
+        "y": 76
+      },
+      "assetClass": "bridge",
+      "status": "draft",
+      "orientation": "j",
+      "part": "pier",
+      "visualState": "rebuilding",
+      "deckZ": 10,
+      "access": [],
+      "supportTopZ": 9
+    },
+    {
+      "key": "rowboat_ne_empty",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "rowboat_ne_loaded",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "rowboat_ne_damaged",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "rowboat_se_empty",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "rowboat_se_loaded",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "rowboat_se_damaged",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "rowboat_sw_empty",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "rowboat_sw_loaded",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "rowboat_sw_damaged",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "rowboat_nw_empty",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "rowboat_nw_loaded",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "rowboat_nw_damaged",
+      "family": "boats",
+      "kind": "rowboat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "work_skiff_ne_empty",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "work_skiff_ne_loaded",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "work_skiff_ne_damaged",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "work_skiff_se_empty",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "work_skiff_se_loaded",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "work_skiff_se_damaged",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "work_skiff_sw_empty",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "work_skiff_sw_loaded",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "work_skiff_sw_damaged",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "work_skiff_nw_empty",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "work_skiff_nw_loaded",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "work_skiff_nw_damaged",
+      "family": "boats",
+      "kind": "work_skiff",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_ne_empty",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_ne_loaded",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_ne_damaged",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_se_empty",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_se_loaded",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_se_damaged",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_sw_empty",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_sw_loaded",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_sw_damaged",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_nw_empty",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_nw_loaded",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "cargo_barge_nw_damaged",
+      "family": "boats",
+      "kind": "cargo_barge",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 64,
+      "pivot": {
+        "x": 52,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_ne_empty",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_ne_loaded",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_ne_damaged",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_se_empty",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_se_loaded",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_se_damaged",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_sw_empty",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_sw_loaded",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_sw_damaged",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_nw_empty",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_nw_loaded",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "coastal_sailboat_nw_damaged",
+      "family": "boats",
+      "kind": "coastal_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_ne_empty",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_ne_loaded",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_ne_damaged",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_se_empty",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_se_loaded",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_se_damaged",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_sw_empty",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_sw_loaded",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_sw_damaged",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_nw_empty",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_nw_loaded",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_canoe_nw_damaged",
+      "family": "fishing",
+      "kind": "fishing_canoe",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "net_boat_ne_empty",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "net_boat_ne_loaded",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "net_boat_ne_damaged",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "net_boat_se_empty",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "net_boat_se_loaded",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "net_boat_se_damaged",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "net_boat_sw_empty",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "net_boat_sw_loaded",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "net_boat_sw_damaged",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "net_boat_nw_empty",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "net_boat_nw_loaded",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "net_boat_nw_damaged",
+      "family": "fishing",
+      "kind": "net_boat",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 1
+      },
+      "width": 56,
+      "height": 64,
+      "pivot": {
+        "x": 36,
+        "y": 60
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_ne_empty",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_ne_loaded",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_ne_damaged",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "ne",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_se_empty",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_se_loaded",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_se_damaged",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "se",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_sw_empty",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_sw_loaded",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_sw_damaged",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "sw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_nw_empty",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "empty",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_nw_loaded",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "loaded",
+      "access": []
+    },
+    {
+      "key": "fishing_sailboat_nw_damaged",
+      "family": "fishing",
+      "kind": "fishing_sailboat",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 2
+      },
+      "width": 88,
+      "height": 112,
+      "pivot": {
+        "x": 52,
+        "y": 108
+      },
+      "assetClass": "boat",
+      "status": "draft",
+      "orientation": "nw",
+      "visualState": "damaged",
+      "access": []
+    },
+    {
+      "key": "fish_school_1",
+      "family": "water",
+      "kind": "fish_school",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 1,
+      "access": []
+    },
+    {
+      "key": "fish_school_2",
+      "family": "water",
+      "kind": "fish_school",
+      "tier": 2,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 2,
+      "access": []
+    },
+    {
+      "key": "fish_school_3",
+      "family": "water",
+      "kind": "fish_school",
+      "tier": 3,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 3,
+      "access": []
+    },
+    {
+      "key": "fish_shadow_1",
+      "family": "water",
+      "kind": "fish_shadow",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 1,
+      "access": []
+    },
+    {
+      "key": "fish_shadow_2",
+      "family": "water",
+      "kind": "fish_shadow",
+      "tier": 2,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 2,
+      "access": []
+    },
+    {
+      "key": "fish_shadow_3",
+      "family": "water",
+      "kind": "fish_shadow",
+      "tier": 3,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 3,
+      "access": []
+    },
+    {
+      "key": "ripples_1",
+      "family": "water",
+      "kind": "ripples",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 1,
+      "access": []
+    },
+    {
+      "key": "ripples_2",
+      "family": "water",
+      "kind": "ripples",
+      "tier": 2,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 2,
+      "access": []
+    },
+    {
+      "key": "ripples_3",
+      "family": "water",
+      "kind": "ripples",
+      "tier": 3,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 3,
+      "access": []
+    },
+    {
+      "key": "net_floats_1",
+      "family": "water",
+      "kind": "net_floats",
+      "tier": 1,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 1,
+      "access": []
+    },
+    {
+      "key": "net_floats_2",
+      "family": "water",
+      "kind": "net_floats",
+      "tier": 2,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 2,
+      "access": []
+    },
+    {
+      "key": "net_floats_3",
+      "family": "water",
+      "kind": "net_floats",
+      "tier": 3,
+      "footprint": {
+        "i": 2,
+        "j": 2
+      },
+      "width": 72,
+      "height": 48,
+      "pivot": {
+        "x": 36,
+        "y": 44
+      },
+      "assetClass": "water_detail",
+      "status": "draft",
+      "visualState": "intact",
+      "variant": 3,
+      "access": []
+    },
+    {
+      "key": "home_4",
+      "family": "towers",
+      "kind": "home",
+      "tier": 4,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 160,
+      "pivot": {
+        "x": 48,
+        "y": 160
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 88
+        }
+      }
+    },
+    {
+      "key": "home_5",
+      "family": "towers",
+      "kind": "home",
+      "tier": 5,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 224,
+      "pivot": {
+        "x": 48,
+        "y": 224
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 152
+        }
+      }
+    },
+    {
+      "key": "home_6",
+      "family": "towers",
+      "kind": "home",
+      "tier": 6,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 128,
+      "height": 352,
+      "pivot": {
+        "x": 64,
+        "y": 352
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 32,
+          "j": 64,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 32,
+          "j": 60,
+          "z": 12
+        },
+        "roof": {
+          "i": 32,
+          "j": 32,
+          "z": 264
+        }
+      }
+    },
+    {
+      "key": "home_7",
+      "family": "towers",
+      "kind": "home",
+      "tier": 7,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 192,
+      "height": 528,
+      "pivot": {
+        "x": 96,
+        "y": 528
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 48,
+          "j": 96,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 48,
+          "j": 92,
+          "z": 12
+        },
+        "roof": {
+          "i": 48,
+          "j": 48,
+          "z": 408
+        }
+      }
+    },
+    {
+      "key": "home_8",
+      "family": "towers",
+      "kind": "home",
+      "tier": 8,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 256,
+      "height": 768,
+      "pivot": {
+        "x": 128,
+        "y": 768
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 64,
+          "j": 128,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 64,
+          "j": 124,
+          "z": 12
+        },
+        "roof": {
+          "i": 64,
+          "j": 64,
+          "z": 616
+        }
+      }
+    },
+    {
+      "key": "shop_4",
+      "family": "towers",
+      "kind": "shop",
+      "tier": 4,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 160,
+      "pivot": {
+        "x": 48,
+        "y": 160
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 88
+        }
+      }
+    },
+    {
+      "key": "shop_5",
+      "family": "towers",
+      "kind": "shop",
+      "tier": 5,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 224,
+      "pivot": {
+        "x": 48,
+        "y": 224
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 152
+        }
+      }
+    },
+    {
+      "key": "shop_6",
+      "family": "towers",
+      "kind": "shop",
+      "tier": 6,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 128,
+      "height": 352,
+      "pivot": {
+        "x": 64,
+        "y": 352
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 32,
+          "j": 64,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 32,
+          "j": 60,
+          "z": 12
+        },
+        "roof": {
+          "i": 32,
+          "j": 32,
+          "z": 264
+        }
+      }
+    },
+    {
+      "key": "shop_7",
+      "family": "towers",
+      "kind": "shop",
+      "tier": 7,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 192,
+      "height": 528,
+      "pivot": {
+        "x": 96,
+        "y": 528
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 48,
+          "j": 96,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 48,
+          "j": 92,
+          "z": 12
+        },
+        "roof": {
+          "i": 48,
+          "j": 48,
+          "z": 408
+        }
+      }
+    },
+    {
+      "key": "shop_8",
+      "family": "towers",
+      "kind": "shop",
+      "tier": 8,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 256,
+      "height": 768,
+      "pivot": {
+        "x": 128,
+        "y": 768
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 64,
+          "j": 128,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 64,
+          "j": 124,
+          "z": 12
+        },
+        "roof": {
+          "i": 64,
+          "j": 64,
+          "z": 616
+        }
+      }
+    },
+    {
+      "key": "clinic_4",
+      "family": "towers",
+      "kind": "clinic",
+      "tier": 4,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 160,
+      "pivot": {
+        "x": 48,
+        "y": 160
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 88
+        }
+      }
+    },
+    {
+      "key": "clinic_5",
+      "family": "towers",
+      "kind": "clinic",
+      "tier": 5,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 224,
+      "pivot": {
+        "x": 48,
+        "y": 224
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 152
+        }
+      }
+    },
+    {
+      "key": "clinic_6",
+      "family": "towers",
+      "kind": "clinic",
+      "tier": 6,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 128,
+      "height": 352,
+      "pivot": {
+        "x": 64,
+        "y": 352
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 32,
+          "j": 64,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 32,
+          "j": 60,
+          "z": 12
+        },
+        "roof": {
+          "i": 32,
+          "j": 32,
+          "z": 264
+        }
+      }
+    },
+    {
+      "key": "clinic_7",
+      "family": "towers",
+      "kind": "clinic",
+      "tier": 7,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 192,
+      "height": 528,
+      "pivot": {
+        "x": 96,
+        "y": 528
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 48,
+          "j": 96,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 48,
+          "j": 92,
+          "z": 12
+        },
+        "roof": {
+          "i": 48,
+          "j": 48,
+          "z": 408
+        }
+      }
+    },
+    {
+      "key": "clinic_8",
+      "family": "towers",
+      "kind": "clinic",
+      "tier": 8,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 256,
+      "height": 768,
+      "pivot": {
+        "x": 128,
+        "y": 768
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 64,
+          "j": 128,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 64,
+          "j": 124,
+          "z": 12
+        },
+        "roof": {
+          "i": 64,
+          "j": 64,
+          "z": 616
+        }
+      }
+    },
+    {
+      "key": "court_4",
+      "family": "towers",
+      "kind": "court",
+      "tier": 4,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 160,
+      "pivot": {
+        "x": 48,
+        "y": 160
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 88
+        }
+      }
+    },
+    {
+      "key": "court_5",
+      "family": "towers",
+      "kind": "court",
+      "tier": 5,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 224,
+      "pivot": {
+        "x": 48,
+        "y": 224
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 152
+        }
+      }
+    },
+    {
+      "key": "court_6",
+      "family": "towers",
+      "kind": "court",
+      "tier": 6,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 128,
+      "height": 352,
+      "pivot": {
+        "x": 64,
+        "y": 352
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 32,
+          "j": 64,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 32,
+          "j": 60,
+          "z": 12
+        },
+        "roof": {
+          "i": 32,
+          "j": 32,
+          "z": 264
+        }
+      }
+    },
+    {
+      "key": "court_7",
+      "family": "towers",
+      "kind": "court",
+      "tier": 7,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 192,
+      "height": 528,
+      "pivot": {
+        "x": 96,
+        "y": 528
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 48,
+          "j": 96,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 48,
+          "j": 92,
+          "z": 12
+        },
+        "roof": {
+          "i": 48,
+          "j": 48,
+          "z": 408
+        }
+      }
+    },
+    {
+      "key": "court_8",
+      "family": "towers",
+      "kind": "court",
+      "tier": 8,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 256,
+      "height": 768,
+      "pivot": {
+        "x": 128,
+        "y": 768
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 64,
+          "j": 128,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 64,
+          "j": 124,
+          "z": 12
+        },
+        "roof": {
+          "i": 64,
+          "j": 64,
+          "z": 616
+        }
+      }
+    },
+    {
+      "key": "council_4",
+      "family": "towers",
+      "kind": "council",
+      "tier": 4,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 160,
+      "pivot": {
+        "x": 48,
+        "y": 160
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 88
+        }
+      }
+    },
+    {
+      "key": "council_5",
+      "family": "towers",
+      "kind": "council",
+      "tier": 5,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 96,
+      "height": 224,
+      "pivot": {
+        "x": 48,
+        "y": 224
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 24,
+          "j": 48,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 24,
+          "j": 44,
+          "z": 12
+        },
+        "roof": {
+          "i": 24,
+          "j": 24,
+          "z": 152
+        }
+      }
+    },
+    {
+      "key": "council_6",
+      "family": "towers",
+      "kind": "council",
+      "tier": 6,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 128,
+      "height": 352,
+      "pivot": {
+        "x": 64,
+        "y": 352
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 32,
+          "j": 64,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 32,
+          "j": 60,
+          "z": 12
+        },
+        "roof": {
+          "i": 32,
+          "j": 32,
+          "z": 264
+        }
+      }
+    },
+    {
+      "key": "council_7",
+      "family": "towers",
+      "kind": "council",
+      "tier": 7,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 192,
+      "height": 528,
+      "pivot": {
+        "x": 96,
+        "y": 528
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 48,
+          "j": 96,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 48,
+          "j": 92,
+          "z": 12
+        },
+        "roof": {
+          "i": 48,
+          "j": 48,
+          "z": 408
+        }
+      }
+    },
+    {
+      "key": "council_8",
+      "family": "towers",
+      "kind": "council",
+      "tier": 8,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 256,
+      "height": 768,
+      "pivot": {
+        "x": 128,
+        "y": 768
+      },
+      "assetClass": "building",
+      "status": "draft",
+      "visualState": "intact",
+      "access": [
+        {
+          "i": 64,
+          "j": 128,
+          "z": 0
+        }
+      ],
+      "attachments": {
+        "front": {
+          "i": 64,
+          "j": 124,
+          "z": 12
+        },
+        "roof": {
+          "i": 64,
+          "j": 64,
+          "z": 616
+        }
+      }
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_104_light",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_104_moderate",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_104_severe",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_104_light",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_104_moderate",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_104_severe",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_104_light",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_104_moderate",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_104_severe",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_104_light",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_104_moderate",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_104_severe",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_104_light",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_104_moderate",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_104_severe",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_104_light",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_104_moderate",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_104_severe",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 104,
+      "pivot": {
+        "x": 52,
+        "y": 100
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_224_light",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_224_moderate",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_3x3_224_severe",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_224_light",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_224_moderate",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_3x3_224_severe",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_224_light",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_224_moderate",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_3x3_224_severe",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_224_light",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_224_moderate",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_3x3_224_severe",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_224_light",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_224_moderate",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_3x3_224_severe",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_224_light",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_224_moderate",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_3x3_224_severe",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 3,
+        "j": 3
+      },
+      "width": 104,
+      "height": 224,
+      "pivot": {
+        "x": 52,
+        "y": 220
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_4x4_352_light",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_4x4_352_moderate",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_4x4_352_severe",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_4x4_352_light",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_4x4_352_moderate",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_4x4_352_severe",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_4x4_352_light",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_4x4_352_moderate",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_4x4_352_severe",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_4x4_352_light",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_4x4_352_moderate",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_4x4_352_severe",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_4x4_352_light",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_4x4_352_moderate",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_4x4_352_severe",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_4x4_352_light",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_4x4_352_moderate",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_4x4_352_severe",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 4,
+        "j": 4
+      },
+      "width": 136,
+      "height": 352,
+      "pivot": {
+        "x": 68,
+        "y": 348
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_6x6_528_light",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_6x6_528_moderate",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_6x6_528_severe",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_6x6_528_light",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_6x6_528_moderate",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_6x6_528_severe",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_6x6_528_light",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_6x6_528_moderate",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_6x6_528_severe",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_6x6_528_light",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_6x6_528_moderate",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_6x6_528_severe",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_6x6_528_light",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_6x6_528_moderate",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_6x6_528_severe",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_6x6_528_light",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_6x6_528_moderate",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_6x6_528_severe",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 6,
+        "j": 6
+      },
+      "width": 200,
+      "height": 528,
+      "pivot": {
+        "x": 100,
+        "y": 524
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_8x8_768_light",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_8x8_768_moderate",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_fire_scorch_8x8_768_severe",
+      "family": "damage",
+      "kind": "fire_scorch",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_8x8_768_light",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_8x8_768_moderate",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_storm_debris_8x8_768_severe",
+      "family": "damage",
+      "kind": "storm_debris",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_8x8_768_light",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_8x8_768_moderate",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_flood_stain_8x8_768_severe",
+      "family": "damage",
+      "kind": "flood_stain",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_8x8_768_light",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_8x8_768_moderate",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_drought_ground_8x8_768_severe",
+      "family": "damage",
+      "kind": "drought_ground",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_8x8_768_light",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_8x8_768_moderate",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_outbreak_sign_8x8_768_severe",
+      "family": "damage",
+      "kind": "outbreak_sign",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": false,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_8x8_768_light",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "light",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_8x8_768_moderate",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "moderate",
+      "requiresMask": true,
+      "access": []
+    },
+    {
+      "key": "overlay_repair_scaffold_8x8_768_severe",
+      "family": "damage",
+      "kind": "repair_scaffold",
+      "tier": 1,
+      "footprint": {
+        "i": 8,
+        "j": 8
+      },
+      "width": 264,
+      "height": 768,
+      "pivot": {
+        "x": 132,
+        "y": 764
+      },
+      "assetClass": "overlay",
+      "status": "draft",
+      "visualState": "severe",
+      "requiresMask": true,
+      "access": []
+    }
+  ]
+}

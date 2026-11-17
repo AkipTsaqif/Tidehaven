@@ -1,0 +1,3000 @@
+{
+ "version": 1,
+ "families": [
+  "bridges",
+  "boats",
+  "fishing",
+  "water",
+  "towers"
+ ],
+ "files": {
+  "arid/bridge_stone_arch_far_bank_i_construction_arid.png": {
+   "sha256": "6ddf8e89fb4e0e17e7457c5fc1d0019e934bf1cbcaed30acd7202086b27a2118"
+  },
+  "arid/bridge_stone_arch_far_bank_i_damaged_arid.png": {
+   "sha256": "537131829a4a9c8ea108923b2a099a99ef09d262897a1112ee41deb98d97cd5d"
+  },
+  "arid/bridge_stone_arch_far_bank_i_intact_arid.png": {
+   "sha256": "4ceb9c10f83112e4cdc3a082ee2611a76c036a95e9aa9adfcf53dd60a3189604"
+  },
+  "arid/bridge_stone_arch_far_bank_i_rebuilding_arid.png": {
+   "sha256": "003d2bea25f9fbf79ed83c798da3ee4037b5a8d2e072ab978649cd91f8531413"
+  },
+  "arid/bridge_stone_arch_far_bank_j_construction_arid.png": {
+   "sha256": "ae26a06445b6fa1bf04e8c4bd21d90149c99ab4c39ef2a53d01107ac1e0329d2"
+  },
+  "arid/bridge_stone_arch_far_bank_j_damaged_arid.png": {
+   "sha256": "765f52b30a7e559d44656cd244343d76b6fe69ff796e7a4afd0d389afcba5695"
+  },
+  "arid/bridge_stone_arch_far_bank_j_intact_arid.png": {
+   "sha256": "791188a8640d24b3f31dc96c528651deffcd7e36e4f8238b4e1d0fe7b2a412c5"
+  },
+  "arid/bridge_stone_arch_far_bank_j_rebuilding_arid.png": {
+   "sha256": "315597d24a17d4bdd42b120c9d063c19f5bd333a60751d6c2b2f21372ab73745"
+  },
+  "arid/bridge_stone_arch_near_bank_i_construction_arid.png": {
+   "sha256": "5233f156205fa01964097e391873dc227a9bde2e53f9273243bbd1f19b02cd45"
+  },
+  "arid/bridge_stone_arch_near_bank_i_damaged_arid.png": {
+   "sha256": "663c8fe19a4b818a69d77e55b0e0767bb638cc24c5861e72d45234a90271533a"
+  },
+  "arid/bridge_stone_arch_near_bank_i_intact_arid.png": {
+   "sha256": "79e6762d875f42f8cec768e53d35625b781980a0d20ffc2fd904e46a602bbb0c"
+  },
+  "arid/bridge_stone_arch_near_bank_i_rebuilding_arid.png": {
+   "sha256": "ae4ce2223558f56ce7347426053516174167a3c9203f5ecdea991e2af74513b2"
+  },
+  "arid/bridge_stone_arch_near_bank_j_construction_arid.png": {
+   "sha256": "876c2e224129696b4c647610a8b0638c656d5a44e749cd548f8368c6c850baa3"
+  },
+  "arid/bridge_stone_arch_near_bank_j_damaged_arid.png": {
+   "sha256": "59c849e55cdbc7949720160d9930252e16e7d29015f431eb80a5a4fb4fab6e51"
+  },
+  "arid/bridge_stone_arch_near_bank_j_intact_arid.png": {
+   "sha256": "7007333674744053231d2cfbf07830c0a69e23d59881a9bf46771fec2cf1f0e0"
+  },
+  "arid/bridge_stone_arch_near_bank_j_rebuilding_arid.png": {
+   "sha256": "fa66a0cd078b667d7531c7bfa6320f7afff1446b32a0c668aa76b36ba823b939"
+  },
+  "arid/bridge_stone_arch_pier_i_construction_arid.png": {
+   "sha256": "96edb8190e541d89cb01e1d5519f285abfcd389526fe923a9dd1fcf0ba0257fe"
+  },
+  "arid/bridge_stone_arch_pier_i_damaged_arid.png": {
+   "sha256": "f850520045db2c88c95f1afde5630fca05b18c12f9baa2eb54dc5e4a407a8ea9"
+  },
+  "arid/bridge_stone_arch_pier_i_intact_arid.png": {
+   "sha256": "491c9847822129ae1011ddea86c95cdcada9da245ec5c71e088a59d6330f74f5"
+  },
+  "arid/bridge_stone_arch_pier_i_rebuilding_arid.png": {
+   "sha256": "cb51dcde2fc7ed33701e3327cf803662e727fbf5d0ec6f568c52820433a9639b"
+  },
+  "arid/bridge_stone_arch_pier_j_construction_arid.png": {
+   "sha256": "bca59afe20ad4c98dc95cfefe4adc18264c498abf37f61fba6bc6addb29a8d28"
+  },
+  "arid/bridge_stone_arch_pier_j_damaged_arid.png": {
+   "sha256": "8b00e6e0f98f599a224b0b86395268e38ba58dc23ce7a13ca96d48f16545291e"
+  },
+  "arid/bridge_stone_arch_pier_j_intact_arid.png": {
+   "sha256": "7b40291f4868a14e9c272321e6f19bde34dbf5b589b8fdfd8303de80d50f58a1"
+  },
+  "arid/bridge_stone_arch_pier_j_rebuilding_arid.png": {
+   "sha256": "33405a04c550d5d95f3f6fd4caa812c30f42c11d70758c2c13cd72cf9b4e219f"
+  },
+  "arid/bridge_stone_arch_span_i_construction_arid.png": {
+   "sha256": "fd9ff07cc2831c327e786c817ac9b359386c3659e599734c8e9e694eb2bbbf39"
+  },
+  "arid/bridge_stone_arch_span_i_damaged_arid.png": {
+   "sha256": "6150f09b2cff2ac84f260bd24d2ae7b71bf1683c6e99672a36037ea2ae104b17"
+  },
+  "arid/bridge_stone_arch_span_i_intact_arid.png": {
+   "sha256": "ff36178ee0535a47fb9231c381939f9a24f446f465f8216e9d393730512b1213"
+  },
+  "arid/bridge_stone_arch_span_i_rebuilding_arid.png": {
+   "sha256": "de26128ae7cd8ab15894b8ee42080b624089f69bae3da8f708c9582216e34d8b"
+  },
+  "arid/bridge_stone_arch_span_j_construction_arid.png": {
+   "sha256": "adec8bbb71d4b1e6b810914d3ad525eba40b549ee25a59778b46f7b401f9ae26"
+  },
+  "arid/bridge_stone_arch_span_j_damaged_arid.png": {
+   "sha256": "3f84d0a72ddc4a34a7ea49455746a6ca54040bc7c3188b470d0632049083584d"
+  },
+  "arid/bridge_stone_arch_span_j_intact_arid.png": {
+   "sha256": "9abd35525877af1e145042da5c032c2febdf9d00f2694dc826f29d362ba3f3b5"
+  },
+  "arid/bridge_stone_arch_span_j_rebuilding_arid.png": {
+   "sha256": "873a26637ffc4efd81ad69ee1e879b013d4b5a5cbba774604eaed171d77d3047"
+  },
+  "arid/bridge_stone_viaduct_far_bank_i_construction_arid.png": {
+   "sha256": "a7d378c1e38474d9dc436c312714a9804c0875411171e458e61f2f5744db6403"
+  },
+  "arid/bridge_stone_viaduct_far_bank_i_damaged_arid.png": {
+   "sha256": "eab979618f89843c6fb2abc80b9321b30f0afea606aa6e1ceb2b909b587e1b37"
+  },
+  "arid/bridge_stone_viaduct_far_bank_i_intact_arid.png": {
+   "sha256": "39367f7d1a5c957e0faacf951ba0cbfa8e0974cbd7622acdb73da75f9e89e66a"
+  },
+  "arid/bridge_stone_viaduct_far_bank_i_rebuilding_arid.png": {
+   "sha256": "86c31ca14b4f4a68bca7780897b51eb21353052e5a3ff36c4bc0b1c732719782"
+  },
+  "arid/bridge_stone_viaduct_far_bank_j_construction_arid.png": {
+   "sha256": "80d7d3b83bdffc8687d17df36ce2cc619d5d699eda71e32904a5df205d7c1573"
+  },
+  "arid/bridge_stone_viaduct_far_bank_j_damaged_arid.png": {
+   "sha256": "a23c36c37ef6ed96129d166a0a572d560647d7f1ebfcab4530b0626ecf89fb68"
+  },
+  "arid/bridge_stone_viaduct_far_bank_j_intact_arid.png": {
+   "sha256": "d053849e7e3d31333ea0e59d3c11b3d72c55cab20c306fce851c4cc1e1976f6f"
+  },
+  "arid/bridge_stone_viaduct_far_bank_j_rebuilding_arid.png": {
+   "sha256": "caeb53f5369e921c40d3c5b934f24087b4b03eaf971999b37cc7415c024e31a0"
+  },
+  "arid/bridge_stone_viaduct_near_bank_i_construction_arid.png": {
+   "sha256": "787efd3c3d3b2d696f8a835d3ccf21eafb33004dc5a927f529cb571af7c90072"
+  },
+  "arid/bridge_stone_viaduct_near_bank_i_damaged_arid.png": {
+   "sha256": "ff7554e2f3a26230541f46021e3daede4e86952650a1aaead56c12fb3a037d68"
+  },
+  "arid/bridge_stone_viaduct_near_bank_i_intact_arid.png": {
+   "sha256": "4999139fa7a0ec35137c3ca3cff84b17a1faeaee270c3f99c6289ef8d0d34d40"
+  },
+  "arid/bridge_stone_viaduct_near_bank_i_rebuilding_arid.png": {
+   "sha256": "cd25ae400f03ba77c94b006fb64d578a08876a9880fc4ab4e75e0a4a39f70829"
+  },
+  "arid/bridge_stone_viaduct_near_bank_j_construction_arid.png": {
+   "sha256": "cf46efd3605ea89e91217befb75934f3a4d179f436db9e9e979d49a9894c428b"
+  },
+  "arid/bridge_stone_viaduct_near_bank_j_damaged_arid.png": {
+   "sha256": "44c9478134bbe3bc300863b482b1bc85c5896dda32d03bbc25e5c785a43c1cc0"
+  },
+  "arid/bridge_stone_viaduct_near_bank_j_intact_arid.png": {
+   "sha256": "fb7a3bca496341529766a10d1926be096c1bd924ef59598125d0eba061c5e53d"
+  },
+  "arid/bridge_stone_viaduct_near_bank_j_rebuilding_arid.png": {
+   "sha256": "a7149cf715def660fa61e1b97f1c76def7703967512a85d6cc733f4018d5ed70"
+  },
+  "arid/bridge_stone_viaduct_pier_i_construction_arid.png": {
+   "sha256": "8dd2fdfc3165bf0ce48d5024d04fbae3033791247b9f6e1347033af67b5c18d4"
+  },
+  "arid/bridge_stone_viaduct_pier_i_damaged_arid.png": {
+   "sha256": "10fe629e4a7d1ae1041f75cbb73d012dcbf910eaab7bd645eab376c9b8d95844"
+  },
+  "arid/bridge_stone_viaduct_pier_i_intact_arid.png": {
+   "sha256": "9bee0b6e2af2d28f877f4e13265f5bdc79d7af39fdce70b0f8d457ae7f52f87d"
+  },
+  "arid/bridge_stone_viaduct_pier_i_rebuilding_arid.png": {
+   "sha256": "6ac0738a9204b6aab88a105b9fae721b5e66022b0f31beb9f9264ab44f6ee865"
+  },
+  "arid/bridge_stone_viaduct_pier_j_construction_arid.png": {
+   "sha256": "68630ee6556f7628165e37f0bb4d99681a3c0ab4957da05445c08014e3bb312b"
+  },
+  "arid/bridge_stone_viaduct_pier_j_damaged_arid.png": {
+   "sha256": "89423a4a8eeaa9b48ae65c6bc83eae6bee57fb36f6c991be42206a649b09e438"
+  },
+  "arid/bridge_stone_viaduct_pier_j_intact_arid.png": {
+   "sha256": "703ee02aa43f60b381e41cb747f9dfb1e885282cf61d974ec764ebaab36076b1"
+  },
+  "arid/bridge_stone_viaduct_pier_j_rebuilding_arid.png": {
+   "sha256": "0522a1c2b250a9ab4f7691d291870f58ce678d07cf65e269288de955fabbb27d"
+  },
+  "arid/bridge_stone_viaduct_span_i_construction_arid.png": {
+   "sha256": "ba9362ab98abb6fab82a1d105471d7940455186fab9728c65c8687ae46f76e36"
+  },
+  "arid/bridge_stone_viaduct_span_i_damaged_arid.png": {
+   "sha256": "ea4aa1ee73a670e450c418e98570ae25d5698219c4fcc4cdae79803ac6f06ba2"
+  },
+  "arid/bridge_stone_viaduct_span_i_intact_arid.png": {
+   "sha256": "770d2eef8035f665a158fddb3e780846deb4c4203885dd90705d7d09644b79ba"
+  },
+  "arid/bridge_stone_viaduct_span_i_rebuilding_arid.png": {
+   "sha256": "f8b7bd49c71d35e77f12490f61333aa9bca81c1eea34f2d3d3b3d15825ffa224"
+  },
+  "arid/bridge_stone_viaduct_span_j_construction_arid.png": {
+   "sha256": "ac9956e9be3dc2ba12f97255aef5f179bc4f2d63023de2dc4b2b91eddb6e1342"
+  },
+  "arid/bridge_stone_viaduct_span_j_damaged_arid.png": {
+   "sha256": "c54e89339bf4717507f0ecc938f0c4635662e34c3ec489058b5d06e4221fb4a6"
+  },
+  "arid/bridge_stone_viaduct_span_j_intact_arid.png": {
+   "sha256": "ca5f71c07967bcb57f28d65196271a7dc878e7f9a1a23c4f63c71145dda01f04"
+  },
+  "arid/bridge_stone_viaduct_span_j_rebuilding_arid.png": {
+   "sha256": "f5ec79b8b35c567aa820f45725dc7d40c9c66afdce00dd278c5e155e405274f9"
+  },
+  "arid/bridge_timber_footbridge_far_bank_i_construction_arid.png": {
+   "sha256": "ac46ebec841c055fbfa089ba9417b55017a23202e71f9c312dfe9603cc78a4e2"
+  },
+  "arid/bridge_timber_footbridge_far_bank_i_damaged_arid.png": {
+   "sha256": "98a803f3dc5c8cf390839058d1acae94548adf17e9409b66872afd25b3314a90"
+  },
+  "arid/bridge_timber_footbridge_far_bank_i_intact_arid.png": {
+   "sha256": "f459ad64930bfa3189bbf22ee06ae36dfa88b5d1ceeaf0c3271375410eef6782"
+  },
+  "arid/bridge_timber_footbridge_far_bank_i_rebuilding_arid.png": {
+   "sha256": "cc1bd37cb3326457c22a35b8b0c00a74f2a19e883973c60919e9db54e616f70a"
+  },
+  "arid/bridge_timber_footbridge_far_bank_j_construction_arid.png": {
+   "sha256": "fc9b86ad8028daac198c252ca8aae0d2f227447a29b1970bfe1ce3dc532bc369"
+  },
+  "arid/bridge_timber_footbridge_far_bank_j_damaged_arid.png": {
+   "sha256": "673196852cd986caa509a57186633a92e1feabd98b265df36be59502e7577a61"
+  },
+  "arid/bridge_timber_footbridge_far_bank_j_intact_arid.png": {
+   "sha256": "4fcf78c56450b73196519b0ac30bcc5acd6f8fad9af8a01cc64b57119e20263b"
+  },
+  "arid/bridge_timber_footbridge_far_bank_j_rebuilding_arid.png": {
+   "sha256": "fe740224a491b593a9aba22d2df3eec668ea3d87275e94ea5f2dac881df274c6"
+  },
+  "arid/bridge_timber_footbridge_near_bank_i_construction_arid.png": {
+   "sha256": "64e430ace11d9af8b41552be1e49d45492784c95d95f3e57a3bac76146e0adcc"
+  },
+  "arid/bridge_timber_footbridge_near_bank_i_damaged_arid.png": {
+   "sha256": "6092e5bb39cd5afeeee3473618c3361cfd2ccf70c7d8e3f664a3aeba66690a29"
+  },
+  "arid/bridge_timber_footbridge_near_bank_i_intact_arid.png": {
+   "sha256": "24ada4b597ff4fb4ebad3e8f662003e015b640607881ea280e69dd0ad8bafbd0"
+  },
+  "arid/bridge_timber_footbridge_near_bank_i_rebuilding_arid.png": {
+   "sha256": "87cdf2f31be93cb3550ef93d9ffffe9ca91a9069fa6f42959f9c5a623977c530"
+  },
+  "arid/bridge_timber_footbridge_near_bank_j_construction_arid.png": {
+   "sha256": "7b594a42d08c9e6abb330504c1a94c85341c74eb38005320062fec0aba4ccf44"
+  },
+  "arid/bridge_timber_footbridge_near_bank_j_damaged_arid.png": {
+   "sha256": "d3f3162a9d43c813836a4dae1d0deb71f60efc9daef916997c3915486ab4e6c6"
+  },
+  "arid/bridge_timber_footbridge_near_bank_j_intact_arid.png": {
+   "sha256": "2aca0ba3e65287a26a63022e3084be843699ed629620872f476b1f1b0c26b7f9"
+  },
+  "arid/bridge_timber_footbridge_near_bank_j_rebuilding_arid.png": {
+   "sha256": "4324126f8e2abd3e2275cb3ec342fd5482ddd630ce0ba4cbb17755f330b5ad53"
+  },
+  "arid/bridge_timber_footbridge_pier_i_construction_arid.png": {
+   "sha256": "6175dbf40e844bc0bf1a4f7c4f658bc7a5411291cbd9737879cb6faec48bc512"
+  },
+  "arid/bridge_timber_footbridge_pier_i_damaged_arid.png": {
+   "sha256": "9bb3e79657e594720485d34f6790c15080704e6e8750f81a2ad20bb404d2e9c1"
+  },
+  "arid/bridge_timber_footbridge_pier_i_intact_arid.png": {
+   "sha256": "5f7dd70e4ee10bee92ea79bfdf272b96082ca95d716ffda0ed17bb534018191a"
+  },
+  "arid/bridge_timber_footbridge_pier_i_rebuilding_arid.png": {
+   "sha256": "0c5c06185d291a591a0498172b31bc57102a82d1861d3d42b5c273fa808280b7"
+  },
+  "arid/bridge_timber_footbridge_pier_j_construction_arid.png": {
+   "sha256": "615263320b17895de29e816f19644d39dc08d7e70c5180cd12ccadc78c4ca17b"
+  },
+  "arid/bridge_timber_footbridge_pier_j_damaged_arid.png": {
+   "sha256": "fff0696a9f346ce383043436031b02d50f263fe39f29371ae106fda1f99c8206"
+  },
+  "arid/bridge_timber_footbridge_pier_j_intact_arid.png": {
+   "sha256": "3ca39eafe4302ec19e30ba9fad50826762c370f6c814fa04f230861c9f3f2b65"
+  },
+  "arid/bridge_timber_footbridge_pier_j_rebuilding_arid.png": {
+   "sha256": "5508ff3ee96af3f35c35bdae22806d7a9463dad5a8622850b1434c063ef48a38"
+  },
+  "arid/bridge_timber_footbridge_span_i_construction_arid.png": {
+   "sha256": "2678f8840bdb1310b9ad8a8be3378c045f7b5f9c3d86496359249a77d772fd55"
+  },
+  "arid/bridge_timber_footbridge_span_i_damaged_arid.png": {
+   "sha256": "6cc4300860d6855dcc9bc4471dc682e73784cc4c9ac5bc9ccf9d8de8bc86e154"
+  },
+  "arid/bridge_timber_footbridge_span_i_intact_arid.png": {
+   "sha256": "ecfea806287b2f8af7dfa41d7fc135698424fa5b231d8bdab6d3d18d41ad0169"
+  },
+  "arid/bridge_timber_footbridge_span_i_rebuilding_arid.png": {
+   "sha256": "1725702c11ac34b931f97da11eb758222844991cff5ca0ba42e4a481d7f2ff90"
+  },
+  "arid/bridge_timber_footbridge_span_j_construction_arid.png": {
+   "sha256": "9e5fb2935fb04d9476ba9073a4ced44087a3d5b67be7bba51a84e6c72e9073f0"
+  },
+  "arid/bridge_timber_footbridge_span_j_damaged_arid.png": {
+   "sha256": "fadde0ea7be944a1c3f0e06067e0de7419313060eaea0a03ea26af4700745938"
+  },
+  "arid/bridge_timber_footbridge_span_j_intact_arid.png": {
+   "sha256": "4c06aa6343a2ffbe88a869d8580d0b5371e2a614d1155710d6fdc89d937f007b"
+  },
+  "arid/bridge_timber_footbridge_span_j_rebuilding_arid.png": {
+   "sha256": "eec0d00ce750e8c7fb743a0b0a801ca4f92f3cd0acf9e29f680a7a524961c991"
+  },
+  "arid/bridge_timber_wagon_far_bank_i_construction_arid.png": {
+   "sha256": "f88513447673455014fa8409a78aedb3952d4ac5becbc5ac6960749c8dae6ee6"
+  },
+  "arid/bridge_timber_wagon_far_bank_i_damaged_arid.png": {
+   "sha256": "2b93f962f96c66c3d4e984c0865cb3dd4aba365638875943442e1dde74d55e04"
+  },
+  "arid/bridge_timber_wagon_far_bank_i_intact_arid.png": {
+   "sha256": "bc45dc9d6839bd24fc27e540b26f0c98b443e5a586990760f5904506c79d1008"
+  },
+  "arid/bridge_timber_wagon_far_bank_i_rebuilding_arid.png": {
+   "sha256": "468a0f573dd70ad2e0e13b94edd360edfe8144a37db9b9f23ce41eadb454ba61"
+  },
+  "arid/bridge_timber_wagon_far_bank_j_construction_arid.png": {
+   "sha256": "b9a1dec5423e0fb3051ff79ab7b56bb0ac2d6a67c28d4beb9eba598eaa526c00"
+  },
+  "arid/bridge_timber_wagon_far_bank_j_damaged_arid.png": {
+   "sha256": "4d75fe173decbe69392eb21247aa7405911dffb919cf6b6c1caf991c4008d7de"
+  },
+  "arid/bridge_timber_wagon_far_bank_j_intact_arid.png": {
+   "sha256": "e972ceab97e3af27db7e604690dac3237ba38f3c50f551ec91eda51e0217985c"
+  },
+  "arid/bridge_timber_wagon_far_bank_j_rebuilding_arid.png": {
+   "sha256": "9a701eaed14ec9a2bf42fec6b8272e88cb3e4e35e7d16c6b78da8ae019d5d69c"
+  },
+  "arid/bridge_timber_wagon_near_bank_i_construction_arid.png": {
+   "sha256": "b08ad1545b92ee5c79820caebe26da27e4e8a8928b0a9c3373a39e417c2901d4"
+  },
+  "arid/bridge_timber_wagon_near_bank_i_damaged_arid.png": {
+   "sha256": "421048f79e241c174dc5aa0240ba4c3e255923d0b7d2920d92e28964f1284ea1"
+  },
+  "arid/bridge_timber_wagon_near_bank_i_intact_arid.png": {
+   "sha256": "667a8ba5260f5e490985a2fb53371cc05f551f10889e841749cd6431fa7e968a"
+  },
+  "arid/bridge_timber_wagon_near_bank_i_rebuilding_arid.png": {
+   "sha256": "38eaf8fe49d667ea8c6c6115eec7323b4d3227f7c1266c75b4a5f9d8b6fa9b2d"
+  },
+  "arid/bridge_timber_wagon_near_bank_j_construction_arid.png": {
+   "sha256": "c0988c83ea23afdc2402ea41052ad9701807d2011a1e9db2bcf621dd4c7b7e84"
+  },
+  "arid/bridge_timber_wagon_near_bank_j_damaged_arid.png": {
+   "sha256": "8c6143477ddf9d82cf0d59682ccf7aa3bf0b4ab31d4b540fb0a138dbe2514495"
+  },
+  "arid/bridge_timber_wagon_near_bank_j_intact_arid.png": {
+   "sha256": "3e85833a614590aecd1ab704a38539c10c15f7326025ed1e15ff41045884654f"
+  },
+  "arid/bridge_timber_wagon_near_bank_j_rebuilding_arid.png": {
+   "sha256": "df0ef11e8cf1dce3e98667dc9b6082630d492fab06c33ee703096d210902b0ee"
+  },
+  "arid/bridge_timber_wagon_pier_i_construction_arid.png": {
+   "sha256": "6c134b68ce681c009dfd7d8a51c01b3fbd75cb1d03b993bec2afdfc64f076681"
+  },
+  "arid/bridge_timber_wagon_pier_i_damaged_arid.png": {
+   "sha256": "baa0360d34cf9b804b71402488fb701532cb457b1639b55e67079df05faca9ea"
+  },
+  "arid/bridge_timber_wagon_pier_i_intact_arid.png": {
+   "sha256": "83fd048d7d9d6cefafeab0074c39db7ce9f19a448845bb4a354b62527e0724c2"
+  },
+  "arid/bridge_timber_wagon_pier_i_rebuilding_arid.png": {
+   "sha256": "0d5923b6e44ec3a1672c407a92e86d987e92a1e7a77223f7fd0afef61b3735bd"
+  },
+  "arid/bridge_timber_wagon_pier_j_construction_arid.png": {
+   "sha256": "a2ebafcdd182a52546f751101dea7c2baa67dbe800e4ccc0e28aac76d73e8164"
+  },
+  "arid/bridge_timber_wagon_pier_j_damaged_arid.png": {
+   "sha256": "f7a48fc68458b46a4920ec056127cf25d7b1e4cea7b3b7fd84a318f9751443eb"
+  },
+  "arid/bridge_timber_wagon_pier_j_intact_arid.png": {
+   "sha256": "3c47f27685eab5b9ab779ed134f1f2e6251d49241a5d3fd4c2d177c771974124"
+  },
+  "arid/bridge_timber_wagon_pier_j_rebuilding_arid.png": {
+   "sha256": "62fea68dbd967578de477b14763b11b750072582a83652b8a90a8824524c0bb5"
+  },
+  "arid/bridge_timber_wagon_span_i_construction_arid.png": {
+   "sha256": "008fc4397a102a30fb9798fe4305c2c4455eeab613af8d4fa1f5a9da72b73ecd"
+  },
+  "arid/bridge_timber_wagon_span_i_damaged_arid.png": {
+   "sha256": "8775ca76cd5a9c2f0e970df0c76da1758693e92cdc248a2254fbbd0301ef2415"
+  },
+  "arid/bridge_timber_wagon_span_i_intact_arid.png": {
+   "sha256": "56dcf0ff6a6dbb8ab73dab9dd89197b5532d9d727c0cb080f4d55fe3f37b98bc"
+  },
+  "arid/bridge_timber_wagon_span_i_rebuilding_arid.png": {
+   "sha256": "6915b6709e01bead4a8457bf1305f1bc0f9a3150ba1cb2232b832fa083adfcbd"
+  },
+  "arid/bridge_timber_wagon_span_j_construction_arid.png": {
+   "sha256": "b470727b08dc5ceb6b657116fd4c3b065f3a987f268a354ae5ae637a89e619ad"
+  },
+  "arid/bridge_timber_wagon_span_j_damaged_arid.png": {
+   "sha256": "a734d790014dbaf6c0d9254bef84f8b679ebc40107fd08357b3ae209236277f5"
+  },
+  "arid/bridge_timber_wagon_span_j_intact_arid.png": {
+   "sha256": "c99164414dc3efd41b26009cd514bc54f3766eacae91c8a5a05163c692076e65"
+  },
+  "arid/bridge_timber_wagon_span_j_rebuilding_arid.png": {
+   "sha256": "57946daeb25f7fd5b3953d2fb280fe05860770da819743607d8d6f012fa76b14"
+  },
+  "arid/cargo_barge_ne_damaged_arid.png": {
+   "sha256": "8b8d128ddf35e2d44b42051d9d85fdbd86a661464808e26bea31e30cc162638d"
+  },
+  "arid/cargo_barge_ne_empty_arid.png": {
+   "sha256": "7174fdfddd97707599ea4c163aa68435b8e385944bf150c5e593985881b2f3f1"
+  },
+  "arid/cargo_barge_ne_loaded_arid.png": {
+   "sha256": "5373414f890dded73b860c1ea4353fef7a89c32fcbc119c9e1377ba7609a24f8"
+  },
+  "arid/cargo_barge_nw_damaged_arid.png": {
+   "sha256": "02fc7c8289d98231ed53a1218412e8275cee0b08eed2155d3f9e701845abe4dc"
+  },
+  "arid/cargo_barge_nw_empty_arid.png": {
+   "sha256": "7ccb25dbc951830bc18bcfed274739bfb76ae265fbbbe5a2bd4e0b1bfdbb9cbe"
+  },
+  "arid/cargo_barge_nw_loaded_arid.png": {
+   "sha256": "6043f13c599fb00a3365c89955d30301c5e24098fb4605c3871e48710630d7d7"
+  },
+  "arid/cargo_barge_se_damaged_arid.png": {
+   "sha256": "830ea80db27775ac3b5aeef19228fa1290c36ee4c69889f0d77c9d31106657fd"
+  },
+  "arid/cargo_barge_se_empty_arid.png": {
+   "sha256": "90e4d7fe0ce378f1377a15f7327d14a6326a5f9a1c776e924abd0b1f02d4208a"
+  },
+  "arid/cargo_barge_se_loaded_arid.png": {
+   "sha256": "c1e6e2809b1fc7797f60a5ba509d4712eec94b687e9488e3e1ab76311c815427"
+  },
+  "arid/cargo_barge_sw_damaged_arid.png": {
+   "sha256": "e6682123a4fe9d147910852755b3bef78b3bd8ab8a5684d0684bc8570ba7699c"
+  },
+  "arid/cargo_barge_sw_empty_arid.png": {
+   "sha256": "bf73e8acf80d40e1735a7b9ff6904524ec2410b031d84a924b3da4ac0ac85de1"
+  },
+  "arid/cargo_barge_sw_loaded_arid.png": {
+   "sha256": "e961d62a78bca2a833a4355ce924685eac6530af109cce01e1c0a44760f1d5ff"
+  },
+  "arid/clinic_4_arid.png": {
+   "sha256": "678a0f7310dd00f2650c060da1ce0e192fb6548e305fd172389b3761dc42b4e2"
+  },
+  "arid/clinic_5_arid.png": {
+   "sha256": "cea69ca5c1dbc8d8380bf75060f6a7a7e0dad2c193b5faaf27b273e9eaa3e032"
+  },
+  "arid/clinic_6_arid.png": {
+   "sha256": "a69530711942a998793028ae327eecb06e4a9b307e32afa54b34fa64d48dcb0f"
+  },
+  "arid/clinic_7_arid.png": {
+   "sha256": "227d0ab8cbb1f4baf18724a9e0b0e2fed16eb447c1cf3088b30bbdf89aa3cba5"
+  },
+  "arid/clinic_8_arid.png": {
+   "sha256": "1b3de61af1a4f8945b5cf15141f69d5dd77fdc77c715a89eaf0463b094a2d398"
+  },
+  "arid/coastal_sailboat_ne_damaged_arid.png": {
+   "sha256": "d358d67cc2c5ed85edf24a72eff829b765697f496cf48e0221f3de1e97a274b0"
+  },
+  "arid/coastal_sailboat_ne_empty_arid.png": {
+   "sha256": "ec6f22a769a39375d44c7c526afee850fa0120b36b6675f2a3f3d5bc28aa176b"
+  },
+  "arid/coastal_sailboat_ne_loaded_arid.png": {
+   "sha256": "cd2ab171fc14a716126d07235ad3f19bff60bf6116e1a95ac15e17146a094f13"
+  },
+  "arid/coastal_sailboat_nw_damaged_arid.png": {
+   "sha256": "7fb623e19ecf4e4d526aec1f31418e5e5f2c7d65f59985baa2ff5311477aa4a0"
+  },
+  "arid/coastal_sailboat_nw_empty_arid.png": {
+   "sha256": "2be78ea55cd3066004a730cb9297208065c6ac727f129fd4d892c9874c96f11f"
+  },
+  "arid/coastal_sailboat_nw_loaded_arid.png": {
+   "sha256": "94ae0cfa868a22be7cb0b8e905fa10aa58a5a71abb5f9c94a016a9907f378eb3"
+  },
+  "arid/coastal_sailboat_se_damaged_arid.png": {
+   "sha256": "02d9d1371e0128c4f7e4ef62e509d61ec0b891c5937e9f0e8b7dd3fa5e2ba103"
+  },
+  "arid/coastal_sailboat_se_empty_arid.png": {
+   "sha256": "c6c37278725ea15e2f37bea24e7fd51f659cf110acfda264562339a7e93c9b37"
+  },
+  "arid/coastal_sailboat_se_loaded_arid.png": {
+   "sha256": "6bb8e2fed9d4c661318c5e194c05b28392208d14dc221cb72254e1bc252ec3a2"
+  },
+  "arid/coastal_sailboat_sw_damaged_arid.png": {
+   "sha256": "a365e5987cd5e5cc3a2ada8f54dba0f85c73d43cceb19ec8bf77b88eb6c7b1e3"
+  },
+  "arid/coastal_sailboat_sw_empty_arid.png": {
+   "sha256": "edac54160f711a585f39bd3f70408df952d94803d90d9989203c3adf69c8cd75"
+  },
+  "arid/coastal_sailboat_sw_loaded_arid.png": {
+   "sha256": "dfe5bf4568e72eb7307f53dd26370b5a539d61a2e1f3169a741e92f37e7bb32d"
+  },
+  "arid/council_4_arid.png": {
+   "sha256": "fad81a1e6fd1bbc922e37276ccfc6d2417ad1e849e634f33c883315c23fd90f0"
+  },
+  "arid/council_5_arid.png": {
+   "sha256": "8bbb8228f203c4115db8c7e2b47ef5d95508c4b106583ea38b40460b798615c9"
+  },
+  "arid/council_6_arid.png": {
+   "sha256": "47b51465773d2a96e1fbe0f5f9c5a0a3d8701dce5a48257dc0ad8d28104d3169"
+  },
+  "arid/council_7_arid.png": {
+   "sha256": "ae50926736a5a67f4a228eb20ed794a756fc68e3fa3979aa89594c7299a8c3a0"
+  },
+  "arid/council_8_arid.png": {
+   "sha256": "ca7400792cf17fc0a86b8df239628bac6ae256604ee2b784d3fd9ab9f9dab510"
+  },
+  "arid/court_4_arid.png": {
+   "sha256": "82765e59dd71d233de3c736906317d3edb919fab688783308160d9ff2e00f1c6"
+  },
+  "arid/court_5_arid.png": {
+   "sha256": "664033c62fea583722162a8c3dc36c70e91829b9f313c533a13e8da4ed91d5ee"
+  },
+  "arid/court_6_arid.png": {
+   "sha256": "22c34f958d527dbc5c6b15be1333031aa16d964af5de63d856a98f06f1865f3f"
+  },
+  "arid/court_7_arid.png": {
+   "sha256": "1c835a66db7542a6b0938482c50d51a176fd8ef49492d17998173454e1418104"
+  },
+  "arid/court_8_arid.png": {
+   "sha256": "04b3a3f1980445d99fd9670f7efba2b09359db76522ed329aa7388c866f69de2"
+  },
+  "arid/fish_school_1_arid.png": {
+   "sha256": "bb81fd4444b9e3745c0bbb86c483c7133d6514895cce599bd222c01e8a6a5f2f"
+  },
+  "arid/fish_school_2_arid.png": {
+   "sha256": "13527f38315940acd12bb5b25c6d74c86e9005045fef2d493623a3bab3e4df3e"
+  },
+  "arid/fish_school_3_arid.png": {
+   "sha256": "ed11a2b0654ccf8e7a73608f7dc0fe61224141ff4cb74ff280e422af989610fe"
+  },
+  "arid/fish_shadow_1_arid.png": {
+   "sha256": "060ede55574311022aef603da7a0ec4ef11c949bc4c63cb2ab1719b81dfddaf1"
+  },
+  "arid/fish_shadow_2_arid.png": {
+   "sha256": "32b81cccdcbbe540aee5f91e8b3409b72533315b0798164eca8c2d44ebac7ec4"
+  },
+  "arid/fish_shadow_3_arid.png": {
+   "sha256": "b8f092c414dbda3a4003772f478d251bb4660c82a33bc07e8af57723138fd813"
+  },
+  "arid/fishing_canoe_ne_damaged_arid.png": {
+   "sha256": "2bd482667277bb544f5e177d82aca837f90070965427a40466c80615b9a96e65"
+  },
+  "arid/fishing_canoe_ne_empty_arid.png": {
+   "sha256": "66699265b2e57dd1ad71728406c672a5f92e9a89979bf4f503123fcfcba536c2"
+  },
+  "arid/fishing_canoe_ne_loaded_arid.png": {
+   "sha256": "29decb08615fd3eb08babc800d995eaba732e57e2ca10f8e48a2c20f4a8fdbc0"
+  },
+  "arid/fishing_canoe_nw_damaged_arid.png": {
+   "sha256": "39024731c80f63a25f0018a0b54dbf1fdbf5671d2fa51af700ccf4581153ec02"
+  },
+  "arid/fishing_canoe_nw_empty_arid.png": {
+   "sha256": "881235260eaa19004496414f11899208cf5f4506046469e04a974f32f585083c"
+  },
+  "arid/fishing_canoe_nw_loaded_arid.png": {
+   "sha256": "076d865f8770d63b943f08b2bad807bbcf535ce4bdbd96abe3e4670605511b05"
+  },
+  "arid/fishing_canoe_se_damaged_arid.png": {
+   "sha256": "96257ddfd16ecb5154da53adea84bd59db5f43a8f594249654bae12140ba7b11"
+  },
+  "arid/fishing_canoe_se_empty_arid.png": {
+   "sha256": "7edab95d4133b3f570867e1dd90e887cd5b4b0c03dd4c70c5d2250041e62f88b"
+  },
+  "arid/fishing_canoe_se_loaded_arid.png": {
+   "sha256": "28eacd17ef3ccfb295e8f54ef3a482dbc0a6af6aca27e1e15497a1ec3087e8a1"
+  },
+  "arid/fishing_canoe_sw_damaged_arid.png": {
+   "sha256": "3a0dad52cfdd40b0302087a42665f6f9a7a8e5338c461ab177961f1c9248caf3"
+  },
+  "arid/fishing_canoe_sw_empty_arid.png": {
+   "sha256": "eec2d5e7b677156a4f7840481e507cc5a40e02ebfd70cdee75fc3021558d7063"
+  },
+  "arid/fishing_canoe_sw_loaded_arid.png": {
+   "sha256": "3de0474a32ed562a111d60dce5887b921abd94d4d6b79550828fb3244882840f"
+  },
+  "arid/fishing_sailboat_ne_damaged_arid.png": {
+   "sha256": "64d59a49b924ffd29397483d9ec68adb6459509b421921eacc36bbe650fbfc27"
+  },
+  "arid/fishing_sailboat_ne_empty_arid.png": {
+   "sha256": "d4f02f3ee017fd46e3403eaa7961e79ba4e4d29cb09037395d34b19cf0473c90"
+  },
+  "arid/fishing_sailboat_ne_loaded_arid.png": {
+   "sha256": "5b74100c898c8ced4b398f227258de8d97a5e961bcc2cd5b93c837292c52a257"
+  },
+  "arid/fishing_sailboat_nw_damaged_arid.png": {
+   "sha256": "1d49ba3ba2cbe54bb7a2d1639ebb083d2534ccf75a4319b58ede565041762ba3"
+  },
+  "arid/fishing_sailboat_nw_empty_arid.png": {
+   "sha256": "10f3ba61d8ead022262b4db3b517d458ccbcd099393f37e3240d0161a17a3eaa"
+  },
+  "arid/fishing_sailboat_nw_loaded_arid.png": {
+   "sha256": "51bd6cf0c767f98c6fb19427b1a6202419c665fd33e99ceced5e7d7642dd7258"
+  },
+  "arid/fishing_sailboat_se_damaged_arid.png": {
+   "sha256": "ad72c5d6dca77aa0220592a9680db3369bdaa23dd5b596af46dc023627600787"
+  },
+  "arid/fishing_sailboat_se_empty_arid.png": {
+   "sha256": "15e0af41c32b5bd5a1b291955ae6b1453a297bfd6ba2641f071f7361f8de9975"
+  },
+  "arid/fishing_sailboat_se_loaded_arid.png": {
+   "sha256": "b21c0d9a7072da653d1fdf9aab264701b8a8d3f5ea3b0819506dc2d088a24060"
+  },
+  "arid/fishing_sailboat_sw_damaged_arid.png": {
+   "sha256": "d88c5b66d3ff39984ad3efd32a52733d6dc3a3770d66540731f9e0e60e206767"
+  },
+  "arid/fishing_sailboat_sw_empty_arid.png": {
+   "sha256": "a32182d003448d3c25522a00e888570c301b3c5f348f05115dce83996b45d1d3"
+  },
+  "arid/fishing_sailboat_sw_loaded_arid.png": {
+   "sha256": "5927faa35bcf9c2c6e93ba2abec427d79d1504ac1ae3e4b6c6ead598cf17a766"
+  },
+  "arid/home_4_arid.png": {
+   "sha256": "709ed8e68c263275772ec8650363da63d5d28210d52caf29733e6777b3bf3270"
+  },
+  "arid/home_5_arid.png": {
+   "sha256": "6d952e25eee4d8299fdfcc14401db8d29364c970d16ff116a42be35bc51dc77b"
+  },
+  "arid/home_6_arid.png": {
+   "sha256": "a82a295c25f802bb2b964db536feaa91281d0873215cc18743084e9aabd39ee3"
+  },
+  "arid/home_7_arid.png": {
+   "sha256": "c15f568d13589815482782b625997d36120756a94f45a90e8489e98441dbdea1"
+  },
+  "arid/home_8_arid.png": {
+   "sha256": "885eb774dfa188a769ed19f5a27f0a876f370269cb1a659836da0114307f1da2"
+  },
+  "arid/net_boat_ne_damaged_arid.png": {
+   "sha256": "cb848b04fa8f542af60c61b2f42e7022eb3cc0eb455eba6d9fcf660e6e6a843f"
+  },
+  "arid/net_boat_ne_empty_arid.png": {
+   "sha256": "0aea038081a3df6eda3ff8c7dd232ae3a1281aafd6808113ba8b7a77596e078a"
+  },
+  "arid/net_boat_ne_loaded_arid.png": {
+   "sha256": "8abc5e0d23c7331916b5cab7363ceb590fb7d223998d9e70b6c5b7619c33cb26"
+  },
+  "arid/net_boat_nw_damaged_arid.png": {
+   "sha256": "e9a2d63e0cad0171a2a5b72c5ae3cec8092cf109198a3f97da28317a258adc62"
+  },
+  "arid/net_boat_nw_empty_arid.png": {
+   "sha256": "be504e75474331281307286644dcf3b74a169d837eea786e6a60a5f935d8cc46"
+  },
+  "arid/net_boat_nw_loaded_arid.png": {
+   "sha256": "dcdbd29e149650a854a6544a05c3799673d9a7d54335034876d751bffcf88b4f"
+  },
+  "arid/net_boat_se_damaged_arid.png": {
+   "sha256": "1a2d0a406544f049354bb8c7104b67dd8159fde6fcebaa111eadac6c9f358808"
+  },
+  "arid/net_boat_se_empty_arid.png": {
+   "sha256": "6971633f251d81271c81d97c1b93605228af55a36080855fe5c9c58a9c0f670b"
+  },
+  "arid/net_boat_se_loaded_arid.png": {
+   "sha256": "6408ea52cab4077f66613c0ead54f3d0568f4d91ac43f943a9a45dd0b731198c"
+  },
+  "arid/net_boat_sw_damaged_arid.png": {
+   "sha256": "be71a8ed956ea21c82c52bca42d2900c1f5dace70adcaba21dfb7e8c82a6d374"
+  },
+  "arid/net_boat_sw_empty_arid.png": {
+   "sha256": "277691312d53f13d8ffd86bf3af469252b332d4927c0c9c69209bc124890ffea"
+  },
+  "arid/net_boat_sw_loaded_arid.png": {
+   "sha256": "8c9fdb2323a9193b11b5b6ad08562a5f483bd4956cdc4e70ea7ff9429ec46ed5"
+  },
+  "arid/net_floats_1_arid.png": {
+   "sha256": "9e3833ccde915f327cdf398b091525ea380970bc0a97a0abcf51bd2e9e0916d9"
+  },
+  "arid/net_floats_2_arid.png": {
+   "sha256": "7f10a622eb91c2cbd36d90cba9f830ee45af8770531ad3bca87d314df04aacf7"
+  },
+  "arid/net_floats_3_arid.png": {
+   "sha256": "6002f2c6b56efe8b3eb20412cc9b11c4a756fdf73e99c27f224e2c3772ce7a09"
+  },
+  "arid/ripples_1_arid.png": {
+   "sha256": "1cd648eaff4ce5655fbe3a3a9c6c32455c827533014b92c19fb20ac1841724d7"
+  },
+  "arid/ripples_2_arid.png": {
+   "sha256": "59bb2e0c94849fbdcdf8b14918d958f8be891b19d030f08f31040a7312f32563"
+  },
+  "arid/ripples_3_arid.png": {
+   "sha256": "3260ad67d86bf9e1d3b5913f5ad1a67920a6e9b3c53ac2db2d19de6c83788751"
+  },
+  "arid/rowboat_ne_damaged_arid.png": {
+   "sha256": "f8bcdfb604a6164e2c39ac6094a86e58e1d7370f0873f9c5dfeb8693a92f76b8"
+  },
+  "arid/rowboat_ne_empty_arid.png": {
+   "sha256": "d836679855c921de1b0ad6958b09220900e0ebe076275ceead91cb20151b45e5"
+  },
+  "arid/rowboat_ne_loaded_arid.png": {
+   "sha256": "98fe3c3fe1a25fb4832dbbbc54a66d62cc87e412c5fa2c7206772b2dead71653"
+  },
+  "arid/rowboat_nw_damaged_arid.png": {
+   "sha256": "69f70c88b2531be08c9cecf6b955a3a8e1954360c3a487ff900176819c5ca3e6"
+  },
+  "arid/rowboat_nw_empty_arid.png": {
+   "sha256": "fb4c9e9d99ee7dfd1b670b458089df5d05ebb3a98f49613b857abfd3d8b1bfc5"
+  },
+  "arid/rowboat_nw_loaded_arid.png": {
+   "sha256": "43717f3b151cf489bef7e6c8df72445069c0bd39cccf43f2298dce3bb03e20bd"
+  },
+  "arid/rowboat_se_damaged_arid.png": {
+   "sha256": "8ffdad68c932c02e6d88db01d7f530e044050e48aee90809eb5ff9964285536a"
+  },
+  "arid/rowboat_se_empty_arid.png": {
+   "sha256": "90d9bf8ed487dfa32c75427453754af20e00a76c5d62448edf948d1f9ede8ff3"
+  },
+  "arid/rowboat_se_loaded_arid.png": {
+   "sha256": "aabd92cb4ea5c33bc50af523b4ca5aae6651ee39f322624d1412fb6cfc4bce39"
+  },
+  "arid/rowboat_sw_damaged_arid.png": {
+   "sha256": "f657182720ac58202a2bb9bf975c9b4e33262512482d3c98483f40d672b0dcdd"
+  },
+  "arid/rowboat_sw_empty_arid.png": {
+   "sha256": "f7c685a3f2d6cded2f7f55416914ec1069ab65f406626f60186ae1a7ad31a7b1"
+  },
+  "arid/rowboat_sw_loaded_arid.png": {
+   "sha256": "bc76db68129acd4c4b092299e462c994c0da78f0dc3fa6e1a3b19d617722113d"
+  },
+  "arid/shop_4_arid.png": {
+   "sha256": "bcb47635dc40fa8f98ac0057dffa4263232dafc088fae5c558389f493f2f11fa"
+  },
+  "arid/shop_5_arid.png": {
+   "sha256": "f8a6f1a9ab3f0d817977119b6f4f1840025d72c2f65b6f7885c8fe443f6f995e"
+  },
+  "arid/shop_6_arid.png": {
+   "sha256": "4a727bea099bc8b094a0572da4b3ac40e26f3ca6c860b51998e10f9526e9e619"
+  },
+  "arid/shop_7_arid.png": {
+   "sha256": "726972a84e3c4a5734a217fb0bed0eaddad11632ba87d8cdb284a34741682741"
+  },
+  "arid/shop_8_arid.png": {
+   "sha256": "ed316c251363cfe47c7874e0462db8ef19b1ad23cf0112e7ffd2858e7fddafb0"
+  },
+  "arid/work_skiff_ne_damaged_arid.png": {
+   "sha256": "ab8cf540de967a2af04fd8c192a3ce3c7a3bd82b047ec44704a64b5536d0c1de"
+  },
+  "arid/work_skiff_ne_empty_arid.png": {
+   "sha256": "88460735effdee8ba172855f87a3274dd22385474fe88e463207a7c68fccbba4"
+  },
+  "arid/work_skiff_ne_loaded_arid.png": {
+   "sha256": "c464896f50161d70548e2185dda3edea5b2c69245006d251a17646358c286899"
+  },
+  "arid/work_skiff_nw_damaged_arid.png": {
+   "sha256": "ad3711d659e66942a0a02224273a016af5ad74920df02a4217b260581fcce9eb"
+  },
+  "arid/work_skiff_nw_empty_arid.png": {
+   "sha256": "7f2d26368936b3f53e16611dfc26ec11df6e4a83cb9dbe47df7670e5f3fa2ea0"
+  },
+  "arid/work_skiff_nw_loaded_arid.png": {
+   "sha256": "4a765d917035f1ea0ff81aa96db9b83824b8c9984eda4d5bab1da5ce0994f85f"
+  },
+  "arid/work_skiff_se_damaged_arid.png": {
+   "sha256": "a370abbe329c6ed86529c99f265f44dc093538978e5cda53188b7332a2d76740"
+  },
+  "arid/work_skiff_se_empty_arid.png": {
+   "sha256": "a139b67a71da20eba1fc170fadb536ca26ebfb76ed5ac167cee9fff7fe5467c1"
+  },
+  "arid/work_skiff_se_loaded_arid.png": {
+   "sha256": "20430c9e57614f7c4bb1dd993287fa03a7767538f2e4f7d273a0eeda79a679d9"
+  },
+  "arid/work_skiff_sw_damaged_arid.png": {
+   "sha256": "b1beec19b2ecb75ebcd518df1e6088d354ce3695377cd0d76c3c837a4a5bd4a7"
+  },
+  "arid/work_skiff_sw_empty_arid.png": {
+   "sha256": "364b7d9dd3b8e2d1bf443d7a047061f4e7ad683ba6124dcbae27194997a8e075"
+  },
+  "arid/work_skiff_sw_loaded_arid.png": {
+   "sha256": "ab68ba6d0e26308b2d88fea55e7ac9b4e34ec753b9625f9c6420ae895a0c037e"
+  },
+  "northern/bridge_stone_arch_far_bank_i_construction_northern.png": {
+   "sha256": "6ddf8e89fb4e0e17e7457c5fc1d0019e934bf1cbcaed30acd7202086b27a2118"
+  },
+  "northern/bridge_stone_arch_far_bank_i_damaged_northern.png": {
+   "sha256": "537131829a4a9c8ea108923b2a099a99ef09d262897a1112ee41deb98d97cd5d"
+  },
+  "northern/bridge_stone_arch_far_bank_i_intact_northern.png": {
+   "sha256": "aba8b8e14f19c9d4340af189673b59de8d088c2037d1a0ce413a3794953c4250"
+  },
+  "northern/bridge_stone_arch_far_bank_i_rebuilding_northern.png": {
+   "sha256": "003d2bea25f9fbf79ed83c798da3ee4037b5a8d2e072ab978649cd91f8531413"
+  },
+  "northern/bridge_stone_arch_far_bank_j_construction_northern.png": {
+   "sha256": "ae26a06445b6fa1bf04e8c4bd21d90149c99ab4c39ef2a53d01107ac1e0329d2"
+  },
+  "northern/bridge_stone_arch_far_bank_j_damaged_northern.png": {
+   "sha256": "765f52b30a7e559d44656cd244343d76b6fe69ff796e7a4afd0d389afcba5695"
+  },
+  "northern/bridge_stone_arch_far_bank_j_intact_northern.png": {
+   "sha256": "b3aff332af321710fcb99617bf66a638a1478a3556906f20db3fc8377d638ec4"
+  },
+  "northern/bridge_stone_arch_far_bank_j_rebuilding_northern.png": {
+   "sha256": "315597d24a17d4bdd42b120c9d063c19f5bd333a60751d6c2b2f21372ab73745"
+  },
+  "northern/bridge_stone_arch_near_bank_i_construction_northern.png": {
+   "sha256": "5233f156205fa01964097e391873dc227a9bde2e53f9273243bbd1f19b02cd45"
+  },
+  "northern/bridge_stone_arch_near_bank_i_damaged_northern.png": {
+   "sha256": "663c8fe19a4b818a69d77e55b0e0767bb638cc24c5861e72d45234a90271533a"
+  },
+  "northern/bridge_stone_arch_near_bank_i_intact_northern.png": {
+   "sha256": "4cbd1f44ab2ffa9b8d56117f5b0f4acc49883742272457195baafb86a9c44372"
+  },
+  "northern/bridge_stone_arch_near_bank_i_rebuilding_northern.png": {
+   "sha256": "ae4ce2223558f56ce7347426053516174167a3c9203f5ecdea991e2af74513b2"
+  },
+  "northern/bridge_stone_arch_near_bank_j_construction_northern.png": {
+   "sha256": "876c2e224129696b4c647610a8b0638c656d5a44e749cd548f8368c6c850baa3"
+  },
+  "northern/bridge_stone_arch_near_bank_j_damaged_northern.png": {
+   "sha256": "59c849e55cdbc7949720160d9930252e16e7d29015f431eb80a5a4fb4fab6e51"
+  },
+  "northern/bridge_stone_arch_near_bank_j_intact_northern.png": {
+   "sha256": "5768ec5eb0c746db154b90a456ec2eccf6ad34196855f1dd646dcd5a4b5dec53"
+  },
+  "northern/bridge_stone_arch_near_bank_j_rebuilding_northern.png": {
+   "sha256": "fa66a0cd078b667d7531c7bfa6320f7afff1446b32a0c668aa76b36ba823b939"
+  },
+  "northern/bridge_stone_arch_pier_i_construction_northern.png": {
+   "sha256": "96edb8190e541d89cb01e1d5519f285abfcd389526fe923a9dd1fcf0ba0257fe"
+  },
+  "northern/bridge_stone_arch_pier_i_damaged_northern.png": {
+   "sha256": "f850520045db2c88c95f1afde5630fca05b18c12f9baa2eb54dc5e4a407a8ea9"
+  },
+  "northern/bridge_stone_arch_pier_i_intact_northern.png": {
+   "sha256": "fe82a6b6ae66394dc76a647e95a8cb0a0d5596f5bb77d05c7d33921b878b7d8b"
+  },
+  "northern/bridge_stone_arch_pier_i_rebuilding_northern.png": {
+   "sha256": "cb51dcde2fc7ed33701e3327cf803662e727fbf5d0ec6f568c52820433a9639b"
+  },
+  "northern/bridge_stone_arch_pier_j_construction_northern.png": {
+   "sha256": "bca59afe20ad4c98dc95cfefe4adc18264c498abf37f61fba6bc6addb29a8d28"
+  },
+  "northern/bridge_stone_arch_pier_j_damaged_northern.png": {
+   "sha256": "8b00e6e0f98f599a224b0b86395268e38ba58dc23ce7a13ca96d48f16545291e"
+  },
+  "northern/bridge_stone_arch_pier_j_intact_northern.png": {
+   "sha256": "5956f04c9c5b2333ec5a84e8bcb0eb29ac2fb38dcec3f888a6da3cb1f378971e"
+  },
+  "northern/bridge_stone_arch_pier_j_rebuilding_northern.png": {
+   "sha256": "33405a04c550d5d95f3f6fd4caa812c30f42c11d70758c2c13cd72cf9b4e219f"
+  },
+  "northern/bridge_stone_arch_span_i_construction_northern.png": {
+   "sha256": "fd9ff07cc2831c327e786c817ac9b359386c3659e599734c8e9e694eb2bbbf39"
+  },
+  "northern/bridge_stone_arch_span_i_damaged_northern.png": {
+   "sha256": "6150f09b2cff2ac84f260bd24d2ae7b71bf1683c6e99672a36037ea2ae104b17"
+  },
+  "northern/bridge_stone_arch_span_i_intact_northern.png": {
+   "sha256": "053eaa293317234ef8ee7065a577cf8a3113da7b93a6b90221cba00e4b46e059"
+  },
+  "northern/bridge_stone_arch_span_i_rebuilding_northern.png": {
+   "sha256": "de26128ae7cd8ab15894b8ee42080b624089f69bae3da8f708c9582216e34d8b"
+  },
+  "northern/bridge_stone_arch_span_j_construction_northern.png": {
+   "sha256": "adec8bbb71d4b1e6b810914d3ad525eba40b549ee25a59778b46f7b401f9ae26"
+  },
+  "northern/bridge_stone_arch_span_j_damaged_northern.png": {
+   "sha256": "3f84d0a72ddc4a34a7ea49455746a6ca54040bc7c3188b470d0632049083584d"
+  },
+  "northern/bridge_stone_arch_span_j_intact_northern.png": {
+   "sha256": "9abd35525877af1e145042da5c032c2febdf9d00f2694dc826f29d362ba3f3b5"
+  },
+  "northern/bridge_stone_arch_span_j_rebuilding_northern.png": {
+   "sha256": "873a26637ffc4efd81ad69ee1e879b013d4b5a5cbba774604eaed171d77d3047"
+  },
+  "northern/bridge_stone_viaduct_far_bank_i_construction_northern.png": {
+   "sha256": "a7d378c1e38474d9dc436c312714a9804c0875411171e458e61f2f5744db6403"
+  },
+  "northern/bridge_stone_viaduct_far_bank_i_damaged_northern.png": {
+   "sha256": "eab979618f89843c6fb2abc80b9321b30f0afea606aa6e1ceb2b909b587e1b37"
+  },
+  "northern/bridge_stone_viaduct_far_bank_i_intact_northern.png": {
+   "sha256": "4f98caca5a210da032b46085e524b0bb529cc705d40f2feb911a10e1adb9dfe6"
+  },
+  "northern/bridge_stone_viaduct_far_bank_i_rebuilding_northern.png": {
+   "sha256": "86c31ca14b4f4a68bca7780897b51eb21353052e5a3ff36c4bc0b1c732719782"
+  },
+  "northern/bridge_stone_viaduct_far_bank_j_construction_northern.png": {
+   "sha256": "80d7d3b83bdffc8687d17df36ce2cc619d5d699eda71e32904a5df205d7c1573"
+  },
+  "northern/bridge_stone_viaduct_far_bank_j_damaged_northern.png": {
+   "sha256": "a23c36c37ef6ed96129d166a0a572d560647d7f1ebfcab4530b0626ecf89fb68"
+  },
+  "northern/bridge_stone_viaduct_far_bank_j_intact_northern.png": {
+   "sha256": "7d66e0516e19c974126629b2d72c5ff296a1d30a48ac76a3fd1e7fc1d12f6189"
+  },
+  "northern/bridge_stone_viaduct_far_bank_j_rebuilding_northern.png": {
+   "sha256": "caeb53f5369e921c40d3c5b934f24087b4b03eaf971999b37cc7415c024e31a0"
+  },
+  "northern/bridge_stone_viaduct_near_bank_i_construction_northern.png": {
+   "sha256": "787efd3c3d3b2d696f8a835d3ccf21eafb33004dc5a927f529cb571af7c90072"
+  },
+  "northern/bridge_stone_viaduct_near_bank_i_damaged_northern.png": {
+   "sha256": "ff7554e2f3a26230541f46021e3daede4e86952650a1aaead56c12fb3a037d68"
+  },
+  "northern/bridge_stone_viaduct_near_bank_i_intact_northern.png": {
+   "sha256": "2d86e6627e54d2ecf39cd953ad3a1ec63da1f202d428de6af0742590bfd811a7"
+  },
+  "northern/bridge_stone_viaduct_near_bank_i_rebuilding_northern.png": {
+   "sha256": "cd25ae400f03ba77c94b006fb64d578a08876a9880fc4ab4e75e0a4a39f70829"
+  },
+  "northern/bridge_stone_viaduct_near_bank_j_construction_northern.png": {
+   "sha256": "cf46efd3605ea89e91217befb75934f3a4d179f436db9e9e979d49a9894c428b"
+  },
+  "northern/bridge_stone_viaduct_near_bank_j_damaged_northern.png": {
+   "sha256": "44c9478134bbe3bc300863b482b1bc85c5896dda32d03bbc25e5c785a43c1cc0"
+  },
+  "northern/bridge_stone_viaduct_near_bank_j_intact_northern.png": {
+   "sha256": "d5bbd12125e3e880a52531458dc0fe5d3e223f574eb8fb30c5d1ac99d110fde0"
+  },
+  "northern/bridge_stone_viaduct_near_bank_j_rebuilding_northern.png": {
+   "sha256": "a7149cf715def660fa61e1b97f1c76def7703967512a85d6cc733f4018d5ed70"
+  },
+  "northern/bridge_stone_viaduct_pier_i_construction_northern.png": {
+   "sha256": "8dd2fdfc3165bf0ce48d5024d04fbae3033791247b9f6e1347033af67b5c18d4"
+  },
+  "northern/bridge_stone_viaduct_pier_i_damaged_northern.png": {
+   "sha256": "10fe629e4a7d1ae1041f75cbb73d012dcbf910eaab7bd645eab376c9b8d95844"
+  },
+  "northern/bridge_stone_viaduct_pier_i_intact_northern.png": {
+   "sha256": "dffe30ca3bb4b3e568d66770bfd6dea461d5bee99a22b3e3e78369ac0cddc21c"
+  },
+  "northern/bridge_stone_viaduct_pier_i_rebuilding_northern.png": {
+   "sha256": "6ac0738a9204b6aab88a105b9fae721b5e66022b0f31beb9f9264ab44f6ee865"
+  },
+  "northern/bridge_stone_viaduct_pier_j_construction_northern.png": {
+   "sha256": "68630ee6556f7628165e37f0bb4d99681a3c0ab4957da05445c08014e3bb312b"
+  },
+  "northern/bridge_stone_viaduct_pier_j_damaged_northern.png": {
+   "sha256": "89423a4a8eeaa9b48ae65c6bc83eae6bee57fb36f6c991be42206a649b09e438"
+  },
+  "northern/bridge_stone_viaduct_pier_j_intact_northern.png": {
+   "sha256": "2760c75eda22bf5747a53a6930f4f0e245f84205018bede84764aa29af5c6ba0"
+  },
+  "northern/bridge_stone_viaduct_pier_j_rebuilding_northern.png": {
+   "sha256": "0522a1c2b250a9ab4f7691d291870f58ce678d07cf65e269288de955fabbb27d"
+  },
+  "northern/bridge_stone_viaduct_span_i_construction_northern.png": {
+   "sha256": "ba9362ab98abb6fab82a1d105471d7940455186fab9728c65c8687ae46f76e36"
+  },
+  "northern/bridge_stone_viaduct_span_i_damaged_northern.png": {
+   "sha256": "ea4aa1ee73a670e450c418e98570ae25d5698219c4fcc4cdae79803ac6f06ba2"
+  },
+  "northern/bridge_stone_viaduct_span_i_intact_northern.png": {
+   "sha256": "1be080708b8712be1d25738774abeefe15b4f33f16493c0437cd04dddc27b6d1"
+  },
+  "northern/bridge_stone_viaduct_span_i_rebuilding_northern.png": {
+   "sha256": "f8b7bd49c71d35e77f12490f61333aa9bca81c1eea34f2d3d3b3d15825ffa224"
+  },
+  "northern/bridge_stone_viaduct_span_j_construction_northern.png": {
+   "sha256": "ac9956e9be3dc2ba12f97255aef5f179bc4f2d63023de2dc4b2b91eddb6e1342"
+  },
+  "northern/bridge_stone_viaduct_span_j_damaged_northern.png": {
+   "sha256": "c54e89339bf4717507f0ecc938f0c4635662e34c3ec489058b5d06e4221fb4a6"
+  },
+  "northern/bridge_stone_viaduct_span_j_intact_northern.png": {
+   "sha256": "ca5f71c07967bcb57f28d65196271a7dc878e7f9a1a23c4f63c71145dda01f04"
+  },
+  "northern/bridge_stone_viaduct_span_j_rebuilding_northern.png": {
+   "sha256": "f5ec79b8b35c567aa820f45725dc7d40c9c66afdce00dd278c5e155e405274f9"
+  },
+  "northern/bridge_timber_footbridge_far_bank_i_construction_northern.png": {
+   "sha256": "ac46ebec841c055fbfa089ba9417b55017a23202e71f9c312dfe9603cc78a4e2"
+  },
+  "northern/bridge_timber_footbridge_far_bank_i_damaged_northern.png": {
+   "sha256": "98a803f3dc5c8cf390839058d1acae94548adf17e9409b66872afd25b3314a90"
+  },
+  "northern/bridge_timber_footbridge_far_bank_i_intact_northern.png": {
+   "sha256": "7b64b8b0da780f873e94ca67103afe76c0f27218c4167756e0989c6bffc36dbc"
+  },
+  "northern/bridge_timber_footbridge_far_bank_i_rebuilding_northern.png": {
+   "sha256": "cc1bd37cb3326457c22a35b8b0c00a74f2a19e883973c60919e9db54e616f70a"
+  },
+  "northern/bridge_timber_footbridge_far_bank_j_construction_northern.png": {
+   "sha256": "fc9b86ad8028daac198c252ca8aae0d2f227447a29b1970bfe1ce3dc532bc369"
+  },
+  "northern/bridge_timber_footbridge_far_bank_j_damaged_northern.png": {
+   "sha256": "673196852cd986caa509a57186633a92e1feabd98b265df36be59502e7577a61"
+  },
+  "northern/bridge_timber_footbridge_far_bank_j_intact_northern.png": {
+   "sha256": "fb5bc4765d8233437970f58f4028d343b5e333225395d6a3219ae091bd2003f7"
+  },
+  "northern/bridge_timber_footbridge_far_bank_j_rebuilding_northern.png": {
+   "sha256": "fe740224a491b593a9aba22d2df3eec668ea3d87275e94ea5f2dac881df274c6"
+  },
+  "northern/bridge_timber_footbridge_near_bank_i_construction_northern.png": {
+   "sha256": "64e430ace11d9af8b41552be1e49d45492784c95d95f3e57a3bac76146e0adcc"
+  },
+  "northern/bridge_timber_footbridge_near_bank_i_damaged_northern.png": {
+   "sha256": "6092e5bb39cd5afeeee3473618c3361cfd2ccf70c7d8e3f664a3aeba66690a29"
+  },
+  "northern/bridge_timber_footbridge_near_bank_i_intact_northern.png": {
+   "sha256": "bf396c4afc967f54c68c6703e28b586647cf8c6eb13e89a7ad136d3fe05b76a0"
+  },
+  "northern/bridge_timber_footbridge_near_bank_i_rebuilding_northern.png": {
+   "sha256": "87cdf2f31be93cb3550ef93d9ffffe9ca91a9069fa6f42959f9c5a623977c530"
+  },
+  "northern/bridge_timber_footbridge_near_bank_j_construction_northern.png": {
+   "sha256": "7b594a42d08c9e6abb330504c1a94c85341c74eb38005320062fec0aba4ccf44"
+  },
+  "northern/bridge_timber_footbridge_near_bank_j_damaged_northern.png": {
+   "sha256": "d3f3162a9d43c813836a4dae1d0deb71f60efc9daef916997c3915486ab4e6c6"
+  },
+  "northern/bridge_timber_footbridge_near_bank_j_intact_northern.png": {
+   "sha256": "6687103446042ab817273c37bf188f25c5a9202777ef29b3b8085998b86afec7"
+  },
+  "northern/bridge_timber_footbridge_near_bank_j_rebuilding_northern.png": {
+   "sha256": "4324126f8e2abd3e2275cb3ec342fd5482ddd630ce0ba4cbb17755f330b5ad53"
+  },
+  "northern/bridge_timber_footbridge_pier_i_construction_northern.png": {
+   "sha256": "6175dbf40e844bc0bf1a4f7c4f658bc7a5411291cbd9737879cb6faec48bc512"
+  },
+  "northern/bridge_timber_footbridge_pier_i_damaged_northern.png": {
+   "sha256": "9bb3e79657e594720485d34f6790c15080704e6e8750f81a2ad20bb404d2e9c1"
+  },
+  "northern/bridge_timber_footbridge_pier_i_intact_northern.png": {
+   "sha256": "1ebe3a927cd948cc0a2fd2902fb7bdeb03dbefe8f9c1620162eb9959e976211d"
+  },
+  "northern/bridge_timber_footbridge_pier_i_rebuilding_northern.png": {
+   "sha256": "0c5c06185d291a591a0498172b31bc57102a82d1861d3d42b5c273fa808280b7"
+  },
+  "northern/bridge_timber_footbridge_pier_j_construction_northern.png": {
+   "sha256": "615263320b17895de29e816f19644d39dc08d7e70c5180cd12ccadc78c4ca17b"
+  },
+  "northern/bridge_timber_footbridge_pier_j_damaged_northern.png": {
+   "sha256": "fff0696a9f346ce383043436031b02d50f263fe39f29371ae106fda1f99c8206"
+  },
+  "northern/bridge_timber_footbridge_pier_j_intact_northern.png": {
+   "sha256": "6e11a7cf08655398ab20caece551b9e1403f09bd6ff909db8f2faff0f8ce32ef"
+  },
+  "northern/bridge_timber_footbridge_pier_j_rebuilding_northern.png": {
+   "sha256": "5508ff3ee96af3f35c35bdae22806d7a9463dad5a8622850b1434c063ef48a38"
+  },
+  "northern/bridge_timber_footbridge_span_i_construction_northern.png": {
+   "sha256": "2678f8840bdb1310b9ad8a8be3378c045f7b5f9c3d86496359249a77d772fd55"
+  },
+  "northern/bridge_timber_footbridge_span_i_damaged_northern.png": {
+   "sha256": "6cc4300860d6855dcc9bc4471dc682e73784cc4c9ac5bc9ccf9d8de8bc86e154"
+  },
+  "northern/bridge_timber_footbridge_span_i_intact_northern.png": {
+   "sha256": "0722050914ea75b9361bb445edc8d9a686e424e52be8f26189a8a949ff584855"
+  },
+  "northern/bridge_timber_footbridge_span_i_rebuilding_northern.png": {
+   "sha256": "1725702c11ac34b931f97da11eb758222844991cff5ca0ba42e4a481d7f2ff90"
+  },
+  "northern/bridge_timber_footbridge_span_j_construction_northern.png": {
+   "sha256": "9e5fb2935fb04d9476ba9073a4ced44087a3d5b67be7bba51a84e6c72e9073f0"
+  },
+  "northern/bridge_timber_footbridge_span_j_damaged_northern.png": {
+   "sha256": "fadde0ea7be944a1c3f0e06067e0de7419313060eaea0a03ea26af4700745938"
+  },
+  "northern/bridge_timber_footbridge_span_j_intact_northern.png": {
+   "sha256": "868e572225603602e8eedde2e6a95a44c192be040ba26267fe7ffcd5bbaf52c2"
+  },
+  "northern/bridge_timber_footbridge_span_j_rebuilding_northern.png": {
+   "sha256": "eec0d00ce750e8c7fb743a0b0a801ca4f92f3cd0acf9e29f680a7a524961c991"
+  },
+  "northern/bridge_timber_wagon_far_bank_i_construction_northern.png": {
+   "sha256": "f88513447673455014fa8409a78aedb3952d4ac5becbc5ac6960749c8dae6ee6"
+  },
+  "northern/bridge_timber_wagon_far_bank_i_damaged_northern.png": {
+   "sha256": "2b93f962f96c66c3d4e984c0865cb3dd4aba365638875943442e1dde74d55e04"
+  },
+  "northern/bridge_timber_wagon_far_bank_i_intact_northern.png": {
+   "sha256": "577c62b36fec3299f1302e5aeb7ae6df726d1a1dfd1585da555cbf8c2bf896e7"
+  },
+  "northern/bridge_timber_wagon_far_bank_i_rebuilding_northern.png": {
+   "sha256": "468a0f573dd70ad2e0e13b94edd360edfe8144a37db9b9f23ce41eadb454ba61"
+  },
+  "northern/bridge_timber_wagon_far_bank_j_construction_northern.png": {
+   "sha256": "b9a1dec5423e0fb3051ff79ab7b56bb0ac2d6a67c28d4beb9eba598eaa526c00"
+  },
+  "northern/bridge_timber_wagon_far_bank_j_damaged_northern.png": {
+   "sha256": "4d75fe173decbe69392eb21247aa7405911dffb919cf6b6c1caf991c4008d7de"
+  },
+  "northern/bridge_timber_wagon_far_bank_j_intact_northern.png": {
+   "sha256": "215dba542933146b85a0b2900e19b48d2dec6eab2f86ad5fd5bcf89b88852f63"
+  },
+  "northern/bridge_timber_wagon_far_bank_j_rebuilding_northern.png": {
+   "sha256": "9a701eaed14ec9a2bf42fec6b8272e88cb3e4e35e7d16c6b78da8ae019d5d69c"
+  },
+  "northern/bridge_timber_wagon_near_bank_i_construction_northern.png": {
+   "sha256": "b08ad1545b92ee5c79820caebe26da27e4e8a8928b0a9c3373a39e417c2901d4"
+  },
+  "northern/bridge_timber_wagon_near_bank_i_damaged_northern.png": {
+   "sha256": "421048f79e241c174dc5aa0240ba4c3e255923d0b7d2920d92e28964f1284ea1"
+  },
+  "northern/bridge_timber_wagon_near_bank_i_intact_northern.png": {
+   "sha256": "6294704c3b808714a03e82507734508c7838b6ad7352b7b5469f964d5e1fd360"
+  },
+  "northern/bridge_timber_wagon_near_bank_i_rebuilding_northern.png": {
+   "sha256": "38eaf8fe49d667ea8c6c6115eec7323b4d3227f7c1266c75b4a5f9d8b6fa9b2d"
+  },
+  "northern/bridge_timber_wagon_near_bank_j_construction_northern.png": {
+   "sha256": "c0988c83ea23afdc2402ea41052ad9701807d2011a1e9db2bcf621dd4c7b7e84"
+  },
+  "northern/bridge_timber_wagon_near_bank_j_damaged_northern.png": {
+   "sha256": "8c6143477ddf9d82cf0d59682ccf7aa3bf0b4ab31d4b540fb0a138dbe2514495"
+  },
+  "northern/bridge_timber_wagon_near_bank_j_intact_northern.png": {
+   "sha256": "58ff68dfd185841b37501415154b1b706ce0e1d0ca27b539566d8c82a77a565d"
+  },
+  "northern/bridge_timber_wagon_near_bank_j_rebuilding_northern.png": {
+   "sha256": "df0ef11e8cf1dce3e98667dc9b6082630d492fab06c33ee703096d210902b0ee"
+  },
+  "northern/bridge_timber_wagon_pier_i_construction_northern.png": {
+   "sha256": "6c134b68ce681c009dfd7d8a51c01b3fbd75cb1d03b993bec2afdfc64f076681"
+  },
+  "northern/bridge_timber_wagon_pier_i_damaged_northern.png": {
+   "sha256": "baa0360d34cf9b804b71402488fb701532cb457b1639b55e67079df05faca9ea"
+  },
+  "northern/bridge_timber_wagon_pier_i_intact_northern.png": {
+   "sha256": "de4190724bed77aa81901909808eefe05d80c80a77dd37970db6e1c996135d4c"
+  },
+  "northern/bridge_timber_wagon_pier_i_rebuilding_northern.png": {
+   "sha256": "0d5923b6e44ec3a1672c407a92e86d987e92a1e7a77223f7fd0afef61b3735bd"
+  },
+  "northern/bridge_timber_wagon_pier_j_construction_northern.png": {
+   "sha256": "a2ebafcdd182a52546f751101dea7c2baa67dbe800e4ccc0e28aac76d73e8164"
+  },
+  "northern/bridge_timber_wagon_pier_j_damaged_northern.png": {
+   "sha256": "f7a48fc68458b46a4920ec056127cf25d7b1e4cea7b3b7fd84a318f9751443eb"
+  },
+  "northern/bridge_timber_wagon_pier_j_intact_northern.png": {
+   "sha256": "9429d8276c6980499f9c29e16fe473282f266610a56a769a5d6aef0ae7a0d5cb"
+  },
+  "northern/bridge_timber_wagon_pier_j_rebuilding_northern.png": {
+   "sha256": "62fea68dbd967578de477b14763b11b750072582a83652b8a90a8824524c0bb5"
+  },
+  "northern/bridge_timber_wagon_span_i_construction_northern.png": {
+   "sha256": "008fc4397a102a30fb9798fe4305c2c4455eeab613af8d4fa1f5a9da72b73ecd"
+  },
+  "northern/bridge_timber_wagon_span_i_damaged_northern.png": {
+   "sha256": "8775ca76cd5a9c2f0e970df0c76da1758693e92cdc248a2254fbbd0301ef2415"
+  },
+  "northern/bridge_timber_wagon_span_i_intact_northern.png": {
+   "sha256": "56dcf0ff6a6dbb8ab73dab9dd89197b5532d9d727c0cb080f4d55fe3f37b98bc"
+  },
+  "northern/bridge_timber_wagon_span_i_rebuilding_northern.png": {
+   "sha256": "6915b6709e01bead4a8457bf1305f1bc0f9a3150ba1cb2232b832fa083adfcbd"
+  },
+  "northern/bridge_timber_wagon_span_j_construction_northern.png": {
+   "sha256": "b470727b08dc5ceb6b657116fd4c3b065f3a987f268a354ae5ae637a89e619ad"
+  },
+  "northern/bridge_timber_wagon_span_j_damaged_northern.png": {
+   "sha256": "a734d790014dbaf6c0d9254bef84f8b679ebc40107fd08357b3ae209236277f5"
+  },
+  "northern/bridge_timber_wagon_span_j_intact_northern.png": {
+   "sha256": "c99164414dc3efd41b26009cd514bc54f3766eacae91c8a5a05163c692076e65"
+  },
+  "northern/bridge_timber_wagon_span_j_rebuilding_northern.png": {
+   "sha256": "57946daeb25f7fd5b3953d2fb280fe05860770da819743607d8d6f012fa76b14"
+  },
+  "northern/cargo_barge_ne_damaged_northern.png": {
+   "sha256": "73f94d49713ac12dcfc38d7a24654fa7e8fddbfbb0e20b4ebae64f5846560d1d"
+  },
+  "northern/cargo_barge_ne_empty_northern.png": {
+   "sha256": "081042de47451bf9a50274c4a7fd3ae5553dbcfc619fad15f8f2651c5a86c7fa"
+  },
+  "northern/cargo_barge_ne_loaded_northern.png": {
+   "sha256": "951b7eb272e664a0c67f9f7e22c5df2dc58753ca770e8a981520b4e7f4ace289"
+  },
+  "northern/cargo_barge_nw_damaged_northern.png": {
+   "sha256": "9dada0e5d35c65e7f909b0ff24b8e1af00d6e81057a0223bec68358bf0ad0be6"
+  },
+  "northern/cargo_barge_nw_empty_northern.png": {
+   "sha256": "5e19c86e11cfaf4e917fbedacbab00750d20bf73147f841b170c8168fd61b158"
+  },
+  "northern/cargo_barge_nw_loaded_northern.png": {
+   "sha256": "c4c3c69de84b17e8525c71c9d15bad536a5517a3d0fd6cfa23ea36b0d7084dbd"
+  },
+  "northern/cargo_barge_se_damaged_northern.png": {
+   "sha256": "2e7dc755751b5a5ccf4664ef4f9c0ab798bf5a6a3e6395d9c50e35d8c9ed912c"
+  },
+  "northern/cargo_barge_se_empty_northern.png": {
+   "sha256": "325bce3c7ec33be38c65ef16dfe016048ee133d47005d6095ab5881a6426c5f5"
+  },
+  "northern/cargo_barge_se_loaded_northern.png": {
+   "sha256": "c888d8448072654e4e327e43e2272fccb908886d39d227c66bdf7bbb56dac9a7"
+  },
+  "northern/cargo_barge_sw_damaged_northern.png": {
+   "sha256": "a7ee67d71cd0c5078ae5d91a4fd4893823a4dbd0e41f2179579cb3c19ef34409"
+  },
+  "northern/cargo_barge_sw_empty_northern.png": {
+   "sha256": "1f6944f8870b1d2783050d6fc2ed392f4c1ca8eaa2c391454ce7667a02bc62a5"
+  },
+  "northern/cargo_barge_sw_loaded_northern.png": {
+   "sha256": "34a756841c9718e0938a987dcf851b8239f1d48560330e05a5151844cb4f919a"
+  },
+  "northern/clinic_4_northern.png": {
+   "sha256": "bcd09d544a29793d57c762dcabe0d22f5b8de55b965e16d545e5379f54cb64d6"
+  },
+  "northern/clinic_5_northern.png": {
+   "sha256": "9a751f73a3a186ea21e25a623a1dc6c2375e8be216fc5295e6583e4b472567aa"
+  },
+  "northern/clinic_6_northern.png": {
+   "sha256": "af29a2761ce22113ac6bba85daf0c380663073c101412d0859f034c32f453893"
+  },
+  "northern/clinic_7_northern.png": {
+   "sha256": "41c20740ed7ef438eb3995c1f96b1cd58c349df1ef33f72d4bec30a15ecca379"
+  },
+  "northern/clinic_8_northern.png": {
+   "sha256": "677a1924703e318f9bf273843c106d08c4a6ec36098b9a44b2271ef378ef25c3"
+  },
+  "northern/coastal_sailboat_ne_damaged_northern.png": {
+   "sha256": "3aab81f89313c12178f354397b922630e00437b3209d69ca4d3b0b394356ec55"
+  },
+  "northern/coastal_sailboat_ne_empty_northern.png": {
+   "sha256": "6dff0ba95f2a4b2b4e34b898d56e023f200f307f6ed768076bedc7c673a7643b"
+  },
+  "northern/coastal_sailboat_ne_loaded_northern.png": {
+   "sha256": "2d57d438a4a5a4da8db5eb3730e9ccda033b418799d8862e1ce7c57c145aaaed"
+  },
+  "northern/coastal_sailboat_nw_damaged_northern.png": {
+   "sha256": "9eb7ded499f6fcf2697561b2fe87ee6cc736ace31b0976eca072dd11626c9d07"
+  },
+  "northern/coastal_sailboat_nw_empty_northern.png": {
+   "sha256": "ab61ffa62524a0afa99ebf04d0eff7a8a46b3ae55b8a70d81bb51387646e24e0"
+  },
+  "northern/coastal_sailboat_nw_loaded_northern.png": {
+   "sha256": "e8764f04a665136109216dd952906bb0e35cb3c5bfc338e0b82e160df71c93de"
+  },
+  "northern/coastal_sailboat_se_damaged_northern.png": {
+   "sha256": "156595b7fcc886411ff0f16fb6c5d5e452f23b2dfb34399f641d634dc3f73230"
+  },
+  "northern/coastal_sailboat_se_empty_northern.png": {
+   "sha256": "08e3a4e91a8febec3f0491129cb3b57eab2740182563beafe15fe7e5bba934e3"
+  },
+  "northern/coastal_sailboat_se_loaded_northern.png": {
+   "sha256": "6d3c88a493e715150e3f9e2ef5d460437321bf7a417d0f24ea56d71e8a6d7a95"
+  },
+  "northern/coastal_sailboat_sw_damaged_northern.png": {
+   "sha256": "aacd67563c799f3c8b0a7ee3ced90e9bca9dc26c564361954374f231fd42878c"
+  },
+  "northern/coastal_sailboat_sw_empty_northern.png": {
+   "sha256": "f69a65a7fcb3debc41ca486bb187a360a8cef00ee7f802ae0091f5e16a0cf673"
+  },
+  "northern/coastal_sailboat_sw_loaded_northern.png": {
+   "sha256": "adecdf96fdb1b233f9b0d7f596966d5b6e6d927448339be2271c92af1fb2be6d"
+  },
+  "northern/council_4_northern.png": {
+   "sha256": "e8f9d42d320fb6951d932d343beb63c8a284db0242610cb2bbc264318068616f"
+  },
+  "northern/council_5_northern.png": {
+   "sha256": "a4bbac70719d460b16faf333722f9bc5361fe0c75701e18b8f53dc8d5a54ea46"
+  },
+  "northern/council_6_northern.png": {
+   "sha256": "c1ba7a0369b749906f2e084deb4d1561abb3d5d0e28e0f76e7733e4a8ff1f324"
+  },
+  "northern/council_7_northern.png": {
+   "sha256": "16b0f98000761be0d174a879fb1a7aa6f076bc290dc5adeda5055bd2ebda753a"
+  },
+  "northern/council_8_northern.png": {
+   "sha256": "44b0107692ac862b08aed02a9777e48f2789a4cbfd2282b8ce297c04cfe3d2cc"
+  },
+  "northern/court_4_northern.png": {
+   "sha256": "95383ff061e13d3209a2c504e2b780ee3c359f15a388a65123dab96b9517dd19"
+  },
+  "northern/court_5_northern.png": {
+   "sha256": "e9c87e5611e952d81caeb0b5552729b810d15fa0136ae12d83eeb7ee054d06af"
+  },
+  "northern/court_6_northern.png": {
+   "sha256": "e2b4e6d339091ef52f028794b612ab874d2b3ce3f4d084d2a77a3b2c9bcc700f"
+  },
+  "northern/court_7_northern.png": {
+   "sha256": "92ce489d0b86e83b0d51ba7c731ac8991a86b92c83b579e6af118675d54cd332"
+  },
+  "northern/court_8_northern.png": {
+   "sha256": "a4d853cb09129da6d78404f8ee631f57de06db59b24cdcf041bf45e6776e6fce"
+  },
+  "northern/fish_school_1_northern.png": {
+   "sha256": "f124137e307fef785fe23674673859aa6615583efadc41f08ae25ecd310ea672"
+  },
+  "northern/fish_school_2_northern.png": {
+   "sha256": "fb17a543b7b370f62adff470660e6198b03b807e82d302d1a022496e9376450b"
+  },
+  "northern/fish_school_3_northern.png": {
+   "sha256": "c625f59f3610782c6ef256e2b1b82192c60eee7e2e72aa36dc76a001eea4a850"
+  },
+  "northern/fish_shadow_1_northern.png": {
+   "sha256": "e34e3532861dcd77b32ca26445788d5448bc1af0a696822f184e6a271af9c404"
+  },
+  "northern/fish_shadow_2_northern.png": {
+   "sha256": "e486f3577104cc23d07588bfc38222d962f78785eba33ac50a1e3d59c6beb40f"
+  },
+  "northern/fish_shadow_3_northern.png": {
+   "sha256": "5519f1433013f9575a7ef544096b9ab4a1afb9336cace117fb180dcfec3ca4be"
+  },
+  "northern/fishing_canoe_ne_damaged_northern.png": {
+   "sha256": "4b1f0e520a2ef5f74f6a0f7b8d3c0763b97bd115e21cf8fd7715adfee4d1ec58"
+  },
+  "northern/fishing_canoe_ne_empty_northern.png": {
+   "sha256": "20db04c4651d548b50c8b5da5d6d8ef575e6f0ac05666a79e65979d4295a11c5"
+  },
+  "northern/fishing_canoe_ne_loaded_northern.png": {
+   "sha256": "b0b310c537468352488bc2cef7c9c0c518c89a8d0bd14f4813bdd20bb8598fd3"
+  },
+  "northern/fishing_canoe_nw_damaged_northern.png": {
+   "sha256": "5546b731ae73b882a9187ce1b112b84ba6233481d7dfc533cddc18a51a8c6bad"
+  },
+  "northern/fishing_canoe_nw_empty_northern.png": {
+   "sha256": "e03ad5dd1fad1cb31071bf21bba64f3ad70a065ad6ed3962d0b93a37d3aa3a3d"
+  },
+  "northern/fishing_canoe_nw_loaded_northern.png": {
+   "sha256": "26f2932f41a9787d24b5282d7ac40c378eabc28cb63b8b90a76d5f8fbb630955"
+  },
+  "northern/fishing_canoe_se_damaged_northern.png": {
+   "sha256": "da651777385d020e528ed2e7d46c4ec062d2ec2b55778cbdbf81c2b9bf637e67"
+  },
+  "northern/fishing_canoe_se_empty_northern.png": {
+   "sha256": "ce408564113babff26768b0ce327a584fd9aed1251cd4e0240bd87cb18e3b153"
+  },
+  "northern/fishing_canoe_se_loaded_northern.png": {
+   "sha256": "31b94f4379cdb896ae2df9c69d44bfb4db89d063ac6b71deba0f05da35d946a9"
+  },
+  "northern/fishing_canoe_sw_damaged_northern.png": {
+   "sha256": "a2cbf294edb0e6628988b9acd601ed17910c35f09bae2d03b81125b8d87b54e3"
+  },
+  "northern/fishing_canoe_sw_empty_northern.png": {
+   "sha256": "d11a045c14c62c22d9896d649feaae3992c24751dff47479ac6e26e9ee4465d0"
+  },
+  "northern/fishing_canoe_sw_loaded_northern.png": {
+   "sha256": "9cbb60271b2066f5142eecc843052611632735c8e415caa0d909f76d87ed3a94"
+  },
+  "northern/fishing_sailboat_ne_damaged_northern.png": {
+   "sha256": "471978f6db0ebe7c562fe1fcdcecb75c97b581164d38714c9702a75af5cc9e2b"
+  },
+  "northern/fishing_sailboat_ne_empty_northern.png": {
+   "sha256": "0986772f57f6558394e550ca8d532e1367a72f644ac7fefc53283d79199b225d"
+  },
+  "northern/fishing_sailboat_ne_loaded_northern.png": {
+   "sha256": "eb4a7482c7c93ed349b13472f59227dbbfa189b2c1872c18d4e6c8b8e37e0703"
+  },
+  "northern/fishing_sailboat_nw_damaged_northern.png": {
+   "sha256": "828930b54006b25cba34776d76e7b4d5b934e901bc18ee39b429f56f3b07d425"
+  },
+  "northern/fishing_sailboat_nw_empty_northern.png": {
+   "sha256": "08367322e5fbe343cc2dcc116be115233404b9548ae2bb2b439e2fbfa7a022b9"
+  },
+  "northern/fishing_sailboat_nw_loaded_northern.png": {
+   "sha256": "9d355a1b683673b36ffe8be4caaa55fae95e8b0a5a8bcf96cf9b025ea9d726b8"
+  },
+  "northern/fishing_sailboat_se_damaged_northern.png": {
+   "sha256": "bddf7322256f9e76b97b111fe18e98c5def40d6568db323b7a864ea6d02637a2"
+  },
+  "northern/fishing_sailboat_se_empty_northern.png": {
+   "sha256": "13f7f0e72dbe1ddd1e4551dcc7651372db3e1a939094d55b0fc40a1adc60bb35"
+  },
+  "northern/fishing_sailboat_se_loaded_northern.png": {
+   "sha256": "1011e1d0af09e2b78e8a364f1fa7e23e31e7617b51d48c4c8dce4ce374e7d543"
+  },
+  "northern/fishing_sailboat_sw_damaged_northern.png": {
+   "sha256": "d9c67901fc557bb58ba5b555a15853be7b59e5e1eac3353790bbca5408dbf24b"
+  },
+  "northern/fishing_sailboat_sw_empty_northern.png": {
+   "sha256": "2781c595bf4720273da043b3f427aeb0160ed2bb81d8442e238ec2548d4509ff"
+  },
+  "northern/fishing_sailboat_sw_loaded_northern.png": {
+   "sha256": "df197e05db7e5a8eab36effdc38bec1dc0c1cb484e7d947fd552c96b13b22dff"
+  },
+  "northern/home_4_northern.png": {
+   "sha256": "a6bf9dc3324173ad79442cfc71810bbe0a37c216e91c9012046b7a901f49b2cf"
+  },
+  "northern/home_5_northern.png": {
+   "sha256": "48e6091dad7aae1fe63d1eaf677eaaee2ddc7f9a7d8fb8ef548fe48004e0cdf0"
+  },
+  "northern/home_6_northern.png": {
+   "sha256": "81f450bb397e72e9ea5662bfe3d4983d07699fc9c4d71ccfdc414c40ddd18ac9"
+  },
+  "northern/home_7_northern.png": {
+   "sha256": "4044da47638ab7d6145e8d4563f155b40d7255edf87d2f0f3eac2bbef9207610"
+  },
+  "northern/home_8_northern.png": {
+   "sha256": "6eab74d6c05f0bec215db20f5453f2946b4d3a140f35731599aaae0315ab45c7"
+  },
+  "northern/net_boat_ne_damaged_northern.png": {
+   "sha256": "c101c09c9701efb87fdabe79d41e0ff261c00cc6f8f4e979a6eaa7ef85a24209"
+  },
+  "northern/net_boat_ne_empty_northern.png": {
+   "sha256": "f135e02f4e6e373bee86bfdea057f240e99a9962564af4ba905077fb29382f79"
+  },
+  "northern/net_boat_ne_loaded_northern.png": {
+   "sha256": "81a0d448748f9155778bc78dca55a44a59f88dea709a1c324d8705adea7cdcd3"
+  },
+  "northern/net_boat_nw_damaged_northern.png": {
+   "sha256": "9b0a9c9174e0d0e5f6ee3b9b0ce011c948a35b8627a68fdd59f5d0666d5c42d7"
+  },
+  "northern/net_boat_nw_empty_northern.png": {
+   "sha256": "c6a997f959a18730bebe96b65c5c228d61bc31645e08bec15cbb62cadbd18e98"
+  },
+  "northern/net_boat_nw_loaded_northern.png": {
+   "sha256": "e9f22317af51e0a4bf4d9da4806fd6ff8c7840b625a3fef972dbb39d2d5ba559"
+  },
+  "northern/net_boat_se_damaged_northern.png": {
+   "sha256": "c74d23f919e612d35435bb4fadc412e780432368a095e443887544e3e0c708ac"
+  },
+  "northern/net_boat_se_empty_northern.png": {
+   "sha256": "50bc267664f563acf6ef00ee0f4e7fb33ece83facc1dc51c2c241b067f3dd8ad"
+  },
+  "northern/net_boat_se_loaded_northern.png": {
+   "sha256": "8347fb1de0a729fcfd827912a199b52eeebf4041599464d261f0e5e64f1241c2"
+  },
+  "northern/net_boat_sw_damaged_northern.png": {
+   "sha256": "43e594da7a099ab135e6eae54df76f53ac8dae93e309ad6816dafb0496bb0bdf"
+  },
+  "northern/net_boat_sw_empty_northern.png": {
+   "sha256": "13d1b9a9b61a44ee9c28dbfb9a790368fd9b5a2389363e8727033b876dfdf3b6"
+  },
+  "northern/net_boat_sw_loaded_northern.png": {
+   "sha256": "3dcd642304f9dfc48c5e25abde376df1b51172a993da13c2f68a5bb8155ff01c"
+  },
+  "northern/net_floats_1_northern.png": {
+   "sha256": "434fb98f734d3d52d6af7302739f3c075f36823bce0eb440549c377877eaf028"
+  },
+  "northern/net_floats_2_northern.png": {
+   "sha256": "162f713560f29ee85c53809b0f8bca048666913ab4e503d2e337105d211d07e7"
+  },
+  "northern/net_floats_3_northern.png": {
+   "sha256": "3c13d80b8baa48ba7d1e1c917827be621c7a50157c539d050ca9c4cec87be07a"
+  },
+  "northern/ripples_1_northern.png": {
+   "sha256": "565d028ec249f78165844bc38279cf4021be4e486c777862d5ebd687980ee1b6"
+  },
+  "northern/ripples_2_northern.png": {
+   "sha256": "38927b0411f463d8d430d98d74e5f1fbb604a0e2f6a91fc9d67ae19b6b014d5f"
+  },
+  "northern/ripples_3_northern.png": {
+   "sha256": "aeb263b7e6bce5d584204d013b1348361ddef72a51c37107294552363d76520c"
+  },
+  "northern/rowboat_ne_damaged_northern.png": {
+   "sha256": "a5e6b8937da89afa864a4f345042e7292f261077a71d688388cbb1c3cd6fbda2"
+  },
+  "northern/rowboat_ne_empty_northern.png": {
+   "sha256": "d8ce9c0f81e2dc52d881b82756ab2ee68d1edf5d4029c59f886c5d9dfdebe1e8"
+  },
+  "northern/rowboat_ne_loaded_northern.png": {
+   "sha256": "a8068f396efcc9f9ab50388763432118163bfcf59b7bcf9375b3583dad4db3eb"
+  },
+  "northern/rowboat_nw_damaged_northern.png": {
+   "sha256": "1a68fa867fca277029b87d951a9c3e81ec467808a6fb415a53d637e12af260d7"
+  },
+  "northern/rowboat_nw_empty_northern.png": {
+   "sha256": "3249f6b0c072034b41b9321e8ff8630af38d5421ea9df4345b04fc04d734b712"
+  },
+  "northern/rowboat_nw_loaded_northern.png": {
+   "sha256": "9eaeba00babf59c8d703427edd34fbac21e6e2b20d06c8e97f4e8996f0cabf8b"
+  },
+  "northern/rowboat_se_damaged_northern.png": {
+   "sha256": "b8cc5d9007606bec98c57d9b8fab613ef16ad3f1c6d47888d84bea6b33c8c1d8"
+  },
+  "northern/rowboat_se_empty_northern.png": {
+   "sha256": "f66d420288eb68c0d044ae366577d96a52fa2b5967bb010da2ced5493155128b"
+  },
+  "northern/rowboat_se_loaded_northern.png": {
+   "sha256": "68f4ca2b562c6a1128eb623560f6870cde140fe29541a1df766fd6bed5f6b579"
+  },
+  "northern/rowboat_sw_damaged_northern.png": {
+   "sha256": "6652e39025a28187f7eb795a5b0e877934828325f2d33029a319286501b3b15f"
+  },
+  "northern/rowboat_sw_empty_northern.png": {
+   "sha256": "8f8e971c45d5743cf6e9bf7e9088425dbdf37dd79eb2a82e96c51a0eaf2bd2b7"
+  },
+  "northern/rowboat_sw_loaded_northern.png": {
+   "sha256": "f41bb94c66fb11516a9ef44dd78cdb4b3f02d46c4f317517660d2905aa5c6fa0"
+  },
+  "northern/shop_4_northern.png": {
+   "sha256": "3a2eabf053e0a71729553b9fa94d273009d26cdda25170812e4c972ad7b11d6d"
+  },
+  "northern/shop_5_northern.png": {
+   "sha256": "1c7db421fa36fb1295575639bd23444a28e1ff1035e2938ee48892ff7f330c83"
+  },
+  "northern/shop_6_northern.png": {
+   "sha256": "a349b0ae34b4b4f2d1f83567816047244bd117ac386d4a0b45c87fbe249bc5a1"
+  },
+  "northern/shop_7_northern.png": {
+   "sha256": "dfb183b2b2d14157f313ab8f21f4e1652bffb0d8eccb537ed119777b82df6d14"
+  },
+  "northern/shop_8_northern.png": {
+   "sha256": "4989fba4bd195f1af034c5eddc1430ca1f828b85f666200b294db476c46de2f6"
+  },
+  "northern/work_skiff_ne_damaged_northern.png": {
+   "sha256": "e487b09fa7044a3bd934ed7ef0330507166dfcbcdf35dc385ab1eaf13cf65b6a"
+  },
+  "northern/work_skiff_ne_empty_northern.png": {
+   "sha256": "69f81e5a034057dffe911b94db6847ac04fef2eb11e005faffd37e5b9a8c206d"
+  },
+  "northern/work_skiff_ne_loaded_northern.png": {
+   "sha256": "0fdf721ea6174dc736df5ebd694ba02b53ea701b9732be84c37f0653eb3a509e"
+  },
+  "northern/work_skiff_nw_damaged_northern.png": {
+   "sha256": "5a75b67a1987ae36c2f417eaa9f747ef3d51ccd73903dd7d14ec5554cb814e75"
+  },
+  "northern/work_skiff_nw_empty_northern.png": {
+   "sha256": "648d34a73f94a68ca0e56089ab62ea396fee3c72ac4f10fc58afa2913bc5a08f"
+  },
+  "northern/work_skiff_nw_loaded_northern.png": {
+   "sha256": "3f32ce0874e45696cb7df72c4afdaa3b318723ee00925e0a3c48fa19619166ba"
+  },
+  "northern/work_skiff_se_damaged_northern.png": {
+   "sha256": "af90ad5d0617145f7b90218e53bfb650bf78a0a53e96aabbb8b2f4fe6c61e157"
+  },
+  "northern/work_skiff_se_empty_northern.png": {
+   "sha256": "11e7c5b173274f74b7632722246ca9f2f1838b15d573b3be5e9ef4e791d2acbc"
+  },
+  "northern/work_skiff_se_loaded_northern.png": {
+   "sha256": "50f08384d768aa6c40f5d7296b67b67fd60691359a41ba953e686d9b82b3a19d"
+  },
+  "northern/work_skiff_sw_damaged_northern.png": {
+   "sha256": "12f9799bf44ba02307eb748b6621c55353502449fb60af49ed5603c73c03ffb5"
+  },
+  "northern/work_skiff_sw_empty_northern.png": {
+   "sha256": "af64562392a8ddd98282fa42383ca3f951bacb34207758128fae1264bb483f47"
+  },
+  "northern/work_skiff_sw_loaded_northern.png": {
+   "sha256": "692335d53447aba4923f698fc58a10ced6bef18ae67720902417e67744ce4c7b"
+  },
+  "temperate/bridge_stone_arch_far_bank_i_construction_temperate.png": {
+   "sha256": "6ddf8e89fb4e0e17e7457c5fc1d0019e934bf1cbcaed30acd7202086b27a2118"
+  },
+  "temperate/bridge_stone_arch_far_bank_i_damaged_temperate.png": {
+   "sha256": "537131829a4a9c8ea108923b2a099a99ef09d262897a1112ee41deb98d97cd5d"
+  },
+  "temperate/bridge_stone_arch_far_bank_i_intact_temperate.png": {
+   "sha256": "697063f1b2f166a0a32914b7a4d7f85a947a92ae366cca1893e94a0839364008"
+  },
+  "temperate/bridge_stone_arch_far_bank_i_rebuilding_temperate.png": {
+   "sha256": "003d2bea25f9fbf79ed83c798da3ee4037b5a8d2e072ab978649cd91f8531413"
+  },
+  "temperate/bridge_stone_arch_far_bank_j_construction_temperate.png": {
+   "sha256": "ae26a06445b6fa1bf04e8c4bd21d90149c99ab4c39ef2a53d01107ac1e0329d2"
+  },
+  "temperate/bridge_stone_arch_far_bank_j_damaged_temperate.png": {
+   "sha256": "765f52b30a7e559d44656cd244343d76b6fe69ff796e7a4afd0d389afcba5695"
+  },
+  "temperate/bridge_stone_arch_far_bank_j_intact_temperate.png": {
+   "sha256": "6cc5d9d1b84c51c6a01433bb6d9a43dd06d2f87d258397e8cf3cd462fbee9b36"
+  },
+  "temperate/bridge_stone_arch_far_bank_j_rebuilding_temperate.png": {
+   "sha256": "315597d24a17d4bdd42b120c9d063c19f5bd333a60751d6c2b2f21372ab73745"
+  },
+  "temperate/bridge_stone_arch_near_bank_i_construction_temperate.png": {
+   "sha256": "5233f156205fa01964097e391873dc227a9bde2e53f9273243bbd1f19b02cd45"
+  },
+  "temperate/bridge_stone_arch_near_bank_i_damaged_temperate.png": {
+   "sha256": "663c8fe19a4b818a69d77e55b0e0767bb638cc24c5861e72d45234a90271533a"
+  },
+  "temperate/bridge_stone_arch_near_bank_i_intact_temperate.png": {
+   "sha256": "cf283f92fff90fefedbbedd0183fad905867f0c6381dcc03b381dc56e2f8a6a0"
+  },
+  "temperate/bridge_stone_arch_near_bank_i_rebuilding_temperate.png": {
+   "sha256": "ae4ce2223558f56ce7347426053516174167a3c9203f5ecdea991e2af74513b2"
+  },
+  "temperate/bridge_stone_arch_near_bank_j_construction_temperate.png": {
+   "sha256": "876c2e224129696b4c647610a8b0638c656d5a44e749cd548f8368c6c850baa3"
+  },
+  "temperate/bridge_stone_arch_near_bank_j_damaged_temperate.png": {
+   "sha256": "59c849e55cdbc7949720160d9930252e16e7d29015f431eb80a5a4fb4fab6e51"
+  },
+  "temperate/bridge_stone_arch_near_bank_j_intact_temperate.png": {
+   "sha256": "647fbcf1c4a45a2442d384127d5fc4c6303f9d51658245da7c9ecabf798ac25e"
+  },
+  "temperate/bridge_stone_arch_near_bank_j_rebuilding_temperate.png": {
+   "sha256": "fa66a0cd078b667d7531c7bfa6320f7afff1446b32a0c668aa76b36ba823b939"
+  },
+  "temperate/bridge_stone_arch_pier_i_construction_temperate.png": {
+   "sha256": "96edb8190e541d89cb01e1d5519f285abfcd389526fe923a9dd1fcf0ba0257fe"
+  },
+  "temperate/bridge_stone_arch_pier_i_damaged_temperate.png": {
+   "sha256": "f850520045db2c88c95f1afde5630fca05b18c12f9baa2eb54dc5e4a407a8ea9"
+  },
+  "temperate/bridge_stone_arch_pier_i_intact_temperate.png": {
+   "sha256": "bd9396f6e65f76d0b783e96c807dacb03b1662f534fe8b029a920c00dbb140ad"
+  },
+  "temperate/bridge_stone_arch_pier_i_rebuilding_temperate.png": {
+   "sha256": "cb51dcde2fc7ed33701e3327cf803662e727fbf5d0ec6f568c52820433a9639b"
+  },
+  "temperate/bridge_stone_arch_pier_j_construction_temperate.png": {
+   "sha256": "bca59afe20ad4c98dc95cfefe4adc18264c498abf37f61fba6bc6addb29a8d28"
+  },
+  "temperate/bridge_stone_arch_pier_j_damaged_temperate.png": {
+   "sha256": "8b00e6e0f98f599a224b0b86395268e38ba58dc23ce7a13ca96d48f16545291e"
+  },
+  "temperate/bridge_stone_arch_pier_j_intact_temperate.png": {
+   "sha256": "95a6ab37dd4eee677ac933fb77454d4fe8b10f35b36921b7f5b80944e2f66580"
+  },
+  "temperate/bridge_stone_arch_pier_j_rebuilding_temperate.png": {
+   "sha256": "33405a04c550d5d95f3f6fd4caa812c30f42c11d70758c2c13cd72cf9b4e219f"
+  },
+  "temperate/bridge_stone_arch_span_i_construction_temperate.png": {
+   "sha256": "fd9ff07cc2831c327e786c817ac9b359386c3659e599734c8e9e694eb2bbbf39"
+  },
+  "temperate/bridge_stone_arch_span_i_damaged_temperate.png": {
+   "sha256": "6150f09b2cff2ac84f260bd24d2ae7b71bf1683c6e99672a36037ea2ae104b17"
+  },
+  "temperate/bridge_stone_arch_span_i_intact_temperate.png": {
+   "sha256": "053eaa293317234ef8ee7065a577cf8a3113da7b93a6b90221cba00e4b46e059"
+  },
+  "temperate/bridge_stone_arch_span_i_rebuilding_temperate.png": {
+   "sha256": "de26128ae7cd8ab15894b8ee42080b624089f69bae3da8f708c9582216e34d8b"
+  },
+  "temperate/bridge_stone_arch_span_j_construction_temperate.png": {
+   "sha256": "adec8bbb71d4b1e6b810914d3ad525eba40b549ee25a59778b46f7b401f9ae26"
+  },
+  "temperate/bridge_stone_arch_span_j_damaged_temperate.png": {
+   "sha256": "3f84d0a72ddc4a34a7ea49455746a6ca54040bc7c3188b470d0632049083584d"
+  },
+  "temperate/bridge_stone_arch_span_j_intact_temperate.png": {
+   "sha256": "9abd35525877af1e145042da5c032c2febdf9d00f2694dc826f29d362ba3f3b5"
+  },
+  "temperate/bridge_stone_arch_span_j_rebuilding_temperate.png": {
+   "sha256": "873a26637ffc4efd81ad69ee1e879b013d4b5a5cbba774604eaed171d77d3047"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_i_construction_temperate.png": {
+   "sha256": "a7d378c1e38474d9dc436c312714a9804c0875411171e458e61f2f5744db6403"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_i_damaged_temperate.png": {
+   "sha256": "eab979618f89843c6fb2abc80b9321b30f0afea606aa6e1ceb2b909b587e1b37"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_i_intact_temperate.png": {
+   "sha256": "a8733d83c52c91374a234445d678faf8c15f7c628766ab1ad5caf59038e6b9a5"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_i_rebuilding_temperate.png": {
+   "sha256": "86c31ca14b4f4a68bca7780897b51eb21353052e5a3ff36c4bc0b1c732719782"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_j_construction_temperate.png": {
+   "sha256": "80d7d3b83bdffc8687d17df36ce2cc619d5d699eda71e32904a5df205d7c1573"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_j_damaged_temperate.png": {
+   "sha256": "a23c36c37ef6ed96129d166a0a572d560647d7f1ebfcab4530b0626ecf89fb68"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_j_intact_temperate.png": {
+   "sha256": "39960dda1b1701d442f133e5add281ffda7cbe3c16e1040711ce91615d1975ca"
+  },
+  "temperate/bridge_stone_viaduct_far_bank_j_rebuilding_temperate.png": {
+   "sha256": "caeb53f5369e921c40d3c5b934f24087b4b03eaf971999b37cc7415c024e31a0"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_i_construction_temperate.png": {
+   "sha256": "787efd3c3d3b2d696f8a835d3ccf21eafb33004dc5a927f529cb571af7c90072"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_i_damaged_temperate.png": {
+   "sha256": "ff7554e2f3a26230541f46021e3daede4e86952650a1aaead56c12fb3a037d68"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_i_intact_temperate.png": {
+   "sha256": "7b8d4a5d72f1550a0db2712f3bd43874a5801de564418bc83a1e6fac2c9d1172"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_i_rebuilding_temperate.png": {
+   "sha256": "cd25ae400f03ba77c94b006fb64d578a08876a9880fc4ab4e75e0a4a39f70829"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_j_construction_temperate.png": {
+   "sha256": "cf46efd3605ea89e91217befb75934f3a4d179f436db9e9e979d49a9894c428b"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_j_damaged_temperate.png": {
+   "sha256": "44c9478134bbe3bc300863b482b1bc85c5896dda32d03bbc25e5c785a43c1cc0"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_j_intact_temperate.png": {
+   "sha256": "32680ec91b90ff0c524326c8ee747e88021dba859a407e2839576dc5eac7483a"
+  },
+  "temperate/bridge_stone_viaduct_near_bank_j_rebuilding_temperate.png": {
+   "sha256": "a7149cf715def660fa61e1b97f1c76def7703967512a85d6cc733f4018d5ed70"
+  },
+  "temperate/bridge_stone_viaduct_pier_i_construction_temperate.png": {
+   "sha256": "8dd2fdfc3165bf0ce48d5024d04fbae3033791247b9f6e1347033af67b5c18d4"
+  },
+  "temperate/bridge_stone_viaduct_pier_i_damaged_temperate.png": {
+   "sha256": "10fe629e4a7d1ae1041f75cbb73d012dcbf910eaab7bd645eab376c9b8d95844"
+  },
+  "temperate/bridge_stone_viaduct_pier_i_intact_temperate.png": {
+   "sha256": "9dbf0f7cb2bbed6095867d4aa565a0b5b0e96e7916ba863691474c06022abae2"
+  },
+  "temperate/bridge_stone_viaduct_pier_i_rebuilding_temperate.png": {
+   "sha256": "6ac0738a9204b6aab88a105b9fae721b5e66022b0f31beb9f9264ab44f6ee865"
+  },
+  "temperate/bridge_stone_viaduct_pier_j_construction_temperate.png": {
+   "sha256": "68630ee6556f7628165e37f0bb4d99681a3c0ab4957da05445c08014e3bb312b"
+  },
+  "temperate/bridge_stone_viaduct_pier_j_damaged_temperate.png": {
+   "sha256": "89423a4a8eeaa9b48ae65c6bc83eae6bee57fb36f6c991be42206a649b09e438"
+  },
+  "temperate/bridge_stone_viaduct_pier_j_intact_temperate.png": {
+   "sha256": "f64f5105196c36b7fa8e24f8def454af5acb44b0d37097ca11388722160abe0f"
+  },
+  "temperate/bridge_stone_viaduct_pier_j_rebuilding_temperate.png": {
+   "sha256": "0522a1c2b250a9ab4f7691d291870f58ce678d07cf65e269288de955fabbb27d"
+  },
+  "temperate/bridge_stone_viaduct_span_i_construction_temperate.png": {
+   "sha256": "ba9362ab98abb6fab82a1d105471d7940455186fab9728c65c8687ae46f76e36"
+  },
+  "temperate/bridge_stone_viaduct_span_i_damaged_temperate.png": {
+   "sha256": "ea4aa1ee73a670e450c418e98570ae25d5698219c4fcc4cdae79803ac6f06ba2"
+  },
+  "temperate/bridge_stone_viaduct_span_i_intact_temperate.png": {
+   "sha256": "1be080708b8712be1d25738774abeefe15b4f33f16493c0437cd04dddc27b6d1"
+  },
+  "temperate/bridge_stone_viaduct_span_i_rebuilding_temperate.png": {
+   "sha256": "f8b7bd49c71d35e77f12490f61333aa9bca81c1eea34f2d3d3b3d15825ffa224"
+  },
+  "temperate/bridge_stone_viaduct_span_j_construction_temperate.png": {
+   "sha256": "ac9956e9be3dc2ba12f97255aef5f179bc4f2d63023de2dc4b2b91eddb6e1342"
+  },
+  "temperate/bridge_stone_viaduct_span_j_damaged_temperate.png": {
+   "sha256": "c54e89339bf4717507f0ecc938f0c4635662e34c3ec489058b5d06e4221fb4a6"
+  },
+  "temperate/bridge_stone_viaduct_span_j_intact_temperate.png": {
+   "sha256": "ca5f71c07967bcb57f28d65196271a7dc878e7f9a1a23c4f63c71145dda01f04"
+  },
+  "temperate/bridge_stone_viaduct_span_j_rebuilding_temperate.png": {
+   "sha256": "f5ec79b8b35c567aa820f45725dc7d40c9c66afdce00dd278c5e155e405274f9"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_i_construction_temperate.png": {
+   "sha256": "ac46ebec841c055fbfa089ba9417b55017a23202e71f9c312dfe9603cc78a4e2"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_i_damaged_temperate.png": {
+   "sha256": "98a803f3dc5c8cf390839058d1acae94548adf17e9409b66872afd25b3314a90"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_i_intact_temperate.png": {
+   "sha256": "525080f65f39dff07c0d47b9937cc8e728757d21c7ad6e2b72db7f5669c862b3"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_i_rebuilding_temperate.png": {
+   "sha256": "cc1bd37cb3326457c22a35b8b0c00a74f2a19e883973c60919e9db54e616f70a"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_j_construction_temperate.png": {
+   "sha256": "fc9b86ad8028daac198c252ca8aae0d2f227447a29b1970bfe1ce3dc532bc369"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_j_damaged_temperate.png": {
+   "sha256": "673196852cd986caa509a57186633a92e1feabd98b265df36be59502e7577a61"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_j_intact_temperate.png": {
+   "sha256": "0bce250e9db3ba0644dec7a6c7e7eb668844889a3d3887567ff1cd3c88cd3d2e"
+  },
+  "temperate/bridge_timber_footbridge_far_bank_j_rebuilding_temperate.png": {
+   "sha256": "fe740224a491b593a9aba22d2df3eec668ea3d87275e94ea5f2dac881df274c6"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_i_construction_temperate.png": {
+   "sha256": "64e430ace11d9af8b41552be1e49d45492784c95d95f3e57a3bac76146e0adcc"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_i_damaged_temperate.png": {
+   "sha256": "6092e5bb39cd5afeeee3473618c3361cfd2ccf70c7d8e3f664a3aeba66690a29"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_i_intact_temperate.png": {
+   "sha256": "e65a4b499e641c16a3a746063c2e82f5fd1f523a000270e825c5f40b4fe57b06"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_i_rebuilding_temperate.png": {
+   "sha256": "87cdf2f31be93cb3550ef93d9ffffe9ca91a9069fa6f42959f9c5a623977c530"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_j_construction_temperate.png": {
+   "sha256": "7b594a42d08c9e6abb330504c1a94c85341c74eb38005320062fec0aba4ccf44"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_j_damaged_temperate.png": {
+   "sha256": "d3f3162a9d43c813836a4dae1d0deb71f60efc9daef916997c3915486ab4e6c6"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_j_intact_temperate.png": {
+   "sha256": "aac9ce85900357e93aa998b2783af5471946cb0a4228ccbc3005457c4902d84e"
+  },
+  "temperate/bridge_timber_footbridge_near_bank_j_rebuilding_temperate.png": {
+   "sha256": "4324126f8e2abd3e2275cb3ec342fd5482ddd630ce0ba4cbb17755f330b5ad53"
+  },
+  "temperate/bridge_timber_footbridge_pier_i_construction_temperate.png": {
+   "sha256": "6175dbf40e844bc0bf1a4f7c4f658bc7a5411291cbd9737879cb6faec48bc512"
+  },
+  "temperate/bridge_timber_footbridge_pier_i_damaged_temperate.png": {
+   "sha256": "9bb3e79657e594720485d34f6790c15080704e6e8750f81a2ad20bb404d2e9c1"
+  },
+  "temperate/bridge_timber_footbridge_pier_i_intact_temperate.png": {
+   "sha256": "c376260e51a44450069f71c6b82d1cc96a3c12af4e8e9010b7023cdd8323a1e8"
+  },
+  "temperate/bridge_timber_footbridge_pier_i_rebuilding_temperate.png": {
+   "sha256": "0c5c06185d291a591a0498172b31bc57102a82d1861d3d42b5c273fa808280b7"
+  },
+  "temperate/bridge_timber_footbridge_pier_j_construction_temperate.png": {
+   "sha256": "615263320b17895de29e816f19644d39dc08d7e70c5180cd12ccadc78c4ca17b"
+  },
+  "temperate/bridge_timber_footbridge_pier_j_damaged_temperate.png": {
+   "sha256": "fff0696a9f346ce383043436031b02d50f263fe39f29371ae106fda1f99c8206"
+  },
+  "temperate/bridge_timber_footbridge_pier_j_intact_temperate.png": {
+   "sha256": "1e15c5e39cff45ea07bbd806146222449e757a39b1055ac858fddeb6e644524e"
+  },
+  "temperate/bridge_timber_footbridge_pier_j_rebuilding_temperate.png": {
+   "sha256": "5508ff3ee96af3f35c35bdae22806d7a9463dad5a8622850b1434c063ef48a38"
+  },
+  "temperate/bridge_timber_footbridge_span_i_construction_temperate.png": {
+   "sha256": "2678f8840bdb1310b9ad8a8be3378c045f7b5f9c3d86496359249a77d772fd55"
+  },
+  "temperate/bridge_timber_footbridge_span_i_damaged_temperate.png": {
+   "sha256": "6cc4300860d6855dcc9bc4471dc682e73784cc4c9ac5bc9ccf9d8de8bc86e154"
+  },
+  "temperate/bridge_timber_footbridge_span_i_intact_temperate.png": {
+   "sha256": "e6e61a270d233731961ec58adbc46fd1e5269906ee3625b8e97cc48cef1b50fa"
+  },
+  "temperate/bridge_timber_footbridge_span_i_rebuilding_temperate.png": {
+   "sha256": "1725702c11ac34b931f97da11eb758222844991cff5ca0ba42e4a481d7f2ff90"
+  },
+  "temperate/bridge_timber_footbridge_span_j_construction_temperate.png": {
+   "sha256": "9e5fb2935fb04d9476ba9073a4ced44087a3d5b67be7bba51a84e6c72e9073f0"
+  },
+  "temperate/bridge_timber_footbridge_span_j_damaged_temperate.png": {
+   "sha256": "fadde0ea7be944a1c3f0e06067e0de7419313060eaea0a03ea26af4700745938"
+  },
+  "temperate/bridge_timber_footbridge_span_j_intact_temperate.png": {
+   "sha256": "6415ec9b9ec916fa2f157a2e28403c5229caa4603395005ef5966842f848bc8d"
+  },
+  "temperate/bridge_timber_footbridge_span_j_rebuilding_temperate.png": {
+   "sha256": "eec0d00ce750e8c7fb743a0b0a801ca4f92f3cd0acf9e29f680a7a524961c991"
+  },
+  "temperate/bridge_timber_wagon_far_bank_i_construction_temperate.png": {
+   "sha256": "f88513447673455014fa8409a78aedb3952d4ac5becbc5ac6960749c8dae6ee6"
+  },
+  "temperate/bridge_timber_wagon_far_bank_i_damaged_temperate.png": {
+   "sha256": "2b93f962f96c66c3d4e984c0865cb3dd4aba365638875943442e1dde74d55e04"
+  },
+  "temperate/bridge_timber_wagon_far_bank_i_intact_temperate.png": {
+   "sha256": "ad63cb024ae7bbba634327b3f46cf3a7e93274f46fe4f150a379574edc636cd3"
+  },
+  "temperate/bridge_timber_wagon_far_bank_i_rebuilding_temperate.png": {
+   "sha256": "468a0f573dd70ad2e0e13b94edd360edfe8144a37db9b9f23ce41eadb454ba61"
+  },
+  "temperate/bridge_timber_wagon_far_bank_j_construction_temperate.png": {
+   "sha256": "b9a1dec5423e0fb3051ff79ab7b56bb0ac2d6a67c28d4beb9eba598eaa526c00"
+  },
+  "temperate/bridge_timber_wagon_far_bank_j_damaged_temperate.png": {
+   "sha256": "4d75fe173decbe69392eb21247aa7405911dffb919cf6b6c1caf991c4008d7de"
+  },
+  "temperate/bridge_timber_wagon_far_bank_j_intact_temperate.png": {
+   "sha256": "e08474855556a160f9e80992f984ab6a95db04dae3d288bd03ec4ee95381abf0"
+  },
+  "temperate/bridge_timber_wagon_far_bank_j_rebuilding_temperate.png": {
+   "sha256": "9a701eaed14ec9a2bf42fec6b8272e88cb3e4e35e7d16c6b78da8ae019d5d69c"
+  },
+  "temperate/bridge_timber_wagon_near_bank_i_construction_temperate.png": {
+   "sha256": "b08ad1545b92ee5c79820caebe26da27e4e8a8928b0a9c3373a39e417c2901d4"
+  },
+  "temperate/bridge_timber_wagon_near_bank_i_damaged_temperate.png": {
+   "sha256": "421048f79e241c174dc5aa0240ba4c3e255923d0b7d2920d92e28964f1284ea1"
+  },
+  "temperate/bridge_timber_wagon_near_bank_i_intact_temperate.png": {
+   "sha256": "400899b73bd8b60872cfdc3bf73f17233faac4c29de3630253239d14cc838037"
+  },
+  "temperate/bridge_timber_wagon_near_bank_i_rebuilding_temperate.png": {
+   "sha256": "38eaf8fe49d667ea8c6c6115eec7323b4d3227f7c1266c75b4a5f9d8b6fa9b2d"
+  },
+  "temperate/bridge_timber_wagon_near_bank_j_construction_temperate.png": {
+   "sha256": "c0988c83ea23afdc2402ea41052ad9701807d2011a1e9db2bcf621dd4c7b7e84"
+  },
+  "temperate/bridge_timber_wagon_near_bank_j_damaged_temperate.png": {
+   "sha256": "8c6143477ddf9d82cf0d59682ccf7aa3bf0b4ab31d4b540fb0a138dbe2514495"
+  },
+  "temperate/bridge_timber_wagon_near_bank_j_intact_temperate.png": {
+   "sha256": "e98d20ccb8099af1fef1952786d027f003296bae98520d587a0f99dd674da9bc"
+  },
+  "temperate/bridge_timber_wagon_near_bank_j_rebuilding_temperate.png": {
+   "sha256": "df0ef11e8cf1dce3e98667dc9b6082630d492fab06c33ee703096d210902b0ee"
+  },
+  "temperate/bridge_timber_wagon_pier_i_construction_temperate.png": {
+   "sha256": "6c134b68ce681c009dfd7d8a51c01b3fbd75cb1d03b993bec2afdfc64f076681"
+  },
+  "temperate/bridge_timber_wagon_pier_i_damaged_temperate.png": {
+   "sha256": "baa0360d34cf9b804b71402488fb701532cb457b1639b55e67079df05faca9ea"
+  },
+  "temperate/bridge_timber_wagon_pier_i_intact_temperate.png": {
+   "sha256": "6c1a80b2e5423fc01c000176bc3d59c182242bcbb3e493db84f6973223c1f405"
+  },
+  "temperate/bridge_timber_wagon_pier_i_rebuilding_temperate.png": {
+   "sha256": "0d5923b6e44ec3a1672c407a92e86d987e92a1e7a77223f7fd0afef61b3735bd"
+  },
+  "temperate/bridge_timber_wagon_pier_j_construction_temperate.png": {
+   "sha256": "a2ebafcdd182a52546f751101dea7c2baa67dbe800e4ccc0e28aac76d73e8164"
+  },
+  "temperate/bridge_timber_wagon_pier_j_damaged_temperate.png": {
+   "sha256": "f7a48fc68458b46a4920ec056127cf25d7b1e4cea7b3b7fd84a318f9751443eb"
+  },
+  "temperate/bridge_timber_wagon_pier_j_intact_temperate.png": {
+   "sha256": "b7d549c858fe9081fad20e4b257ad3e782308892df5576712648c80156fa3c1b"
+  },
+  "temperate/bridge_timber_wagon_pier_j_rebuilding_temperate.png": {
+   "sha256": "62fea68dbd967578de477b14763b11b750072582a83652b8a90a8824524c0bb5"
+  },
+  "temperate/bridge_timber_wagon_span_i_construction_temperate.png": {
+   "sha256": "008fc4397a102a30fb9798fe4305c2c4455eeab613af8d4fa1f5a9da72b73ecd"
+  },
+  "temperate/bridge_timber_wagon_span_i_damaged_temperate.png": {
+   "sha256": "8775ca76cd5a9c2f0e970df0c76da1758693e92cdc248a2254fbbd0301ef2415"
+  },
+  "temperate/bridge_timber_wagon_span_i_intact_temperate.png": {
+   "sha256": "56dcf0ff6a6dbb8ab73dab9dd89197b5532d9d727c0cb080f4d55fe3f37b98bc"
+  },
+  "temperate/bridge_timber_wagon_span_i_rebuilding_temperate.png": {
+   "sha256": "6915b6709e01bead4a8457bf1305f1bc0f9a3150ba1cb2232b832fa083adfcbd"
+  },
+  "temperate/bridge_timber_wagon_span_j_construction_temperate.png": {
+   "sha256": "b470727b08dc5ceb6b657116fd4c3b065f3a987f268a354ae5ae637a89e619ad"
+  },
+  "temperate/bridge_timber_wagon_span_j_damaged_temperate.png": {
+   "sha256": "a734d790014dbaf6c0d9254bef84f8b679ebc40107fd08357b3ae209236277f5"
+  },
+  "temperate/bridge_timber_wagon_span_j_intact_temperate.png": {
+   "sha256": "c99164414dc3efd41b26009cd514bc54f3766eacae91c8a5a05163c692076e65"
+  },
+  "temperate/bridge_timber_wagon_span_j_rebuilding_temperate.png": {
+   "sha256": "57946daeb25f7fd5b3953d2fb280fe05860770da819743607d8d6f012fa76b14"
+  },
+  "temperate/cargo_barge_ne_damaged_temperate.png": {
+   "sha256": "4adf3ce6f9e2b93e5075ebfa86b05016d14090873e0c909ae8a73267dfa0c0bc"
+  },
+  "temperate/cargo_barge_ne_empty_temperate.png": {
+   "sha256": "1043c88f75d326346fbaef7480266c1ddc48155378760ef1fb27625a2b09d267"
+  },
+  "temperate/cargo_barge_ne_loaded_temperate.png": {
+   "sha256": "21cb35029b509f817385529d2e8538d07a3d72965c1805ac08a4bbb9326f8f2b"
+  },
+  "temperate/cargo_barge_nw_damaged_temperate.png": {
+   "sha256": "dd8d3ef79038bc983bbc2b10cbc0c7b499fa96224d57b3deaaa9eccf4670bb73"
+  },
+  "temperate/cargo_barge_nw_empty_temperate.png": {
+   "sha256": "dbd9c826d9dcfb7313515de5a4144bd401da71d7febcd0a4d6c9192f56bd665b"
+  },
+  "temperate/cargo_barge_nw_loaded_temperate.png": {
+   "sha256": "56ac68222e20ac720d88a443dc2d74d7eecfcdd626996c2385e15b06b15853e0"
+  },
+  "temperate/cargo_barge_se_damaged_temperate.png": {
+   "sha256": "0bcd11f95766115379ebd20c6b3bf7f6fec0694fa1ba84915a26bf1ead9e69b2"
+  },
+  "temperate/cargo_barge_se_empty_temperate.png": {
+   "sha256": "aa3c6eca2fe1a91c354e9523a7e4cc5b6f057a7f24917e4a44131640651de147"
+  },
+  "temperate/cargo_barge_se_loaded_temperate.png": {
+   "sha256": "1b83f8282fc80f6285ec8ff54d62194e1e79f950d9feff6d3f563c24f3dbb95c"
+  },
+  "temperate/cargo_barge_sw_damaged_temperate.png": {
+   "sha256": "b3e6eee6566cbd8f8e0f809d4b7fc874d5dd0e5dbad3206db002381e9e04ea35"
+  },
+  "temperate/cargo_barge_sw_empty_temperate.png": {
+   "sha256": "f8905eb90e68b9ce4caf9c626f9eaa335e55723186852ffe426e105098f203ea"
+  },
+  "temperate/cargo_barge_sw_loaded_temperate.png": {
+   "sha256": "9da10b90134bb1e35f7d3021f2b4ba4256b9d3052540ad8cd52b9c952ddb2cc9"
+  },
+  "temperate/clinic_4_temperate.png": {
+   "sha256": "52d0e852bfc7fc931d8243f7a5be045efb35f06e173de3ac1721b9cc6e1ce3e8"
+  },
+  "temperate/clinic_5_temperate.png": {
+   "sha256": "5ff4eac8bd20251d37972391fa8161d3e6fe140dfab0e93bf1cbd0f90a6ea947"
+  },
+  "temperate/clinic_6_temperate.png": {
+   "sha256": "fd4b08fd1f999ed7bfe9335a97043c7b82dbc2c6ae568924ff422d5c6ae95111"
+  },
+  "temperate/clinic_7_temperate.png": {
+   "sha256": "130512408c1971c760df4d7e703a5e0850a473a761b8b2c08d11d8fbc9cf3f59"
+  },
+  "temperate/clinic_8_temperate.png": {
+   "sha256": "175c1eafceaa90c47da39e94587f449459661eaec5ec1239c5cf1e67dd1577cb"
+  },
+  "temperate/coastal_sailboat_ne_damaged_temperate.png": {
+   "sha256": "65cd6c4fb0f47d74338097ac58ea45e34a7405f2efd2493f3804ae07de39c675"
+  },
+  "temperate/coastal_sailboat_ne_empty_temperate.png": {
+   "sha256": "86094ac6c099f262ad963ae1fcdbbfe8b37ccbf6b6d0e7c9d9f9908fff23cd82"
+  },
+  "temperate/coastal_sailboat_ne_loaded_temperate.png": {
+   "sha256": "0a82b8dc95e2e53a245e4daaf2ce2053aa4cac51c0979a8d04ca6b2ebb57682f"
+  },
+  "temperate/coastal_sailboat_nw_damaged_temperate.png": {
+   "sha256": "66464506910e91229acc6788c7b4ff4782b3bc113b342167d9f779482014b2a5"
+  },
+  "temperate/coastal_sailboat_nw_empty_temperate.png": {
+   "sha256": "2715b238e826ab2e0490f5f7f7786f8bb753f280c614ac36ba12f330f9a684dc"
+  },
+  "temperate/coastal_sailboat_nw_loaded_temperate.png": {
+   "sha256": "182894323fedd6d2278fcf4b928969b136c31a01f2dc6a852622fe15fb98c926"
+  },
+  "temperate/coastal_sailboat_se_damaged_temperate.png": {
+   "sha256": "87fd3468e5876bbaf76042ece86b4e0348f4f85081affdc09d8eb60be19b83b2"
+  },
+  "temperate/coastal_sailboat_se_empty_temperate.png": {
+   "sha256": "d25a20885e18f5f94d07fabb8a2c63de3de648001b1e0ffd149c29087cdc87e5"
+  },
+  "temperate/coastal_sailboat_se_loaded_temperate.png": {
+   "sha256": "b9e80aeac529cd598db04512b63bebf29f7ba632f87771ea759f4d89b4ce8efd"
+  },
+  "temperate/coastal_sailboat_sw_damaged_temperate.png": {
+   "sha256": "17577972401009f4a30372bd206455117fb77db70bc3be4fcc3152f1031c00b4"
+  },
+  "temperate/coastal_sailboat_sw_empty_temperate.png": {
+   "sha256": "be1a267b91447c0f166e754de1ed2406e23d29ae44ebc0a47fa5f2a5ec64f2ca"
+  },
+  "temperate/coastal_sailboat_sw_loaded_temperate.png": {
+   "sha256": "0c56aa5293a4280a74ff29dde6c1740654a16ba049e9ca555de0938194358a22"
+  },
+  "temperate/council_4_temperate.png": {
+   "sha256": "a4d5484de6b892c9e2f325d9f1708b6b6c221f181a3e8be3d8d844651bda3e5b"
+  },
+  "temperate/council_5_temperate.png": {
+   "sha256": "11bb711807959e8582b238bae09acf2a6f647605744cb6d5ac07f5c9630eee10"
+  },
+  "temperate/council_6_temperate.png": {
+   "sha256": "c7425cca147c16ebcde7d1580e12dcd8f3cef6dc7d724020a60999742d72f200"
+  },
+  "temperate/council_7_temperate.png": {
+   "sha256": "de5e21e7c8e3a21998ab9019b240bededeb26886cb85a3348c380ad5709b4e36"
+  },
+  "temperate/council_8_temperate.png": {
+   "sha256": "4b2fccbcc9958860f3070c33b2e573505dd8a25ee9f6fc047c82eec1868f3858"
+  },
+  "temperate/court_4_temperate.png": {
+   "sha256": "393c435dbe78b2e9039128b86e76a107f54afccf01348906ba8b8e1565c8b9fb"
+  },
+  "temperate/court_5_temperate.png": {
+   "sha256": "2a45517ac39204f9b85a72f3812033cf8eca8a25ae398eefef30c0a87235e961"
+  },
+  "temperate/court_6_temperate.png": {
+   "sha256": "a183f60e0c8e6940cfd4bb9b6b94cb7311f6a49bc965db45654f0944b8e6e7dd"
+  },
+  "temperate/court_7_temperate.png": {
+   "sha256": "2354155c964397b348d90b6354e7144f5a201c4c7962540d65257e8157d6d169"
+  },
+  "temperate/court_8_temperate.png": {
+   "sha256": "93490bc77583adb8128d40a0b3f7b78c963d28e5609594b187796c5b3bd57ef8"
+  },
+  "temperate/fish_school_1_temperate.png": {
+   "sha256": "be5c541b8fa0614b166b47540d1ac78f0aa75f94e8643fba5d87e22718972f17"
+  },
+  "temperate/fish_school_2_temperate.png": {
+   "sha256": "db970e11aac306b0a5a3f104deb5cd8ded1f6253f54c40926bdd40f222faedc9"
+  },
+  "temperate/fish_school_3_temperate.png": {
+   "sha256": "206972cc45140ada0ae69a6066a6e188847d515b07265ace36802c1dda0fe3a0"
+  },
+  "temperate/fish_shadow_1_temperate.png": {
+   "sha256": "17eeba6ecff1109531665f7ec5bcab341624e2288c889ee6d469b5aea83db173"
+  },
+  "temperate/fish_shadow_2_temperate.png": {
+   "sha256": "59691b00927c77d730a9fdb957489a057533d0efa53a4533cf377d7d1e27c75d"
+  },
+  "temperate/fish_shadow_3_temperate.png": {
+   "sha256": "dd43f750fbd4fe807c9453327d7c00b3205dfb7db960704207d3c35a05352726"
+  },
+  "temperate/fishing_canoe_ne_damaged_temperate.png": {
+   "sha256": "74378b116758f452d08dedef7215fa9268c876d11edd7dc0495ddb5079da4ce0"
+  },
+  "temperate/fishing_canoe_ne_empty_temperate.png": {
+   "sha256": "eeded023ce63271952a55a4f5bedf120c27c804ab18d42d9d0f478f8d483f243"
+  },
+  "temperate/fishing_canoe_ne_loaded_temperate.png": {
+   "sha256": "a975a8fa3c681de0f02eb38e53e56965f8066cd945a1cb5c40019e0cf53285d5"
+  },
+  "temperate/fishing_canoe_nw_damaged_temperate.png": {
+   "sha256": "34b8da923f76e0ad1e7bceb74ede2973f55b2d9f24f7b7d1d785d6770b280d5f"
+  },
+  "temperate/fishing_canoe_nw_empty_temperate.png": {
+   "sha256": "e10156a1e736b8e86518cc7c97709a84cd7efa2ba778a24efd8a41b722763b43"
+  },
+  "temperate/fishing_canoe_nw_loaded_temperate.png": {
+   "sha256": "5e355a11d958a3b7c68da1c45c7374933201adc9d31939f16ee9edc844a7b451"
+  },
+  "temperate/fishing_canoe_se_damaged_temperate.png": {
+   "sha256": "b7e513650f0ad2227c81cdb4d122c159387408c75aaa9da3267f004ff24d29ec"
+  },
+  "temperate/fishing_canoe_se_empty_temperate.png": {
+   "sha256": "3a368f4c16a36cda3096946279a39ff7af0c546a1eef960d7ab7fae1b876dcab"
+  },
+  "temperate/fishing_canoe_se_loaded_temperate.png": {
+   "sha256": "a095c9e6db1d0fc610b3049bab4a351f7eb5fd4a484c32179f66a1b92bf0e697"
+  },
+  "temperate/fishing_canoe_sw_damaged_temperate.png": {
+   "sha256": "06bada310ceb487db0d0644ac931584637a76901991c4727bdf722a134e4b7ee"
+  },
+  "temperate/fishing_canoe_sw_empty_temperate.png": {
+   "sha256": "c2dbe3df212d9d60077da4985a57277561b1727a89ee9bb57ddf508f5ff3a685"
+  },
+  "temperate/fishing_canoe_sw_loaded_temperate.png": {
+   "sha256": "94f4f597d4e8e3b85378298ad9336a3c5f593c26eef22ba690c4581039987536"
+  },
+  "temperate/fishing_sailboat_ne_damaged_temperate.png": {
+   "sha256": "29e7ba46fec37fab934c75f654ca642fbfcd257b5870c03e55ef90249331efb5"
+  },
+  "temperate/fishing_sailboat_ne_empty_temperate.png": {
+   "sha256": "2ec6bbe047588e1b2f73e89e492c9bcab31516f609289318f7fbb67c50483414"
+  },
+  "temperate/fishing_sailboat_ne_loaded_temperate.png": {
+   "sha256": "4419f356d08199d0d6ba34fdd12541862b2da6dc06bb410a5362e1b363d4922c"
+  },
+  "temperate/fishing_sailboat_nw_damaged_temperate.png": {
+   "sha256": "7ed0028ced959f328544c7179cd096c689db9ceac1436c5dc08c557cedd95d54"
+  },
+  "temperate/fishing_sailboat_nw_empty_temperate.png": {
+   "sha256": "a99a76a04193dcaf595314f1b10ec348f7186144581e15e717baa4371e11bdcc"
+  },
+  "temperate/fishing_sailboat_nw_loaded_temperate.png": {
+   "sha256": "a2420d487fb61576ea887563808e711bc65f6a488c400423c0344a850308ba91"
+  },
+  "temperate/fishing_sailboat_se_damaged_temperate.png": {
+   "sha256": "1cbcdaa704e71f5796d419c9a357c23000b07325faf262910b84401422a1d654"
+  },
+  "temperate/fishing_sailboat_se_empty_temperate.png": {
+   "sha256": "b2618865eead4e95247d9af771df912c38fcf5c78f3e97b4001a155082421b8b"
+  },
+  "temperate/fishing_sailboat_se_loaded_temperate.png": {
+   "sha256": "8368218ad47d74a51023a8c8a05a8bda6b6aeba8e6c0a1408a538e40e6808db1"
+  },
+  "temperate/fishing_sailboat_sw_damaged_temperate.png": {
+   "sha256": "7271dfdfcf1a8a218fafd642cd989d6000458772d54ed71867cfe6db622ab794"
+  },
+  "temperate/fishing_sailboat_sw_empty_temperate.png": {
+   "sha256": "aeb635fe8575b18a93cf160be459c983f9683e404f00ca87cdecbd45c014b6a9"
+  },
+  "temperate/fishing_sailboat_sw_loaded_temperate.png": {
+   "sha256": "391b58f7df44619fea820d3556057daeaf92f1fab3ff87adeb54ed90d995857d"
+  },
+  "temperate/home_4_temperate.png": {
+   "sha256": "fb4eeceec4b6c7a1704f0a8f996b74c04a0601ab4c2088af1442960bb2612995"
+  },
+  "temperate/home_5_temperate.png": {
+   "sha256": "0a2f39f5be01d69582fff6629ab0fd8c13c54535ea41542c016b7a7089104847"
+  },
+  "temperate/home_6_temperate.png": {
+   "sha256": "4049e6d72e65759d3968255491f42271ff429c7e7cba7c256e13decd1c209369"
+  },
+  "temperate/home_7_temperate.png": {
+   "sha256": "78562630d670d0b77af2f647aadb9eb0cb93ac40ec42f95fc67829485cf0446f"
+  },
+  "temperate/home_8_temperate.png": {
+   "sha256": "5cb5ff648f3521226f8ff4032259abe1b4e56ef95803f7a115153f872aad7f7b"
+  },
+  "temperate/net_boat_ne_damaged_temperate.png": {
+   "sha256": "0c1d66e6e96285259ec036578a2a2b4ceeee1dfef15283cea1b847c20c1e0e45"
+  },
+  "temperate/net_boat_ne_empty_temperate.png": {
+   "sha256": "65970a8875aea6ce54b990318b9b1842d04c00adc9bc8d4a9bd9b1cd4c6a8937"
+  },
+  "temperate/net_boat_ne_loaded_temperate.png": {
+   "sha256": "fa762630f02491a4fa21b7fd2faf6e58c5c6ef270692ba693ed8984afb9cb7d0"
+  },
+  "temperate/net_boat_nw_damaged_temperate.png": {
+   "sha256": "4c9bdaa7e287fc50c14906142de36f9c0902ef430cd411969ebcc6891c9644e3"
+  },
+  "temperate/net_boat_nw_empty_temperate.png": {
+   "sha256": "888284d4d61df3540965c21e6ef432274d28e95edc35be0dc397a2823109ba0a"
+  },
+  "temperate/net_boat_nw_loaded_temperate.png": {
+   "sha256": "7a825d9a2c1fa2628f79d39e26732e52ebace854400bb866030616a64db2487f"
+  },
+  "temperate/net_boat_se_damaged_temperate.png": {
+   "sha256": "ceaa336958e93c913530ce976dd59a29683d4808440801563f7380e3c575c2a9"
+  },
+  "temperate/net_boat_se_empty_temperate.png": {
+   "sha256": "79867bd8577693090685ad35da593603b3e7e3b1df20f0ceaaf7a0774fa3cf0d"
+  },
+  "temperate/net_boat_se_loaded_temperate.png": {
+   "sha256": "dc181800478eb03a4ba059680275495ed628d110fe120e6acf6f12daa3ff3360"
+  },
+  "temperate/net_boat_sw_damaged_temperate.png": {
+   "sha256": "861ccfbba4659d4ae1bcd5ffcc36638ee3cb082b4f8b8a0683cc44575e937c99"
+  },
+  "temperate/net_boat_sw_empty_temperate.png": {
+   "sha256": "b676e8688bb089ffe3f13e50bbda03610191120128e242aa57642ffebdf00fbd"
+  },
+  "temperate/net_boat_sw_loaded_temperate.png": {
+   "sha256": "c07ce55b2e37d5cbbb88c07e7bf5fc8241ebdbe650e98748ae92d00bd3e1a076"
+  },
+  "temperate/net_floats_1_temperate.png": {
+   "sha256": "ee5199327e11187dedf5b2661162460eddf62a5509fca0299a3f9782eba8e11b"
+  },
+  "temperate/net_floats_2_temperate.png": {
+   "sha256": "d86e102f6362cc908a75d0acddc3842a784fd0dbc9f9a60b615f2fc7269bdbbb"
+  },
+  "temperate/net_floats_3_temperate.png": {
+   "sha256": "b16cda74bfcb66beec53d8264aebe99cbfc252eda2510a1362a29af7c11826c1"
+  },
+  "temperate/ripples_1_temperate.png": {
+   "sha256": "17b59de15dfa9e67addb1a9ad9d5c15782d9b6e89e5c45fde5ca1748de10a18c"
+  },
+  "temperate/ripples_2_temperate.png": {
+   "sha256": "30b86d0f4ae16fabaf021efe381ef1ee407a89298a788d3649918c618a7665c2"
+  },
+  "temperate/ripples_3_temperate.png": {
+   "sha256": "02812bf3894c81e199d92c2f4a665853b5c231ad4d174f1ef68a6c4962e69f87"
+  },
+  "temperate/rowboat_ne_damaged_temperate.png": {
+   "sha256": "52801fd8eecd9f56e12ba9d91eac1799d10979cde60c583705d4f22b909ba32a"
+  },
+  "temperate/rowboat_ne_empty_temperate.png": {
+   "sha256": "cd9a5bb12a801820049576e7674ada75f8b6ed064f09515cdc15264abb34c544"
+  },
+  "temperate/rowboat_ne_loaded_temperate.png": {
+   "sha256": "e6b2fa1977aad55df06bb5263bdda7f35b22a33be93d1d07ce047b5828f6819d"
+  },
+  "temperate/rowboat_nw_damaged_temperate.png": {
+   "sha256": "4e01839866cc89acae465ff6ae02b94b7815c53fb65e0050e142793f82decf21"
+  },
+  "temperate/rowboat_nw_empty_temperate.png": {
+   "sha256": "3e41a92c216a85183dffb7dfd5146eb7342121c35fe89e1deee22714cfa35675"
+  },
+  "temperate/rowboat_nw_loaded_temperate.png": {
+   "sha256": "2211f269ac10f00a55d450792ceca86b4a22b30dd4f3c3a600d2637516f36aa5"
+  },
+  "temperate/rowboat_se_damaged_temperate.png": {
+   "sha256": "0a2d06c9a95af589afa32ab9e54f351a36685ff030ae6f00fc809d3c9985786b"
+  },
+  "temperate/rowboat_se_empty_temperate.png": {
+   "sha256": "ae1598a970840d799566675692c6588de9146eb38c8dfe7b2a2ac3c88921a8a0"
+  },
+  "temperate/rowboat_se_loaded_temperate.png": {
+   "sha256": "5921f74fab2c38d8bd6e6bf2c23cd50bc78aa7ad3f593806310634f336ba4350"
+  },
+  "temperate/rowboat_sw_damaged_temperate.png": {
+   "sha256": "8206bd6de7e1c6920e09602bde2e05b4f085fb8776d6dd55ac6da1db625a0dc0"
+  },
+  "temperate/rowboat_sw_empty_temperate.png": {
+   "sha256": "437feb1d87e78b34657408e355c345bb1e441251349382534b04cca667a5154f"
+  },
+  "temperate/rowboat_sw_loaded_temperate.png": {
+   "sha256": "4f41455869e3930ff5076c25dc3224af9be7b75a9fb4bf4e3becf5684d431f29"
+  },
+  "temperate/shop_4_temperate.png": {
+   "sha256": "5426ef39607e6b74590429328c13d6ed4ae1d060ce8e54336e2d50255e96338d"
+  },
+  "temperate/shop_5_temperate.png": {
+   "sha256": "3396591f41fb1b86eefdeced967479b0ec345f3657aa56bf4ba6b53f52042bc5"
+  },
+  "temperate/shop_6_temperate.png": {
+   "sha256": "999e2d4e67c9e527ac156197d19ed88f9d0c40972126d2573cfd4ea484115a5e"
+  },
+  "temperate/shop_7_temperate.png": {
+   "sha256": "90529e5c53af4ab333d66410252b0e33622cc77c4238106a85a5f6468f404543"
+  },
+  "temperate/shop_8_temperate.png": {
+   "sha256": "5d88b8427e846813b9746be69afb1f07ffc0abe1d4788c5ad8a57d192b6027d4"
+  },
+  "temperate/work_skiff_ne_damaged_temperate.png": {
+   "sha256": "04d0b4bef42570e3b52290b9a837b3abc319ee5c90f7aa581baab8b1e70b4c30"
+  },
+  "temperate/work_skiff_ne_empty_temperate.png": {
+   "sha256": "2e55c95246157dfd667144c0b5c705423066f8e7c0b15fa89ff415f2e0469194"
+  },
+  "temperate/work_skiff_ne_loaded_temperate.png": {
+   "sha256": "ae5f47beccfe5b27c3b78dc462b6027409ce476176326d9dc796eef0a7a0444d"
+  },
+  "temperate/work_skiff_nw_damaged_temperate.png": {
+   "sha256": "1fd0efa84a91ee3aa51e69639ca90d0434326ac16f674e45985217b282acab15"
+  },
+  "temperate/work_skiff_nw_empty_temperate.png": {
+   "sha256": "9a91893b212710e2649838c7f4699faaa509f013f4070d2d862ef68c8c643e16"
+  },
+  "temperate/work_skiff_nw_loaded_temperate.png": {
+   "sha256": "ec38c7f87e5e4db25c6099ce80f5bf403801980aec0a6c108f2b118e8a1d7749"
+  },
+  "temperate/work_skiff_se_damaged_temperate.png": {
+   "sha256": "9bfd4534df8002450851f2c275b769fd5537fc1fb40c432b2f7288d67b0e1dd8"
+  },
+  "temperate/work_skiff_se_empty_temperate.png": {
+   "sha256": "69d5fb9238b70dbdad91777958a77d3791d1906c17acc8d4e24594bd110bb2c2"
+  },
+  "temperate/work_skiff_se_loaded_temperate.png": {
+   "sha256": "d4562d6b0f3857df095750f64a3fb4a9a7a82cc6018f9ae7df42a1680e714136"
+  },
+  "temperate/work_skiff_sw_damaged_temperate.png": {
+   "sha256": "c607626cae7b61e92dd4788e6f22a4fe8fe80b87d64a48bdfe1e113e16192019"
+  },
+  "temperate/work_skiff_sw_empty_temperate.png": {
+   "sha256": "9131b48e2062e912dc2cb2d0ad1d5c97c3745e92af525f585863cc41b5e3ed5b"
+  },
+  "temperate/work_skiff_sw_loaded_temperate.png": {
+   "sha256": "6d570161d2d569b08f270fc2bc759ecf512fc1f2f9cbaecf21907937188eeb23"
+  },
+  "tropical/bridge_stone_arch_far_bank_i_construction_tropical.png": {
+   "sha256": "6ddf8e89fb4e0e17e7457c5fc1d0019e934bf1cbcaed30acd7202086b27a2118"
+  },
+  "tropical/bridge_stone_arch_far_bank_i_damaged_tropical.png": {
+   "sha256": "537131829a4a9c8ea108923b2a099a99ef09d262897a1112ee41deb98d97cd5d"
+  },
+  "tropical/bridge_stone_arch_far_bank_i_intact_tropical.png": {
+   "sha256": "eeb6aca7401712a9c02653f126436e9ea90af01e1719f4142e69c76682362bff"
+  },
+  "tropical/bridge_stone_arch_far_bank_i_rebuilding_tropical.png": {
+   "sha256": "003d2bea25f9fbf79ed83c798da3ee4037b5a8d2e072ab978649cd91f8531413"
+  },
+  "tropical/bridge_stone_arch_far_bank_j_construction_tropical.png": {
+   "sha256": "ae26a06445b6fa1bf04e8c4bd21d90149c99ab4c39ef2a53d01107ac1e0329d2"
+  },
+  "tropical/bridge_stone_arch_far_bank_j_damaged_tropical.png": {
+   "sha256": "765f52b30a7e559d44656cd244343d76b6fe69ff796e7a4afd0d389afcba5695"
+  },
+  "tropical/bridge_stone_arch_far_bank_j_intact_tropical.png": {
+   "sha256": "ce9b571c443d6a83fcbdf93e315c992afacf1e150f7912ee7fed983286fd8454"
+  },
+  "tropical/bridge_stone_arch_far_bank_j_rebuilding_tropical.png": {
+   "sha256": "315597d24a17d4bdd42b120c9d063c19f5bd333a60751d6c2b2f21372ab73745"
+  },
+  "tropical/bridge_stone_arch_near_bank_i_construction_tropical.png": {
+   "sha256": "5233f156205fa01964097e391873dc227a9bde2e53f9273243bbd1f19b02cd45"
+  },
+  "tropical/bridge_stone_arch_near_bank_i_damaged_tropical.png": {
+   "sha256": "663c8fe19a4b818a69d77e55b0e0767bb638cc24c5861e72d45234a90271533a"
+  },
+  "tropical/bridge_stone_arch_near_bank_i_intact_tropical.png": {
+   "sha256": "f69b3c1ab4afe4376af012b203c42a7dd97dead110bdd11b66a018ee159cabf1"
+  },
+  "tropical/bridge_stone_arch_near_bank_i_rebuilding_tropical.png": {
+   "sha256": "ae4ce2223558f56ce7347426053516174167a3c9203f5ecdea991e2af74513b2"
+  },
+  "tropical/bridge_stone_arch_near_bank_j_construction_tropical.png": {
+   "sha256": "876c2e224129696b4c647610a8b0638c656d5a44e749cd548f8368c6c850baa3"
+  },
+  "tropical/bridge_stone_arch_near_bank_j_damaged_tropical.png": {
+   "sha256": "59c849e55cdbc7949720160d9930252e16e7d29015f431eb80a5a4fb4fab6e51"
+  },
+  "tropical/bridge_stone_arch_near_bank_j_intact_tropical.png": {
+   "sha256": "3a6e4d8b40681cecd7edbb045c35f7e524697a2f79639578364910b0e885abc8"
+  },
+  "tropical/bridge_stone_arch_near_bank_j_rebuilding_tropical.png": {
+   "sha256": "fa66a0cd078b667d7531c7bfa6320f7afff1446b32a0c668aa76b36ba823b939"
+  },
+  "tropical/bridge_stone_arch_pier_i_construction_tropical.png": {
+   "sha256": "96edb8190e541d89cb01e1d5519f285abfcd389526fe923a9dd1fcf0ba0257fe"
+  },
+  "tropical/bridge_stone_arch_pier_i_damaged_tropical.png": {
+   "sha256": "f850520045db2c88c95f1afde5630fca05b18c12f9baa2eb54dc5e4a407a8ea9"
+  },
+  "tropical/bridge_stone_arch_pier_i_intact_tropical.png": {
+   "sha256": "b5b893b9728723b335e74617a772669d6af378f2cbd2e84b20e98300cbd18096"
+  },
+  "tropical/bridge_stone_arch_pier_i_rebuilding_tropical.png": {
+   "sha256": "cb51dcde2fc7ed33701e3327cf803662e727fbf5d0ec6f568c52820433a9639b"
+  },
+  "tropical/bridge_stone_arch_pier_j_construction_tropical.png": {
+   "sha256": "bca59afe20ad4c98dc95cfefe4adc18264c498abf37f61fba6bc6addb29a8d28"
+  },
+  "tropical/bridge_stone_arch_pier_j_damaged_tropical.png": {
+   "sha256": "8b00e6e0f98f599a224b0b86395268e38ba58dc23ce7a13ca96d48f16545291e"
+  },
+  "tropical/bridge_stone_arch_pier_j_intact_tropical.png": {
+   "sha256": "36275e98ffd2d268fa5f5508ce0c2755b76d7f6b5e4445da1f1d98d1a365fbc7"
+  },
+  "tropical/bridge_stone_arch_pier_j_rebuilding_tropical.png": {
+   "sha256": "33405a04c550d5d95f3f6fd4caa812c30f42c11d70758c2c13cd72cf9b4e219f"
+  },
+  "tropical/bridge_stone_arch_span_i_construction_tropical.png": {
+   "sha256": "fd9ff07cc2831c327e786c817ac9b359386c3659e599734c8e9e694eb2bbbf39"
+  },
+  "tropical/bridge_stone_arch_span_i_damaged_tropical.png": {
+   "sha256": "6150f09b2cff2ac84f260bd24d2ae7b71bf1683c6e99672a36037ea2ae104b17"
+  },
+  "tropical/bridge_stone_arch_span_i_intact_tropical.png": {
+   "sha256": "053eaa293317234ef8ee7065a577cf8a3113da7b93a6b90221cba00e4b46e059"
+  },
+  "tropical/bridge_stone_arch_span_i_rebuilding_tropical.png": {
+   "sha256": "de26128ae7cd8ab15894b8ee42080b624089f69bae3da8f708c9582216e34d8b"
+  },
+  "tropical/bridge_stone_arch_span_j_construction_tropical.png": {
+   "sha256": "adec8bbb71d4b1e6b810914d3ad525eba40b549ee25a59778b46f7b401f9ae26"
+  },
+  "tropical/bridge_stone_arch_span_j_damaged_tropical.png": {
+   "sha256": "3f84d0a72ddc4a34a7ea49455746a6ca54040bc7c3188b470d0632049083584d"
+  },
+  "tropical/bridge_stone_arch_span_j_intact_tropical.png": {
+   "sha256": "9abd35525877af1e145042da5c032c2febdf9d00f2694dc826f29d362ba3f3b5"
+  },
+  "tropical/bridge_stone_arch_span_j_rebuilding_tropical.png": {
+   "sha256": "873a26637ffc4efd81ad69ee1e879b013d4b5a5cbba774604eaed171d77d3047"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_i_construction_tropical.png": {
+   "sha256": "a7d378c1e38474d9dc436c312714a9804c0875411171e458e61f2f5744db6403"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_i_damaged_tropical.png": {
+   "sha256": "eab979618f89843c6fb2abc80b9321b30f0afea606aa6e1ceb2b909b587e1b37"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_i_intact_tropical.png": {
+   "sha256": "ec3ff7e75421b904860cd7ebbf8509151112c5e0fb798316cb06caa31ed323a7"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_i_rebuilding_tropical.png": {
+   "sha256": "86c31ca14b4f4a68bca7780897b51eb21353052e5a3ff36c4bc0b1c732719782"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_j_construction_tropical.png": {
+   "sha256": "80d7d3b83bdffc8687d17df36ce2cc619d5d699eda71e32904a5df205d7c1573"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_j_damaged_tropical.png": {
+   "sha256": "a23c36c37ef6ed96129d166a0a572d560647d7f1ebfcab4530b0626ecf89fb68"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_j_intact_tropical.png": {
+   "sha256": "f878cc2d7b9ac47852b2e4f4e536a823444efb637bc1449ffd1bd2078896738a"
+  },
+  "tropical/bridge_stone_viaduct_far_bank_j_rebuilding_tropical.png": {
+   "sha256": "caeb53f5369e921c40d3c5b934f24087b4b03eaf971999b37cc7415c024e31a0"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_i_construction_tropical.png": {
+   "sha256": "787efd3c3d3b2d696f8a835d3ccf21eafb33004dc5a927f529cb571af7c90072"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_i_damaged_tropical.png": {
+   "sha256": "ff7554e2f3a26230541f46021e3daede4e86952650a1aaead56c12fb3a037d68"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_i_intact_tropical.png": {
+   "sha256": "7a51183a9a7f4e5d647943dcfbea7465e5b0452489ee6071273c78c53ae1b34c"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_i_rebuilding_tropical.png": {
+   "sha256": "cd25ae400f03ba77c94b006fb64d578a08876a9880fc4ab4e75e0a4a39f70829"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_j_construction_tropical.png": {
+   "sha256": "cf46efd3605ea89e91217befb75934f3a4d179f436db9e9e979d49a9894c428b"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_j_damaged_tropical.png": {
+   "sha256": "44c9478134bbe3bc300863b482b1bc85c5896dda32d03bbc25e5c785a43c1cc0"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_j_intact_tropical.png": {
+   "sha256": "6c738314c0d557d73ecb1f0167aabb7ec20cf97b226af1512f4c36a5ceee0104"
+  },
+  "tropical/bridge_stone_viaduct_near_bank_j_rebuilding_tropical.png": {
+   "sha256": "a7149cf715def660fa61e1b97f1c76def7703967512a85d6cc733f4018d5ed70"
+  },
+  "tropical/bridge_stone_viaduct_pier_i_construction_tropical.png": {
+   "sha256": "8dd2fdfc3165bf0ce48d5024d04fbae3033791247b9f6e1347033af67b5c18d4"
+  },
+  "tropical/bridge_stone_viaduct_pier_i_damaged_tropical.png": {
+   "sha256": "10fe629e4a7d1ae1041f75cbb73d012dcbf910eaab7bd645eab376c9b8d95844"
+  },
+  "tropical/bridge_stone_viaduct_pier_i_intact_tropical.png": {
+   "sha256": "0b384075952995716fa5acdfc606a842c32240fb896e9d0ba30781ff340531a6"
+  },
+  "tropical/bridge_stone_viaduct_pier_i_rebuilding_tropical.png": {
+   "sha256": "6ac0738a9204b6aab88a105b9fae721b5e66022b0f31beb9f9264ab44f6ee865"
+  },
+  "tropical/bridge_stone_viaduct_pier_j_construction_tropical.png": {
+   "sha256": "68630ee6556f7628165e37f0bb4d99681a3c0ab4957da05445c08014e3bb312b"
+  },
+  "tropical/bridge_stone_viaduct_pier_j_damaged_tropical.png": {
+   "sha256": "89423a4a8eeaa9b48ae65c6bc83eae6bee57fb36f6c991be42206a649b09e438"
+  },
+  "tropical/bridge_stone_viaduct_pier_j_intact_tropical.png": {
+   "sha256": "11069fc172ca902b1c95a0927d40576e818002f87232119bceb3d8bcc06277c8"
+  },
+  "tropical/bridge_stone_viaduct_pier_j_rebuilding_tropical.png": {
+   "sha256": "0522a1c2b250a9ab4f7691d291870f58ce678d07cf65e269288de955fabbb27d"
+  },
+  "tropical/bridge_stone_viaduct_span_i_construction_tropical.png": {
+   "sha256": "ba9362ab98abb6fab82a1d105471d7940455186fab9728c65c8687ae46f76e36"
+  },
+  "tropical/bridge_stone_viaduct_span_i_damaged_tropical.png": {
+   "sha256": "ea4aa1ee73a670e450c418e98570ae25d5698219c4fcc4cdae79803ac6f06ba2"
+  },
+  "tropical/bridge_stone_viaduct_span_i_intact_tropical.png": {
+   "sha256": "1be080708b8712be1d25738774abeefe15b4f33f16493c0437cd04dddc27b6d1"
+  },
+  "tropical/bridge_stone_viaduct_span_i_rebuilding_tropical.png": {
+   "sha256": "f8b7bd49c71d35e77f12490f61333aa9bca81c1eea34f2d3d3b3d15825ffa224"
+  },
+  "tropical/bridge_stone_viaduct_span_j_construction_tropical.png": {
+   "sha256": "ac9956e9be3dc2ba12f97255aef5f179bc4f2d63023de2dc4b2b91eddb6e1342"
+  },
+  "tropical/bridge_stone_viaduct_span_j_damaged_tropical.png": {
+   "sha256": "c54e89339bf4717507f0ecc938f0c4635662e34c3ec489058b5d06e4221fb4a6"
+  },
+  "tropical/bridge_stone_viaduct_span_j_intact_tropical.png": {
+   "sha256": "ca5f71c07967bcb57f28d65196271a7dc878e7f9a1a23c4f63c71145dda01f04"
+  },
+  "tropical/bridge_stone_viaduct_span_j_rebuilding_tropical.png": {
+   "sha256": "f5ec79b8b35c567aa820f45725dc7d40c9c66afdce00dd278c5e155e405274f9"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_i_construction_tropical.png": {
+   "sha256": "ac46ebec841c055fbfa089ba9417b55017a23202e71f9c312dfe9603cc78a4e2"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_i_damaged_tropical.png": {
+   "sha256": "98a803f3dc5c8cf390839058d1acae94548adf17e9409b66872afd25b3314a90"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_i_intact_tropical.png": {
+   "sha256": "a338febc36d2f6460a83d2c9b127d0fac1434569774069a6ba881ce088b663f5"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_i_rebuilding_tropical.png": {
+   "sha256": "cc1bd37cb3326457c22a35b8b0c00a74f2a19e883973c60919e9db54e616f70a"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_j_construction_tropical.png": {
+   "sha256": "fc9b86ad8028daac198c252ca8aae0d2f227447a29b1970bfe1ce3dc532bc369"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_j_damaged_tropical.png": {
+   "sha256": "673196852cd986caa509a57186633a92e1feabd98b265df36be59502e7577a61"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_j_intact_tropical.png": {
+   "sha256": "6d81438dc22f95b04cf25ec84c1ba4880923e4c17f9313f1243a6b29479831da"
+  },
+  "tropical/bridge_timber_footbridge_far_bank_j_rebuilding_tropical.png": {
+   "sha256": "fe740224a491b593a9aba22d2df3eec668ea3d87275e94ea5f2dac881df274c6"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_i_construction_tropical.png": {
+   "sha256": "64e430ace11d9af8b41552be1e49d45492784c95d95f3e57a3bac76146e0adcc"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_i_damaged_tropical.png": {
+   "sha256": "6092e5bb39cd5afeeee3473618c3361cfd2ccf70c7d8e3f664a3aeba66690a29"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_i_intact_tropical.png": {
+   "sha256": "7609fcc2afb693590dcb71377ac48616d68fd2fd4efc1273c0c0eb2f72cbe813"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_i_rebuilding_tropical.png": {
+   "sha256": "87cdf2f31be93cb3550ef93d9ffffe9ca91a9069fa6f42959f9c5a623977c530"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_j_construction_tropical.png": {
+   "sha256": "7b594a42d08c9e6abb330504c1a94c85341c74eb38005320062fec0aba4ccf44"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_j_damaged_tropical.png": {
+   "sha256": "d3f3162a9d43c813836a4dae1d0deb71f60efc9daef916997c3915486ab4e6c6"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_j_intact_tropical.png": {
+   "sha256": "d1bc08d9d1a98f7c92aedf079900a8894b5fef63f0189cdb7c09ab979ae6ddd1"
+  },
+  "tropical/bridge_timber_footbridge_near_bank_j_rebuilding_tropical.png": {
+   "sha256": "4324126f8e2abd3e2275cb3ec342fd5482ddd630ce0ba4cbb17755f330b5ad53"
+  },
+  "tropical/bridge_timber_footbridge_pier_i_construction_tropical.png": {
+   "sha256": "6175dbf40e844bc0bf1a4f7c4f658bc7a5411291cbd9737879cb6faec48bc512"
+  },
+  "tropical/bridge_timber_footbridge_pier_i_damaged_tropical.png": {
+   "sha256": "9bb3e79657e594720485d34f6790c15080704e6e8750f81a2ad20bb404d2e9c1"
+  },
+  "tropical/bridge_timber_footbridge_pier_i_intact_tropical.png": {
+   "sha256": "8ece897c666291f1d03e338588b5718fae623c0ef6f447ad3c73bf487a8d5e6a"
+  },
+  "tropical/bridge_timber_footbridge_pier_i_rebuilding_tropical.png": {
+   "sha256": "0c5c06185d291a591a0498172b31bc57102a82d1861d3d42b5c273fa808280b7"
+  },
+  "tropical/bridge_timber_footbridge_pier_j_construction_tropical.png": {
+   "sha256": "615263320b17895de29e816f19644d39dc08d7e70c5180cd12ccadc78c4ca17b"
+  },
+  "tropical/bridge_timber_footbridge_pier_j_damaged_tropical.png": {
+   "sha256": "fff0696a9f346ce383043436031b02d50f263fe39f29371ae106fda1f99c8206"
+  },
+  "tropical/bridge_timber_footbridge_pier_j_intact_tropical.png": {
+   "sha256": "9109f4a7f0a214d75cef32866cf5753475f4f068d672cc877f4b44c1303c90ef"
+  },
+  "tropical/bridge_timber_footbridge_pier_j_rebuilding_tropical.png": {
+   "sha256": "5508ff3ee96af3f35c35bdae22806d7a9463dad5a8622850b1434c063ef48a38"
+  },
+  "tropical/bridge_timber_footbridge_span_i_construction_tropical.png": {
+   "sha256": "2678f8840bdb1310b9ad8a8be3378c045f7b5f9c3d86496359249a77d772fd55"
+  },
+  "tropical/bridge_timber_footbridge_span_i_damaged_tropical.png": {
+   "sha256": "6cc4300860d6855dcc9bc4471dc682e73784cc4c9ac5bc9ccf9d8de8bc86e154"
+  },
+  "tropical/bridge_timber_footbridge_span_i_intact_tropical.png": {
+   "sha256": "868dafb3dc3a385a2bb10b54242ce6c80a86a8dba7de8c8a8a7d70e1dd79f5b5"
+  },
+  "tropical/bridge_timber_footbridge_span_i_rebuilding_tropical.png": {
+   "sha256": "1725702c11ac34b931f97da11eb758222844991cff5ca0ba42e4a481d7f2ff90"
+  },
+  "tropical/bridge_timber_footbridge_span_j_construction_tropical.png": {
+   "sha256": "9e5fb2935fb04d9476ba9073a4ced44087a3d5b67be7bba51a84e6c72e9073f0"
+  },
+  "tropical/bridge_timber_footbridge_span_j_damaged_tropical.png": {
+   "sha256": "fadde0ea7be944a1c3f0e06067e0de7419313060eaea0a03ea26af4700745938"
+  },
+  "tropical/bridge_timber_footbridge_span_j_intact_tropical.png": {
+   "sha256": "7cc0f06d453b05241b342dbb5d7db2cebeaa510df64d69ddc4a52c526caf8dc6"
+  },
+  "tropical/bridge_timber_footbridge_span_j_rebuilding_tropical.png": {
+   "sha256": "eec0d00ce750e8c7fb743a0b0a801ca4f92f3cd0acf9e29f680a7a524961c991"
+  },
+  "tropical/bridge_timber_wagon_far_bank_i_construction_tropical.png": {
+   "sha256": "f88513447673455014fa8409a78aedb3952d4ac5becbc5ac6960749c8dae6ee6"
+  },
+  "tropical/bridge_timber_wagon_far_bank_i_damaged_tropical.png": {
+   "sha256": "2b93f962f96c66c3d4e984c0865cb3dd4aba365638875943442e1dde74d55e04"
+  },
+  "tropical/bridge_timber_wagon_far_bank_i_intact_tropical.png": {
+   "sha256": "3b4a41270690512c778b9c85a5f3a3c3feff2c8483d18abcf8d38a970c98c5f4"
+  },
+  "tropical/bridge_timber_wagon_far_bank_i_rebuilding_tropical.png": {
+   "sha256": "468a0f573dd70ad2e0e13b94edd360edfe8144a37db9b9f23ce41eadb454ba61"
+  },
+  "tropical/bridge_timber_wagon_far_bank_j_construction_tropical.png": {
+   "sha256": "b9a1dec5423e0fb3051ff79ab7b56bb0ac2d6a67c28d4beb9eba598eaa526c00"
+  },
+  "tropical/bridge_timber_wagon_far_bank_j_damaged_tropical.png": {
+   "sha256": "4d75fe173decbe69392eb21247aa7405911dffb919cf6b6c1caf991c4008d7de"
+  },
+  "tropical/bridge_timber_wagon_far_bank_j_intact_tropical.png": {
+   "sha256": "7d6a4abcddaa7056645519a52caf302a57f71ecce91908942f7f5d9e465e2767"
+  },
+  "tropical/bridge_timber_wagon_far_bank_j_rebuilding_tropical.png": {
+   "sha256": "9a701eaed14ec9a2bf42fec6b8272e88cb3e4e35e7d16c6b78da8ae019d5d69c"
+  },
+  "tropical/bridge_timber_wagon_near_bank_i_construction_tropical.png": {
+   "sha256": "b08ad1545b92ee5c79820caebe26da27e4e8a8928b0a9c3373a39e417c2901d4"
+  },
+  "tropical/bridge_timber_wagon_near_bank_i_damaged_tropical.png": {
+   "sha256": "421048f79e241c174dc5aa0240ba4c3e255923d0b7d2920d92e28964f1284ea1"
+  },
+  "tropical/bridge_timber_wagon_near_bank_i_intact_tropical.png": {
+   "sha256": "533798c21e0b4dbfc2453db1f1dfcef432f404142e44125442581839fd00f064"
+  },
+  "tropical/bridge_timber_wagon_near_bank_i_rebuilding_tropical.png": {
+   "sha256": "38eaf8fe49d667ea8c6c6115eec7323b4d3227f7c1266c75b4a5f9d8b6fa9b2d"
+  },
+  "tropical/bridge_timber_wagon_near_bank_j_construction_tropical.png": {
+   "sha256": "c0988c83ea23afdc2402ea41052ad9701807d2011a1e9db2bcf621dd4c7b7e84"
+  },
+  "tropical/bridge_timber_wagon_near_bank_j_damaged_tropical.png": {
+   "sha256": "8c6143477ddf9d82cf0d59682ccf7aa3bf0b4ab31d4b540fb0a138dbe2514495"
+  },
+  "tropical/bridge_timber_wagon_near_bank_j_intact_tropical.png": {
+   "sha256": "1a31b1e541993f667deeb06429b24c3ff74add19ce84fc5b7305fa43154af1ee"
+  },
+  "tropical/bridge_timber_wagon_near_bank_j_rebuilding_tropical.png": {
+   "sha256": "df0ef11e8cf1dce3e98667dc9b6082630d492fab06c33ee703096d210902b0ee"
+  },
+  "tropical/bridge_timber_wagon_pier_i_construction_tropical.png": {
+   "sha256": "6c134b68ce681c009dfd7d8a51c01b3fbd75cb1d03b993bec2afdfc64f076681"
+  },
+  "tropical/bridge_timber_wagon_pier_i_damaged_tropical.png": {
+   "sha256": "baa0360d34cf9b804b71402488fb701532cb457b1639b55e67079df05faca9ea"
+  },
+  "tropical/bridge_timber_wagon_pier_i_intact_tropical.png": {
+   "sha256": "905e39ab7a1e26c411a756b42bd7f74543bd5649e278bcbf60857e1855b32b58"
+  },
+  "tropical/bridge_timber_wagon_pier_i_rebuilding_tropical.png": {
+   "sha256": "0d5923b6e44ec3a1672c407a92e86d987e92a1e7a77223f7fd0afef61b3735bd"
+  },
+  "tropical/bridge_timber_wagon_pier_j_construction_tropical.png": {
+   "sha256": "a2ebafcdd182a52546f751101dea7c2baa67dbe800e4ccc0e28aac76d73e8164"
+  },
+  "tropical/bridge_timber_wagon_pier_j_damaged_tropical.png": {
+   "sha256": "f7a48fc68458b46a4920ec056127cf25d7b1e4cea7b3b7fd84a318f9751443eb"
+  },
+  "tropical/bridge_timber_wagon_pier_j_intact_tropical.png": {
+   "sha256": "bd79832cf2f411aa977684fcdeaa128ebf8af5281bccac661e0ec4906dcdf329"
+  },
+  "tropical/bridge_timber_wagon_pier_j_rebuilding_tropical.png": {
+   "sha256": "62fea68dbd967578de477b14763b11b750072582a83652b8a90a8824524c0bb5"
+  },
+  "tropical/bridge_timber_wagon_span_i_construction_tropical.png": {
+   "sha256": "008fc4397a102a30fb9798fe4305c2c4455eeab613af8d4fa1f5a9da72b73ecd"
+  },
+  "tropical/bridge_timber_wagon_span_i_damaged_tropical.png": {
+   "sha256": "8775ca76cd5a9c2f0e970df0c76da1758693e92cdc248a2254fbbd0301ef2415"
+  },
+  "tropical/bridge_timber_wagon_span_i_intact_tropical.png": {
+   "sha256": "56dcf0ff6a6dbb8ab73dab9dd89197b5532d9d727c0cb080f4d55fe3f37b98bc"
+  },
+  "tropical/bridge_timber_wagon_span_i_rebuilding_tropical.png": {
+   "sha256": "6915b6709e01bead4a8457bf1305f1bc0f9a3150ba1cb2232b832fa083adfcbd"
+  },
+  "tropical/bridge_timber_wagon_span_j_construction_tropical.png": {
+   "sha256": "b470727b08dc5ceb6b657116fd4c3b065f3a987f268a354ae5ae637a89e619ad"
+  },
+  "tropical/bridge_timber_wagon_span_j_damaged_tropical.png": {
+   "sha256": "a734d790014dbaf6c0d9254bef84f8b679ebc40107fd08357b3ae209236277f5"
+  },
+  "tropical/bridge_timber_wagon_span_j_intact_tropical.png": {
+   "sha256": "c99164414dc3efd41b26009cd514bc54f3766eacae91c8a5a05163c692076e65"
+  },
+  "tropical/bridge_timber_wagon_span_j_rebuilding_tropical.png": {
+   "sha256": "57946daeb25f7fd5b3953d2fb280fe05860770da819743607d8d6f012fa76b14"
+  },
+  "tropical/cargo_barge_ne_damaged_tropical.png": {
+   "sha256": "fb7e143a97261c7ebb95ed3d714c32f1b8ec15c264863c03bb54b0baf3055c5f"
+  },
+  "tropical/cargo_barge_ne_empty_tropical.png": {
+   "sha256": "cb722a565e281513a1d47542dedc01f8bcffd59a3f0a5cfd2ff4e44f11cca45e"
+  },
+  "tropical/cargo_barge_ne_loaded_tropical.png": {
+   "sha256": "7323c053febf752d339e3c11a3c149faa30f77fc33a044ad68c600c84aea06cc"
+  },
+  "tropical/cargo_barge_nw_damaged_tropical.png": {
+   "sha256": "007c67fa2c9f0e171057d54727de1d89c7ad342a8bae373dafcd1123778259cc"
+  },
+  "tropical/cargo_barge_nw_empty_tropical.png": {
+   "sha256": "81f861b413650df797708883118cd62c3eb9ebe96e8705b9ebb80562155a88ba"
+  },
+  "tropical/cargo_barge_nw_loaded_tropical.png": {
+   "sha256": "510112a0ac9228970ad6115a4d1c546a3bacce7f154d3270acf9ead7691164e1"
+  },
+  "tropical/cargo_barge_se_damaged_tropical.png": {
+   "sha256": "d95c4d5f24170be7cd4cbb7ed231b86bd5c626eea7ee829ea3431580ebcf7274"
+  },
+  "tropical/cargo_barge_se_empty_tropical.png": {
+   "sha256": "f85d3e58ce2152395d3c350ae658e76817ddd08c4771707805ace6a4158d7d62"
+  },
+  "tropical/cargo_barge_se_loaded_tropical.png": {
+   "sha256": "03be27699d1f6909d9626ae3d9c37dc3d6d196c81cd8131be04a1d66669a8203"
+  },
+  "tropical/cargo_barge_sw_damaged_tropical.png": {
+   "sha256": "947b0f442083f46579a17d3906f558754971b07202899c552550a9d84f067d76"
+  },
+  "tropical/cargo_barge_sw_empty_tropical.png": {
+   "sha256": "9d0f86d156d4f67b9248cbc014986b58ec760f5f7187e6d3dd698fbc74b2a27d"
+  },
+  "tropical/cargo_barge_sw_loaded_tropical.png": {
+   "sha256": "0e0ac9f707573359b291fe95e821aaca54202b171c248369c8400621a86a5375"
+  },
+  "tropical/clinic_4_tropical.png": {
+   "sha256": "eaec62a10c67c6e4f6acfed2673a6b73f09e4a3f77566575eb1707514db63e9b"
+  },
+  "tropical/clinic_5_tropical.png": {
+   "sha256": "1e8ff3ccaef969e4ea14ec9315c77a75d89d63b8359101d809925d96ca2ebbf5"
+  },
+  "tropical/clinic_6_tropical.png": {
+   "sha256": "56474d7a1bc8dce6b3b0da5c420052c0f019f5faa3c266e962e66349c782a7bf"
+  },
+  "tropical/clinic_7_tropical.png": {
+   "sha256": "e08d8b863f7edbf7c7e510dd7713827d99eba946796536e656553afe61c2bf87"
+  },
+  "tropical/clinic_8_tropical.png": {
+   "sha256": "0f6cb2dc493d8fc3678dd33dd038f59bc8cdee0f0b1401e1e927c208e73fe6ef"
+  },
+  "tropical/coastal_sailboat_ne_damaged_tropical.png": {
+   "sha256": "53f7aeb674aedcd07c2347c6415ec1f522ddea7d7b74c0d3a8f908555c08d0fd"
+  },
+  "tropical/coastal_sailboat_ne_empty_tropical.png": {
+   "sha256": "5a147eedc5e0cbc664548733496019d059e392d22c1bffd84c70b0fe1a6ffa19"
+  },
+  "tropical/coastal_sailboat_ne_loaded_tropical.png": {
+   "sha256": "a4b656e197d269995e3d7b565b5160e0f870b6f48adbadc3d51830435ee2e313"
+  },
+  "tropical/coastal_sailboat_nw_damaged_tropical.png": {
+   "sha256": "2078253f5c380e2ac771313523db59db02d9a841cb26bc61268e2326912768a3"
+  },
+  "tropical/coastal_sailboat_nw_empty_tropical.png": {
+   "sha256": "45960a18cc6739d58080489b2932cd6e5acf22da0a6fd9bc72f21474b8ac2304"
+  },
+  "tropical/coastal_sailboat_nw_loaded_tropical.png": {
+   "sha256": "bd3fbdd2300076322c0bc9890baef59124f25241d36cc6cc1f3cbd6a7023e2fe"
+  },
+  "tropical/coastal_sailboat_se_damaged_tropical.png": {
+   "sha256": "78ee73e76113e53a1a109dd11358b526ddf70cd878a297bad98be56dad7495c7"
+  },
+  "tropical/coastal_sailboat_se_empty_tropical.png": {
+   "sha256": "fa832e29e964fd1d2a66e7ff153fd25470ce912c3561650948e0c2a1cf0932eb"
+  },
+  "tropical/coastal_sailboat_se_loaded_tropical.png": {
+   "sha256": "9d706096dfd285aaf803d299bb5142a70b90b411a87204695ed790763c1d585d"
+  },
+  "tropical/coastal_sailboat_sw_damaged_tropical.png": {
+   "sha256": "b5d32b7caecaf150a99bb490bf4d7cb75cd8dc3a28f4b8f7da5269aac9f54f7f"
+  },
+  "tropical/coastal_sailboat_sw_empty_tropical.png": {
+   "sha256": "c522f28d1d6fe913e7b3adcadb8b6826b788b112fa66af249ce98cecad486bd7"
+  },
+  "tropical/coastal_sailboat_sw_loaded_tropical.png": {
+   "sha256": "8ffce2b2605a7bfb02fc293162abc6a7ab44f3ff09b774526066baf7d7e7aac0"
+  },
+  "tropical/council_4_tropical.png": {
+   "sha256": "93938388cb6d8dcc2f6900e021055c3f61acc6d1f9dbc2a80aa07c06cf7e9823"
+  },
+  "tropical/council_5_tropical.png": {
+   "sha256": "b8b4f23691c987f22a66e549e2a37fc97b241d5c0f7b0cc44ec7383a8a2edf33"
+  },
+  "tropical/council_6_tropical.png": {
+   "sha256": "6653026a856b2d52d38221f3ab22ff393b8a76afdeafeea5890736e75f4e5a90"
+  },
+  "tropical/council_7_tropical.png": {
+   "sha256": "843fabe5c1972f393518d277690d409235120ffae93949ff249104831090e554"
+  },
+  "tropical/council_8_tropical.png": {
+   "sha256": "c842a61821903528769bff29f21b731fdee49db53b60241089cd5bc991931827"
+  },
+  "tropical/court_4_tropical.png": {
+   "sha256": "5f384aada62cb9e9720a91712ac51efb7b3e46216491a87a865568942a2f07d9"
+  },
+  "tropical/court_5_tropical.png": {
+   "sha256": "96d779121fe2cf6495a5d1eb3cc0d491715630ff80a6c546981fdfec3f63b137"
+  },
+  "tropical/court_6_tropical.png": {
+   "sha256": "26213eb3f76383c0f6a0f21f5e0ac62b840a318114bae47bd22ff1ec801d3d08"
+  },
+  "tropical/court_7_tropical.png": {
+   "sha256": "db1c6b73a6fa1146b320dc8dad10340074fddb9c04dce28345e48d7c386e2dc2"
+  },
+  "tropical/court_8_tropical.png": {
+   "sha256": "e82c9925e131aec9177561288031ad871c26e60fe639a4b8753ab8316d534b0f"
+  },
+  "tropical/fish_school_1_tropical.png": {
+   "sha256": "ee8562b9877194444ee5e75462a9442ba21c2320ffa9f2dfb64c069c9f45bd97"
+  },
+  "tropical/fish_school_2_tropical.png": {
+   "sha256": "9b9ea33331b79616bae40fb6c6d92bd70082d554fd170a06d3eb7e6c3bfdc589"
+  },
+  "tropical/fish_school_3_tropical.png": {
+   "sha256": "a5d7551076480541dd09cd9a27cc8abc4d1586e4173418a3eb24ee7f972c2688"
+  },
+  "tropical/fish_shadow_1_tropical.png": {
+   "sha256": "047fc1cc09b3c2583600a2e23c1ba72a01aec1ef264ac34b625bec6676c81d9f"
+  },
+  "tropical/fish_shadow_2_tropical.png": {
+   "sha256": "be4add2f1c2703f0ceae37b0f9b7784651a6ed99ea257dfb86d1bb6dbbd6274d"
+  },
+  "tropical/fish_shadow_3_tropical.png": {
+   "sha256": "6ed345e2582def674d65d0aa0b88dcb338243218f6ac0b41964536374af46420"
+  },
+  "tropical/fishing_canoe_ne_damaged_tropical.png": {
+   "sha256": "ed4668c54c2a7567fb80980ecf8f5032150ad7b1d276ec623b2060b8d265a6bf"
+  },
+  "tropical/fishing_canoe_ne_empty_tropical.png": {
+   "sha256": "1a79c5e699a99ad31cc5abeb2a8eba3b30b945889f361b9b9aba373dbaff8f29"
+  },
+  "tropical/fishing_canoe_ne_loaded_tropical.png": {
+   "sha256": "b6cc499afd8de175149c44b9c0e2f016ac6aa329dd6ede4989af0fefbc7ad37c"
+  },
+  "tropical/fishing_canoe_nw_damaged_tropical.png": {
+   "sha256": "c6ed4e163803a51ecea79be53858af8134367865856d729b631e69461d1e5ada"
+  },
+  "tropical/fishing_canoe_nw_empty_tropical.png": {
+   "sha256": "feb9292654bbd12d294c0f637b35ed1bbd64946a943b17ba15b5c469b9566653"
+  },
+  "tropical/fishing_canoe_nw_loaded_tropical.png": {
+   "sha256": "6e34f98a1aac054d973f53c55be3354209d0d83dfedf0b5e129bb23f79826a44"
+  },
+  "tropical/fishing_canoe_se_damaged_tropical.png": {
+   "sha256": "c98932bc8360c3803a4886ba6d0b7534eceb1a91ce70b93a578af6476d016be0"
+  },
+  "tropical/fishing_canoe_se_empty_tropical.png": {
+   "sha256": "71717e458eba25a80e5e9989b33c6a448b219f14343f79140fdd2725addf5fd9"
+  },
+  "tropical/fishing_canoe_se_loaded_tropical.png": {
+   "sha256": "ba6c3e2b114017a757d3fe02f871efa7cd577eb517fc9affb0e4f0bf3eb48846"
+  },
+  "tropical/fishing_canoe_sw_damaged_tropical.png": {
+   "sha256": "86c5d6e42a9d19b7722f4cc9875cb2e5ee3bbfe7e528f6ba5d63a29d40678645"
+  },
+  "tropical/fishing_canoe_sw_empty_tropical.png": {
+   "sha256": "611a4cf9887b56ebdc759c33f2a3567d160b393bb8af807be655625f438cafbd"
+  },
+  "tropical/fishing_canoe_sw_loaded_tropical.png": {
+   "sha256": "3ad7210d097a9f6f4630097fcb8a7bd364d46c3941dc7d41be7735b8c09aa6e3"
+  },
+  "tropical/fishing_sailboat_ne_damaged_tropical.png": {
+   "sha256": "f8ee92f7fed8ecd770e985142dc63351c1d90220d30587d7212d98778f87f845"
+  },
+  "tropical/fishing_sailboat_ne_empty_tropical.png": {
+   "sha256": "3f4d3b07ae4edc2372874dc62f8b1d775cd86046063f678d2dc02ba7a31661ac"
+  },
+  "tropical/fishing_sailboat_ne_loaded_tropical.png": {
+   "sha256": "ba4b7f2e88fa30261c294609b78c9a5b033ccb00931c51f1dcaa03ae4796d206"
+  },
+  "tropical/fishing_sailboat_nw_damaged_tropical.png": {
+   "sha256": "64fc31721316a1d9fc02b0d7911c3428029aaaf78e751081c615d793eeb2543a"
+  },
+  "tropical/fishing_sailboat_nw_empty_tropical.png": {
+   "sha256": "9fc799f1f994c34781312b14b19b6a22c991f23c4d287a948e470649c3fe02a6"
+  },
+  "tropical/fishing_sailboat_nw_loaded_tropical.png": {
+   "sha256": "9003467152cacd49276912c8999a2c43c66b9e2d29cd45115608a5068f83451a"
+  },
+  "tropical/fishing_sailboat_se_damaged_tropical.png": {
+   "sha256": "7a0b168f953e43e323c84f223028fea0be63a976520d2647817e259cc99024ba"
+  },
+  "tropical/fishing_sailboat_se_empty_tropical.png": {
+   "sha256": "cbed8cfa5312974d8d80bd0776d89db2cb84cc78f7e482c4f1a99a262f078071"
+  },
+  "tropical/fishing_sailboat_se_loaded_tropical.png": {
+   "sha256": "921fe4dd8b6b136f388c15bf3f055837ba88db58dea2d6697c32fd410dcd29e2"
+  },
+  "tropical/fishing_sailboat_sw_damaged_tropical.png": {
+   "sha256": "5cdb6987fac43733d35857466a0e60bf4ccdbff963489ca4b6a9b0affd9604b4"
+  },
+  "tropical/fishing_sailboat_sw_empty_tropical.png": {
+   "sha256": "7ef8b4d1d5ad8332c8b4b176a7d56055a5e387f9c80050e40d61b786eec64e2d"
+  },
+  "tropical/fishing_sailboat_sw_loaded_tropical.png": {
+   "sha256": "d7aada721a4244ebe682eb6dc3c23bb31075b3ef9b030bb5b268dac7318395f4"
+  },
+  "tropical/home_4_tropical.png": {
+   "sha256": "efaae06d5f307bbef715d8bfa4154cd4ea85fc008e92cd68f7acbf235d4a279c"
+  },
+  "tropical/home_5_tropical.png": {
+   "sha256": "17020acc8d63bfd3d8214597c7958273514c2009ca707922806a6b0c6abafb44"
+  },
+  "tropical/home_6_tropical.png": {
+   "sha256": "3442585d9f99d7508420c4c92f4ae16bca3dfd89b98d3901811c03afbe069cd9"
+  },
+  "tropical/home_7_tropical.png": {
+   "sha256": "636d385ba23887ba24e5db7a08891ce9cb1ff5a785d90642a6b80874252ff328"
+  },
+  "tropical/home_8_tropical.png": {
+   "sha256": "e551ab5d4ff0f0065095acc1e090bc6f4c55374362d00ecb65a5786f7392350e"
+  },
+  "tropical/net_boat_ne_damaged_tropical.png": {
+   "sha256": "51c2784adfdc71a86236e12aa8d1d53a709739ed223f48563aa64bc42ee87f0e"
+  },
+  "tropical/net_boat_ne_empty_tropical.png": {
+   "sha256": "9d6774cd49de0e79f205c033a4b340dbf5d98cbe7fc3a430ed45cb796a2ee5ae"
+  },
+  "tropical/net_boat_ne_loaded_tropical.png": {
+   "sha256": "217a27a7b4ed30c4e168d33c3fb9d3b1a45aedaae999f1e45ab8b5bfd7927c0c"
+  },
+  "tropical/net_boat_nw_damaged_tropical.png": {
+   "sha256": "30746d55cb0324739b5a36c4c512eba115732c8a8a780ff6344ca90252ae86db"
+  },
+  "tropical/net_boat_nw_empty_tropical.png": {
+   "sha256": "b839aa8561baf0bd47f92b6934d8cbfd370954f025ac3ad01137f54cff986e5b"
+  },
+  "tropical/net_boat_nw_loaded_tropical.png": {
+   "sha256": "2feacae1b5dc8f4bd5df183c56811ab1e447bed027583bc660dece8806c406d4"
+  },
+  "tropical/net_boat_se_damaged_tropical.png": {
+   "sha256": "251a5d9cd31387cd1569ddd0c491fdabb95ba811d10c2132e38b4a2b032f56ac"
+  },
+  "tropical/net_boat_se_empty_tropical.png": {
+   "sha256": "f5210c370739fc9aa2c222d02c92fb3007933a6329c061fc81bd43f43ab4e435"
+  },
+  "tropical/net_boat_se_loaded_tropical.png": {
+   "sha256": "7e6cc1ec5fa0049d95ccde46ca4183ab5c84f9bd7be90a0b890b0317ee2ce09b"
+  },
+  "tropical/net_boat_sw_damaged_tropical.png": {
+   "sha256": "4257f2317b8798083fa365b86f59d2d8ccf89215a292dcdbc90463b5c39cc28e"
+  },
+  "tropical/net_boat_sw_empty_tropical.png": {
+   "sha256": "4e83d3eeeccf42ae0ad885d956bec66a97e17ce70656160b7bc90dc4bebb0e6c"
+  },
+  "tropical/net_boat_sw_loaded_tropical.png": {
+   "sha256": "5e8c9df045aeb0a94a39708f99177050905e53e12fe74dea7abfc81997cabb5e"
+  },
+  "tropical/net_floats_1_tropical.png": {
+   "sha256": "7fd7fb3d7c32e52e704adc45273ae83df9ef4628e48e02fb2c073fdf5a6295bc"
+  },
+  "tropical/net_floats_2_tropical.png": {
+   "sha256": "c93a5b938b1df582de0668984be0cbf31d8d7097588ed787c55188b58ec2fb45"
+  },
+  "tropical/net_floats_3_tropical.png": {
+   "sha256": "95e8d9854c7f4baf63628f20a7e5694569823d1b39d75bfdac575714606f7be6"
+  },
+  "tropical/ripples_1_tropical.png": {
+   "sha256": "c61dcb62cfd64a3ac98a483ee5b40090713dbd486b9dbe8946469eb293fcb7e9"
+  },
+  "tropical/ripples_2_tropical.png": {
+   "sha256": "56af5c5c2271b2fc0875a7bc60881b3da6512fe6e853172d46a030dce3b4a835"
+  },
+  "tropical/ripples_3_tropical.png": {
+   "sha256": "d199c676308b8927be773eb22d07a8bcdc8145730d393907c2c634532b15834a"
+  },
+  "tropical/rowboat_ne_damaged_tropical.png": {
+   "sha256": "687e4eaa126ef1347f69ee9d38be8c66b6d3b7e3b02f3a42874cbb441de2fb5a"
+  },
+  "tropical/rowboat_ne_empty_tropical.png": {
+   "sha256": "b6189b2727204f27520d762a1af76402a769057245c1d52c8a85e62dcc8a33be"
+  },
+  "tropical/rowboat_ne_loaded_tropical.png": {
+   "sha256": "01d46e60a3d57dd8729ca37738ac2c11937c343db18c5e232a6726c060e85315"
+  },
+  "tropical/rowboat_nw_damaged_tropical.png": {
+   "sha256": "925c87d5edc0430cad21ac61381c2bb4f85024781f8c524f7da56c0c948a2c1d"
+  },
+  "tropical/rowboat_nw_empty_tropical.png": {
+   "sha256": "ff73824dfb6ad5f41e6646b76f0022780ee9cb5de7da47ac0656f492b323a733"
+  },
+  "tropical/rowboat_nw_loaded_tropical.png": {
+   "sha256": "96c5534db05e8914d6cdd436fc0640cc08f667a20bc25ac2368d621e195d0066"
+  },
+  "tropical/rowboat_se_damaged_tropical.png": {
+   "sha256": "8dbf2d00850c5b7532f934c553a3926a62dfd6ebd1db7ad84c2e9cd0e1d69f10"
+  },
+  "tropical/rowboat_se_empty_tropical.png": {
+   "sha256": "c6b27414641ce87d03cdf7580be5e7b665337cf443367604d1994e41f6ce3a6f"
+  },
+  "tropical/rowboat_se_loaded_tropical.png": {
+   "sha256": "c2b64fb5ce725e8e024ef034ee8aecbb17b0ca6bbe5e253d977d357c5abd2c07"
+  },
+  "tropical/rowboat_sw_damaged_tropical.png": {
+   "sha256": "5321af71178fcf4b6661ae2b4036189c56eb6dbf1afd03d84ca3a9b64c5e1b4f"
+  },
+  "tropical/rowboat_sw_empty_tropical.png": {
+   "sha256": "e10a5533b2ec39aaff63bc75fdf5a0d13beda9afd6d53d4d2ccf73608ed5b1bb"
+  },
+  "tropical/rowboat_sw_loaded_tropical.png": {
+   "sha256": "1029bf8fa2595363b21dc71c9381c77531c70fa12c1866991cef402953da7501"
+  },
+  "tropical/shop_4_tropical.png": {
+   "sha256": "0f1fedce31a6e0dfad644a10dbb89963006ade5fd07595ff50cd99076a52c3c1"
+  },
+  "tropical/shop_5_tropical.png": {
+   "sha256": "84d39800de7b9be1b8c6fb846e839372dae29276ba96de4b11b0c533ea0e4192"
+  },
+  "tropical/shop_6_tropical.png": {
+   "sha256": "0a03597c136f0727cb9be73effa79655d7f45e782c9c0a380a6aa8ea128aa280"
+  },
+  "tropical/shop_7_tropical.png": {
+   "sha256": "ab9778e456af6ee54ae289db9f695186566cfa529934359a00bc4af297032391"
+  },
+  "tropical/shop_8_tropical.png": {
+   "sha256": "e6bcfd663bcf3ac7689c805e4ef8d640718c36f5c31e810314ae33e825d78f2a"
+  },
+  "tropical/work_skiff_ne_damaged_tropical.png": {
+   "sha256": "6b4387fedec26f964b9c1fbdf26285425e29bde96c7b6a404d5962aa57a071de"
+  },
+  "tropical/work_skiff_ne_empty_tropical.png": {
+   "sha256": "d305909d72e0a504fb6378b92782f85ca230d24cd459ea59fb0b2843402c4d5d"
+  },
+  "tropical/work_skiff_ne_loaded_tropical.png": {
+   "sha256": "98f644b3706f6d716a3402a9eac9e757af5b28b2e48a6c4bb4c7f17ef2cf2b44"
+  },
+  "tropical/work_skiff_nw_damaged_tropical.png": {
+   "sha256": "ae79370db76e6c7ab432acf1ca63316c445c4c06a4c1c7278d436dc0a078c1be"
+  },
+  "tropical/work_skiff_nw_empty_tropical.png": {
+   "sha256": "d3b30ecc9690de5e6704f14276ae39b1a5a0610a46281c09526c562c14ab7d0e"
+  },
+  "tropical/work_skiff_nw_loaded_tropical.png": {
+   "sha256": "ddac328144491614f6bc7683490b375e1f5ff138ea12f553735902d23cf43782"
+  },
+  "tropical/work_skiff_se_damaged_tropical.png": {
+   "sha256": "1d73f3c85b06eadd90b5bd45096fc495b8e15e82e9e5981fdc76f7f3a6382567"
+  },
+  "tropical/work_skiff_se_empty_tropical.png": {
+   "sha256": "665a07318ce9625baec50d1368aba3bbde839546aa7ae08db88081e2f99aefab"
+  },
+  "tropical/work_skiff_se_loaded_tropical.png": {
+   "sha256": "f2f155b38d0eb9def073ec39c99defc597e19947c0331ef65eabb3f9b98cbe0a"
+  },
+  "tropical/work_skiff_sw_damaged_tropical.png": {
+   "sha256": "0fe7b74142fd41d65cc84b4d2c7a46a671f092d9bb3065e80a4ab006071642c8"
+  },
+  "tropical/work_skiff_sw_empty_tropical.png": {
+   "sha256": "9d5ecbac24c94b1b56c645c177f6946df4ec7b5e9f3cb8057d7b1673e43d68b5"
+  },
+  "tropical/work_skiff_sw_loaded_tropical.png": {
+   "sha256": "29c73d6c2c4aabe465ef8ca9259b77f5ccb23c9100166500edc3ea4fa2cd513c"
+  }
+ }
+}
