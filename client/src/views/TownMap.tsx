@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
-  HALF_H, HALF_W, SCALES, TOP, computeFit, drawTown, lotPivot, useTownMap, type MapLot, type View,
+  SCALES, TOP, computeFit, drawTown, useTownMap, type MapLot, type View,
 } from '../map-render.js';
+import { pointInFootprint } from '../map-assets.js';
 
 /**
  * Bird's-eye town map. Read-only: it shows the committed town through /api/map and never sends
@@ -46,8 +47,8 @@ export function TownMap({ revision = 0 }: { revision?: number }) {
   const fit = useCallback(() => {
     const box = viewport.current;
     if (!box || !terrain || !data) return;
-    setView(computeFit(data, terrain, { w: box.clientWidth, h: box.clientHeight }));
-  }, [data, terrain]);
+    setView(computeFit(data, terrain, { w: box.clientWidth, h: box.clientHeight }, 1, atlas));
+  }, [data, terrain, atlas]);
 
   useEffect(() => {
     if (view === null && data && terrain && size.w > 0) fit();
@@ -86,10 +87,9 @@ export function TownMap({ revision = 0 }: { revision?: number }) {
     const lotTiles = data.tile.lotTiles;
     const ordered = [...data.lots].sort((a, b) => b.tx + b.ty - (a.tx + a.ty) || b.tx - a.tx);
     for (const lot of ordered) {
-      const pivot = lotPivot(lot, terrain, lotTiles);
-      const dx = Math.abs(mx - pivot.x) / (lotTiles * HALF_W);
-      const dy = Math.abs(my - (pivot.y - lotTiles * HALF_H)) / (lotTiles * HALF_H);
-      if (dx + dy <= 1) return lot;
+      const fp = lot.footprint ?? { w: lotTiles, d: lotTiles };
+      const origin = terrain.height * 16;
+      if (pointInFootprint(mx - origin, my, lot.tx - terrain.x0, lot.ty - terrain.y0, fp)) return lot;
     }
     return null;
   };

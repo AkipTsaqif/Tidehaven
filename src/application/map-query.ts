@@ -27,6 +27,8 @@ export interface MapLot {
   ty: number;
   /** Atlas frame `<kind>_<tier>`, or null when the kind has no sprite yet. */
   frame: string | null;
+  /** Authoritative reservation; new artwork alone cannot enlarge it. */
+  footprint: { w: number; d: number };
   kind: string;
   tier: 1 | 2 | 3;
   name: string;
@@ -165,6 +167,7 @@ export function mapView(db: Db, worldId: number): MapView {
       lots.push({
         key: `b${building.id}`, tx: lot.tx, ty: lot.ty,
         frame: spriteKind ? `${spriteKind}_${tier}` : null,
+        footprint: { w: LOT_TILES, d: LOT_TILES },
         kind: building.kind, tier, name: building.name, buildingId: building.id,
         capacity: building.capacity, conditionPct: Math.round(building.condition_bps / 100), destroyed,
         plannedKind: planned.get(building.id) ?? null,
@@ -174,7 +177,7 @@ export function mapView(db: Db, worldId: number): MapView {
     } else if (lot.householdId !== null) {
       const camp = campById.get(lot.householdId)!;
       lots.push({
-        key: `c${camp.id}`, tx: lot.tx, ty: lot.ty, frame: 'camp_1', kind: 'camp', tier: 1, name: camp.name,
+        key: `c${camp.id}`, tx: lot.tx, ty: lot.ty, frame: 'camp_1', footprint: { w: LOT_TILES, d: LOT_TILES }, kind: 'camp', tier: 1, name: camp.name,
         buildingId: null, capacity: camp.capacity, conditionPct: null, destroyed: false, plannedKind: null,
         business: null, residents: camp.members, households: 1,
       });

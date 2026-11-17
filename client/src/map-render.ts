@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getJson } from './api.js';
+import { normalizeAtlas, type Atlas, type Footprint } from './map-assets.js';
+export type { Atlas } from './map-assets.js';
 import {
   drawRoads, drawTreeShadow, sceneryPoint, treeSprite, TREE_PIVOT, type MapRoad, type MapTree,
 } from './map-scenery.js';
@@ -22,6 +24,7 @@ export interface MapLot {
   tx: number;
   ty: number;
   frame: string | null;
+  footprint?: Footprint;
   kind: string;
   tier: 1 | 2 | 3;
   name: string;
@@ -47,12 +50,6 @@ export interface MapResponse {
   roadTargetsOmitted: number;
   unplaced: { buildings: number; camps: number };
   truncated: { buildings: number; camps: number };
-}
-
-export interface Atlas {
-  cell: { w: number; h: number };
-  pivot: { x: number; y: number };
-  biomes: Record<string, { image: string; frames: Record<string, { x: number; y: number }> }>;
 }
 
 export interface View {
@@ -134,7 +131,8 @@ export function lotPivot(lot: MapLot, terrain: Terrain, lotTiles: number): { x: 
   const originX = (terrain.height - 1) * HALF_W + HALF_W;
   const tx = lot.tx - terrain.x0;
   const ty = lot.ty - terrain.y0;
-  return { x: originX + (tx - ty) * HALF_W, y: (tx + ty + 2 * lotTiles) * HALF_H };
+  const f = lot.footprint ?? { w: lotTiles, d: lotTiles };
+  return { x: originX + (tx + f.w - ty - f.d) * HALF_W, y: (tx + ty + f.w + f.d) * HALF_H };
 }
 
 export interface TownDrawParams {
@@ -177,21 +175,21 @@ export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
   });
   const frames = atlas?.biomes[data.biome]?.frames;
   if (!sheet || !frames || !atlas) return;
-  const left = -view.x / view.scale - atlas.cell.w;
-  const right = (size.w - view.x) / view.scale + atlas.cell.w;
-  const top = -view.y / view.scale - TOP;
-  const bottom = (size.h - view.y) / view.scale + atlas.cell.h;
+  const left = -view.x / view.scale;
+  const right = (size.w - view.x) / view.scale;
+  const top = -view.y / view.scale;
+  const bottom = (size.h - view.y) / view.scale;
   // Shadows are ground-level; every object then shares one painter's order so trees behind a
   // building disappear correctly while trees in front can overlap it naturally.
   for (const tree of data.trees) {
     const point = sceneryPoint(tree, terrain);
-    if (point.x < left || point.x > right || point.y < top || point.y > bottom) continue;
+    if (point.x + 24 < left || point.x - 24 > right || point.y < top || point.y - 48 > bottom) continue;
     drawTreeShadow(ctx, point);
   }
   for (const object of objects) {
     if (object.tree) {
       const point = sceneryPoint(object.tree, terrain);
-      if (point.x < left || point.x > right || point.y < top || point.y > bottom) continue;
+      if (point.x + 24 < left || point.x - 24 > right || point.y < top || point.y - 48 > bottom) continue;
       ctx.drawImage(treeSprite(data.biome, object.tree), Math.round(point.x) - TREE_PIVOT.x, Math.round(point.y) - TREE_PIVOT.y);
       continue;
     }
@@ -199,20 +197,21 @@ export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
     const frame = lot.frame ? frames[lot.frame] : undefined;
     if (!frame) continue;
     const pivot = lotPivot(lot, terrain, data.tile.lotTiles);
-    if (pivot.x < left || pivot.x > right || pivot.y < top || pivot.y > bottom) continue;
-    ctx.drawImage(sheet, frame.x, frame.y, atlas.cell.w, atlas.cell.h,
-      pivot.x - atlas.pivot.x, pivot.y + TOP - atlas.pivot.y, atlas.cell.w, atlas.cell.h);
+    const dx = pivot.x - frame.pivot.x, dy = pivot.y + TOP - frame.pivot.y;
+    if (dx + frame.rect.w < left || dx > right || dy + frame.rect.h < top || dy > bottom) continue;
+    ctx.drawImage(sheet, frame.rect.x, frame.rect.y, frame.rect.w, frame.rect.h,
+      dx, dy, frame.rect.w, frame.rect.h);
     if (selected !== undefined && lot.key === selected) {
-      const w = data.tile.lotTiles * HALF_W;
-      const h = data.tile.lotTiles * HALF_H;
-      const py = pivot.y + TOP;
+      const fp = lot.footprint ?? frame.footprint;
+      const topX = terrain.height * HALF_W + (lot.tx - terrain.x0 - lot.ty + terrain.y0) * HALF_W;
+      const topY = (lot.tx - terrain.x0 + lot.ty - terrain.y0) * HALF_H + TOP;
       ctx.strokeStyle = '#f2d064';
       ctx.lineWidth = 1 / view.scale;
       ctx.beginPath();
-      ctx.moveTo(pivot.x, py - 2 * h);
-      ctx.lineTo(pivot.x + w, py - h);
-      ctx.lineTo(pivot.x, py);
-      ctx.lineTo(pivot.x - w, py - h);
+      ctx.moveTo(topX, topY);
+      ctx.lineTo(topX + fp.w * HALF_W, topY + fp.w * HALF_H);
+      ctx.lineTo(pivot.x, pivot.y + TOP);
+      ctx.lineTo(topX - fp.d * HALF_W, topY + fp.d * HALF_H);
       ctx.closePath();
       ctx.stroke();
     }
@@ -222,7 +221,7 @@ export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
 /** Depth-sorted buildings and trees; recompute only when the scene changes, never per frame. */
 export function sortTownObjects(data: MapResponse): TownObject[] {
   const entries: TownObject[] = [
-    ...data.lots.map((lot) => ({ depth: lot.tx + lot.ty + 2 * data.tile.lotTiles, lot })),
+    ...data.lots.map((lot) => ({ depth: lot.tx + lot.ty + (lot.footprint?.w ?? data.tile.lotTiles) + (lot.footprint?.d ?? data.tile.lotTiles), lot })),
     ...data.trees.map((tree) => ({ depth: tree.x + tree.y, tree })),
   ];
   return entries.sort((a, b) => a.depth - b.depth || (a.tree ? 0 : 1) - (b.tree ? 0 : 1));
@@ -233,19 +232,30 @@ export function sortTownObjects(data: MapResponse): TownObject[] {
  * below 1x (so a lone outlying fishery cannot shrink the town to specks); a small thumbnail passes
  * a lower `minScale` so it can show the whole town.
  */
-export function computeFit(data: MapResponse, terrain: Terrain, box: { w: number; h: number }, minScale = 1): View {
+export function computeFit(data: MapResponse, terrain: Terrain, box: { w: number; h: number }, minScale = 1, atlas?: Atlas | null): View {
   const pixelWidth = (terrain.width + terrain.height) * HALF_W;
   const pixelHeight = (terrain.width + terrain.height) * HALF_H + 112;
   const placed = data.lots.map((lot) => lotPivot(lot, terrain, data.tile.lotTiles));
   const xs = placed.map((p) => p.x);
   const ys = placed.map((p) => p.y);
-  const minX = xs.length ? Math.min(...xs) - 96 : 0;
-  const maxX = xs.length ? Math.max(...xs) + 96 : pixelWidth;
-  const minY = ys.length ? Math.min(...ys) - 130 : 0;
-  const maxY = ys.length ? Math.max(...ys) + 30 : pixelHeight;
-  const fits = SCALES.filter((s) => s >= minScale && (maxX - minX) * s <= box.w && (maxY - minY) * s <= box.h);
+  const bounds = placed.map((pivot, n) => {
+    const lot = data.lots[n]!;
+    const frame = lot.frame ? atlas?.biomes[data.biome]?.frames[lot.frame] : undefined;
+    return frame
+      ? { left: pivot.x - frame.pivot.x, right: pivot.x - frame.pivot.x + frame.rect.w,
+        top: pivot.y - frame.pivot.y, bottom: pivot.y - frame.pivot.y + frame.rect.h }
+      : { left: pivot.x - 96, right: pivot.x + 96, top: pivot.y - 130, bottom: pivot.y + 30 };
+  });
+  const minX = xs.length ? Math.min(...bounds.map((b) => b.left)) - 16 : 0;
+  const maxX = xs.length ? Math.max(...bounds.map((b) => b.right)) + 16 : pixelWidth;
+  const minY = ys.length ? Math.min(...bounds.map((b) => b.top)) - 16 : 0;
+  const maxY = ys.length ? Math.max(...bounds.map((b) => b.bottom)) + 16 : pixelHeight;
+  // A single tall frame must be allowed to fit below1x; otherwise Fit would cut off its crown.
+  const tallest = bounds.reduce((height, b) => Math.max(height, b.bottom - b.top + 32), 0);
+  const minimum = tallest > box.h ? Math.min(minScale, 0.5) : minScale;
+  const fits = SCALES.filter((s) => s >= minimum && (maxX - minX) * s <= box.w && (maxY - minY) * s <= box.h);
   const allFit = fits.length > 0;
-  const scale = allFit ? fits[fits.length - 1]! : minScale;
+  const scale = allFit ? fits[fits.length - 1]! : minimum;
   const median = (values: number[]) => [...values].sort((a, b) => a - b)[Math.floor(values.length / 2)] ?? 0;
   const cx = allFit || xs.length === 0 ? (minX + maxX) / 2 : median(xs);
   const cy = allFit || ys.length === 0 ? (minY + maxY) / 2 : median(ys) - 50;
@@ -276,7 +286,8 @@ export function useTownMap(revision: number): {
 
   useEffect(() => {
     let current = true;
-    getJson<Atlas>('/map/atlas.json')
+    getJson<unknown>('/map/atlas.json')
+      .then(normalizeAtlas)
       .then((next) => current && setAtlas(next))
       .catch((err: Error) => current && setError(`sprite atlas: ${err.message}`));
     return () => { current = false; };

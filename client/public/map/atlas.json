@@ -1,693 +1,2815 @@
 {
- "version": 1,
- "tileWidth": 32,
- "tileHeight": 16,
- "cell": {
-  "w": 96,
-  "h": 104
- },
- "pivot": {
-  "x": 48,
-  "y": 104
- },
- "footprint": {
-  "i": 3,
-  "j": 3
+ "version": 2,
+ "tile": {
+  "w": 32,
+  "h": 16
  },
  "biomes": {
   "tropical": {
    "image": "/map/atlas-tropical.png",
    "frames": {
-    "home_1": {
-     "x": 0,
-     "y": 0
-    },
-    "home_2": {
-     "x": 96,
-     "y": 0
-    },
-    "home_3": {
-     "x": 192,
-     "y": 0
-    },
-    "farm_1": {
-     "x": 288,
-     "y": 0
-    },
-    "farm_2": {
-     "x": 384,
-     "y": 0
-    },
-    "farm_3": {
-     "x": 480,
-     "y": 0
-    },
-    "fishery_1": {
-     "x": 576,
-     "y": 0
-    },
-    "fishery_2": {
-     "x": 672,
-     "y": 0
-    },
-    "fishery_3": {
-     "x": 768,
-     "y": 0
-    },
     "bakery_1": {
-     "x": 0,
-     "y": 104
+     "rect": {
+      "x": 2,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_2": {
-     "x": 96,
-     "y": 104
+     "rect": {
+      "x": 102,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_3": {
-     "x": 192,
-     "y": 104
-    },
-    "timber_camp_1": {
-     "x": 288,
-     "y": 104
-    },
-    "timber_camp_2": {
-     "x": 384,
-     "y": 104
-    },
-    "timber_camp_3": {
-     "x": 480,
-     "y": 104
-    },
-    "workshop_1": {
-     "x": 576,
-     "y": 104
-    },
-    "workshop_2": {
-     "x": 672,
-     "y": 104
-    },
-    "workshop_3": {
-     "x": 768,
-     "y": 104
-    },
-    "shop_1": {
-     "x": 0,
-     "y": 208
-    },
-    "shop_2": {
-     "x": 96,
-     "y": 208
-    },
-    "shop_3": {
-     "x": 192,
-     "y": 208
-    },
-    "clinic_1": {
-     "x": 288,
-     "y": 208
-    },
-    "clinic_2": {
-     "x": 384,
-     "y": 208
-    },
-    "clinic_3": {
-     "x": 480,
-     "y": 208
-    },
-    "guard_house_1": {
-     "x": 576,
-     "y": 208
-    },
-    "guard_house_2": {
-     "x": 672,
-     "y": 208
-    },
-    "guard_house_3": {
-     "x": 768,
-     "y": 208
-    },
-    "court_1": {
-     "x": 0,
-     "y": 312
-    },
-    "court_2": {
-     "x": 96,
-     "y": 312
-    },
-    "court_3": {
-     "x": 192,
-     "y": 312
-    },
-    "council_1": {
-     "x": 288,
-     "y": 312
-    },
-    "council_2": {
-     "x": 384,
-     "y": 312
-    },
-    "council_3": {
-     "x": 480,
-     "y": 312
-    },
-    "public_works_1": {
-     "x": 576,
-     "y": 312
-    },
-    "public_works_2": {
-     "x": 672,
-     "y": 312
-    },
-    "public_works_3": {
-     "x": 768,
-     "y": 312
+     "rect": {
+      "x": 202,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "camp_1": {
-     "x": 0,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "home_site_1": {
-     "x": 96,
-     "y": 416
+    "clinic_1": {
+     "rect": {
+      "x": 402,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_site_1": {
-     "x": 192,
-     "y": 416
+    "clinic_2": {
+     "rect": {
+      "x": 502,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_abandoned_1": {
-     "x": 288,
-     "y": 416
+    "clinic_3": {
+     "rect": {
+      "x": 602,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_1": {
+     "rect": {
+      "x": 702,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_2": {
+     "rect": {
+      "x": 802,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_3": {
+     "rect": {
+      "x": 902,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_1": {
+     "rect": {
+      "x": 2,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_2": {
+     "rect": {
+      "x": 102,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_3": {
+     "rect": {
+      "x": 202,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "destroyed_1": {
-     "x": 384,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_abandoned_1": {
+     "rect": {
+      "x": 402,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_site_1": {
+     "rect": {
+      "x": 502,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_1": {
+     "rect": {
+      "x": 602,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_2": {
+     "rect": {
+      "x": 702,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_3": {
+     "rect": {
+      "x": 802,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_1": {
+     "rect": {
+      "x": 902,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_2": {
+     "rect": {
+      "x": 2,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_3": {
+     "rect": {
+      "x": 102,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_1": {
+     "rect": {
+      "x": 202,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_2": {
+     "rect": {
+      "x": 302,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_3": {
+     "rect": {
+      "x": 402,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_1": {
+     "rect": {
+      "x": 502,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_2": {
+     "rect": {
+      "x": 602,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_3": {
+     "rect": {
+      "x": 702,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_site_1": {
+     "rect": {
+      "x": 802,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_1": {
+     "rect": {
+      "x": 902,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_2": {
+     "rect": {
+      "x": 2,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_3": {
+     "rect": {
+      "x": 102,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_1": {
+     "rect": {
+      "x": 202,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_2": {
+     "rect": {
+      "x": 302,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_3": {
+     "rect": {
+      "x": 402,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_1": {
+     "rect": {
+      "x": 502,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_2": {
+     "rect": {
+      "x": 602,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_3": {
+     "rect": {
+      "x": 702,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_1": {
+     "rect": {
+      "x": 802,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_2": {
+     "rect": {
+      "x": 902,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_3": {
+     "rect": {
+      "x": 2,
+      "y": 434,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     }
    }
   },
   "temperate": {
    "image": "/map/atlas-temperate.png",
    "frames": {
-    "home_1": {
-     "x": 0,
-     "y": 0
-    },
-    "home_2": {
-     "x": 96,
-     "y": 0
-    },
-    "home_3": {
-     "x": 192,
-     "y": 0
-    },
-    "farm_1": {
-     "x": 288,
-     "y": 0
-    },
-    "farm_2": {
-     "x": 384,
-     "y": 0
-    },
-    "farm_3": {
-     "x": 480,
-     "y": 0
-    },
-    "fishery_1": {
-     "x": 576,
-     "y": 0
-    },
-    "fishery_2": {
-     "x": 672,
-     "y": 0
-    },
-    "fishery_3": {
-     "x": 768,
-     "y": 0
-    },
     "bakery_1": {
-     "x": 0,
-     "y": 104
+     "rect": {
+      "x": 2,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_2": {
-     "x": 96,
-     "y": 104
+     "rect": {
+      "x": 102,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_3": {
-     "x": 192,
-     "y": 104
-    },
-    "timber_camp_1": {
-     "x": 288,
-     "y": 104
-    },
-    "timber_camp_2": {
-     "x": 384,
-     "y": 104
-    },
-    "timber_camp_3": {
-     "x": 480,
-     "y": 104
-    },
-    "workshop_1": {
-     "x": 576,
-     "y": 104
-    },
-    "workshop_2": {
-     "x": 672,
-     "y": 104
-    },
-    "workshop_3": {
-     "x": 768,
-     "y": 104
-    },
-    "shop_1": {
-     "x": 0,
-     "y": 208
-    },
-    "shop_2": {
-     "x": 96,
-     "y": 208
-    },
-    "shop_3": {
-     "x": 192,
-     "y": 208
-    },
-    "clinic_1": {
-     "x": 288,
-     "y": 208
-    },
-    "clinic_2": {
-     "x": 384,
-     "y": 208
-    },
-    "clinic_3": {
-     "x": 480,
-     "y": 208
-    },
-    "guard_house_1": {
-     "x": 576,
-     "y": 208
-    },
-    "guard_house_2": {
-     "x": 672,
-     "y": 208
-    },
-    "guard_house_3": {
-     "x": 768,
-     "y": 208
-    },
-    "court_1": {
-     "x": 0,
-     "y": 312
-    },
-    "court_2": {
-     "x": 96,
-     "y": 312
-    },
-    "court_3": {
-     "x": 192,
-     "y": 312
-    },
-    "council_1": {
-     "x": 288,
-     "y": 312
-    },
-    "council_2": {
-     "x": 384,
-     "y": 312
-    },
-    "council_3": {
-     "x": 480,
-     "y": 312
-    },
-    "public_works_1": {
-     "x": 576,
-     "y": 312
-    },
-    "public_works_2": {
-     "x": 672,
-     "y": 312
-    },
-    "public_works_3": {
-     "x": 768,
-     "y": 312
+     "rect": {
+      "x": 202,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "camp_1": {
-     "x": 0,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "home_site_1": {
-     "x": 96,
-     "y": 416
+    "clinic_1": {
+     "rect": {
+      "x": 402,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_site_1": {
-     "x": 192,
-     "y": 416
+    "clinic_2": {
+     "rect": {
+      "x": 502,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_abandoned_1": {
-     "x": 288,
-     "y": 416
+    "clinic_3": {
+     "rect": {
+      "x": 602,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_1": {
+     "rect": {
+      "x": 702,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_2": {
+     "rect": {
+      "x": 802,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_3": {
+     "rect": {
+      "x": 902,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_1": {
+     "rect": {
+      "x": 2,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_2": {
+     "rect": {
+      "x": 102,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_3": {
+     "rect": {
+      "x": 202,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "destroyed_1": {
-     "x": 384,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_abandoned_1": {
+     "rect": {
+      "x": 402,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_site_1": {
+     "rect": {
+      "x": 502,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_1": {
+     "rect": {
+      "x": 602,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_2": {
+     "rect": {
+      "x": 702,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_3": {
+     "rect": {
+      "x": 802,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_1": {
+     "rect": {
+      "x": 902,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_2": {
+     "rect": {
+      "x": 2,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_3": {
+     "rect": {
+      "x": 102,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_1": {
+     "rect": {
+      "x": 202,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_2": {
+     "rect": {
+      "x": 302,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_3": {
+     "rect": {
+      "x": 402,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_1": {
+     "rect": {
+      "x": 502,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_2": {
+     "rect": {
+      "x": 602,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_3": {
+     "rect": {
+      "x": 702,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_site_1": {
+     "rect": {
+      "x": 802,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_1": {
+     "rect": {
+      "x": 902,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_2": {
+     "rect": {
+      "x": 2,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_3": {
+     "rect": {
+      "x": 102,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_1": {
+     "rect": {
+      "x": 202,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_2": {
+     "rect": {
+      "x": 302,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_3": {
+     "rect": {
+      "x": 402,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_1": {
+     "rect": {
+      "x": 502,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_2": {
+     "rect": {
+      "x": 602,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_3": {
+     "rect": {
+      "x": 702,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_1": {
+     "rect": {
+      "x": 802,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_2": {
+     "rect": {
+      "x": 902,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_3": {
+     "rect": {
+      "x": 2,
+      "y": 434,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     }
    }
   },
   "arid": {
    "image": "/map/atlas-arid.png",
    "frames": {
-    "home_1": {
-     "x": 0,
-     "y": 0
-    },
-    "home_2": {
-     "x": 96,
-     "y": 0
-    },
-    "home_3": {
-     "x": 192,
-     "y": 0
-    },
-    "farm_1": {
-     "x": 288,
-     "y": 0
-    },
-    "farm_2": {
-     "x": 384,
-     "y": 0
-    },
-    "farm_3": {
-     "x": 480,
-     "y": 0
-    },
-    "fishery_1": {
-     "x": 576,
-     "y": 0
-    },
-    "fishery_2": {
-     "x": 672,
-     "y": 0
-    },
-    "fishery_3": {
-     "x": 768,
-     "y": 0
-    },
     "bakery_1": {
-     "x": 0,
-     "y": 104
+     "rect": {
+      "x": 2,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_2": {
-     "x": 96,
-     "y": 104
+     "rect": {
+      "x": 102,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_3": {
-     "x": 192,
-     "y": 104
-    },
-    "timber_camp_1": {
-     "x": 288,
-     "y": 104
-    },
-    "timber_camp_2": {
-     "x": 384,
-     "y": 104
-    },
-    "timber_camp_3": {
-     "x": 480,
-     "y": 104
-    },
-    "workshop_1": {
-     "x": 576,
-     "y": 104
-    },
-    "workshop_2": {
-     "x": 672,
-     "y": 104
-    },
-    "workshop_3": {
-     "x": 768,
-     "y": 104
-    },
-    "shop_1": {
-     "x": 0,
-     "y": 208
-    },
-    "shop_2": {
-     "x": 96,
-     "y": 208
-    },
-    "shop_3": {
-     "x": 192,
-     "y": 208
-    },
-    "clinic_1": {
-     "x": 288,
-     "y": 208
-    },
-    "clinic_2": {
-     "x": 384,
-     "y": 208
-    },
-    "clinic_3": {
-     "x": 480,
-     "y": 208
-    },
-    "guard_house_1": {
-     "x": 576,
-     "y": 208
-    },
-    "guard_house_2": {
-     "x": 672,
-     "y": 208
-    },
-    "guard_house_3": {
-     "x": 768,
-     "y": 208
-    },
-    "court_1": {
-     "x": 0,
-     "y": 312
-    },
-    "court_2": {
-     "x": 96,
-     "y": 312
-    },
-    "court_3": {
-     "x": 192,
-     "y": 312
-    },
-    "council_1": {
-     "x": 288,
-     "y": 312
-    },
-    "council_2": {
-     "x": 384,
-     "y": 312
-    },
-    "council_3": {
-     "x": 480,
-     "y": 312
-    },
-    "public_works_1": {
-     "x": 576,
-     "y": 312
-    },
-    "public_works_2": {
-     "x": 672,
-     "y": 312
-    },
-    "public_works_3": {
-     "x": 768,
-     "y": 312
+     "rect": {
+      "x": 202,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "camp_1": {
-     "x": 0,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "home_site_1": {
-     "x": 96,
-     "y": 416
+    "clinic_1": {
+     "rect": {
+      "x": 402,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_site_1": {
-     "x": 192,
-     "y": 416
+    "clinic_2": {
+     "rect": {
+      "x": 502,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_abandoned_1": {
-     "x": 288,
-     "y": 416
+    "clinic_3": {
+     "rect": {
+      "x": 602,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_1": {
+     "rect": {
+      "x": 702,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_2": {
+     "rect": {
+      "x": 802,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_3": {
+     "rect": {
+      "x": 902,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_1": {
+     "rect": {
+      "x": 2,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_2": {
+     "rect": {
+      "x": 102,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_3": {
+     "rect": {
+      "x": 202,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "destroyed_1": {
-     "x": 384,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_abandoned_1": {
+     "rect": {
+      "x": 402,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_site_1": {
+     "rect": {
+      "x": 502,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_1": {
+     "rect": {
+      "x": 602,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_2": {
+     "rect": {
+      "x": 702,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_3": {
+     "rect": {
+      "x": 802,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_1": {
+     "rect": {
+      "x": 902,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_2": {
+     "rect": {
+      "x": 2,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_3": {
+     "rect": {
+      "x": 102,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_1": {
+     "rect": {
+      "x": 202,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_2": {
+     "rect": {
+      "x": 302,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_3": {
+     "rect": {
+      "x": 402,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_1": {
+     "rect": {
+      "x": 502,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_2": {
+     "rect": {
+      "x": 602,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_3": {
+     "rect": {
+      "x": 702,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_site_1": {
+     "rect": {
+      "x": 802,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_1": {
+     "rect": {
+      "x": 902,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_2": {
+     "rect": {
+      "x": 2,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_3": {
+     "rect": {
+      "x": 102,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_1": {
+     "rect": {
+      "x": 202,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_2": {
+     "rect": {
+      "x": 302,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_3": {
+     "rect": {
+      "x": 402,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_1": {
+     "rect": {
+      "x": 502,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_2": {
+     "rect": {
+      "x": 602,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_3": {
+     "rect": {
+      "x": 702,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_1": {
+     "rect": {
+      "x": 802,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_2": {
+     "rect": {
+      "x": 902,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_3": {
+     "rect": {
+      "x": 2,
+      "y": 434,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     }
    }
   },
   "northern": {
    "image": "/map/atlas-northern.png",
    "frames": {
-    "home_1": {
-     "x": 0,
-     "y": 0
-    },
-    "home_2": {
-     "x": 96,
-     "y": 0
-    },
-    "home_3": {
-     "x": 192,
-     "y": 0
-    },
-    "farm_1": {
-     "x": 288,
-     "y": 0
-    },
-    "farm_2": {
-     "x": 384,
-     "y": 0
-    },
-    "farm_3": {
-     "x": 480,
-     "y": 0
-    },
-    "fishery_1": {
-     "x": 576,
-     "y": 0
-    },
-    "fishery_2": {
-     "x": 672,
-     "y": 0
-    },
-    "fishery_3": {
-     "x": 768,
-     "y": 0
-    },
     "bakery_1": {
-     "x": 0,
-     "y": 104
+     "rect": {
+      "x": 2,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_2": {
-     "x": 96,
-     "y": 104
+     "rect": {
+      "x": 102,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "bakery_3": {
-     "x": 192,
-     "y": 104
-    },
-    "timber_camp_1": {
-     "x": 288,
-     "y": 104
-    },
-    "timber_camp_2": {
-     "x": 384,
-     "y": 104
-    },
-    "timber_camp_3": {
-     "x": 480,
-     "y": 104
-    },
-    "workshop_1": {
-     "x": 576,
-     "y": 104
-    },
-    "workshop_2": {
-     "x": 672,
-     "y": 104
-    },
-    "workshop_3": {
-     "x": 768,
-     "y": 104
-    },
-    "shop_1": {
-     "x": 0,
-     "y": 208
-    },
-    "shop_2": {
-     "x": 96,
-     "y": 208
-    },
-    "shop_3": {
-     "x": 192,
-     "y": 208
-    },
-    "clinic_1": {
-     "x": 288,
-     "y": 208
-    },
-    "clinic_2": {
-     "x": 384,
-     "y": 208
-    },
-    "clinic_3": {
-     "x": 480,
-     "y": 208
-    },
-    "guard_house_1": {
-     "x": 576,
-     "y": 208
-    },
-    "guard_house_2": {
-     "x": 672,
-     "y": 208
-    },
-    "guard_house_3": {
-     "x": 768,
-     "y": 208
-    },
-    "court_1": {
-     "x": 0,
-     "y": 312
-    },
-    "court_2": {
-     "x": 96,
-     "y": 312
-    },
-    "court_3": {
-     "x": 192,
-     "y": 312
-    },
-    "council_1": {
-     "x": 288,
-     "y": 312
-    },
-    "council_2": {
-     "x": 384,
-     "y": 312
-    },
-    "council_3": {
-     "x": 480,
-     "y": 312
-    },
-    "public_works_1": {
-     "x": 576,
-     "y": 312
-    },
-    "public_works_2": {
-     "x": 672,
-     "y": 312
-    },
-    "public_works_3": {
-     "x": 768,
-     "y": 312
+     "rect": {
+      "x": 202,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "camp_1": {
-     "x": 0,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "home_site_1": {
-     "x": 96,
-     "y": 416
+    "clinic_1": {
+     "rect": {
+      "x": 402,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_site_1": {
-     "x": 192,
-     "y": 416
+    "clinic_2": {
+     "rect": {
+      "x": 502,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
-    "development_abandoned_1": {
-     "x": 288,
-     "y": 416
+    "clinic_3": {
+     "rect": {
+      "x": 602,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_1": {
+     "rect": {
+      "x": 702,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_2": {
+     "rect": {
+      "x": 802,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "council_3": {
+     "rect": {
+      "x": 902,
+      "y": 2,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_1": {
+     "rect": {
+      "x": 2,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_2": {
+     "rect": {
+      "x": 102,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "court_3": {
+     "rect": {
+      "x": 202,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     },
     "destroyed_1": {
-     "x": 384,
-     "y": 416
+     "rect": {
+      "x": 302,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_abandoned_1": {
+     "rect": {
+      "x": 402,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "development_site_1": {
+     "rect": {
+      "x": 502,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_1": {
+     "rect": {
+      "x": 602,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_2": {
+     "rect": {
+      "x": 702,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "farm_3": {
+     "rect": {
+      "x": 802,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_1": {
+     "rect": {
+      "x": 902,
+      "y": 110,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_2": {
+     "rect": {
+      "x": 2,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "fishery_3": {
+     "rect": {
+      "x": 102,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_1": {
+     "rect": {
+      "x": 202,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_2": {
+     "rect": {
+      "x": 302,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "guard_house_3": {
+     "rect": {
+      "x": 402,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_1": {
+     "rect": {
+      "x": 502,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_2": {
+     "rect": {
+      "x": 602,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_3": {
+     "rect": {
+      "x": 702,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "home_site_1": {
+     "rect": {
+      "x": 802,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_1": {
+     "rect": {
+      "x": 902,
+      "y": 218,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_2": {
+     "rect": {
+      "x": 2,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "public_works_3": {
+     "rect": {
+      "x": 102,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_1": {
+     "rect": {
+      "x": 202,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_2": {
+     "rect": {
+      "x": 302,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "shop_3": {
+     "rect": {
+      "x": 402,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_1": {
+     "rect": {
+      "x": 502,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_2": {
+     "rect": {
+      "x": 602,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "timber_camp_3": {
+     "rect": {
+      "x": 702,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_1": {
+     "rect": {
+      "x": 802,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_2": {
+     "rect": {
+      "x": 902,
+      "y": 326,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
+    },
+    "workshop_3": {
+     "rect": {
+      "x": 2,
+      "y": 434,
+      "w": 96,
+      "h": 104
+     },
+     "pivot": {
+      "x": 48,
+      "y": 104
+     },
+     "footprint": {
+      "w": 3,
+      "d": 3
+     },
+     "assetClass": "building"
     }
    }
   }

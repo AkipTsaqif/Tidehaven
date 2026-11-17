@@ -25,7 +25,7 @@ export function MiniMap({ revision = 0 }: { revision?: number }) {
     const el = canvas.current;
     if (!el || !data || !terrain || !ground || size.w === 0) return;
     // A thumbnail may zoom out to 0.5x so the whole town fits; the view is recomputed on resize.
-    const view: View = computeFit(data, terrain, size, 0.5);
+    const view: View = computeFit(data, terrain, size, 0.5, atlas);
     drawTown(el, { data, terrain, ground, atlas, sheet, objects, view, size });
   }, [data, terrain, ground, atlas, sheet, objects, size]);
 
