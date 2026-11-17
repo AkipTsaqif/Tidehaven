@@ -1,22 +1,25 @@
-# Impact — founding biome and terrain settings
+# Impact — sprite expansion foundation and production handoff
 
 ## Target
-Founding-only TIDEHAVEN_BIOME (auto/tropical/temperate/arid/northern), TIDEHAVEN_TERRAIN
-(island/coast/river_plain/auto). Resolved choices stored under worlds.config_json.map using the existing
-JSON metadata column; no migration or coordinate storage. Existing saves retain seed biome + island.
+Per-frame asset dimensions, pivots, footprints, attachments and layers; production-kit v2 extension
+for bridges, boats, fish-water markers, vertical towers and damage/repair overlays. Keep legacy 164
+sprite pixels unchanged. New assets are not automatically new gameplay entities.
 
 ## Dependents
-config.ts -> main.createTown -> bootstrap metadata -> map-query -> IslandField/layout/scenery -> TownMap label.
-Tests: config validation, bootstrap persistence/read-back/save/resume, legacy map defaults, terrain morphology,
-full land-footprint and fishery shoreline, road segments never cross water without bridges, browser variants.
+art/build.lua and catalog.lua; art-build.mjs; art-atlas.py; art-test.mjs; client map-render.ts,
+TownMap.tsx and MiniMap.tsx. Shared map-query DTO gains explicit legacy 3x3 footprints only.
 
 ## Risk: Medium
-Founding code and observer metadata change, not domain outcomes or scenario/rules hashes.
-No settings written on resume. Metadata persisted once and returned consistently.
+Asset/API shape changes cross authoring, packing and rendering. Domain placement and state remain
+unchanged for this slice. Larger runtime footprints require a separate authorized redevelopment
+permit; a sprite alone must never enlarge a live building or grant capacity.
 
-## Bridge scope
-No bridge sprites exist in building atlas/catalog. This change does not invent invisible crossings:
-river land components keep separate path networks. Bridge art + constrained crossing generation is follow-up.
+## Test coverage
+Existing art-test runs 164 sprites with clipping/palette/pivot checks. Add manifest-v2 packing and
+legacy adapter tests, variable footprint pivot/culling/hit-test tests, sample bridge/megatall renders,
+repeat output hashes, alpha-preserving atlas crop identity. Run verify and browser tests.
 
-## Recommended action
-Implement settings, preserve legacy saves, verify in-memory founding plus shape snapshots and full gates.
+## Follow-on phases
+Visible existing damage, real bridge/boat construction, spatial permits/funded relocation and tower
+economy remain separate release steps from the approved multi-phase plan. Handoff must state which
+features are art-ready versus live, and forbid artists from editing saves/economy to demonstrate art.
