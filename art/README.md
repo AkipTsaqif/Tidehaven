@@ -9,10 +9,14 @@ Overview mini-map. This authoring pipeline never writes simulation state or modi
 geometry contracts, individual family briefs, commands, review steps and copy/paste task prompts.
 The executable recipes live in `art/expansion/`; all339identities ×4biomes build and every entry is still
 `draft`. Reviewed art exists for bridges, boats, fishing, water details and tower tiers 4–8 (996 PNGs).
-The 90 damage/repair identities per biome are still starter scaffolds. Do not enable new gameplay from artwork.
+Drought, outbreak and repair overlays are still starter scaffolds. Do not enable new gameplay from artwork.
 
 **No Aseprite needed to use the reviewed art.** The PNGs are committed in `art/expansion/assets/`
-(`<biome>/<key>_<biome>.png`) with a SHA-256 manifest:
+(`<biome>/<key>_<biome>.png`) with a SHA-256 manifest. That covers 996 sprites for bridges, boats,
+fishing, water and towers, plus 180 overlay sprites for fire scorch, storm debris and flood stain.
+Storm and flood sprites also ship `<biome>/meta/<key>_<biome>.json`, which records which pixels are
+ground marks and which are wall marks. Overlays are not safe to stamp unmasked: each needs a verified
+wall/roof/ground mask and a real placement rule before it may be drawn.
 
 ```bash
 node scripts/art-expansion-package.mjs --check    # any machine: sizes, hashes, exact file set
