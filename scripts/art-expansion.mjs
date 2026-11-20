@@ -26,8 +26,13 @@ for (const biome of biomes) {
   const job = join(dir, '_job.json');
   const specs = selected.map((entry) => ({ ...entry, biome, seed }));
   writeFileSync(job, JSON.stringify(specs));
+  // Overlay provenance is written NEXT TO the requested output, so a copied run never overwrites
+  // the delivered metadata. The directory exists before the render (no per-sprite shell-out).
+  const metaDir = join(dir, 'meta');
+  mkdirSync(metaDir, { recursive: true });
   const result = spawnSync(executable, ['--batch', '--script-param', `root=${slash(join(root, 'art'))}`,
     '--script-param', `out=${slash(dir)}`, '--script-param', `job=${slash(job)}`,
+    '--script-param', `meta=${slash(metaDir)}`,
     '--script', join(root, 'art/expansion/build.lua')], { encoding: 'utf8', timeout: 300_000, maxBuffer: 4 * 1024 * 1024 });
   const lines = result.stdout?.split(/\r?\n/) ?? [];
   if (result.error || result.status !== 0 || specs.some((s) => !lines.includes(`ASSET_OK ${s.key}_${biome}`))) {
