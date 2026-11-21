@@ -10,7 +10,10 @@
  "overlays": [
   "fire_scorch",
   "storm_debris",
-  "flood_stain"
+  "flood_stain",
+  "drought_ground",
+  "outbreak_sign",
+  "repair_scaffold"
  ],
  "files": {
   "arid/bridge_stone_arch_far_bank_i_construction_arid.png": {
@@ -664,6 +667,51 @@
   "arid/net_floats_3_arid.png": {
    "sha256": "6002f2c6b56efe8b3eb20412cc9b11c4a756fdf73e99c27f224e2c3772ce7a09"
   },
+  "arid/overlay_drought_ground_3x3_104_light_arid.png": {
+   "sha256": "85fb0c730a79b59de484b380454cc4f838576edbe410752d5d176f8d8d25099a"
+  },
+  "arid/overlay_drought_ground_3x3_104_moderate_arid.png": {
+   "sha256": "fd9cbb853ed402d3d324891ea93a7dd39847d8cf1b5b724faf342bee83d18315"
+  },
+  "arid/overlay_drought_ground_3x3_104_severe_arid.png": {
+   "sha256": "a9a020242f68ad261c2195831638b7c5783d634317343aab3c32a81c14035c2d"
+  },
+  "arid/overlay_drought_ground_3x3_224_light_arid.png": {
+   "sha256": "cf1aed1db03b518c4bf4d07564ec5929778471987bbf9d0c0a9797815176368a"
+  },
+  "arid/overlay_drought_ground_3x3_224_moderate_arid.png": {
+   "sha256": "14447b76426375434c23a626870037dd5ebec9fca4666635877d09cc1e51a397"
+  },
+  "arid/overlay_drought_ground_3x3_224_severe_arid.png": {
+   "sha256": "5945864e48528f4fe6b5f37bd93bd032a30acbe97886278c9b87cbc5a72a0212"
+  },
+  "arid/overlay_drought_ground_4x4_352_light_arid.png": {
+   "sha256": "1730afaf4552555c863b18deeb535dc979907e689f8b40489bb250a64ebb6eec"
+  },
+  "arid/overlay_drought_ground_4x4_352_moderate_arid.png": {
+   "sha256": "fb860417c7f76db0b7fd63d8fbae228830ed7673628f39c4d2488a987f6093cc"
+  },
+  "arid/overlay_drought_ground_4x4_352_severe_arid.png": {
+   "sha256": "746aacb92e8239449f0de2b40d483554432cdd51295e5d443662d37008b7f70b"
+  },
+  "arid/overlay_drought_ground_6x6_528_light_arid.png": {
+   "sha256": "7be78b3a0deeee0481dc0e2217a496b22ab6d5967177b609487913f4cf38de0d"
+  },
+  "arid/overlay_drought_ground_6x6_528_moderate_arid.png": {
+   "sha256": "99a2025c8377e3349085e38dabfd571583684f34740373a8866233b1a31a7263"
+  },
+  "arid/overlay_drought_ground_6x6_528_severe_arid.png": {
+   "sha256": "3f50e300c5d5166e0f14ef254705218fac0c2d9ab14f4170c09726b8ed54887f"
+  },
+  "arid/overlay_drought_ground_8x8_768_light_arid.png": {
+   "sha256": "92b0abd98c8ebb54713e200d6cec51650f40c6cc882403f7fc87a97f985af137"
+  },
+  "arid/overlay_drought_ground_8x8_768_moderate_arid.png": {
+   "sha256": "09b0380460c4461cb05f6651003e16cb9fe789b87ff1a5a0e55648ff499463ba"
+  },
+  "arid/overlay_drought_ground_8x8_768_severe_arid.png": {
+   "sha256": "17b65956ff02716a25375f2a4c5a1fb0fba1a28951555d628a515ef667f0a4d5"
+  },
   "arid/overlay_fire_scorch_3x3_104_light_arid.png": {
    "sha256": "fbdf1eb233e9e07dde22aea524bbf58b50c46f9e4bbde5a1cbce97f7d2739162"
   },
@@ -753,6 +801,96 @@
   },
   "arid/overlay_flood_stain_8x8_768_severe_arid.png": {
    "sha256": "e33c6fdcab2ebe54cee3861a757e044d9cdae8b0c47ac0b592c127ee511c79e7"
+  },
+  "arid/overlay_outbreak_sign_3x3_104_light_arid.png": {
+   "sha256": "e4b8fedc401bb9cc45eaa7cb1aa440c9386a517961c75a9a32dd1460afc0a422"
+  },
+  "arid/overlay_outbreak_sign_3x3_104_moderate_arid.png": {
+   "sha256": "56f9ccddb3cefc812e261418bb6399fa7b9eada398731ce0aa3b0e592f8a03a2"
+  },
+  "arid/overlay_outbreak_sign_3x3_104_severe_arid.png": {
+   "sha256": "1a235aa046d12c14c7010749654bba7d75c6ee90390847a2c3b62ddc8dae6b73"
+  },
+  "arid/overlay_outbreak_sign_3x3_224_light_arid.png": {
+   "sha256": "dade212742171d3252b0423f522fe821ae99c75cbe9a2886337c8ae9c329697e"
+  },
+  "arid/overlay_outbreak_sign_3x3_224_moderate_arid.png": {
+   "sha256": "79bf2d11cfa3711865b11a7e54fd1d7c9294f5213687eee8d6927f207a8e7801"
+  },
+  "arid/overlay_outbreak_sign_3x3_224_severe_arid.png": {
+   "sha256": "467efbd3fe7eed0bd9472daafcb7ce81784e3c7b2a6e0cd1ed256c9870012e0a"
+  },
+  "arid/overlay_outbreak_sign_4x4_352_light_arid.png": {
+   "sha256": "f7151c5f2e074f78288ebed4ed4039c94562c75642fcbe9c977f08567a114976"
+  },
+  "arid/overlay_outbreak_sign_4x4_352_moderate_arid.png": {
+   "sha256": "71d071b83661bf559cfac766cab95c919468ebf52259092a7fb119f8ccf0f99e"
+  },
+  "arid/overlay_outbreak_sign_4x4_352_severe_arid.png": {
+   "sha256": "69234ebf5e37034495e4d57a8665c751d7431d653cbf5ebcbc2ba1daa94a2efc"
+  },
+  "arid/overlay_outbreak_sign_6x6_528_light_arid.png": {
+   "sha256": "0991997afaf34cf95299e602c7d7c4fd02da2bab67d99721b55e7364d87e82c4"
+  },
+  "arid/overlay_outbreak_sign_6x6_528_moderate_arid.png": {
+   "sha256": "9028d9ded8f091ef8b8cbe1e02c789119aa5f329a12b79ce68cd3125ab55eaff"
+  },
+  "arid/overlay_outbreak_sign_6x6_528_severe_arid.png": {
+   "sha256": "9a5752f3521b7536bcf2572ce02d269ef64358c7b2dd2bb837930b0597492426"
+  },
+  "arid/overlay_outbreak_sign_8x8_768_light_arid.png": {
+   "sha256": "8b253516d040cf3a5e6515d71a7a0bbcb7af2e193f34e9b4d31b5afda6adeb3c"
+  },
+  "arid/overlay_outbreak_sign_8x8_768_moderate_arid.png": {
+   "sha256": "d9a1ba8cf2cbad7ef6e741ffa23cb76b820f7300081502079ec319eb3f8637ba"
+  },
+  "arid/overlay_outbreak_sign_8x8_768_severe_arid.png": {
+   "sha256": "e6964c7ce663ab39eff64a9228aea7f15dbac2d97d7a846271ef8422740ddf8a"
+  },
+  "arid/overlay_repair_scaffold_3x3_104_light_arid.png": {
+   "sha256": "eb09c8ad6a2485709250cdd01eb46eb16c6ec8ff15c07f2efd8715fc67f983f2"
+  },
+  "arid/overlay_repair_scaffold_3x3_104_moderate_arid.png": {
+   "sha256": "f3d27deb304b545eeee7286a9ebf87ab9a7a76d0f52cd679cedc6773a8824da3"
+  },
+  "arid/overlay_repair_scaffold_3x3_104_severe_arid.png": {
+   "sha256": "71c343fc3354811c2fcf7f922585660887fac0e8b87f627adb282505a0380a20"
+  },
+  "arid/overlay_repair_scaffold_3x3_224_light_arid.png": {
+   "sha256": "ad27d3799520ecac288847ec125ce2c22e3c794fa7646a9cef352d7f97bcdf02"
+  },
+  "arid/overlay_repair_scaffold_3x3_224_moderate_arid.png": {
+   "sha256": "ff3b2f48f2cfc44dfaed69750bd17600cd9a753d2fb433dc7e47f98b8da5e0dd"
+  },
+  "arid/overlay_repair_scaffold_3x3_224_severe_arid.png": {
+   "sha256": "2ef007b0f2e1de52fcd49796862a87609c900722813bf2fd86c2ea14bfc2a6b3"
+  },
+  "arid/overlay_repair_scaffold_4x4_352_light_arid.png": {
+   "sha256": "1ff01840f58cf1240f3ddb82a4707fc0750213d045d1128c4682967c0dd8fe72"
+  },
+  "arid/overlay_repair_scaffold_4x4_352_moderate_arid.png": {
+   "sha256": "eb233fddb55cb0f09118c76901e1598871f2ca41c72c372d7194431de98474cd"
+  },
+  "arid/overlay_repair_scaffold_4x4_352_severe_arid.png": {
+   "sha256": "3c1bb9eacdc48855bf06f41df3113331c901854ee847814fc3f32f28de048dd0"
+  },
+  "arid/overlay_repair_scaffold_6x6_528_light_arid.png": {
+   "sha256": "757cb38bfb182fc8fe58faa867d1a8c5abe92be6d16acd64c6bf0da13ba59840"
+  },
+  "arid/overlay_repair_scaffold_6x6_528_moderate_arid.png": {
+   "sha256": "5f5dab9ad0335d2053c40a1929455ec6b562570ae434372cccafea7f56173163"
+  },
+  "arid/overlay_repair_scaffold_6x6_528_severe_arid.png": {
+   "sha256": "a257fc94199a021bc4a4902bcde825619ca37f244e6ca0d611a6553a52af25d4"
+  },
+  "arid/overlay_repair_scaffold_8x8_768_light_arid.png": {
+   "sha256": "50d38ad07f2a779cfccd86dcab19047173ca91a5e060089ac6b95e3a7e7fcbf3"
+  },
+  "arid/overlay_repair_scaffold_8x8_768_moderate_arid.png": {
+   "sha256": "c5fbd4fb5946f0150c41c24659dc24fd473905b424d3607a0a93d71f4e3f602f"
+  },
+  "arid/overlay_repair_scaffold_8x8_768_severe_arid.png": {
+   "sha256": "fb3a656c0300bc45593920904aeb88c5a9224769bada6b763fb595c18296463a"
   },
   "arid/overlay_storm_debris_3x3_104_light_arid.png": {
    "sha256": "a6e0cc55d096765317c5f228a9ca2cc38578929c213c31c3729c8408d989abe6"
@@ -1546,6 +1684,51 @@
   "northern/net_floats_3_northern.png": {
    "sha256": "3c13d80b8baa48ba7d1e1c917827be621c7a50157c539d050ca9c4cec87be07a"
   },
+  "northern/overlay_drought_ground_3x3_104_light_northern.png": {
+   "sha256": "e432bf294a9271821d7df2b85df8694a5212e7c9e26d0ee3b7bc7fbc7720ce0f"
+  },
+  "northern/overlay_drought_ground_3x3_104_moderate_northern.png": {
+   "sha256": "50e69d488b38ec907bb0ba5ff8b44130c113ef4b84d19578c6198c60ecf2c9fd"
+  },
+  "northern/overlay_drought_ground_3x3_104_severe_northern.png": {
+   "sha256": "b69b83d7d8058a56b4511935ae98cc620a937b034c6100445b57fbc0e52f0136"
+  },
+  "northern/overlay_drought_ground_3x3_224_light_northern.png": {
+   "sha256": "babecec1d5954578d7bdfa9c29f40256d71647313b4885835d1d1e084bcfae47"
+  },
+  "northern/overlay_drought_ground_3x3_224_moderate_northern.png": {
+   "sha256": "c89b8db21bc37b4966693985794b6377a42da08a1634b9a6b0e6b1177027d7ed"
+  },
+  "northern/overlay_drought_ground_3x3_224_severe_northern.png": {
+   "sha256": "d746be55e3e997598596f690ad98d6fcff60347e1d0fc78711870ceb898d1e0e"
+  },
+  "northern/overlay_drought_ground_4x4_352_light_northern.png": {
+   "sha256": "19f6ca1362e0c46d339db210190d72b84e0327e93eef0d3b7006c7d7b95d4cf6"
+  },
+  "northern/overlay_drought_ground_4x4_352_moderate_northern.png": {
+   "sha256": "86a0824a7a954098c7ed4138aa18adb824faaee01b7e26cf4a5602bda3139cee"
+  },
+  "northern/overlay_drought_ground_4x4_352_severe_northern.png": {
+   "sha256": "959f3777dec7f5c20b9e2af679e6ad80eab01c99be9213bb57ed09cb82654638"
+  },
+  "northern/overlay_drought_ground_6x6_528_light_northern.png": {
+   "sha256": "22b6c5429a2b3f0b684285f76c857d01f9c692d9fc6f67ab27faee4073018136"
+  },
+  "northern/overlay_drought_ground_6x6_528_moderate_northern.png": {
+   "sha256": "e6f245586bf54fb65f0f665debec20d3d52b35157d3a945b22c45cb825053df0"
+  },
+  "northern/overlay_drought_ground_6x6_528_severe_northern.png": {
+   "sha256": "33ed7ae83ac31cfed9f3a2fd480e0bc2b3ed7891123342fcb4955053b6d07b61"
+  },
+  "northern/overlay_drought_ground_8x8_768_light_northern.png": {
+   "sha256": "fec7fc8681b0014e640ea27203ff87ce39e7ff3e30f99a522ed5758c42f2b9e1"
+  },
+  "northern/overlay_drought_ground_8x8_768_moderate_northern.png": {
+   "sha256": "8b052a8be6edd36bc1c4cb1a08cc30fd4f7604376f6efc063c410ec7c1e8a45f"
+  },
+  "northern/overlay_drought_ground_8x8_768_severe_northern.png": {
+   "sha256": "ad3607f566e141ad4a203f34cdaabafe6f31975500d76fda01e2a4a52b8c2ee5"
+  },
   "northern/overlay_fire_scorch_3x3_104_light_northern.png": {
    "sha256": "93f83c865b5ff40d43cf2e3a7161a52437be56c0ff081f983436154f97b7e6f6"
   },
@@ -1635,6 +1818,96 @@
   },
   "northern/overlay_flood_stain_8x8_768_severe_northern.png": {
    "sha256": "128bb7d3d66ca588cbd5f327e4db6951dfa95ee33061e8a223d9b76b4848cdc8"
+  },
+  "northern/overlay_outbreak_sign_3x3_104_light_northern.png": {
+   "sha256": "aba7f60efd064ca162d54460e9c7c4935cf86ad341b2922c79928eca586258fa"
+  },
+  "northern/overlay_outbreak_sign_3x3_104_moderate_northern.png": {
+   "sha256": "392f03681be8a860355ba6c1a17b6d9c1d9f07ccf719740853b88f566f601ad0"
+  },
+  "northern/overlay_outbreak_sign_3x3_104_severe_northern.png": {
+   "sha256": "abe97886c0a69790f8c615d1b93a70c3d34c252adfa3094d287f01538378214d"
+  },
+  "northern/overlay_outbreak_sign_3x3_224_light_northern.png": {
+   "sha256": "3723509801d23c128dfaf12003c9f7690bf4d3801fefa46f24bb38aa0f708b74"
+  },
+  "northern/overlay_outbreak_sign_3x3_224_moderate_northern.png": {
+   "sha256": "77d63c276e3893de0378dc4f5bb0beb608098306c22e8820ecc29d59efbf5f3d"
+  },
+  "northern/overlay_outbreak_sign_3x3_224_severe_northern.png": {
+   "sha256": "b128f51c6b2b19547dc437c3825d9f1aeeb1eb017c0f0bef672ff8dcd9a7eb53"
+  },
+  "northern/overlay_outbreak_sign_4x4_352_light_northern.png": {
+   "sha256": "6fcc5bf57a599d48f939877087265488d1e43a353e8ddc3cbf9edab0ec0032f9"
+  },
+  "northern/overlay_outbreak_sign_4x4_352_moderate_northern.png": {
+   "sha256": "1c3c863ca5b9d58269fe49cf4c595457a3de0bdca350f5eafb933845b2e18331"
+  },
+  "northern/overlay_outbreak_sign_4x4_352_severe_northern.png": {
+   "sha256": "4abc7a13642605c524c0940f200a9a06efe67db65c0ec9adfd0e922e69682408"
+  },
+  "northern/overlay_outbreak_sign_6x6_528_light_northern.png": {
+   "sha256": "bee1394391c91996488369c49d2fb57b7cf4fb187b96c05ca4e144d44e0a5d77"
+  },
+  "northern/overlay_outbreak_sign_6x6_528_moderate_northern.png": {
+   "sha256": "8b13c37a9cb055e4f27916e5539ca58ee3f3c93852c243ca4e537ccc617f2e5c"
+  },
+  "northern/overlay_outbreak_sign_6x6_528_severe_northern.png": {
+   "sha256": "436ab5f805b27388c4e00a1f4efa2c7789ca205581b30f11a05b40f32abbd6b3"
+  },
+  "northern/overlay_outbreak_sign_8x8_768_light_northern.png": {
+   "sha256": "676c9274428ed959adf49605ca5d7af0a227b320e25b99037976890c0dca535f"
+  },
+  "northern/overlay_outbreak_sign_8x8_768_moderate_northern.png": {
+   "sha256": "2a7e05ed30ba02300a07476afb49e5a3d8c0d7963aa398e5fbee55a4e85adf37"
+  },
+  "northern/overlay_outbreak_sign_8x8_768_severe_northern.png": {
+   "sha256": "d004c40446bf46c0cd715b3b64bd81a3de4a323c4b30cb24aaf3636f058c9cf1"
+  },
+  "northern/overlay_repair_scaffold_3x3_104_light_northern.png": {
+   "sha256": "6d582be7659f46ab5cd9608b16bc0264c5ad68f078564b50ba94f295c43a6bf2"
+  },
+  "northern/overlay_repair_scaffold_3x3_104_moderate_northern.png": {
+   "sha256": "a250bfc0ae71686635330f3f4e60c8090b27646e979a1781463ae753c61c0d3b"
+  },
+  "northern/overlay_repair_scaffold_3x3_104_severe_northern.png": {
+   "sha256": "88d3fac9941861f8627ff8c599e745834e241d3e1e8ccb444a074f743d384935"
+  },
+  "northern/overlay_repair_scaffold_3x3_224_light_northern.png": {
+   "sha256": "d8f59b282cd78cc4fe732ec8df3377e575abb0d25b63e6665367c76c37e2043a"
+  },
+  "northern/overlay_repair_scaffold_3x3_224_moderate_northern.png": {
+   "sha256": "a3da253c19851bcd3239e434c98650298578483d695f3f8fbdc58f4d011d23b1"
+  },
+  "northern/overlay_repair_scaffold_3x3_224_severe_northern.png": {
+   "sha256": "fe5da168e9fa91aef08218bd8b36201a5d1428e020c5cd4ec36b01914a7262ca"
+  },
+  "northern/overlay_repair_scaffold_4x4_352_light_northern.png": {
+   "sha256": "7009f2853dd51611c4b5b947c97c01f038dd42953ed096f532022c437d97f0f7"
+  },
+  "northern/overlay_repair_scaffold_4x4_352_moderate_northern.png": {
+   "sha256": "5d3da9779dadfa93112fb53d985838fb771a5917e1b8bc6f0af50c9724846c2b"
+  },
+  "northern/overlay_repair_scaffold_4x4_352_severe_northern.png": {
+   "sha256": "1ba047a0114d9b6e8977adc38c230f82592dfe9bb3b3351df3f491664779f148"
+  },
+  "northern/overlay_repair_scaffold_6x6_528_light_northern.png": {
+   "sha256": "d6a56b5a8d97bfa749ec206b7deb76394372e374e05148c9d07608ff08b434bb"
+  },
+  "northern/overlay_repair_scaffold_6x6_528_moderate_northern.png": {
+   "sha256": "2055fc794ee02110ef1c1f31ad1c109a108682d4dd5928292b8451e74b63439b"
+  },
+  "northern/overlay_repair_scaffold_6x6_528_severe_northern.png": {
+   "sha256": "d49875b780ae9f2f2456e9633382b37604eb1bfb6c57fbae0ab5557006f75c5d"
+  },
+  "northern/overlay_repair_scaffold_8x8_768_light_northern.png": {
+   "sha256": "286f449758822a32d1f9e3ca7226176964cf2ccfe365943d0edef2feb1efca5d"
+  },
+  "northern/overlay_repair_scaffold_8x8_768_moderate_northern.png": {
+   "sha256": "fe9ff011591c9eb856250caeda1c3547bbe58db29fd0201cfdbc439a33b89385"
+  },
+  "northern/overlay_repair_scaffold_8x8_768_severe_northern.png": {
+   "sha256": "ad8682c63377031bd1d1548a9e202600d8499938f31729d9623638a7d2c54ebf"
   },
   "northern/overlay_storm_debris_3x3_104_light_northern.png": {
    "sha256": "a8cd1321126a77ead328279d96f1703c1c4ac48e1e348c4712afd0d47fb8e6c7"
@@ -2428,6 +2701,51 @@
   "temperate/net_floats_3_temperate.png": {
    "sha256": "b16cda74bfcb66beec53d8264aebe99cbfc252eda2510a1362a29af7c11826c1"
   },
+  "temperate/overlay_drought_ground_3x3_104_light_temperate.png": {
+   "sha256": "cd71f6cd07ebeb56867a04cc61063ff7b742d0191363a41e482cea97bd468cc5"
+  },
+  "temperate/overlay_drought_ground_3x3_104_moderate_temperate.png": {
+   "sha256": "70f3a6abcfb7753e5cd12f5a942af54ecc9e69511fd76249766128a88906c532"
+  },
+  "temperate/overlay_drought_ground_3x3_104_severe_temperate.png": {
+   "sha256": "bfe21b445e28391e2214b4275fe7943c1269e94fbd90603c14146a7ca020de54"
+  },
+  "temperate/overlay_drought_ground_3x3_224_light_temperate.png": {
+   "sha256": "4e6bc1d44bfda1efeb33aed5b8c961935705323a1945e5e2f430a478e85f2289"
+  },
+  "temperate/overlay_drought_ground_3x3_224_moderate_temperate.png": {
+   "sha256": "657ce8c46e7ffb7762e63c63381f181721a73574b6064c2010e2080a49701513"
+  },
+  "temperate/overlay_drought_ground_3x3_224_severe_temperate.png": {
+   "sha256": "a9219950cadabc59184cad1771320466c3b5b1f8007db9e573728fface4323be"
+  },
+  "temperate/overlay_drought_ground_4x4_352_light_temperate.png": {
+   "sha256": "4eba4314aef497d265bf6b0077dc6d0e206646d06d88d8d084b36915b1b66bd3"
+  },
+  "temperate/overlay_drought_ground_4x4_352_moderate_temperate.png": {
+   "sha256": "dfce524efc223600f3b0d501189c960b8bcba25a76e5bdecad2a6af72ccadb05"
+  },
+  "temperate/overlay_drought_ground_4x4_352_severe_temperate.png": {
+   "sha256": "65f6c9296306e373e70dd87e66bd6605262acfc3d1721f9e3da0b411a629c2ee"
+  },
+  "temperate/overlay_drought_ground_6x6_528_light_temperate.png": {
+   "sha256": "f1c7ee9a19d78b4ad4d6c504b049ab606363fffcf81f23ba3fd365dbb2a2a4c6"
+  },
+  "temperate/overlay_drought_ground_6x6_528_moderate_temperate.png": {
+   "sha256": "9e8d9e156359cebbd9436c19d171099658359d659a837a27e8b834ace99982d4"
+  },
+  "temperate/overlay_drought_ground_6x6_528_severe_temperate.png": {
+   "sha256": "f5f21f816e246e1b11e21fea227b6cd7d853ba14ea5cec528db9ae61cb2d465c"
+  },
+  "temperate/overlay_drought_ground_8x8_768_light_temperate.png": {
+   "sha256": "7b54b7e31bf666f2e36e0ce4b81ecc83423254f9d226478b40d66e91c55416fe"
+  },
+  "temperate/overlay_drought_ground_8x8_768_moderate_temperate.png": {
+   "sha256": "17c75af9d725c2b3b97b9b7b7c855eadcdef913873df6593ca2c268698f23978"
+  },
+  "temperate/overlay_drought_ground_8x8_768_severe_temperate.png": {
+   "sha256": "1db67652d6ff3676ab8c2c5f5b951d9cbe0d4e232ec81f92bc3ad189abbb25a4"
+  },
   "temperate/overlay_fire_scorch_3x3_104_light_temperate.png": {
    "sha256": "abd37a3a5b5937f6f91f41f936f38f80c1dff2ae14f23dd77f5ff6c6a383f1e0"
   },
@@ -2517,6 +2835,96 @@
   },
   "temperate/overlay_flood_stain_8x8_768_severe_temperate.png": {
    "sha256": "992873c34d8260ea952a69f65941e2f1720d49b51d6cca3e329d4cffafe1f9ed"
+  },
+  "temperate/overlay_outbreak_sign_3x3_104_light_temperate.png": {
+   "sha256": "f8d298334df7732ba30a819602ae550c4f6fc02fcd7cb2b19aa178349e89d1fa"
+  },
+  "temperate/overlay_outbreak_sign_3x3_104_moderate_temperate.png": {
+   "sha256": "49e84d8c7386db339ae7ba9e17ca48a0f05020eb884e8575f276d16a26ae264c"
+  },
+  "temperate/overlay_outbreak_sign_3x3_104_severe_temperate.png": {
+   "sha256": "9cb4e2b0d74f8824cc94e25c642b3de812e27126660b57c1399056bec34c6d7f"
+  },
+  "temperate/overlay_outbreak_sign_3x3_224_light_temperate.png": {
+   "sha256": "3099cfcbd044b0fff01b7e4b795bda3575c2881a60462509e26dc4d0fa423e5d"
+  },
+  "temperate/overlay_outbreak_sign_3x3_224_moderate_temperate.png": {
+   "sha256": "981aa02213bdf72c92d08e87d18d58813cb060fc010a09daf372d9407efa65fe"
+  },
+  "temperate/overlay_outbreak_sign_3x3_224_severe_temperate.png": {
+   "sha256": "8c9ee99b7b1c06eea808a27ee99ff7643080375ad20881694f17df6fe213e2bc"
+  },
+  "temperate/overlay_outbreak_sign_4x4_352_light_temperate.png": {
+   "sha256": "ad33d5fa4cf9d08be1b535b8ca8f5b59cbcaafa2c446eedf80eebad4696be35a"
+  },
+  "temperate/overlay_outbreak_sign_4x4_352_moderate_temperate.png": {
+   "sha256": "ede9ff1f6df2c1ad14d3f9fa3f587b5b2ce122bdb066dc21562c969175892fc4"
+  },
+  "temperate/overlay_outbreak_sign_4x4_352_severe_temperate.png": {
+   "sha256": "5052ddd360f64af2bbe6ce483cec392f9735e77a3e909946c7eeb3c3a9dfcd2f"
+  },
+  "temperate/overlay_outbreak_sign_6x6_528_light_temperate.png": {
+   "sha256": "61cdfd794a8541268f5b4e1e8676e26f768916706a7fdeba5fa0a698722d318a"
+  },
+  "temperate/overlay_outbreak_sign_6x6_528_moderate_temperate.png": {
+   "sha256": "9989658a914a0d9a2bbf49f5a74029e18117789cf49ddb2685b08ce4d2d7127d"
+  },
+  "temperate/overlay_outbreak_sign_6x6_528_severe_temperate.png": {
+   "sha256": "e32e46bfbd076f4338304ae36edc71155eb1bef886e196966f1e18a2789fc7f3"
+  },
+  "temperate/overlay_outbreak_sign_8x8_768_light_temperate.png": {
+   "sha256": "5acd810e70791cc55cc5a2f4faec221b95013b404330e7b6b0f949fe981bb99c"
+  },
+  "temperate/overlay_outbreak_sign_8x8_768_moderate_temperate.png": {
+   "sha256": "4da82800e770659f61a127fdd90a76ac69118ffd46bb130b588da2c56f179348"
+  },
+  "temperate/overlay_outbreak_sign_8x8_768_severe_temperate.png": {
+   "sha256": "d800c7116167e03dca085782f045c179c15eb5c5055ed391a1674f43d7ece15e"
+  },
+  "temperate/overlay_repair_scaffold_3x3_104_light_temperate.png": {
+   "sha256": "cf45eb3aec63e4b1cbd937a53dea2fecf4e151ce61f4f90a5c2898c5877b2b5d"
+  },
+  "temperate/overlay_repair_scaffold_3x3_104_moderate_temperate.png": {
+   "sha256": "dab388e485790b91070c9eb848006de288133581955432e97c1f7af81e599032"
+  },
+  "temperate/overlay_repair_scaffold_3x3_104_severe_temperate.png": {
+   "sha256": "9e3c9ef994a4f246dc05bae7dc7a66e4b433c574a30643d97d671f31f3a25444"
+  },
+  "temperate/overlay_repair_scaffold_3x3_224_light_temperate.png": {
+   "sha256": "b5cf7deddc5099471ebf66f7872a4e93cdae60d49f80fed1390a55a750e00666"
+  },
+  "temperate/overlay_repair_scaffold_3x3_224_moderate_temperate.png": {
+   "sha256": "5ef0c5337b5f35754ba2a2232ab46446b54232bbf051e25284e9171892ed73fa"
+  },
+  "temperate/overlay_repair_scaffold_3x3_224_severe_temperate.png": {
+   "sha256": "b6aef4e36530dd01374840d9b4809bc57a89cc24523b19a0e607545f8391016f"
+  },
+  "temperate/overlay_repair_scaffold_4x4_352_light_temperate.png": {
+   "sha256": "7b9731f8351178082b51c57aa62c00a574e5b4703a3d7ec7f67dfb47372f0961"
+  },
+  "temperate/overlay_repair_scaffold_4x4_352_moderate_temperate.png": {
+   "sha256": "de4ed695c057109887c64df56e33f2a8e5c4cd21c4d8a8578e4096d4e26ccd29"
+  },
+  "temperate/overlay_repair_scaffold_4x4_352_severe_temperate.png": {
+   "sha256": "b6fbbd6c93c8a251f462993ec6bab97ca64ada7da25aa1f2893c5b1e58a593a7"
+  },
+  "temperate/overlay_repair_scaffold_6x6_528_light_temperate.png": {
+   "sha256": "1bc484fd7477ca0e9ab46058359ce1fd5ebe9ea97cb2ce614e34396016962adb"
+  },
+  "temperate/overlay_repair_scaffold_6x6_528_moderate_temperate.png": {
+   "sha256": "244026dd252b46fcc6932abec63bc559354649e1d3b9efdec000c8d0eda25fe1"
+  },
+  "temperate/overlay_repair_scaffold_6x6_528_severe_temperate.png": {
+   "sha256": "26428fbce88e844f23e319759c94406b5eb80c8d8eac7ca36b83846ed2eb3abb"
+  },
+  "temperate/overlay_repair_scaffold_8x8_768_light_temperate.png": {
+   "sha256": "7f4cbb61f1eb05562dcb48ce062eab3dc13e62e74b3418039d7d35cf284c814c"
+  },
+  "temperate/overlay_repair_scaffold_8x8_768_moderate_temperate.png": {
+   "sha256": "05716aef6009031c22f2b3ec654d79ff5e7708a1bb93eb9e88bc75b6faed18c6"
+  },
+  "temperate/overlay_repair_scaffold_8x8_768_severe_temperate.png": {
+   "sha256": "24213b8c2eb8c417251aebd30292f152a21fdc13e60f40d4734050a7de42bcf5"
   },
   "temperate/overlay_storm_debris_3x3_104_light_temperate.png": {
    "sha256": "5823607cb58baca4783712e59cc90a84b41f1d125da87fcd761dbfbdff2f6493"
@@ -3310,6 +3718,51 @@
   "tropical/net_floats_3_tropical.png": {
    "sha256": "95e8d9854c7f4baf63628f20a7e5694569823d1b39d75bfdac575714606f7be6"
   },
+  "tropical/overlay_drought_ground_3x3_104_light_tropical.png": {
+   "sha256": "772712c499b9f9daf50ad4c0cb77ecc7dbadfff14ef624f7362b91aae2565b62"
+  },
+  "tropical/overlay_drought_ground_3x3_104_moderate_tropical.png": {
+   "sha256": "b5a471b9de85fea41816073bbfc07d57950927afc88e986ea1229a9fc08df220"
+  },
+  "tropical/overlay_drought_ground_3x3_104_severe_tropical.png": {
+   "sha256": "80b45d5160b859169072b0b85a1bc6151aa5147ed098f0505d94957194302ed0"
+  },
+  "tropical/overlay_drought_ground_3x3_224_light_tropical.png": {
+   "sha256": "de42f5cb7525e51e50cd64c7b9b5d23c6a0d1e324f03ff326326089339de119e"
+  },
+  "tropical/overlay_drought_ground_3x3_224_moderate_tropical.png": {
+   "sha256": "013241bc04c102cd7077b4536fef14bf90c4637601b9aa15d2262ba915eecceb"
+  },
+  "tropical/overlay_drought_ground_3x3_224_severe_tropical.png": {
+   "sha256": "9efed009165008711bff0ac14af0e8b29c06374fd7200f2e69b4180b07fdecfc"
+  },
+  "tropical/overlay_drought_ground_4x4_352_light_tropical.png": {
+   "sha256": "25d64588ff0edad6e4e96a8546e568e93856f5ae2c4d143638b1115589903da9"
+  },
+  "tropical/overlay_drought_ground_4x4_352_moderate_tropical.png": {
+   "sha256": "f6da3db3c89b7ee05012ebd787925befce333b899b47c10e3a6e51b272a1ce0d"
+  },
+  "tropical/overlay_drought_ground_4x4_352_severe_tropical.png": {
+   "sha256": "2bd754c9fa217d326374a15a8a318fa76eade38803d781f85779cadd7b5fba57"
+  },
+  "tropical/overlay_drought_ground_6x6_528_light_tropical.png": {
+   "sha256": "6ba123ae4b268fbbbb3be08eda3a1e8d1b21c46dfa8e6b846fc3155021761fed"
+  },
+  "tropical/overlay_drought_ground_6x6_528_moderate_tropical.png": {
+   "sha256": "463643435dec08fae2daa76dea3036a07774511d2298dcffb4e794897ce3a9ad"
+  },
+  "tropical/overlay_drought_ground_6x6_528_severe_tropical.png": {
+   "sha256": "9304a275ab9c49972468e7dffdc39daca522b5a1c1a799ba9b1bcdb4c2593bbf"
+  },
+  "tropical/overlay_drought_ground_8x8_768_light_tropical.png": {
+   "sha256": "69e85e7d3ee741e3901c2b99ea39cd682c45bf1515700184921f726d7223793f"
+  },
+  "tropical/overlay_drought_ground_8x8_768_moderate_tropical.png": {
+   "sha256": "7fe6327e4f97cae5c4ef80649d44eba652313df7a03a6c1fe25448a832edf6bb"
+  },
+  "tropical/overlay_drought_ground_8x8_768_severe_tropical.png": {
+   "sha256": "d513327d1da5e88fd4e5c4a6ba6ca09841eee4bd3714310fcf9d5756d5dbb658"
+  },
   "tropical/overlay_fire_scorch_3x3_104_light_tropical.png": {
    "sha256": "53670cc956fb2119db1ec7883b3aa92db65b1dfe8a0ab454e085455360627477"
   },
@@ -3399,6 +3852,96 @@
   },
   "tropical/overlay_flood_stain_8x8_768_severe_tropical.png": {
    "sha256": "1ae5e9ba53a009da0b49053e01d3421c1c4b947042f7512541947d45a29ef45f"
+  },
+  "tropical/overlay_outbreak_sign_3x3_104_light_tropical.png": {
+   "sha256": "998051b7c7800712a29f60147c90ddc22a1478dccb8396664051c3fab5c58b33"
+  },
+  "tropical/overlay_outbreak_sign_3x3_104_moderate_tropical.png": {
+   "sha256": "9c5e8f03540d1de28426346a72c2d557deabf7e72d518a9c0b74733e2b0a6379"
+  },
+  "tropical/overlay_outbreak_sign_3x3_104_severe_tropical.png": {
+   "sha256": "9a728e2ae61c6911d46d0e6eff5681ffc437331e68ceb4c7e85dd38fce899414"
+  },
+  "tropical/overlay_outbreak_sign_3x3_224_light_tropical.png": {
+   "sha256": "f0833d24f02e5919bfb5db17a33a3023b820a55a6139df8b0f1e719db84506af"
+  },
+  "tropical/overlay_outbreak_sign_3x3_224_moderate_tropical.png": {
+   "sha256": "400754e7508772cead0916d3dfa379a6c91384bc21485ba7fa21418e79861bdf"
+  },
+  "tropical/overlay_outbreak_sign_3x3_224_severe_tropical.png": {
+   "sha256": "24575259083cc84636fca1540f7a8da20e35099ce65fda60268b5168e5ef5598"
+  },
+  "tropical/overlay_outbreak_sign_4x4_352_light_tropical.png": {
+   "sha256": "f5bc7bbeec0dfaeae75c678a7d2c57d2e4c3ed26bcc149d5e9f38bf13eeaf986"
+  },
+  "tropical/overlay_outbreak_sign_4x4_352_moderate_tropical.png": {
+   "sha256": "ba678891a9f53d149755b84a13ebc278677b37309f8981ce892ddba93803e9ac"
+  },
+  "tropical/overlay_outbreak_sign_4x4_352_severe_tropical.png": {
+   "sha256": "d274c1789d18c9ad54a24f4bef5f3d33ffdb94eb5baff86a30448933c82b3fd5"
+  },
+  "tropical/overlay_outbreak_sign_6x6_528_light_tropical.png": {
+   "sha256": "6db0b8e833e5a0867ab66b762fdbd89fd25d286fc7b3f2af9fbb949e3085f1c1"
+  },
+  "tropical/overlay_outbreak_sign_6x6_528_moderate_tropical.png": {
+   "sha256": "e64a5c339f79781e9e465b0c4c1acc212d8f2d4ebc4420f5c65aafb81ea0c723"
+  },
+  "tropical/overlay_outbreak_sign_6x6_528_severe_tropical.png": {
+   "sha256": "b9bb8b073bb4084b53b43e37db4ec59998e38e67b181d67f5009df049333bd6c"
+  },
+  "tropical/overlay_outbreak_sign_8x8_768_light_tropical.png": {
+   "sha256": "5d3a1c78d01470f78ed9bfa818e208b7dac79045025325736c2ad895866c31b4"
+  },
+  "tropical/overlay_outbreak_sign_8x8_768_moderate_tropical.png": {
+   "sha256": "f203b59336fdc296735a634525c2664ddd0f7bbf46ebe892840047cb17713bb2"
+  },
+  "tropical/overlay_outbreak_sign_8x8_768_severe_tropical.png": {
+   "sha256": "04aa280c43372fb6603798576e577c99dbd76278dde607da61699ce48305a9b2"
+  },
+  "tropical/overlay_repair_scaffold_3x3_104_light_tropical.png": {
+   "sha256": "90912d9587fc2eb9fc957a8ac09b16f8046369d358c3a90b25554f492045e7e8"
+  },
+  "tropical/overlay_repair_scaffold_3x3_104_moderate_tropical.png": {
+   "sha256": "480a12c53cc3c670a12729f10004cfdd15df0e5715913b360969a1eef4a717dc"
+  },
+  "tropical/overlay_repair_scaffold_3x3_104_severe_tropical.png": {
+   "sha256": "06f84f0a2f2daa8b139cd8d3ce4690702eaf63478ec055d56e5c8e3aae4a0bb2"
+  },
+  "tropical/overlay_repair_scaffold_3x3_224_light_tropical.png": {
+   "sha256": "ca9d463303b6da85dd7054037c576548bfb5dea96f6c53e9d8d9ae30b582dd61"
+  },
+  "tropical/overlay_repair_scaffold_3x3_224_moderate_tropical.png": {
+   "sha256": "bc8236421573bf9e002f0d70e0b025a12f3ef1b8164098ff46d0892013b55712"
+  },
+  "tropical/overlay_repair_scaffold_3x3_224_severe_tropical.png": {
+   "sha256": "779bbcd4f9559084a4b51dde6628eff80089c69f34079208336091b6bd22fee7"
+  },
+  "tropical/overlay_repair_scaffold_4x4_352_light_tropical.png": {
+   "sha256": "3407d8512b7b16ddeaebacab5f3df7749211c3af291977691aa812f9f24df385"
+  },
+  "tropical/overlay_repair_scaffold_4x4_352_moderate_tropical.png": {
+   "sha256": "56f9dd84e67b97b2c31ff9ac4ad31a0fa9a6376bddbe2e9588c280a69a89bb0e"
+  },
+  "tropical/overlay_repair_scaffold_4x4_352_severe_tropical.png": {
+   "sha256": "464027d992330e618d753c475c2b3a8e5e1f435ba487fbbfd75573591ba44ad2"
+  },
+  "tropical/overlay_repair_scaffold_6x6_528_light_tropical.png": {
+   "sha256": "de524ba861c6b002668327022347e392b67063654ccc80b53185bdbf7eac5776"
+  },
+  "tropical/overlay_repair_scaffold_6x6_528_moderate_tropical.png": {
+   "sha256": "5e88b138f670a68c406dea5afceb65ee9f7ff226b3dbff9f9c53909f44872e55"
+  },
+  "tropical/overlay_repair_scaffold_6x6_528_severe_tropical.png": {
+   "sha256": "91b5db9298e49ca2645f26ed29e8852cb178dcb90ec91a0f6691d2762fb6826d"
+  },
+  "tropical/overlay_repair_scaffold_8x8_768_light_tropical.png": {
+   "sha256": "65e5930ed2225c1e07cfd9cbbef06a7d1ec46bccf67abe49c1b8ccbed27b98a2"
+  },
+  "tropical/overlay_repair_scaffold_8x8_768_moderate_tropical.png": {
+   "sha256": "283c3295dc0c20d7dca4b9e2f41ba8f428ecc41b0b84c25d4b54904b151880d9"
+  },
+  "tropical/overlay_repair_scaffold_8x8_768_severe_tropical.png": {
+   "sha256": "63869870862711aa119778e2bcadd18e3648f8345f48f3cc1c4bd559c61eff5c"
   },
   "tropical/overlay_storm_debris_3x3_104_light_tropical.png": {
    "sha256": "67656a9c48421539efaf8fb3b17d910102fc206fff8bbb235ae2f7c6caec3065"
@@ -3543,6 +4086,51 @@
   }
  },
  "meta": {
+  "arid/meta/overlay_drought_ground_3x3_104_light_arid.json": {
+   "sha256": "685fe01f5003223983a5523d6d3c993239dda4234a80029b670eeeca67090d24"
+  },
+  "arid/meta/overlay_drought_ground_3x3_104_moderate_arid.json": {
+   "sha256": "75b62f3aa9cedd4ccb341cd9fa42d0e98cf141be907025cf3f786b6194b46682"
+  },
+  "arid/meta/overlay_drought_ground_3x3_104_severe_arid.json": {
+   "sha256": "e4096446ee97a420e5ad304f49c044cbe8a7e96bd87306cdbe9e41786f4db805"
+  },
+  "arid/meta/overlay_drought_ground_3x3_224_light_arid.json": {
+   "sha256": "33a39fd3f84aaa286d03a799b0ef955993f558bea816cf3b060a469dcbbacfb1"
+  },
+  "arid/meta/overlay_drought_ground_3x3_224_moderate_arid.json": {
+   "sha256": "5fbc7454b8004b0c8e0f507b24fb46b42205ff46b60c48b8761881b622ae17d5"
+  },
+  "arid/meta/overlay_drought_ground_3x3_224_severe_arid.json": {
+   "sha256": "78549ec919c30066c36d0efe63886530e9e3c53714ba74753090361a36b135a0"
+  },
+  "arid/meta/overlay_drought_ground_4x4_352_light_arid.json": {
+   "sha256": "9d4d059dc4b40126e6e71806091aead8f8d82a00d5f862d921952c4be7eded8c"
+  },
+  "arid/meta/overlay_drought_ground_4x4_352_moderate_arid.json": {
+   "sha256": "fbc02e83c1d22a3149ebf6f93a6a4b1e472ce0781de6b1ba47b4fea6c2930b54"
+  },
+  "arid/meta/overlay_drought_ground_4x4_352_severe_arid.json": {
+   "sha256": "fff412ed54e0b0ff7479bcbbed2d8b0b6a958eeb8fc612410b2752c81da74628"
+  },
+  "arid/meta/overlay_drought_ground_6x6_528_light_arid.json": {
+   "sha256": "019d78cc0b945a16c48637462e337b31a5c3011dba62f732ab35177644971052"
+  },
+  "arid/meta/overlay_drought_ground_6x6_528_moderate_arid.json": {
+   "sha256": "af54c6762a2f873e06db388be37ec57c01abbe03fade66715ef258acbfb9f133"
+  },
+  "arid/meta/overlay_drought_ground_6x6_528_severe_arid.json": {
+   "sha256": "616d2fa28b012021b9f3947264df2ba6ff378820278828735f72c5b7a233ba14"
+  },
+  "arid/meta/overlay_drought_ground_8x8_768_light_arid.json": {
+   "sha256": "d84b4e847d9f8b5a08555524f2f77a5d013254d8af9cc445b473c138f4ed63ce"
+  },
+  "arid/meta/overlay_drought_ground_8x8_768_moderate_arid.json": {
+   "sha256": "5315904d17e51970cc3ca7ffe9587914dda49067d844a6ea710c6ff178104b63"
+  },
+  "arid/meta/overlay_drought_ground_8x8_768_severe_arid.json": {
+   "sha256": "786f51bfe903f272c64956e02af7afc3e5356f9cdfe5231253612de55bf7254a"
+  },
   "arid/meta/overlay_flood_stain_3x3_104_light_arid.json": {
    "sha256": "9ddeb89a99d916d1063b35f26b83583da40638d32bdd9c325aabc6c96a7ba7cd"
   },
@@ -3587,6 +4175,96 @@
   },
   "arid/meta/overlay_flood_stain_8x8_768_severe_arid.json": {
    "sha256": "2b3713c7ea3b0100112e6cfb899f6ee1f9301e2c0793a609884b300779647c73"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_104_light_arid.json": {
+   "sha256": "95b055200d9a4514294848a2cccfa9f286cc6b8e11d542f0b38172def7d2f816"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_104_moderate_arid.json": {
+   "sha256": "95892ae7b35ba56c9d8b4526dbba245337063e1c6a114dbbb2294aee7808fdb7"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_104_severe_arid.json": {
+   "sha256": "5b897ef50288a3e7492b9bd11f47e442d7930c7f0a1eea5fffff8a3b0876aaa6"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_224_light_arid.json": {
+   "sha256": "c6c978c7943dc321af0521ce1d8909f8095ddfb88b3d665e68fd1c31e14c4229"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_224_moderate_arid.json": {
+   "sha256": "7829fea70488ec50116d321609b61361b758b3169dc7036ced47493f6cc6036b"
+  },
+  "arid/meta/overlay_outbreak_sign_3x3_224_severe_arid.json": {
+   "sha256": "0e489829617114acb54a963b08e3cfa3b3c31e2d7bce68a8e3f1ebe1141e68e5"
+  },
+  "arid/meta/overlay_outbreak_sign_4x4_352_light_arid.json": {
+   "sha256": "e28aa7f36b570e59fbc6785fd220c8eb3e9bc7a7fc6c2f2d83c47ae4f97f1208"
+  },
+  "arid/meta/overlay_outbreak_sign_4x4_352_moderate_arid.json": {
+   "sha256": "d92d3b4dccbdee6958dd015ed0873fa8771665565c3f1a662724f4dd42fe789f"
+  },
+  "arid/meta/overlay_outbreak_sign_4x4_352_severe_arid.json": {
+   "sha256": "fbf84544a4ad0787958276a4814eae495468e0e1bb46bf133b0ee1e1584579c4"
+  },
+  "arid/meta/overlay_outbreak_sign_6x6_528_light_arid.json": {
+   "sha256": "cc9e589e249b34fc7dc274f97a01ccc54c3fb1dea49d4cdc6928c16ef79a8618"
+  },
+  "arid/meta/overlay_outbreak_sign_6x6_528_moderate_arid.json": {
+   "sha256": "c400f67bd53f9bd2de47860e695e23147e0004c811d5e55cf29f64c2670d3c13"
+  },
+  "arid/meta/overlay_outbreak_sign_6x6_528_severe_arid.json": {
+   "sha256": "4bedc9fcce351618b5a5fb4dc80c36d9c37293084f38375d02d9c30853ed3e31"
+  },
+  "arid/meta/overlay_outbreak_sign_8x8_768_light_arid.json": {
+   "sha256": "f4bb39e040fcbf987c5bd7ea717e39ba2e718b9095be596f5286d178d9df8e06"
+  },
+  "arid/meta/overlay_outbreak_sign_8x8_768_moderate_arid.json": {
+   "sha256": "6c2ea117118927f61412271d0629f9539cf1f6cc75ef797e6470ff97828c5a3f"
+  },
+  "arid/meta/overlay_outbreak_sign_8x8_768_severe_arid.json": {
+   "sha256": "40a2a89620e1f0b4bb8d167fc1e9287c7fa66e7bf37f7e3316a32826c4dba1ec"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_104_light_arid.json": {
+   "sha256": "eaaac1273511225259c52efd80c6581a9f125c85c96c94802d8896fcb0a44f8c"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_104_moderate_arid.json": {
+   "sha256": "070916314ea9eeda5f89c506d2074a1905b0a133a52d715151a9f7b79eae1741"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_104_severe_arid.json": {
+   "sha256": "f358df0edca5a02797736aea9ae9b5a050d8253faacac2c39164627fad2556c0"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_224_light_arid.json": {
+   "sha256": "7249f6a6c845758d54d760a97ef427b4e7f730ffe6bc7f9ceb378bdcb8ca43c3"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_224_moderate_arid.json": {
+   "sha256": "2494c549b29a0e7e87cf73e86db27f960d03f0a90f852e13cdefd53bbe5956f8"
+  },
+  "arid/meta/overlay_repair_scaffold_3x3_224_severe_arid.json": {
+   "sha256": "6d4d48f5cafc1e5854e44dadc6659585346a54f226a4622486482ce301c419dc"
+  },
+  "arid/meta/overlay_repair_scaffold_4x4_352_light_arid.json": {
+   "sha256": "a9bf87f1ea9ee545614466415cc0d2231a51cdfa0b08b94016a91ca381d6eaa5"
+  },
+  "arid/meta/overlay_repair_scaffold_4x4_352_moderate_arid.json": {
+   "sha256": "582c2097c8bbecc5acc98eafd2d2706f8b83e15208d2a8c913e7c4d4dda3a432"
+  },
+  "arid/meta/overlay_repair_scaffold_4x4_352_severe_arid.json": {
+   "sha256": "6128daa4cf0f054abe5f4063ef13f0c85fd333ab4c44af8058038a5cd39c02a3"
+  },
+  "arid/meta/overlay_repair_scaffold_6x6_528_light_arid.json": {
+   "sha256": "ce11fe7960ae2f3315c27b849a86e3283078937211d098d2d0e458e428a57f51"
+  },
+  "arid/meta/overlay_repair_scaffold_6x6_528_moderate_arid.json": {
+   "sha256": "643d40377b6697df88019c6e4da78933833d492e42b69701bc182e922febb438"
+  },
+  "arid/meta/overlay_repair_scaffold_6x6_528_severe_arid.json": {
+   "sha256": "2978646faa6474418e5c2de0d50d2896499a4edd97dce2d6e91e4a4c351e6d58"
+  },
+  "arid/meta/overlay_repair_scaffold_8x8_768_light_arid.json": {
+   "sha256": "116660df0ecc2cffb05154ad024e1e64855846e8deca6ccf9132d90ee1ed52a6"
+  },
+  "arid/meta/overlay_repair_scaffold_8x8_768_moderate_arid.json": {
+   "sha256": "ca39dbd6bf585acf51e5bc53f323c7b26cbea5b88896356416533e613af59d84"
+  },
+  "arid/meta/overlay_repair_scaffold_8x8_768_severe_arid.json": {
+   "sha256": "c5dee97fc9ad1db2219a35c9e20bbfed41b15d73c0de27cd70a6c485f6717c77"
   },
   "arid/meta/overlay_storm_debris_3x3_104_light_arid.json": {
    "sha256": "b00b4b0e01da5a824dcf25d790989b523a3d1c8f1a7a2525e4beba68aca4f1fb"
@@ -3633,6 +4311,51 @@
   "arid/meta/overlay_storm_debris_8x8_768_severe_arid.json": {
    "sha256": "860d404704247d7f1bdcd131e81a3947c15d5b93c81531c618a11d2216ee7d0e"
   },
+  "northern/meta/overlay_drought_ground_3x3_104_light_northern.json": {
+   "sha256": "2dee3e267922c212ca015b1d0cec510f1be0c4e94cfdb396a9a61e80e66441ef"
+  },
+  "northern/meta/overlay_drought_ground_3x3_104_moderate_northern.json": {
+   "sha256": "b09e9bd5b504d45594c6d94e30690d18bf8f59e6ff0f8eb8dde465caef7b8d8c"
+  },
+  "northern/meta/overlay_drought_ground_3x3_104_severe_northern.json": {
+   "sha256": "23012ad919fc1176be6dc468599a1ad2c15f3587bbf63ee8ed232fc062e73d3b"
+  },
+  "northern/meta/overlay_drought_ground_3x3_224_light_northern.json": {
+   "sha256": "a7b417ff8f8932d56980d503e80265e34b9e02a1075e33a1a80262151327c765"
+  },
+  "northern/meta/overlay_drought_ground_3x3_224_moderate_northern.json": {
+   "sha256": "32b5317b2f7241773958b2f94b833b3e034d9620cf8cb1de440ffaa901c3ba2c"
+  },
+  "northern/meta/overlay_drought_ground_3x3_224_severe_northern.json": {
+   "sha256": "81fb446e338fb4748c2da131ae0b2902868f5d92178f9b3edd562f589867c385"
+  },
+  "northern/meta/overlay_drought_ground_4x4_352_light_northern.json": {
+   "sha256": "b69903ebcbde8926d4d437601016e866aaa7b74fdcf6744edfa29653fb9a4985"
+  },
+  "northern/meta/overlay_drought_ground_4x4_352_moderate_northern.json": {
+   "sha256": "40696f1867a38441e01a62b561d76b1adec50c6ffb38a63c51b486472cd21355"
+  },
+  "northern/meta/overlay_drought_ground_4x4_352_severe_northern.json": {
+   "sha256": "195db4f5ad65578ea1045560d52b1d4e4e5da8544b3593d7b875f5333884c557"
+  },
+  "northern/meta/overlay_drought_ground_6x6_528_light_northern.json": {
+   "sha256": "bb5f29301bb3c19c27a713de94460a961c87541c450cac7967210be0a7d00645"
+  },
+  "northern/meta/overlay_drought_ground_6x6_528_moderate_northern.json": {
+   "sha256": "0ab725bba57f2f94980133f24705272e1e95f9532c5629bf94298af1e9630b23"
+  },
+  "northern/meta/overlay_drought_ground_6x6_528_severe_northern.json": {
+   "sha256": "4755b96d4bec21a70baf60d693174564c2012af7c03fcc05784c9acd4a8de127"
+  },
+  "northern/meta/overlay_drought_ground_8x8_768_light_northern.json": {
+   "sha256": "8721eba420e3f7d755df96b3169f0a833b4f733185efb7ce6e3dca378c8176dc"
+  },
+  "northern/meta/overlay_drought_ground_8x8_768_moderate_northern.json": {
+   "sha256": "ba4293a579bee3f86471bffdcdcee7731848e054e1c5c589c1ef5ccbd0cf4bd6"
+  },
+  "northern/meta/overlay_drought_ground_8x8_768_severe_northern.json": {
+   "sha256": "56b1924ca9bd25efb0c4790fd0b06fe2dada161ff7caccb3d3d7abef6942b281"
+  },
   "northern/meta/overlay_flood_stain_3x3_104_light_northern.json": {
    "sha256": "66873b57113541ece92624e9bf1e2e2ceb3f8520b0a45231ec1e2ecb7feecb3c"
   },
@@ -3677,6 +4400,96 @@
   },
   "northern/meta/overlay_flood_stain_8x8_768_severe_northern.json": {
    "sha256": "89d2455967d5c6de67a2c13f7bd82612c68831a1683c03b378d28c9f7fbf3d05"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_104_light_northern.json": {
+   "sha256": "c64d58b2cab561f356b8b335853ef2a7490290519245bc19df21212be18b5d50"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_104_moderate_northern.json": {
+   "sha256": "9222c4cad317a7e8bfb8c0a0821bfc20ffdfbdeb440df8ef123330b39e31a631"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_104_severe_northern.json": {
+   "sha256": "a66fb9555ae6125fa068fe057f9deec71968b61d6b41ba7a6eb0e0b7bd5521b4"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_224_light_northern.json": {
+   "sha256": "282178da5d63510b157e99f5e47dab90243ce2b32b3e9178cc919c4c64631fd7"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_224_moderate_northern.json": {
+   "sha256": "e19108b5a37dcd6c265037f08352b42a04b9dcfcb91d4ddeb0b90449c6a68019"
+  },
+  "northern/meta/overlay_outbreak_sign_3x3_224_severe_northern.json": {
+   "sha256": "613d90e6645f191c69fd9280ae6ce73fe9074f1d000f3d6f149fd75dcefa30ad"
+  },
+  "northern/meta/overlay_outbreak_sign_4x4_352_light_northern.json": {
+   "sha256": "16ac6a908130e7d17c90b61f4708de873a9abbc0b4d2ab4ebe83d640cd91bcb2"
+  },
+  "northern/meta/overlay_outbreak_sign_4x4_352_moderate_northern.json": {
+   "sha256": "67f42fc319d6f852de0f159386f51d8d8c68ac58fbaa17449ef676d5a1170a95"
+  },
+  "northern/meta/overlay_outbreak_sign_4x4_352_severe_northern.json": {
+   "sha256": "9f7d5e017a092391b00dfb10a21031673761d688da9d204698e28aeec027275c"
+  },
+  "northern/meta/overlay_outbreak_sign_6x6_528_light_northern.json": {
+   "sha256": "fd7cd84c3e57a55219c5ddc00c72cf2d5f10469b133d7cc1648a20071dd0d66b"
+  },
+  "northern/meta/overlay_outbreak_sign_6x6_528_moderate_northern.json": {
+   "sha256": "76a786b25b42182b1c960699ad7734b73cec36f72312ff4cf9deb05e9531d43b"
+  },
+  "northern/meta/overlay_outbreak_sign_6x6_528_severe_northern.json": {
+   "sha256": "542cc79c139cd1f69bca5a4c1f8a1c05dda1f1fe51028bf55bb30571231d374d"
+  },
+  "northern/meta/overlay_outbreak_sign_8x8_768_light_northern.json": {
+   "sha256": "1f2c5d516d59c0c8606a6bb258672a78ee1a3c86de55d06aee6d5d030e27d527"
+  },
+  "northern/meta/overlay_outbreak_sign_8x8_768_moderate_northern.json": {
+   "sha256": "21ad1b232e4abe857617cca7896f1f4fd83321c461e02b23b1767d10387f1245"
+  },
+  "northern/meta/overlay_outbreak_sign_8x8_768_severe_northern.json": {
+   "sha256": "642e848a2dd838d7011a31e619c03fb7ad677272310957af71b58fd36244fb8a"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_104_light_northern.json": {
+   "sha256": "8b46aa6bb59281e3435ec9ee4fbc04108fe7fcf200eae7fc65fc8ba852cef428"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_104_moderate_northern.json": {
+   "sha256": "15e4f05a592410d781621de864c12364ea24f53a19e1bfbef1863a40533e45f1"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_104_severe_northern.json": {
+   "sha256": "b4baa1c448a67f9ff4efa3d321508878931fe73eeae0e6374de22e57cf4401e0"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_224_light_northern.json": {
+   "sha256": "0514282f45bbc040003dfa995fb04e216afcf1e8babef25d18f6524069d7fad1"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_224_moderate_northern.json": {
+   "sha256": "423e33e3de7f1ae68a7f35d0fbc0584eddeadde9972284d0b8195fa976e966e7"
+  },
+  "northern/meta/overlay_repair_scaffold_3x3_224_severe_northern.json": {
+   "sha256": "69c52a36ccd6d7a60e335082aac5902f79dbda065e6344e3b002edad94e114c7"
+  },
+  "northern/meta/overlay_repair_scaffold_4x4_352_light_northern.json": {
+   "sha256": "8a96a627390abeb46236aef41428a421fe50958880ec27f382bc95c57f00a328"
+  },
+  "northern/meta/overlay_repair_scaffold_4x4_352_moderate_northern.json": {
+   "sha256": "620a24c42ac14325c6f573de0bcdae08d007edfa44fe2683ac6929995de0d2ae"
+  },
+  "northern/meta/overlay_repair_scaffold_4x4_352_severe_northern.json": {
+   "sha256": "c14868665beb703d48a0c765f0f8d2be60f45e7d28f0dc94978aec3b8cb69321"
+  },
+  "northern/meta/overlay_repair_scaffold_6x6_528_light_northern.json": {
+   "sha256": "403c5b2a7032d8051c8ee5cbc404505e7c199e1ff0f04a6f9e5f37263d8bcada"
+  },
+  "northern/meta/overlay_repair_scaffold_6x6_528_moderate_northern.json": {
+   "sha256": "c937f38436beb3493994300b96a85a03eac97a7744a7b4937cc1601ab698ce7f"
+  },
+  "northern/meta/overlay_repair_scaffold_6x6_528_severe_northern.json": {
+   "sha256": "ebcff4bd7aa2aa76b9f4063fbf6e66b94a61ace8d8ca72ba48056272d9d177db"
+  },
+  "northern/meta/overlay_repair_scaffold_8x8_768_light_northern.json": {
+   "sha256": "76d89daf1b6c886751c3a4d243af3a69b126ad882c086d17f5f560e7a4ba6ab4"
+  },
+  "northern/meta/overlay_repair_scaffold_8x8_768_moderate_northern.json": {
+   "sha256": "20dc5ffb487a40eafe394e56891fda5e70a3e6f51404dba18697b87059e3ab34"
+  },
+  "northern/meta/overlay_repair_scaffold_8x8_768_severe_northern.json": {
+   "sha256": "dbdd18e62bf3837f8485c3be1c2e61069917c55426595c618f29bd80e4a8ddc7"
   },
   "northern/meta/overlay_storm_debris_3x3_104_light_northern.json": {
    "sha256": "0342e9d15ed7b1dea28aa912eff89dcc8b178adf3cdb0ca623e51a063393cceb"
@@ -3723,6 +4536,51 @@
   "northern/meta/overlay_storm_debris_8x8_768_severe_northern.json": {
    "sha256": "1d10260b39cf791a3cde428ece41776e37fe5373f25d337f27eddf84d78c9b23"
   },
+  "temperate/meta/overlay_drought_ground_3x3_104_light_temperate.json": {
+   "sha256": "534245a7beaf6c37aef38da384480ac763477346cd1ed8102e7195e458618951"
+  },
+  "temperate/meta/overlay_drought_ground_3x3_104_moderate_temperate.json": {
+   "sha256": "c3ef303e6e26d5c2895696360cb6277a350442e5f3de1141ac342fa234dbdb30"
+  },
+  "temperate/meta/overlay_drought_ground_3x3_104_severe_temperate.json": {
+   "sha256": "7aaff4db05232508fd795f72d6b4d418e1ec15121252a7a70bc70109c70d0f77"
+  },
+  "temperate/meta/overlay_drought_ground_3x3_224_light_temperate.json": {
+   "sha256": "ea9bebb489a33b60f78d680b26ea9fca696767cc77e5b3fd14b8b2745404df2b"
+  },
+  "temperate/meta/overlay_drought_ground_3x3_224_moderate_temperate.json": {
+   "sha256": "daa4aaeffb84378065ba70a839f2968d4caba4a1e2f515081a3a2d2832cd9290"
+  },
+  "temperate/meta/overlay_drought_ground_3x3_224_severe_temperate.json": {
+   "sha256": "c5e43e72d25d08563397579cecd15e392305eb0eeceaba2c64e8b36aba9074dc"
+  },
+  "temperate/meta/overlay_drought_ground_4x4_352_light_temperate.json": {
+   "sha256": "288aa05a6c18401574492a5517db3212ece1f0ef697bf3bb29cbd075d78dc4ff"
+  },
+  "temperate/meta/overlay_drought_ground_4x4_352_moderate_temperate.json": {
+   "sha256": "3a339e40ffba4bcc9c62c3bdf50ea2d7af91abac42edfabbf2c882ff3650c3e1"
+  },
+  "temperate/meta/overlay_drought_ground_4x4_352_severe_temperate.json": {
+   "sha256": "edc890d2819437120848821c7e0fff1b9ad19c9c2266305d7c2e1b6f002d3d2b"
+  },
+  "temperate/meta/overlay_drought_ground_6x6_528_light_temperate.json": {
+   "sha256": "96043332e4e8c56a62e9143f82f409203b1d44af3d046d9d5b4b9ee0a3c0d3db"
+  },
+  "temperate/meta/overlay_drought_ground_6x6_528_moderate_temperate.json": {
+   "sha256": "45d9b18cfaec9ac2a468d389a5937d664358a016a3bfbe09c3fc64b1a1871e24"
+  },
+  "temperate/meta/overlay_drought_ground_6x6_528_severe_temperate.json": {
+   "sha256": "e9ed969c08dd796bef270f4ad5b795194b5e53ea1e0509a7312cb103ac452eef"
+  },
+  "temperate/meta/overlay_drought_ground_8x8_768_light_temperate.json": {
+   "sha256": "1480a4081fdcfa4a7d6b07ed3dd3475d469f33b14f900c9a4103fdf124a06d81"
+  },
+  "temperate/meta/overlay_drought_ground_8x8_768_moderate_temperate.json": {
+   "sha256": "9649948fa0187be5cd75d790fdfc5b58905748c4d036b076b87adc9fcabf1256"
+  },
+  "temperate/meta/overlay_drought_ground_8x8_768_severe_temperate.json": {
+   "sha256": "14dd978583dd5da00632592a025c242eac4b5bcce0bb96ff7bfbe8ea866633ca"
+  },
   "temperate/meta/overlay_flood_stain_3x3_104_light_temperate.json": {
    "sha256": "5e40ded610dd10a2822a3ee11855d48434673efc82ce0aa786ed7d5091a9b90d"
   },
@@ -3767,6 +4625,96 @@
   },
   "temperate/meta/overlay_flood_stain_8x8_768_severe_temperate.json": {
    "sha256": "57b9683a44f0e5fc49c3096d6196540f71f1fbbb1e2626f8ee25062bd50f2cdd"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_104_light_temperate.json": {
+   "sha256": "4f838ca85e9a9a33e51433674174b054c9824a3591489f4de5698be1927aee8d"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_104_moderate_temperate.json": {
+   "sha256": "6a0a8b8090a96ff1456540cb943dba5d9d45815829c5219c59c80679dd487b2d"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_104_severe_temperate.json": {
+   "sha256": "bf53b9df8b78b29c868a765b08b676f7f53cbef553cfefee6023580f56fb9290"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_224_light_temperate.json": {
+   "sha256": "38bcf299a34820329c95f6ce1865214f345797394c7a5ba9dacc9074feca18f6"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_224_moderate_temperate.json": {
+   "sha256": "eff5654180e52c2325c39ab9a972acfb2b2da19c8af25a321ff46fe7b7c84bec"
+  },
+  "temperate/meta/overlay_outbreak_sign_3x3_224_severe_temperate.json": {
+   "sha256": "aa1663182220ced289e9f6f3616562da1123355b4f85941b46fa306abc75477d"
+  },
+  "temperate/meta/overlay_outbreak_sign_4x4_352_light_temperate.json": {
+   "sha256": "0ae3a6d67a5e990681629567196675f7c100f7b255c1b38d5a585086328e1378"
+  },
+  "temperate/meta/overlay_outbreak_sign_4x4_352_moderate_temperate.json": {
+   "sha256": "ec97e45a47c06cc576bf2f6822c0cd7d91b6b52ec140f285176a1b0300cd62ae"
+  },
+  "temperate/meta/overlay_outbreak_sign_4x4_352_severe_temperate.json": {
+   "sha256": "83e04d088b0bffc9ee8e6b3d8826178c12a2b98b3626d48b7d383338ac89dad4"
+  },
+  "temperate/meta/overlay_outbreak_sign_6x6_528_light_temperate.json": {
+   "sha256": "ebf6e27d1831490f10e974dfc7c72b2a113c082bc233026d2970fe598841efa1"
+  },
+  "temperate/meta/overlay_outbreak_sign_6x6_528_moderate_temperate.json": {
+   "sha256": "1c99aa6c3c840581be50094f807344d85675b65d1effe5b84b70ef48d671f316"
+  },
+  "temperate/meta/overlay_outbreak_sign_6x6_528_severe_temperate.json": {
+   "sha256": "8c998e12f9bec0361ed352bb3b776d71d35006b03b26a4239b8c00ab0fdfcb7c"
+  },
+  "temperate/meta/overlay_outbreak_sign_8x8_768_light_temperate.json": {
+   "sha256": "0f35722c7b82a4a89a6373ef524190d430f06ea70b2da98340a2c5c0d16e2b1e"
+  },
+  "temperate/meta/overlay_outbreak_sign_8x8_768_moderate_temperate.json": {
+   "sha256": "e945ca5f9299a6e2be5cb8313e4a0db809ce2fceb3e48902fbb77103395088e5"
+  },
+  "temperate/meta/overlay_outbreak_sign_8x8_768_severe_temperate.json": {
+   "sha256": "ca12510d188a7089e9d0d82bafa5c3f9969d000a46968d7d3f76373f07473eda"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_104_light_temperate.json": {
+   "sha256": "2d852437f4bc83b081169764a030ad6590e40316541e8ea4be6e337885476a12"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_104_moderate_temperate.json": {
+   "sha256": "86e06b4edab71c0a9895f71d9c4a7b0be65b2e9f2f9a656049e37a62e82c1aed"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_104_severe_temperate.json": {
+   "sha256": "5f41d014f36e8371509262a1f50c2d5a432064448124c06ec704a3c0786baa3d"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_224_light_temperate.json": {
+   "sha256": "7afcb0d21867267460697d6fa2cc4fae415fb625c1c558df9900995646c8ca32"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_224_moderate_temperate.json": {
+   "sha256": "b7c32f7cbfec3693afe6dac8ab76865122fa107e824253add3a7979006e28059"
+  },
+  "temperate/meta/overlay_repair_scaffold_3x3_224_severe_temperate.json": {
+   "sha256": "6b1d8819bead9b90cde378b8bb5679fe7a52ff5103f4bf39e007d298bae8f73c"
+  },
+  "temperate/meta/overlay_repair_scaffold_4x4_352_light_temperate.json": {
+   "sha256": "5b8d64dbaeccd96a6f43634b823585c1743d37dd0a2c94afd6285349013e9ced"
+  },
+  "temperate/meta/overlay_repair_scaffold_4x4_352_moderate_temperate.json": {
+   "sha256": "8b8b9f09e404862930db4f5000730fc908acdd073548577e204fbb78d6000587"
+  },
+  "temperate/meta/overlay_repair_scaffold_4x4_352_severe_temperate.json": {
+   "sha256": "b822675ee3f9514b94548c55fe51c0b26b51d40235f2b34380bc77b6e80a0fca"
+  },
+  "temperate/meta/overlay_repair_scaffold_6x6_528_light_temperate.json": {
+   "sha256": "17c362be6cef6ae2daa4bdb915d41ceed6158a4063e96f5c5ceada4941961810"
+  },
+  "temperate/meta/overlay_repair_scaffold_6x6_528_moderate_temperate.json": {
+   "sha256": "332365a95c5903f078c756cd193250ee135bf3207040d7e962e081611d82874f"
+  },
+  "temperate/meta/overlay_repair_scaffold_6x6_528_severe_temperate.json": {
+   "sha256": "12fe8326063db6d989f343b973f60b4a5eee32d287d9ab1b33ddd8145a4180ee"
+  },
+  "temperate/meta/overlay_repair_scaffold_8x8_768_light_temperate.json": {
+   "sha256": "0a7c722049f1f961f41abce0ffe9cd843578e6a9886e42fe55039b933a9e66dd"
+  },
+  "temperate/meta/overlay_repair_scaffold_8x8_768_moderate_temperate.json": {
+   "sha256": "8df952dd6e753b8568be323e273afd05d796d0b9f3e4e0f02e83f88b42422227"
+  },
+  "temperate/meta/overlay_repair_scaffold_8x8_768_severe_temperate.json": {
+   "sha256": "63a783d5c925bfb5453390657746c7bfd44f66287febe1d5206d49881492b945"
   },
   "temperate/meta/overlay_storm_debris_3x3_104_light_temperate.json": {
    "sha256": "1ab429758ccae71a047895dc7c4db1f0d032a6ae0ed2a7986bc44db57631dc38"
@@ -3813,6 +4761,51 @@
   "temperate/meta/overlay_storm_debris_8x8_768_severe_temperate.json": {
    "sha256": "172e3dadcc06068120839fcc9faa474a5a2ffdbb28f702b056d3de0a55506257"
   },
+  "tropical/meta/overlay_drought_ground_3x3_104_light_tropical.json": {
+   "sha256": "6a2c486207f62a43f0b412a0cb6605a547e05aacded93d1bfc38554e668ef6bb"
+  },
+  "tropical/meta/overlay_drought_ground_3x3_104_moderate_tropical.json": {
+   "sha256": "b5202c596962177b877ec2cd625e68af3af49e684476bc2030847c5ac1fc41b8"
+  },
+  "tropical/meta/overlay_drought_ground_3x3_104_severe_tropical.json": {
+   "sha256": "9962e62fb8f9ff0fdc6a4476fc5089fd742471bbe938807762c1931083b8e106"
+  },
+  "tropical/meta/overlay_drought_ground_3x3_224_light_tropical.json": {
+   "sha256": "8396bb35ccde3cb999093445b2e9cbb2549e751c2bd6a3524c962245511b0b1e"
+  },
+  "tropical/meta/overlay_drought_ground_3x3_224_moderate_tropical.json": {
+   "sha256": "f49c37c676f65bb9a90294b6a0bcdfdc7589ec4c22c4296157c7a211454dccde"
+  },
+  "tropical/meta/overlay_drought_ground_3x3_224_severe_tropical.json": {
+   "sha256": "7186f244c84bf76e80cd9fc84e0629fa7c7f7674dc4d76f29a26df0837454b74"
+  },
+  "tropical/meta/overlay_drought_ground_4x4_352_light_tropical.json": {
+   "sha256": "afb7ad985712de0bbdc6f6bda0d74334f965708f05d535e7cbc33387bfac2952"
+  },
+  "tropical/meta/overlay_drought_ground_4x4_352_moderate_tropical.json": {
+   "sha256": "4a8159ce745eb48328ffe9258316f2fb8a7e9140a4e3c2a2c65aca6fc54ff92d"
+  },
+  "tropical/meta/overlay_drought_ground_4x4_352_severe_tropical.json": {
+   "sha256": "2d4690956a0e767bd191cab8867c8d40a6e52de2fa3cd10161cce2c2fba08db4"
+  },
+  "tropical/meta/overlay_drought_ground_6x6_528_light_tropical.json": {
+   "sha256": "b10a40739758047fc95251f3b9abff154bf904f8a8873b5d6a005512b9c7a2ba"
+  },
+  "tropical/meta/overlay_drought_ground_6x6_528_moderate_tropical.json": {
+   "sha256": "7f6895e057fb448786521a97bcbf52bf48579d926902e558430a4b160eea3b75"
+  },
+  "tropical/meta/overlay_drought_ground_6x6_528_severe_tropical.json": {
+   "sha256": "0f10cca99472ebd09966d6b5c3ffbab43b2935b41324b28e2c00688c4e9a75d5"
+  },
+  "tropical/meta/overlay_drought_ground_8x8_768_light_tropical.json": {
+   "sha256": "4ab6375087f071a4d8c7fd0b3fb079c69b65036243eb23ec6af2e51a42aa3f11"
+  },
+  "tropical/meta/overlay_drought_ground_8x8_768_moderate_tropical.json": {
+   "sha256": "57bbd4d3d78e2273b211750a649d72d5e933bb1c7f96778d116c51eacad49302"
+  },
+  "tropical/meta/overlay_drought_ground_8x8_768_severe_tropical.json": {
+   "sha256": "8daf56ae0e16ff9bbab3686406046ccb4d0232b64a5d562d6f255bd7d198c64e"
+  },
   "tropical/meta/overlay_flood_stain_3x3_104_light_tropical.json": {
    "sha256": "f82885bd02afe8c05dd886317281df74c7759d0a0a98783b32ba43cabc9fa550"
   },
@@ -3857,6 +4850,96 @@
   },
   "tropical/meta/overlay_flood_stain_8x8_768_severe_tropical.json": {
    "sha256": "b21678b9c9f9a7aeb46753cbbdea48419b000a5c70fd67ba7d337d705deba528"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_104_light_tropical.json": {
+   "sha256": "8f25f70fb4022149d457d5bb82347eabe038691baaee37870ff3c38a0134f95a"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_104_moderate_tropical.json": {
+   "sha256": "3f5d4151e3b9e39fe4209aed67d4a7ae0a59361afe5be24d3048e583d3153a28"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_104_severe_tropical.json": {
+   "sha256": "6611ded3cf95d791a028f8022347bf6394311e21829ff1fef9d32fb73b269d08"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_224_light_tropical.json": {
+   "sha256": "a4be130e091b98d1cb3567d2c01660959ca70ce8819b8d8c9ea7f0c061c9e31d"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_224_moderate_tropical.json": {
+   "sha256": "c3eb5699144c0b8f7f916f0a495d25986d602198887518c99291ea8c681489cf"
+  },
+  "tropical/meta/overlay_outbreak_sign_3x3_224_severe_tropical.json": {
+   "sha256": "743477ed451296e49586670120ecffadc42ba12eb7357472f7ba6a7059ac51c4"
+  },
+  "tropical/meta/overlay_outbreak_sign_4x4_352_light_tropical.json": {
+   "sha256": "02df879279269d0f4e2419ff872823fea3026d2f138f5b313218d664e516f862"
+  },
+  "tropical/meta/overlay_outbreak_sign_4x4_352_moderate_tropical.json": {
+   "sha256": "03385cb799e3ff65516d0b2bf7aa58690e8c015a9eb11e057a8011364bd2c9e4"
+  },
+  "tropical/meta/overlay_outbreak_sign_4x4_352_severe_tropical.json": {
+   "sha256": "845acde6b1fc416ace33a84df8ca5fab157a1eeceb53551adf2cadd458b103d4"
+  },
+  "tropical/meta/overlay_outbreak_sign_6x6_528_light_tropical.json": {
+   "sha256": "e0aebf142cd446a544e9e4ca407b9ebbf408690e725fec6dab379917475d39a9"
+  },
+  "tropical/meta/overlay_outbreak_sign_6x6_528_moderate_tropical.json": {
+   "sha256": "bb739afc68b9d8ffdd9cceda3d4d50f1fa6d43f7a665d398f4410962093bab52"
+  },
+  "tropical/meta/overlay_outbreak_sign_6x6_528_severe_tropical.json": {
+   "sha256": "03ae4533cd72e85668eea48de080d17e2056fd33077697f97d615d559487f869"
+  },
+  "tropical/meta/overlay_outbreak_sign_8x8_768_light_tropical.json": {
+   "sha256": "d7a1137e6d6ae99b68d714e9fec925c49f06f04ce5e8a0f6eb0e2e83db6f25f8"
+  },
+  "tropical/meta/overlay_outbreak_sign_8x8_768_moderate_tropical.json": {
+   "sha256": "85be5a0e8f6bb618e9f13a0c8ddec13ecf2b9367369175f1a64314b23d462fe9"
+  },
+  "tropical/meta/overlay_outbreak_sign_8x8_768_severe_tropical.json": {
+   "sha256": "9ae9ab11c5a3b211767378e2c9a15c9d15539ede08ba7c94a01ab408356ad693"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_104_light_tropical.json": {
+   "sha256": "5db056ca97ebdb978eb24bedb098ca6f1c13391a8620d5bf958f7bdb4d819123"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_104_moderate_tropical.json": {
+   "sha256": "6689b34b2e58452ca0f6f1e1b4fdeb2b003de342eabac2f1eec9f49560e2ed05"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_104_severe_tropical.json": {
+   "sha256": "ef8958a8abc2a38a9fb367f834411d0e968da7104fde0314b4ac26bd28bbc039"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_224_light_tropical.json": {
+   "sha256": "71e1ca69bb7c0875e2dddf441c7aaac3b2f9c3f78169b13098599bccf5bbc952"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_224_moderate_tropical.json": {
+   "sha256": "28eeb392c672e9fc7aa06ab6ab44fe70d9fe70d3b8921d7c1ff7fa1cfb156d5a"
+  },
+  "tropical/meta/overlay_repair_scaffold_3x3_224_severe_tropical.json": {
+   "sha256": "0a3d9742ce02ab42d84c14f1eddd74cf4635735ca05f832ecd5b75b14540b243"
+  },
+  "tropical/meta/overlay_repair_scaffold_4x4_352_light_tropical.json": {
+   "sha256": "340211cb5dba92f9670d3408412a9b90bde5c3bf2eea62f80e1ea29e7496b542"
+  },
+  "tropical/meta/overlay_repair_scaffold_4x4_352_moderate_tropical.json": {
+   "sha256": "77ddd8a6ad95a73e3a1093fce7c00eca8888992540b1037e124deb232d7cd066"
+  },
+  "tropical/meta/overlay_repair_scaffold_4x4_352_severe_tropical.json": {
+   "sha256": "0905d39adfbe504b261b3be790e74d1847231a8e40b4f7bfb42ced434b494c2c"
+  },
+  "tropical/meta/overlay_repair_scaffold_6x6_528_light_tropical.json": {
+   "sha256": "57851f09a17d898dda05116153b18cdc31087534e3eadebad0a215fc957b40be"
+  },
+  "tropical/meta/overlay_repair_scaffold_6x6_528_moderate_tropical.json": {
+   "sha256": "fbcd708d293393c436bf8401b8793324a1e7e6abeca8a32c50e44e472730023b"
+  },
+  "tropical/meta/overlay_repair_scaffold_6x6_528_severe_tropical.json": {
+   "sha256": "5579178ca1a26967be447781b44709ccf37fc131475aa42dc0553a42c999c7cd"
+  },
+  "tropical/meta/overlay_repair_scaffold_8x8_768_light_tropical.json": {
+   "sha256": "b82f1c5922d42116abf1f885467c522c2cfd5a133cdd3886c9c9f079ac25fcb1"
+  },
+  "tropical/meta/overlay_repair_scaffold_8x8_768_moderate_tropical.json": {
+   "sha256": "d7fba29f927079a9c8ecbfe034e7492eb20dfc2bdeec865a60ea3bd99b447711"
+  },
+  "tropical/meta/overlay_repair_scaffold_8x8_768_severe_tropical.json": {
+   "sha256": "95446b6c316b70c43dd879fb0bf37d52fa8340a8aab72aa2ede6139100db3070"
   },
   "tropical/meta/overlay_storm_debris_3x3_104_light_tropical.json": {
    "sha256": "3ed1d79d15eea5a8ebb07de369fe87d3defbe4407b99e0b2affcaee49ecbb55d"

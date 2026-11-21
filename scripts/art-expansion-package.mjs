@@ -5,10 +5,10 @@
  *   node scripts/art-expansion-package.mjs --check
  *   node scripts/art-expansion-package.mjs --export     # authoring machine only; reads art/generated/expansion
  *
- * The package covers the reviewed families (bridges, boats, fishing, water, towers) and the three
- * reviewed overlay effects (fire scorch, storm debris, flood stain). Storm and flood sprites also ship
- * their pixel-ownership metadata, which says which pixels are ground marks and which are wall marks.
- * Drought, outbreak and repair overlays are still starter drafts and are deliberately not packaged.
+ * The package covers the reviewed families (bridges, boats, fishing, water, towers) and all six
+ * reviewed overlay effects (fire scorch, storm debris, flood stain, drought ground, outbreak sign,
+ * repair scaffold). Every overlay except fire scorch also ships its pixel-ownership metadata, which
+ * records which pixels belong to which piece and, for the repair scaffold, its world geometry.
  * Every entry stays `draft` in the catalog: packaging is not gameplay activation, not approval for the
  * production atlas, and overlays still need a verified material mask before they may be drawn.
  */
@@ -20,8 +20,8 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = JSON.parse(readFileSync(join(root, 'art/expansion/catalog.json'), 'utf8'));
 const packaged = ['bridges', 'boats', 'fishing', 'water', 'towers'];
-const overlayKinds = ['fire_scorch', 'storm_debris', 'flood_stain'];
-const metaKinds = ['storm_debris', 'flood_stain'];
+const overlayKinds = ['fire_scorch', 'storm_debris', 'flood_stain', 'drought_ground', 'outbreak_sign', 'repair_scaffold'];
+const metaKinds = ['storm_debris', 'flood_stain', 'drought_ground', 'outbreak_sign', 'repair_scaffold'];
 const isPackaged = (entry) =>
   packaged.includes(entry.family) || (entry.family === 'damage' && overlayKinds.includes(entry.kind));
 const entries = catalog.entries.filter(isPackaged);

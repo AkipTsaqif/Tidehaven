@@ -8,31 +8,32 @@ describe('portable expansion art package', () => {
     expect(checkPackage()).toEqual([]);
   });
 
-  it('packages reviewed families and the three reviewed overlay effects only', () => {
+  it('packages every reviewed family and all six overlay effects', () => {
     const manifest = JSON.parse(readFileSync(new URL('../../art/expansion/assets/manifest.json', import.meta.url), 'utf8')) as {
       families: string[];
       overlays: string[];
       files: Record<string, unknown>;
-      meta: Record<string, unknown>;
     };
     expect(manifest.families).toEqual(['bridges', 'boats', 'fishing', 'water', 'towers']);
-    expect(manifest.overlays).toEqual(['fire_scorch', 'storm_debris', 'flood_stain']);
-    expect(Object.keys(manifest.files)).toHaveLength(1176);
+    expect(manifest.overlays).toEqual(['fire_scorch', 'storm_debris', 'flood_stain', 'drought_ground', 'outbreak_sign', 'repair_scaffold']);
     const names = Object.keys(manifest.files);
-    expect(names.filter((name) => name.includes('overlay_'))).toHaveLength(180);
-    for (const unfinished of ['drought_ground', 'outbreak_sign', 'repair_scaffold']) {
-      expect(names.some((name) => name.includes(unfinished))).toBe(false);
+    expect(names).toHaveLength(1356);
+    expect(names.filter((name) => name.includes('overlay_'))).toHaveLength(360);
+    for (const effect of manifest.overlays) {
+      expect(names.filter((name) => name.includes('overlay_' + effect + '_'))).toHaveLength(60);
     }
   });
 
-  it('ships ground/wall ownership metadata for storm and flood sprites only', () => {
+  it('ships pixel-ownership metadata for every overlay except fire scorch', () => {
     const manifest = JSON.parse(readFileSync(new URL('../../art/expansion/assets/manifest.json', import.meta.url), 'utf8')) as {
       meta: Record<string, unknown>;
     };
     const names = Object.keys(manifest.meta);
-    expect(names).toHaveLength(120);
-    expect(names.every((name) => /overlay_(storm_debris|flood_stain)_/.test(name))).toBe(true);
+    expect(names).toHaveLength(300);
     expect(names.some((name) => name.includes('fire_scorch'))).toBe(false);
+    for (const effect of ['storm_debris', 'flood_stain', 'drought_ground', 'outbreak_sign', 'repair_scaffold']) {
+      expect(names.filter((name) => name.includes('overlay_' + effect + '_'))).toHaveLength(60);
+    }
   });
 
   it('detects tampered metadata and stray files', () => {
