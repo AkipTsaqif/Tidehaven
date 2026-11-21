@@ -7,7 +7,7 @@ import { computeFit, drawTown, useTownMap, type View } from '../map-render.js';
  * the canvas ignores pointer events entirely, so the page scrolls normally when the mouse is over it.
  */
 export function MiniMap({ revision = 0 }: { revision?: number }) {
-  const { data, atlas, sheet, ground, objects, error } = useTownMap(revision);
+  const { data, atlas, sheets, ground, objects, error } = useTownMap(revision);
   const frame = useRef<HTMLDivElement | null>(null);
   const canvas = useRef<HTMLCanvasElement | null>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -26,8 +26,8 @@ export function MiniMap({ revision = 0 }: { revision?: number }) {
     if (!el || !data || !terrain || !ground || size.w === 0) return;
     // A thumbnail may zoom out to 0.5x so the whole town fits; the view is recomputed on resize.
     const view: View = computeFit(data, terrain, size, 0.5, atlas);
-    drawTown(el, { data, terrain, ground, atlas, sheet, objects, view, size });
-  }, [data, terrain, ground, atlas, sheet, objects, size]);
+    drawTown(el, { data, terrain, ground, atlas, sheets, objects, view, size });
+  }, [data, terrain, ground, atlas, sheets, objects, size]);
 
   if (error) return <div className="muted small">Map unavailable.</div>;
   if (!data) return <div className="muted small">Loading map…</div>;

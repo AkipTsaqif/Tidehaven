@@ -154,7 +154,9 @@ rotated. Placement v2 intentionally reshuffles the old visual layout once, then 
 for subsequent additions. The drawn terrain box grows to cover every reclaimed patch and, on islands, widens until no islet is sliced
 by its edge (bounded; the 768-tile cap still applies). Search is bounded to 360 tiles from the town origin; buildings with no
 remaining valid footprint are reported as unplaced rather than overlapping or drawing over water.
-Sprites come from the committed atlas in `client/public/map/`, packed by `scripts/art-atlas.py`.
+Sprites come from the committed atlas in `client/public/map/`, packed by `scripts/art-atlas.py`. The atlas
+is multi-page (v3): each frame names the page it lives on, the client waits for every page before drawing,
+and a frame whose page is missing is skipped and reported rather than drawn from the wrong page.
 Changing the layout code reshuffles every town's map once. That is acceptable because nothing
 depends on map positions.
 

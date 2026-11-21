@@ -140,7 +140,8 @@ export interface TownDrawParams {
   terrain: Terrain;
   ground: HTMLCanvasElement;
   atlas: Atlas | null;
-  sheet: HTMLImageElement | null;
+  /** One decoded image per atlas page, in page order. Null until every page has loaded. */
+  sheets: HTMLImageElement[] | null;
   objects: TownObject[];
   view: View;
   size: { w: number; h: number };
@@ -150,7 +151,7 @@ export interface TownDrawParams {
 
 /** Terrain, trails, trees and buildings in one depth-ordered painter's pass. */
 export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
-  const { data, terrain, ground, atlas, sheet, objects, view, size, selected } = p;
+  const { data, terrain, ground, atlas, sheets, objects, view, size, selected } = p;
   const dpr = window.devicePixelRatio || 1;
   const width = Math.round(size.w * dpr);
   const height = Math.round(size.h * dpr);
@@ -174,7 +175,7 @@ export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
     top: -view.y / view.scale, bottom: (size.h - view.y) / view.scale,
   });
   const frames = atlas?.biomes[data.biome]?.frames;
-  if (!sheet || !frames || !atlas) return;
+  if (!sheets || !frames || !atlas) return;
   const left = -view.x / view.scale;
   const right = (size.w - view.x) / view.scale;
   const top = -view.y / view.scale;
@@ -197,8 +198,12 @@ export function drawTown(el: HTMLCanvasElement, p: TownDrawParams): void {
     const frame = lot.frame ? frames[lot.frame] : undefined;
     if (!frame) continue;
     const pivot = lotPivot(lot, terrain, data.tile.lotTiles);
-    const dx = pivot.x - frame.pivot.x, dy = pivot.y + TOP - frame.pivot.y;
+    // A trimmed frame is drawn at its offset inside the full canvas; the pivot is on the full canvas.
+    const dx = pivot.x - frame.pivot.x + (frame.trim?.x ?? 0);
+    const dy = pivot.y + TOP - frame.pivot.y + (frame.trim?.y ?? 0);
     if (dx + frame.rect.w < left || dx > right || dy + frame.rect.h < top || dy > bottom) continue;
+    const sheet = sheets[frame.page];
+    if (!sheet) continue;
     ctx.drawImage(sheet, frame.rect.x, frame.rect.y, frame.rect.w, frame.rect.h,
       dx, dy, frame.rect.w, frame.rect.h);
     if (selected !== undefined && lot.key === selected) {
@@ -262,18 +267,19 @@ export function computeFit(data: MapResponse, terrain: Terrain, box: { w: number
   return { scale, x: Math.round(box.w / 2 - cx * scale), y: Math.round(box.h / 2 - (cy + TOP) * scale) };
 }
 
-/** Loads /api/map, the sprite atlas and the biome's sprite sheet. Read-only: it never sends commands. */
+/** Loads /api/map, the sprite atlas and the biome's sprite pages. Read-only: it never sends commands. */
 export function useTownMap(revision: number): {
   data: MapResponse | null;
   atlas: Atlas | null;
-  sheet: HTMLImageElement | null;
+  /** One decoded image per atlas page, in page order. Null until every page has loaded. */
+  sheets: HTMLImageElement[] | null;
   ground: HTMLCanvasElement | null;
   objects: TownObject[];
   error: string | null;
 } {
   const [data, setData] = useState<MapResponse | null>(null);
   const [atlas, setAtlas] = useState<Atlas | null>(null);
-  const [sheet, setSheet] = useState<HTMLImageElement | null>(null);
+  const [sheets, setSheets] = useState<HTMLImageElement[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -297,14 +303,22 @@ export function useTownMap(revision: number): {
   useEffect(() => {
     const entry = atlas?.biomes[biome];
     if (!entry) return;
-    const image = new Image();
-    image.onload = () => setSheet(image);
-    image.onerror = () => setError(`could not load ${entry.image}`);
-    image.src = entry.image;
+    let current = true;
+    setSheets(null);
+    // Every page must be decoded before drawing starts, so a frame never samples a half-loaded page.
+    Promise.all(entry.pages.map((page) => new Promise<HTMLImageElement>((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = () => reject(new Error(`could not load ${page.image}`));
+      image.src = page.image;
+    })))
+      .then((images) => current && setSheets(images))
+      .catch((err: Error) => current && setError(err.message));
+    return () => { current = false; };
   }, [atlas, biome]);
 
   const terrain = data?.terrain ?? null;
   const ground = useMemo(() => (terrain ? terrainImage(terrain, biome) : null), [terrain, biome]);
   const objects = useMemo(() => (data ? sortTownObjects(data) : []), [data]);
-  return { data, atlas, sheet, ground, objects, error };
+  return { data, atlas, sheets, ground, objects, error };
 }

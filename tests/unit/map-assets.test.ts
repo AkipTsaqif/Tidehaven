@@ -45,3 +45,61 @@ describe('variable asset geometry', () => {
     expect(pointInFootprint((7 - 3) * 16, (7 + 3) * 8, 0, 0, bridge.footprint)).toBe(false);
   });
 });
+
+describe('multi-page atlas v3', () => {
+  const page = (image: string) => ({ image, width: 1024, height: 512 });
+  const v3 = () => ({
+    version: 3,
+    tile: { w: 32, h: 16 },
+    biomes: {
+      tropical: {
+        pages: [page('/map/atlas-tropical-0.png'), page('/map/atlas-tropical-1.png')],
+        frames: {
+          home_1: { page: 0, rect: { x: 2, y: 2, w: 96, h: 104 }, pivot: { x: 48, y: 104 }, footprint: { w: 3, d: 3 }, assetClass: 'building' },
+          overlay: { page: 1, rect: { x: 2, y: 2, w: 20, h: 12 }, pivot: { x: 52, y: 100 }, footprint: { w: 3, d: 3 }, assetClass: 'overlay',
+            trim: { x: 30, y: 70, w: 104, h: 104 } },
+        },
+      },
+    },
+  });
+
+  it('reads pages and gives every frame the image of the page it lives on', () => {
+    const atlas = normalizeAtlas(v3());
+    const biome = atlas.biomes.tropical!;
+    expect(biome.pages.map((p) => p.image)).toEqual(['/map/atlas-tropical-0.png', '/map/atlas-tropical-1.png']);
+    expect(biome.frames.home_1!.page).toBe(0);
+    expect(biome.frames.overlay!.page).toBe(1);
+  });
+
+  it('keeps the canvas size and offset of a trimmed frame so its pivot still means the same thing', () => {
+    const f = normalizeAtlas(v3()).biomes.tropical!.frames.overlay!;
+    expect(f.rect).toMatchObject({ w: 20, h: 12 });
+    expect(f.trim).toEqual({ x: 30, y: 70, w: 104, h: 104 });
+    // Drawn at sprite origin + trim offset: the pivot is still measured on the full canvas.
+    // 3x3 lot at tile (0,0): bottom vertex is (0, 48). Origin = bottom - pivot = (-52, -52).
+    // The crop then sits at origin + trim offset (30, 70), with the CROPPED size.
+    expect(spriteBounds(0, 0, f)).toEqual({ x: -52 + 30, y: 48 - 100 + 70, w: 20, h: 12 });
+  });
+
+  it('upgrades v1 and v2 atlases to a single page so old files keep working', () => {
+    const v2 = normalizeAtlas(JSON.parse(readFileSync('client/public/map/atlas.json', 'utf8')));
+    expect(v2.biomes.tropical!.pages).toHaveLength(1);
+    expect(v2.biomes.tropical!.frames.home_1!.page).toBe(0);
+    expect(v2.biomes.tropical!.frames.home_1!.trim).toBeUndefined();
+  });
+
+  it('rejects a frame pointing at a missing page, a bad page image, or a trim that does not fit', () => {
+    const missing = v3();
+    missing.biomes.tropical.frames.home_1.page = 2;
+    expect(() => normalizeAtlas(missing)).toThrow();
+    const badImage = v3();
+    badImage.biomes.tropical.pages[1]!.image = '/evil/../x.png';
+    expect(() => normalizeAtlas(badImage)).toThrow();
+    const noPages = v3();
+    noPages.biomes.tropical.pages = [];
+    expect(() => normalizeAtlas(noPages)).toThrow();
+    const badTrim = v3();
+    badTrim.biomes.tropical.frames.overlay.trim = { x: 100, y: 0, w: 20, h: 12 };
+    expect(() => normalizeAtlas(badTrim)).toThrow();
+  });
+});

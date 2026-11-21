@@ -25,7 +25,22 @@ node scripts/art-expansion-package.mjs --export   # authoring machine after rebu
 ```
 
 The packaged art is not in the production atlas: `art/expansion/catalog.json` keeps `draft` status and
-`scripts/art-atlas.py` rejects draft extras. Approval and multi-page atlas packing are separate steps.
+`scripts/art-atlas.py` rejects draft extras unless you pass `--allow-draft` (for testing, never for the
+committed atlas). Approving entries for production is a separate step.
+
+### Atlas v3: pages and trimmed overlays
+
+`scripts/art-atlas.py` writes a v3 atlas. Each biome has a list of `pages` (1024 wide, at most 4096
+tall, at most 16 pages) and every frame names its `page`. Art that does not fit one page is split over
+several; the full catalog plus the 41 legacy sprites needs two pages per biome. Page 0 keeps the file
+name `atlas-<biome>.png`, later pages are `atlas-<biome>-1.png`, and pages left over from a larger earlier
+run are deleted.
+
+Overlay frames are mostly empty canvas (about 10% content), so they are trimmed to their opaque box. A
+trimmed frame records `trim: {x, y, w, h}`: where the crop sits in the full canvas and that canvas's size.
+The pivot is always measured on the full canvas, so it means the same thing as before trimming, and a
+frame is drawn at its sprite origin plus the trim offset. Buildings, bridges, boats and water are never
+trimmed. The client still reads v1 and v2 atlases as a single page.
 Per-family review decisions are in `art/expansion/*_REVIEW.md`.
 
 ```bash

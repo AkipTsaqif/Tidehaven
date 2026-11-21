@@ -157,6 +157,76 @@ test.describe('Tidehaven dashboard', () => {
     expect(errors).toEqual([]);
   });
 
+  test('draws each frame from the atlas page it names, not always the first page', async ({ page, request }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(String(error)));
+    const map = (await (await request.get('/api/map')).json()) as { biome: string; lots: { frame: string | null }[] };
+    const real = (await (await request.get('/map/atlas.json')).json()) as {
+      biomes: Record<string, { pages: { image: string; width: number; height: number }[]; frames: Record<string, { page: number }> }>;
+    };
+    const biome = real.biomes[map.biome]!;
+    const used = [...new Set(map.lots.map((lot) => lot.frame).filter((f): f is string => f !== null))];
+    expect(used.length).toBeGreaterThan(1);
+
+    // Page 1 is a fully TRANSPARENT image of the same size. Every used frame is moved onto it, so the
+    // town can only show buildings if the renderer ignores the page number and draws from page 0.
+    const first = biome.pages[0]!;
+    const transparent = `${first.image.replace('.png', '')}-blank.png`;
+    biome.pages = [first, { ...first, image: transparent }];
+    for (const key of used) biome.frames[key]!.page = 1;
+    const blank = await page.evaluate(([w, h]) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = w!; canvas.height = h!;
+      return canvas.toDataURL('image/png').split(',')[1]!;
+    }, [first.width, first.height]);
+    const requested: string[] = [];
+    await page.route('**/map/atlas.json', (route) => route.fulfill({ json: real }));
+    await page.route('**/map/*-blank.png', (route) => {
+      requested.push(route.request().url());
+      return route.fulfill({ body: Buffer.from(blank, 'base64'), contentType: 'image/png' });
+    });
+    // Every pixel, not a sparse sample: a small sprite must still be able to change the answer.
+    const sample = () => page.locator('.map-canvas').evaluate((canvas: HTMLCanvasElement) => {
+      const ctx = canvas.getContext('2d');
+      if (!ctx || canvas.width === 0) return 0;
+      const { data } = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const seen = new Set<number>();
+      for (let i = 0; i < data.length; i += 4) seen.add((data[i]! << 16) | (data[i + 1]! << 8) | data[i + 2]!);
+      return seen.size;
+    });
+
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Map' }).click();
+    await expect(page.locator('.map-viewport')).toBeVisible();
+    await expect.poll(() => requested.length, { message: 'the second atlas page was never requested' }).toBeGreaterThan(0);
+    await page.waitForTimeout(500);
+    const withBlankPage = await sample();
+
+    // Control: the same town with every frame on the real page draws many more colours (the buildings).
+    await page.unroute('**/map/atlas.json');
+    for (const key of used) biome.frames[key]!.page = 0;
+    await page.route('**/map/atlas.json', (route) => route.fulfill({ json: real }));
+    await page.reload();
+    await page.getByRole('button', { name: 'Map' }).click();
+    await expect(page.locator('.map-viewport')).toBeVisible();
+    await expect.poll(sample, { message: `buildings should add colours beyond the ${withBlankPage} of the empty town` }).toBeGreaterThan(withBlankPage + 10);
+    expect(errors).toEqual([]);
+  });
+
+  test('does not draw a frame whose atlas page is missing, and reports it', async ({ page, request }) => {
+    const map = (await (await request.get('/api/map')).json()) as { biome: string };
+    const real = (await (await request.get('/map/atlas.json')).json()) as {
+      biomes: Record<string, { pages: unknown[]; frames: Record<string, { page: number }> }>;
+    };
+    const broken = JSON.parse(JSON.stringify(real)) as typeof real;
+    const biome = broken.biomes[map.biome]!;
+    for (const frame of Object.values(biome.frames)) frame.page = 3;
+    await page.route('**/map/atlas.json', (route) => route.fulfill({ json: broken }));
+    await page.goto('/');
+    await page.getByRole('button', { name: 'Map' }).click();
+    await expect(page.getByText(/sprite atlas/i)).toBeVisible();
+  });
+
   test('shows a view-only town map on the overview that cannot be dragged, clicked or zoomed', async ({ page }) => {
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(String(error)));

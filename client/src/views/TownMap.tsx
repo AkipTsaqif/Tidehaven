@@ -26,7 +26,7 @@ function label(kind: string): string {
 }
 
 export function TownMap({ revision = 0 }: { revision?: number }) {
-  const { data, atlas, sheet, ground, objects, error } = useTownMap(revision);
+  const { data, atlas, sheets, ground, objects, error } = useTownMap(revision);
   const [selected, setSelected] = useState<string | null>(null);
   const [view, setView] = useState<View | null>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -58,8 +58,8 @@ export function TownMap({ revision = 0 }: { revision?: number }) {
   useEffect(() => {
     const el = canvas.current;
     if (!el || !terrain || !data || !view || !ground || size.w === 0) return;
-    drawTown(el, { data, terrain, ground, atlas, sheet, objects, view, size, selected });
-  }, [data, terrain, ground, atlas, sheet, selected, view, size, objects]);
+    drawTown(el, { data, terrain, ground, atlas, sheets, objects, view, size, selected });
+  }, [data, terrain, ground, atlas, sheets, selected, view, size, objects]);
 
   const zoom = (direction: 1 | -1, cx?: number, cy?: number) => {
     setView((current) => {

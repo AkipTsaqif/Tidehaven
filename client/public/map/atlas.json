@@ -1,14 +1,21 @@
 {
- "version": 2,
+ "version": 3,
  "tile": {
   "w": 32,
   "h": 16
  },
  "biomes": {
   "tropical": {
-   "image": "/map/atlas-tropical.png",
+   "pages": [
+    {
+     "image": "/map/atlas-tropical.png",
+     "width": 1024,
+     "height": 540
+    }
+   ],
    "frames": {
     "bakery_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 2,
@@ -26,6 +33,7 @@
      "assetClass": "building"
     },
     "bakery_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 2,
@@ -43,6 +51,7 @@
      "assetClass": "building"
     },
     "bakery_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 2,
@@ -60,6 +69,7 @@
      "assetClass": "building"
     },
     "camp_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 2,
@@ -77,6 +87,7 @@
      "assetClass": "building"
     },
     "clinic_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 2,
@@ -94,6 +105,7 @@
      "assetClass": "building"
     },
     "clinic_2": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 2,
@@ -111,6 +123,7 @@
      "assetClass": "building"
     },
     "clinic_3": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 2,
@@ -128,6 +141,7 @@
      "assetClass": "building"
     },
     "council_1": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 2,
@@ -145,6 +159,7 @@
      "assetClass": "building"
     },
     "council_2": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 2,
@@ -162,6 +177,7 @@
      "assetClass": "building"
     },
     "council_3": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 2,
@@ -179,6 +195,7 @@
      "assetClass": "building"
     },
     "court_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 110,
@@ -196,6 +213,7 @@
      "assetClass": "building"
     },
     "court_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 110,
@@ -213,6 +231,7 @@
      "assetClass": "building"
     },
     "court_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 110,
@@ -230,6 +249,7 @@
      "assetClass": "building"
     },
     "destroyed_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 110,
@@ -247,6 +267,7 @@
      "assetClass": "building"
     },
     "development_abandoned_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 110,
@@ -264,6 +285,7 @@
      "assetClass": "building"
     },
     "development_site_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 110,
@@ -281,6 +303,7 @@
      "assetClass": "building"
     },
     "farm_1": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 110,
@@ -298,6 +321,7 @@
      "assetClass": "building"
     },
     "farm_2": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 110,
@@ -315,6 +339,7 @@
      "assetClass": "building"
     },
     "farm_3": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 110,
@@ -332,6 +357,7 @@
      "assetClass": "building"
     },
     "fishery_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 110,
@@ -349,6 +375,7 @@
      "assetClass": "building"
     },
     "fishery_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 218,
@@ -366,6 +393,7 @@
      "assetClass": "building"
     },
     "fishery_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 218,
@@ -383,6 +411,7 @@
      "assetClass": "building"
     },
     "guard_house_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 218,
@@ -400,6 +429,7 @@
      "assetClass": "building"
     },
     "guard_house_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 218,
@@ -417,6 +447,7 @@
      "assetClass": "building"
     },
     "guard_house_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 218,
@@ -434,6 +465,7 @@
      "assetClass": "building"
     },
     "home_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 218,
@@ -451,6 +483,7 @@
      "assetClass": "building"
     },
     "home_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 218,
@@ -468,6 +501,7 @@
      "assetClass": "building"
     },
     "home_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 218,
@@ -485,6 +519,7 @@
      "assetClass": "building"
     },
     "home_site_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 218,
@@ -502,6 +537,7 @@
      "assetClass": "building"
     },
     "public_works_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 218,
@@ -519,6 +555,7 @@
      "assetClass": "building"
     },
     "public_works_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 326,
@@ -536,6 +573,7 @@
      "assetClass": "building"
     },
     "public_works_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 326,
@@ -553,6 +591,7 @@
      "assetClass": "building"
     },
     "shop_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 326,
@@ -570,6 +609,7 @@
      "assetClass": "building"
     },
     "shop_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 326,
@@ -587,6 +627,7 @@
      "assetClass": "building"
     },
     "shop_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 326,
@@ -604,6 +645,7 @@
      "assetClass": "building"
     },
     "timber_camp_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 326,
@@ -621,6 +663,7 @@
      "assetClass": "building"
     },
     "timber_camp_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 326,
@@ -638,6 +681,7 @@
      "assetClass": "building"
     },
     "timber_camp_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 326,
@@ -655,6 +699,7 @@
      "assetClass": "building"
     },
     "workshop_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 326,
@@ -672,6 +717,7 @@
      "assetClass": "building"
     },
     "workshop_2": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 326,
@@ -689,6 +735,7 @@
      "assetClass": "building"
     },
     "workshop_3": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 434,
@@ -708,9 +755,16 @@
    }
   },
   "temperate": {
-   "image": "/map/atlas-temperate.png",
+   "pages": [
+    {
+     "image": "/map/atlas-temperate.png",
+     "width": 1024,
+     "height": 540
+    }
+   ],
    "frames": {
     "bakery_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 2,
@@ -728,6 +782,7 @@
      "assetClass": "building"
     },
     "bakery_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 2,
@@ -745,6 +800,7 @@
      "assetClass": "building"
     },
     "bakery_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 2,
@@ -762,6 +818,7 @@
      "assetClass": "building"
     },
     "camp_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 2,
@@ -779,6 +836,7 @@
      "assetClass": "building"
     },
     "clinic_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 2,
@@ -796,6 +854,7 @@
      "assetClass": "building"
     },
     "clinic_2": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 2,
@@ -813,6 +872,7 @@
      "assetClass": "building"
     },
     "clinic_3": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 2,
@@ -830,6 +890,7 @@
      "assetClass": "building"
     },
     "council_1": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 2,
@@ -847,6 +908,7 @@
      "assetClass": "building"
     },
     "council_2": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 2,
@@ -864,6 +926,7 @@
      "assetClass": "building"
     },
     "council_3": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 2,
@@ -881,6 +944,7 @@
      "assetClass": "building"
     },
     "court_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 110,
@@ -898,6 +962,7 @@
      "assetClass": "building"
     },
     "court_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 110,
@@ -915,6 +980,7 @@
      "assetClass": "building"
     },
     "court_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 110,
@@ -932,6 +998,7 @@
      "assetClass": "building"
     },
     "destroyed_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 110,
@@ -949,6 +1016,7 @@
      "assetClass": "building"
     },
     "development_abandoned_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 110,
@@ -966,6 +1034,7 @@
      "assetClass": "building"
     },
     "development_site_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 110,
@@ -983,6 +1052,7 @@
      "assetClass": "building"
     },
     "farm_1": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 110,
@@ -1000,6 +1070,7 @@
      "assetClass": "building"
     },
     "farm_2": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 110,
@@ -1017,6 +1088,7 @@
      "assetClass": "building"
     },
     "farm_3": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 110,
@@ -1034,6 +1106,7 @@
      "assetClass": "building"
     },
     "fishery_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 110,
@@ -1051,6 +1124,7 @@
      "assetClass": "building"
     },
     "fishery_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 218,
@@ -1068,6 +1142,7 @@
      "assetClass": "building"
     },
     "fishery_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 218,
@@ -1085,6 +1160,7 @@
      "assetClass": "building"
     },
     "guard_house_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 218,
@@ -1102,6 +1178,7 @@
      "assetClass": "building"
     },
     "guard_house_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 218,
@@ -1119,6 +1196,7 @@
      "assetClass": "building"
     },
     "guard_house_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 218,
@@ -1136,6 +1214,7 @@
      "assetClass": "building"
     },
     "home_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 218,
@@ -1153,6 +1232,7 @@
      "assetClass": "building"
     },
     "home_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 218,
@@ -1170,6 +1250,7 @@
      "assetClass": "building"
     },
     "home_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 218,
@@ -1187,6 +1268,7 @@
      "assetClass": "building"
     },
     "home_site_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 218,
@@ -1204,6 +1286,7 @@
      "assetClass": "building"
     },
     "public_works_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 218,
@@ -1221,6 +1304,7 @@
      "assetClass": "building"
     },
     "public_works_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 326,
@@ -1238,6 +1322,7 @@
      "assetClass": "building"
     },
     "public_works_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 326,
@@ -1255,6 +1340,7 @@
      "assetClass": "building"
     },
     "shop_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 326,
@@ -1272,6 +1358,7 @@
      "assetClass": "building"
     },
     "shop_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 326,
@@ -1289,6 +1376,7 @@
      "assetClass": "building"
     },
     "shop_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 326,
@@ -1306,6 +1394,7 @@
      "assetClass": "building"
     },
     "timber_camp_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 326,
@@ -1323,6 +1412,7 @@
      "assetClass": "building"
     },
     "timber_camp_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 326,
@@ -1340,6 +1430,7 @@
      "assetClass": "building"
     },
     "timber_camp_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 326,
@@ -1357,6 +1448,7 @@
      "assetClass": "building"
     },
     "workshop_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 326,
@@ -1374,6 +1466,7 @@
      "assetClass": "building"
     },
     "workshop_2": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 326,
@@ -1391,6 +1484,7 @@
      "assetClass": "building"
     },
     "workshop_3": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 434,
@@ -1410,9 +1504,16 @@
    }
   },
   "arid": {
-   "image": "/map/atlas-arid.png",
+   "pages": [
+    {
+     "image": "/map/atlas-arid.png",
+     "width": 1024,
+     "height": 540
+    }
+   ],
    "frames": {
     "bakery_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 2,
@@ -1430,6 +1531,7 @@
      "assetClass": "building"
     },
     "bakery_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 2,
@@ -1447,6 +1549,7 @@
      "assetClass": "building"
     },
     "bakery_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 2,
@@ -1464,6 +1567,7 @@
      "assetClass": "building"
     },
     "camp_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 2,
@@ -1481,6 +1585,7 @@
      "assetClass": "building"
     },
     "clinic_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 2,
@@ -1498,6 +1603,7 @@
      "assetClass": "building"
     },
     "clinic_2": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 2,
@@ -1515,6 +1621,7 @@
      "assetClass": "building"
     },
     "clinic_3": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 2,
@@ -1532,6 +1639,7 @@
      "assetClass": "building"
     },
     "council_1": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 2,
@@ -1549,6 +1657,7 @@
      "assetClass": "building"
     },
     "council_2": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 2,
@@ -1566,6 +1675,7 @@
      "assetClass": "building"
     },
     "council_3": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 2,
@@ -1583,6 +1693,7 @@
      "assetClass": "building"
     },
     "court_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 110,
@@ -1600,6 +1711,7 @@
      "assetClass": "building"
     },
     "court_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 110,
@@ -1617,6 +1729,7 @@
      "assetClass": "building"
     },
     "court_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 110,
@@ -1634,6 +1747,7 @@
      "assetClass": "building"
     },
     "destroyed_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 110,
@@ -1651,6 +1765,7 @@
      "assetClass": "building"
     },
     "development_abandoned_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 110,
@@ -1668,6 +1783,7 @@
      "assetClass": "building"
     },
     "development_site_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 110,
@@ -1685,6 +1801,7 @@
      "assetClass": "building"
     },
     "farm_1": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 110,
@@ -1702,6 +1819,7 @@
      "assetClass": "building"
     },
     "farm_2": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 110,
@@ -1719,6 +1837,7 @@
      "assetClass": "building"
     },
     "farm_3": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 110,
@@ -1736,6 +1855,7 @@
      "assetClass": "building"
     },
     "fishery_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 110,
@@ -1753,6 +1873,7 @@
      "assetClass": "building"
     },
     "fishery_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 218,
@@ -1770,6 +1891,7 @@
      "assetClass": "building"
     },
     "fishery_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 218,
@@ -1787,6 +1909,7 @@
      "assetClass": "building"
     },
     "guard_house_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 218,
@@ -1804,6 +1927,7 @@
      "assetClass": "building"
     },
     "guard_house_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 218,
@@ -1821,6 +1945,7 @@
      "assetClass": "building"
     },
     "guard_house_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 218,
@@ -1838,6 +1963,7 @@
      "assetClass": "building"
     },
     "home_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 218,
@@ -1855,6 +1981,7 @@
      "assetClass": "building"
     },
     "home_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 218,
@@ -1872,6 +1999,7 @@
      "assetClass": "building"
     },
     "home_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 218,
@@ -1889,6 +2017,7 @@
      "assetClass": "building"
     },
     "home_site_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 218,
@@ -1906,6 +2035,7 @@
      "assetClass": "building"
     },
     "public_works_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 218,
@@ -1923,6 +2053,7 @@
      "assetClass": "building"
     },
     "public_works_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 326,
@@ -1940,6 +2071,7 @@
      "assetClass": "building"
     },
     "public_works_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 326,
@@ -1957,6 +2089,7 @@
      "assetClass": "building"
     },
     "shop_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 326,
@@ -1974,6 +2107,7 @@
      "assetClass": "building"
     },
     "shop_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 326,
@@ -1991,6 +2125,7 @@
      "assetClass": "building"
     },
     "shop_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 326,
@@ -2008,6 +2143,7 @@
      "assetClass": "building"
     },
     "timber_camp_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 326,
@@ -2025,6 +2161,7 @@
      "assetClass": "building"
     },
     "timber_camp_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 326,
@@ -2042,6 +2179,7 @@
      "assetClass": "building"
     },
     "timber_camp_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 326,
@@ -2059,6 +2197,7 @@
      "assetClass": "building"
     },
     "workshop_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 326,
@@ -2076,6 +2215,7 @@
      "assetClass": "building"
     },
     "workshop_2": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 326,
@@ -2093,6 +2233,7 @@
      "assetClass": "building"
     },
     "workshop_3": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 434,
@@ -2112,9 +2253,16 @@
    }
   },
   "northern": {
-   "image": "/map/atlas-northern.png",
+   "pages": [
+    {
+     "image": "/map/atlas-northern.png",
+     "width": 1024,
+     "height": 540
+    }
+   ],
    "frames": {
     "bakery_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 2,
@@ -2132,6 +2280,7 @@
      "assetClass": "building"
     },
     "bakery_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 2,
@@ -2149,6 +2298,7 @@
      "assetClass": "building"
     },
     "bakery_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 2,
@@ -2166,6 +2316,7 @@
      "assetClass": "building"
     },
     "camp_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 2,
@@ -2183,6 +2334,7 @@
      "assetClass": "building"
     },
     "clinic_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 2,
@@ -2200,6 +2352,7 @@
      "assetClass": "building"
     },
     "clinic_2": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 2,
@@ -2217,6 +2370,7 @@
      "assetClass": "building"
     },
     "clinic_3": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 2,
@@ -2234,6 +2388,7 @@
      "assetClass": "building"
     },
     "council_1": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 2,
@@ -2251,6 +2406,7 @@
      "assetClass": "building"
     },
     "council_2": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 2,
@@ -2268,6 +2424,7 @@
      "assetClass": "building"
     },
     "council_3": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 2,
@@ -2285,6 +2442,7 @@
      "assetClass": "building"
     },
     "court_1": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 110,
@@ -2302,6 +2460,7 @@
      "assetClass": "building"
     },
     "court_2": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 110,
@@ -2319,6 +2478,7 @@
      "assetClass": "building"
     },
     "court_3": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 110,
@@ -2336,6 +2496,7 @@
      "assetClass": "building"
     },
     "destroyed_1": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 110,
@@ -2353,6 +2514,7 @@
      "assetClass": "building"
     },
     "development_abandoned_1": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 110,
@@ -2370,6 +2532,7 @@
      "assetClass": "building"
     },
     "development_site_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 110,
@@ -2387,6 +2550,7 @@
      "assetClass": "building"
     },
     "farm_1": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 110,
@@ -2404,6 +2568,7 @@
      "assetClass": "building"
     },
     "farm_2": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 110,
@@ -2421,6 +2586,7 @@
      "assetClass": "building"
     },
     "farm_3": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 110,
@@ -2438,6 +2604,7 @@
      "assetClass": "building"
     },
     "fishery_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 110,
@@ -2455,6 +2622,7 @@
      "assetClass": "building"
     },
     "fishery_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 218,
@@ -2472,6 +2640,7 @@
      "assetClass": "building"
     },
     "fishery_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 218,
@@ -2489,6 +2658,7 @@
      "assetClass": "building"
     },
     "guard_house_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 218,
@@ -2506,6 +2676,7 @@
      "assetClass": "building"
     },
     "guard_house_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 218,
@@ -2523,6 +2694,7 @@
      "assetClass": "building"
     },
     "guard_house_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 218,
@@ -2540,6 +2712,7 @@
      "assetClass": "building"
     },
     "home_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 218,
@@ -2557,6 +2730,7 @@
      "assetClass": "building"
     },
     "home_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 218,
@@ -2574,6 +2748,7 @@
      "assetClass": "building"
     },
     "home_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 218,
@@ -2591,6 +2766,7 @@
      "assetClass": "building"
     },
     "home_site_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 218,
@@ -2608,6 +2784,7 @@
      "assetClass": "building"
     },
     "public_works_1": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 218,
@@ -2625,6 +2802,7 @@
      "assetClass": "building"
     },
     "public_works_2": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 326,
@@ -2642,6 +2820,7 @@
      "assetClass": "building"
     },
     "public_works_3": {
+     "page": 0,
      "rect": {
       "x": 102,
       "y": 326,
@@ -2659,6 +2838,7 @@
      "assetClass": "building"
     },
     "shop_1": {
+     "page": 0,
      "rect": {
       "x": 202,
       "y": 326,
@@ -2676,6 +2856,7 @@
      "assetClass": "building"
     },
     "shop_2": {
+     "page": 0,
      "rect": {
       "x": 302,
       "y": 326,
@@ -2693,6 +2874,7 @@
      "assetClass": "building"
     },
     "shop_3": {
+     "page": 0,
      "rect": {
       "x": 402,
       "y": 326,
@@ -2710,6 +2892,7 @@
      "assetClass": "building"
     },
     "timber_camp_1": {
+     "page": 0,
      "rect": {
       "x": 502,
       "y": 326,
@@ -2727,6 +2910,7 @@
      "assetClass": "building"
     },
     "timber_camp_2": {
+     "page": 0,
      "rect": {
       "x": 602,
       "y": 326,
@@ -2744,6 +2928,7 @@
      "assetClass": "building"
     },
     "timber_camp_3": {
+     "page": 0,
      "rect": {
       "x": 702,
       "y": 326,
@@ -2761,6 +2946,7 @@
      "assetClass": "building"
     },
     "workshop_1": {
+     "page": 0,
      "rect": {
       "x": 802,
       "y": 326,
@@ -2778,6 +2964,7 @@
      "assetClass": "building"
     },
     "workshop_2": {
+     "page": 0,
      "rect": {
       "x": 902,
       "y": 326,
@@ -2795,6 +2982,7 @@
      "assetClass": "building"
     },
     "workshop_3": {
+     "page": 0,
      "rect": {
       "x": 2,
       "y": 434,
