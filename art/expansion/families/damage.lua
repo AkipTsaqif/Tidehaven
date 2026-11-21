@@ -882,6 +882,334 @@ local function droughtDraw(L, c, theme, s)
   stormMeta(s.key, s.biome, app.params.meta, s.width, s.height, gx, gy)
 end
 
+-- The outbreak helpers take the ctx table and draw on the details layer, like every other effect.
+local function ctx_of(c) return c end
+
+
+-- ---------------------------------------------------------------- outbreak sign
+-- What an outbreak actually is in this game (src/domain/events/health.ts, startOutbreak): a health
+-- case on a RESIDENT, "harbour fever", infectious for 7-14 days, emitted with `targetId: null`.
+-- No building is involved and nothing is damaged. So this overlay is a PRESENTATION of "someone here
+-- is ill / under care": a small public-health notice standing on the ground at a building's entrance.
+-- It is NOT a statement that the building is ruined, condemned or unsafe.
+--
+-- Nothing here may touch the building: no rubble, char, mud, water, cracked ground, damage, bodies,
+-- boarded openings or window changes. The mark is a plain board with a simple ABSTRACT device, never
+-- a cross or any real-world organisation emblem.
+--
+-- Reuses the storm/flood/drought ownership-stamping helpers (stormBegin/stormEnd/stormQuad/stormMeta)
+-- so exact per-pixel provenance and the per-biome metadata sidecar come for free. Every helper below
+-- is NEW; no existing helper's behaviour is changed.
+--
+-- Severity changes ARRANGEMENT, never opacity:
+--   light    one small notice board on a post
+--   moderate board + a tied cloth marker
+--   severe   board + a short rope barrier between two posts + one more marker
+local OUTBREAK_SEVERITY = {
+  light = { posts = 1, cloth = 0, barrier = 0, stake = 0 },
+  moderate = { posts = 2, cloth = 1, barrier = 0, stake = 1 },
+  severe = { posts = 4, cloth = 1, barrier = 2, stake = 1 },
+}
+
+-- Biome differences are material and SHAPE, not recolour: a palm-thatch tie in the tropics, a timber
+-- notice in temperate, adobe-and-cloth in the arid belt, tarred pine posts in the north.
+local OUTBREAK_BIOME = {
+  -- Board spans are given in WORLD units; one world unit is 2 screen px, so a board of 4 is ~8 px
+  -- across screen. The delivered lots expose only a narrow sliver of free paving in front of the
+  -- building, so the notice has to be a SMALL street-level object to stand on real ground.
+  tropical = { seed = 71, post = 'thatch', h = 5, wide = 4, tall = 3 },
+  temperate = { seed = 73, post = 'timber', h = 5, wide = 4, tall = 3 },
+  arid = { seed = 79, post = 'adobe', h = 4, wide = 3, tall = 3 },
+  northern = { seed = 83, post = 'pine', h = 6, wide = 4, tall = 3 },
+}
+
+local function outbreakPalette(L, theme, bio)
+  local post, trim
+  if bio.post == 'thatch' then
+    post, trim = L.C.WHEAT, L.C.WOOD          -- lashed thatch bundle on a wood stake
+  elseif bio.post == 'adobe' then
+    post, trim = L.C.CONCRETE, L.C.PLASTER     -- sun-dried adobe pier
+  elseif bio.post == 'pine' then
+    post, trim = L.C.WOOD, L.C.CONCRETE        -- tarred pine, dark and slim
+  else
+    post, trim = L.C.WOOD, L.C.CONCRETE        -- ordinary timber
+  end
+  return {
+    post = post[3],
+    postDark = post[2],
+    trim = trim[3],
+    board = L.C.PLASTER[5],        -- pale notice board face
+    boardEdge = L.C.PLASTER[3],
+    boardDark = L.C.PLASTER[2],
+    ink = L.C.WOOD[1],             -- the abstract mark and lettering strokes
+    inkLight = L.C.WOOD[3],
+    cloth = theme.roof[4],         -- tied cloth marker
+    clothDark = theme.roof[2],
+    rope = L.C.WHEAT[3],           -- cordage
+    ropeDark = L.C.WHEAT[2],
+    herb = theme.leaf[3],          -- sealed bundle of herbs
+  }
+end
+
+-- A single upright post standing ON the ground: foot at world z = 0, so it can never float. Returns
+-- nothing; ownership is tracked by the enclosing stormBegin/stormEnd.
+-- Projected screen bbox of a post standing at (i, j) with height h, used by the validator to
+-- prove elevated pieces hang from a real post and that ropes meet their posts at both ends.
+local function postBBox(L, c, i, j, h, thick)
+  -- Real projected bbox of a post: sample its four vertical corners at z = 0 and z = h and take the
+  -- screen extrema. A hand-guessed box would make the "is it attached" test meaningless.
+  local w = thick or 2
+  local x0, x1, y0, y1 = math.huge, -math.huge, math.huge, -math.huge
+  for _, corner in ipairs({ { i, j }, { i + w, j }, { i + w, j + w }, { i, j + w } }) do
+    for _, z in ipairs({ 0, h }) do
+      local p = L.P(c, corner[1], corner[2], z)
+      x0 = math.min(x0, p[1]); x1 = math.max(x1, p[1])
+      y0 = math.min(y0, p[2]); y1 = math.max(y1, p[2])
+    end
+  end
+  return { math.floor(x0), math.floor(y0), math.ceil(x1), math.ceil(y1) }
+end
+
+local function outbreakPost(L, ctx, i, j, h, pal, thick)
+  local c = ctx.details
+  i, j = even(i), even(j)
+  local w = thick or 2
+  -- the post itself, foot on the ground plane
+  stormQuad(L, c, { { i, j, 0 }, { i + w, j, 0 }, { i + w, j + w, h }, { i, j + w, h } },
+    pal.post)
+  -- a darker shaded edge so it reads as a round-ish stake rather than a flat card
+  stormQuad(L, c, { { i + w, j, 0 }, { i + w + 1, j, 0 }, { i + w + 1, j + w, h },
+                    { i + w, j + w, h } }, pal.postDark)
+  -- a footing band where it meets the earth
+  stormQuad(L, c, { { i, j, 0 }, { i + w + 1, j, 0 }, { i + w + 1, j + w, 1 },
+                    { i, j + w, 1 } }, pal.trim)
+end
+
+-- The notice board: a small pale panel with a dark rim, hung on a post at world height z. The panel
+-- carries a simple ABSTRACT device (a ring of dots) - deliberately not a cross or any real emblem.
+local function outbreakBoard(L, ctx, i, j, z, wide, tall, pal)
+  local c = ctx.details
+  i, j, z = even(i), even(j), even(z)
+  -- rim, then the face inset by one unit on each side
+  stormQuad(L, c, { { i, j, z }, { i + wide, j, z }, { i + wide, j + 1, z + tall },
+                    { i, j + 1, z + tall } }, pal.boardEdge)
+  stormQuad(L, c, { { i + 1, j, z + 1 }, { i + wide - 1, j, z + 1 },
+                    { i + wide - 1, j + 1, z + tall - 1 }, { i + 1, j + 1, z + tall - 1 } },
+    pal.board)
+  -- abstract device: a small ring of dots, four around an empty centre. No cross, no lettering.
+  local cx, cz = i + math.floor(wide / 2), z + math.floor(tall / 2)
+  for _, o in ipairs({ { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } }) do
+    stormQuad(L, c, { { cx + o[1], j, cz + o[2] }, { cx + o[1] + 1, j, cz + o[2] },
+                      { cx + o[1] + 1, j + 1, cz + o[2] }, { cx + o[1], j + 1, cz + o[2] } },
+      pal.ink)
+  end
+  -- two short strokes below the device, suggesting a written notice without spelling anything
+  for k = 0, 1 do
+    stormQuad(L, c, { { i + 2, j, z + 2 - k }, { i + wide - 2, j, z + 2 - k },
+                      { i + wide - 2, j + 1, z + 2 - k }, { i + 2, j + 1, z + 2 - k } },
+      pal.inkLight)
+  end
+end
+
+-- A tied cloth marker hanging from a post: gathered at the top where it is tied, ragged at the
+-- bottom. The gather lies ON the post, so the cloth is attached rather than floating.
+local function outbreakCloth(L, ctx, i, j, z, wide, tall, pal, rnd)
+  local c = ctx.details
+  i, j, z = even(i), even(j), even(z)
+  -- the tie: a narrow band wrapped around the post at this height
+  stormQuad(L, c, { { i - 1, j, z + tall }, { i + 2, j, z + tall },
+                    { i + 2, j + 2, z + tall + 1 }, { i - 1, j + 2, z + tall + 1 } }, pal.rope)
+  -- the cloth falls from the tie
+  stormQuad(L, c, { { i, j, z + tall }, { i + wide, j, z + tall },
+                    { i + wide, j + 2, z }, { i, j + 2, z } }, pal.cloth)
+  stormQuad(L, c, { { i, j, z + tall }, { i + wide, j, z + tall },
+                    { i + wide, j + 1, z + tall - 1 }, { i, j + 1, z + tall - 1 } },
+    pal.clothDark)
+  -- a ragged hem: knock single pixels out of the last rows
+  for k = 0, wide - 1 do
+    if rnd(3) == 0 then
+      stormQuad(L, c, { { i + k, j, z }, { i + k + 1, j, z },
+                        { i + k + 1, j + 2, z + 1 }, { i + k, j + 2, z + 1 } }, pal.clothDark)
+    end
+  end
+end
+
+-- A sealed bundle of herbs tied to a post: a compact parcel bound with cord. Small, at head height.
+local function outbreakBundle(L, ctx, i, j, z, pal, rnd)
+  local c = ctx.details
+  i, j, z = even(i), even(j), even(z)
+  stormQuad(L, c, { { i, j, z }, { i + 3, j, z }, { i + 3, j + 2, z + 3 }, { i, j + 2, z + 3 } },
+    pal.herb)
+  -- cord binding, two wraps
+  for k = 0, 1 do
+    stormQuad(L, c, { { i - 1, j, z + 1 + k }, { i + 4, j, z + 1 + k },
+                      { i + 4, j + 2, z + 2 + k }, { i - 1, j + 2, z + 2 + k } }, pal.rope)
+  end
+  if rnd(2) == 0 then
+    stormQuad(L, c, { { i, j, z + 3 }, { i + 2, j, z + 3 }, { i + 2, j + 1, z + 4 },
+                      { i, j + 1, z + 4 } }, pal.herb)
+  end
+end
+
+-- A rope strung between TWO real posts. Every pixel of the rope lies between the two, and the
+-- validator checks both ends actually meet a post: a ladder of short quads, never a floating curve.
+local function outbreakRope(L, ctx, ia, ja, ib, jb, z, pal, rnd)
+  local c = ctx.details
+  local steps = math.max(math.abs(ib - ia), math.abs(jb - ja)) * 2
+  if steps <= 0 then return end
+  for k = 0, steps do
+    local t = k / steps
+    local i = even(math.floor(ia + (ib - ia) * t))
+    local j = math.floor(ja + (jb - ja) * t)
+    -- one unit of slack: the rope dips slightly in the middle, which is what a real cord does
+    local sag = math.floor(math.sin(t * math.pi) * 1.5)
+    stormQuad(L, c, { { i, j, z - sag }, { i + 1, j, z - sag },
+                      { i + 1, j + 1, z - sag + 1 }, { i, j + 1, z - sag + 1 } },
+      (k % 2 == 0) and pal.rope or pal.ropeDark)
+  end
+end
+
+-- A stake: a short pointed post driven into the ground, for the rope barrier.
+local function outbreakStake(L, ctx, i, j, h, pal)
+  local c = ctx.details
+  i, j = even(i), even(j)
+  stormQuad(L, c, { { i, j, 0 }, { i + 2, j, 0 }, { i + 2, j + 2, h }, { i, j + 2, h } },
+    pal.postDark)
+  stormQuad(L, c, { { i, j, 0 }, { i + 2, j, 0 }, { i + 2, j + 2, 1 }, { i, j + 2, 1 } },
+    pal.trim)
+end
+
+
+-- Outbreak metadata: the same record shape as stormMeta, plus the post bboxes and rope endpoints the
+-- outbreak validator needs to prove support. Kept as a SEPARATE helper so stormMeta stays
+-- byte-for-byte identical for storm/flood/drought.
+local function outbreakMeta(key, biome, outDir, w, h, gx, gy)
+  if not outDir then
+    error('outbreak_sign: no metadata destination (pass --script-param meta=<dir>)')
+  end
+  local fh = io.open(outDir .. '/' .. key .. '_' .. biome .. '.json', 'w')
+  if not fh then
+    error('outbreak_sign: cannot write metadata to ' .. outDir)
+  end
+  local parts = {}
+  for _, p in ipairs(STORM_STAMPS.pieces) do
+    local xy = {}
+    for k = 1, p.n do
+      xy[#xy + 1] = p.sx[k][1]
+      xy[#xy + 1] = p.sx[k][2]
+    end
+    local extra = ''
+    if p.posts then
+      local bs = {}
+      for _, post in ipairs(p.posts) do
+        local b = post.bbox
+        bs[#bs + 1] = string.format('[%d,%d,%d,%d]', b[1], b[2], b[3], b[4])
+      end
+      extra = ',"posts":[' .. table.concat(bs, ',') .. ']'
+    end
+    if p.rope_ends then
+      local es = {}
+      for _, e in ipairs(p.rope_ends) do es[#es + 1] = e and 'true' or 'false' end
+      extra = extra .. ',"rope_ends":[' .. table.concat(es, ',') .. ']'
+    end
+    parts[#parts + 1] = string.format(
+      '{"class":"%s","kind":"%s","anchor":[%s,%s,%s],"px":%d,"stamps":[%s]%s}',
+      p.class, p.kind, p.anchor[1], p.anchor[2], p.anchor[3], p.n,
+      table.concat(xy, ','), extra)
+  end
+  fh:write('{"key":"' .. key .. '","biome":"' .. biome .. '","size":[' .. w .. ',' .. h
+    .. '],"gx":' .. gx .. ',"gy":' .. gy
+    .. ',"pieces":[' .. table.concat(parts, ',') .. ']}')
+  fh:close()
+end
+
+local function outbreakDraw(L, c, theme, s)
+  local A, D = s.A, s.B
+  local gx = s.pivot.x - A + D
+  local gy = s.pivot.y - (A + D) / 2
+  local sev = OUTBREAK_SEVERITY[s.visualState] or OUTBREAK_SEVERITY.moderate
+  local bio = OUTBREAK_BIOME[s.biome] or OUTBREAK_BIOME.temperate
+  local rnd = rng(bio.seed * 7919 + s.width * 31 + s.height * 17
+    + (s.visualState == 'severe' and 3 or s.visualState == 'light' and 1 or 2))
+  local pal = outbreakPalette(L, theme, bio)
+
+  -- The marker stands on the ground in FRONT of the building: the near corner of the reserved lot,
+  -- where an entrance faces the street. Everything is at world z >= 0, growing upward only.
+  local inset = math.max(6, math.floor(math.min(A, D) / 8))
+  local mid = math.floor(A / 2)
+
+  -- ---- the notice board on its post: the piece that is present at EVERY severity
+  local bi = mid - math.floor(bio.wide / 2)
+  -- The OUTER front edge of the lot, so the marker stands clear of the building mass on the
+  -- paving by the entrance. bj = D-2 is the near corner row, the frontmost ground available.
+  local bj = D - 2
+  stormBegin('ground', 'post', { bi, bj, 0 })
+  outbreakPost(L, ctx_of(c), bi, bj, bio.h, pal)
+  stormEnd()
+
+  -- The board hangs LOW on its post. At head height it interpenetrated the building mass behind the
+  -- lot; a street-level notice is both more legible from the isometric camera and clear of the wall.
+  local boardZ = 2
+  stormBegin('ground', 'board', { bi - 1, bj, boardZ })
+  -- record the post this board hangs from, so the validator can prove it is not floating
+  STORM_PIECE.posts = { { bbox = postBBox(L, c.details, bi, bj, bio.h) } }
+  outbreakBoard(L, ctx_of(c), bi - 1, bj, boardZ, bio.wide, bio.tall, pal)
+  stormEnd()
+
+  -- ---- severity ARRANGEMENT: cloth marker, herb bundle, then a rope barrier between stakes
+  if sev.cloth > 0 then
+    -- The cloth is TIED TO the notice post and hangs in the SAME column. Drawing it a few units to
+    -- one side put it off the lot's narrow front paving, where it could not be placed at all; tied
+    -- here it occupies the post's own columns, so wherever the post can stand, the cloth can hang.
+    -- It hangs at STREET level (z = 0, a short drop), hugging the post's own columns. Hung higher,
+    -- the cloth projected up into the building that rises behind the lot and interpenetrated it: an
+    -- elevated mark at the lot's FRONT row lands on the storeys behind it in an isometric view.
+    stormBegin('ground', 'cloth', { bi, bj, 0 })
+    STORM_PIECE.posts = { { bbox = postBBox(L, c.details, bi, bj, bio.h) } }
+    outbreakCloth(L, ctx_of(c), bi, bj, 0, 2, 2, pal, rnd)
+    stormEnd()
+  end
+
+  if sev.stake > 0 then
+    local hi = bi                     -- bundle ON the post column, like the cloth
+    stormBegin('ground', 'bundle', { hi, bj, 1 })
+    STORM_PIECE.posts = { { bbox = postBBox(L, c.details, hi, bj, bio.h) } }
+    outbreakBundle(L, ctx_of(c), hi, bj, 1, pal, rnd)
+    stormEnd()
+  end
+
+  if sev.barrier > 0 then
+    -- two stakes with a rope between them: BOTH ends land on a post, by construction
+    -- Stakes at the board's own ends: the cordon then spans exactly the board's columns, so it
+    -- fits wherever the board fits. Spreading past the board put the cordon off the paving.
+    local sa = bi
+    local sb = bi + bio.wide - 2
+    stormBegin('ground', 'stake', { sa, bj, 0 })
+    outbreakStake(L, ctx_of(c), sa, bj, 5, pal)
+    stormEnd()
+    stormBegin('ground', 'stake', { sb, bj, 0 })
+    outbreakStake(L, ctx_of(c), sb, bj, 5, pal)
+    stormEnd()
+    stormBegin('ground', 'rope', { sa, bj, 4 })
+    -- BOTH ends of the rope are recorded against the two stakes it spans
+    STORM_PIECE.posts = { { bbox = postBBox(L, c.details, sa, bj, 5) },
+                            { bbox = postBBox(L, c.details, sb, bj, 5) } }
+    STORM_PIECE.rope_ends = { true, true }
+    outbreakRope(L, ctx_of(c), sa + 2, bj, sb, bj, 4, pal, rnd)
+    stormEnd()
+  end
+
+  if sev.posts > 3 then
+    -- one more free-standing marker post, so severe reads as a small cordon rather than a sign
+    local pi = bi + bio.wide - 2           -- extra post at the board's far end
+    stormBegin('ground', 'post', { pi, bj, 0 })
+    outbreakPost(L, ctx_of(c), pi, bj, bio.h - 3, pal, 2)
+    stormEnd()
+  end
+
+  outbreakMeta(s.key, s.biome, app.params.meta, s.width, s.height, gx, gy)
+end
+
 function F.draw(L, B, c, theme, s)
   local A, D = s.A, s.B
   local gx = s.pivot.x - A + D
@@ -899,6 +1227,11 @@ function F.draw(L, B, c, theme, s)
 
   if s.kind == 'drought_ground' then
     droughtDraw(L, c, theme, s)
+    return
+  end
+
+  if s.kind == 'outbreak_sign' then
+    outbreakDraw(L, c, theme, s)
     return
   end
 
