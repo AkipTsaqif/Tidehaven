@@ -561,6 +561,327 @@ local function floodDraw(L, c, theme, s)
   stormMeta(s.key, s.biome, app.params.meta, s.width, s.height, gx, gy)
 end
 
+
+-- ---------------------------------------------------------------- drought ground
+-- What the simulation's drought actually does: it lowers one building's condition and can injure
+-- occupants. It does NOT destroy stock, kill crops or collapse anything. So this effect draws dry,
+-- stressed GROUND and plants AROUND a building - cracked soil, bleached earth, thin dust drifts,
+-- wilted plants, dry split timber - and never ruin, flames, mud, water or debris piles.
+--
+-- GROUND CLASS ONLY: nothing here may touch WALL or ROOF material, and the building is not tinted.
+--
+-- Reuses the storm/flood ownership-stamping helpers (stormBegin/stormEnd/stormQuad/stormMeta) so
+-- exact per-pixel provenance and the per-biome metadata sidecar come for free. No existing helper's
+-- behaviour is changed; the helpers below are new.
+--
+-- Severity changes the AREA of dry ground, the NUMBER and SIZE of crack clusters and how many plants
+-- are affected - never opacity.
+local DROUGHT_SEVERITY = {
+  light = { patches = 4, cracks = 2, crackLen = 3, plants = 1, reach = 0.40 },
+  moderate = { patches = 8, cracks = 4, crackLen = 4, plants = 2, reach = 0.68 },
+  severe = { patches = 14, cracks = 6, crackLen = 5, plants = 3, reach = 1.00 },
+}
+
+-- Arid ground is ALREADY dry, so its drought cannot read as "more brown". It reads through a
+-- distinct PALE tone (bleached earth + wheat straw), DEEPER and THICKER cracks, more dust and dead
+-- scrub. Each biome therefore has its own dry-earth ramp as well as its own shape parameters, and
+-- the arid ramp is the only one that is genuinely pale.
+
+local DROUGHT_BIOME = {
+  tropical = { seed = 13, crackDepth = 2, crackWidth = 1, dust = 2, scrub = 1, bleached = 3 },
+  temperate = { seed = 29, crackDepth = 2, crackWidth = 1, dust = 3, scrub = 1, bleached = 2 },
+  arid = { seed = 37, crackDepth = 5, crackWidth = 2, dust = 5, scrub = 4, bleached = 1 },
+  northern = { seed = 47, crackDepth = 1, crackWidth = 1, dust = 2, scrub = 2, bleached = 2 },
+}
+
+local function even(n) return n - (n % 2) end
+
+local function droughtPalette(L, theme, tone)
+  -- DRY EARTH MUST READ LIGHTER THAN THE GRASS IT SITS ON. Grass under a lot is GRASS[4]
+  -- (luminance ~135), so the dry ground has to sit ABOVE that: DIRT[4]/[5] or the pale WHEAT ramp.
+  -- Before this revision the "soil" tone was DIRT[3] (lum 97) -- DARKER than the grass -- and the
+  -- cracks were filled 2x2 cells in DIRT[1], so 61% of every mark was one dark brown. Dark tones are
+  -- now reserved for the crack LINES, which cover a small share of the mark.
+  tone = tone or {}
+  local base = tone.tone or L.C.DIRT[4]
+  local light = tone.toneLight or L.C.DIRT[5]
+  return {
+    soil = base,                 -- dry earth: the bulk of the mark, lighter than grass
+    bleached = light,            -- the palest, sun-bleached earth
+    pale = L.C.WHEAT[4],         -- dusty straw highlight
+    crack = L.C.DIRT[1],         -- crack line ONLY
+    crackLit = L.C.DIRT[2],      -- crack line edge ONLY
+    dead = L.C.BARN[2],          -- dead leaf / dead scrub
+    deadLit = L.C.BARN[3],
+    trunk = L.C.WOOD[2],         -- dry split timber
+    trunkLit = L.C.WOOD[3],
+    drv = theme.leaf,            -- a still-alive leaf tone, used sparingly
+  }
+end
+
+-- A single stamped pixel. Every drought helper must go through stormQuad or droughtDot, otherwise
+-- painted pixels would have no owner and exact recomposition would fail.
+local function droughtDot(L, ctx, i, j, z, col)
+  local c = ctx.details
+  stormQuad(L, c, { { i, j, z }, { i + 1, j, z }, { i + 1, j + 1, z }, { i, j + 1, z } }, col)
+end
+
+-- One flat ground patch on the lot ground plane (world z = 0): dry, bleached or dusty earth.
+local function droughtPatch(L, ctx, i, j, w, d, col)
+  local c = ctx.details
+  stormQuad(L, c, { { i, j, 0 }, { i + w, j, 0 }, { i + w, j + d, 0 }, { i, j + d, 0 } }, col)
+end
+
+-- A crack run: a jagged dark line across the dry ground, with a lit edge on one side so it reads as
+-- a fissure rather than a smear. Runs in world i/j on the ground plane.
+local function droughtCrack(L, ctx, i, j, len, depth, width, pal, rnd)
+  local c = ctx.details
+  local ci, cj = even(i), even(j)
+  -- A crack is a THIN LINE, not a filled cell. Painting a 2x2 world cell solid made the cracks the
+  -- dominant colour of the whole mark (61% of pixels in the 8x8 sprites). The line is therefore
+  -- built from 2-wide, 1-tall strips: long in screen x, one row deep, so a fissure reads as a hair
+  -- line through pale earth. `width` is how many screen rows deep it bites (arid bites deeper).
+  local steps = len * 2
+  local wide = math.max(1, width or 1)
+  for k = 0, steps do
+    for w = 0, wide - 1 do
+      stormQuad(L, c, { { ci, cj + w * 2, 0 }, { ci + 2, cj + w * 2, 0 },
+                        { ci + 2, cj + w * 2 + 1, 0 }, { ci, cj + w * 2 + 1, 0 } },
+        (w == wide - 1 and k % 6 == 0) and pal.crackLit or pal.crack)
+    end
+    -- advance by half a world unit (one world i is two screen x), with a shallow adjacent wander
+    ci = ci + 1
+    if k % 6 == 5 then cj = cj + 2 end
+    -- occasional deeper fissure: a short SECOND line offset from the main one, still adjacent
+    if k % 11 == 10 and depth > 1 then
+      stormQuad(L, c, { { ci, cj + 2, 0 }, { ci + 2, cj + 2, 0 },
+                        { ci + 2, cj + 3, 0 }, { ci, cj + 3, 0 } }, pal.crack)
+    end
+  end
+end
+
+-- A thin dust drift: a very sparse pale scatter, never a solid block.
+local function droughtDust(L, ctx, i, j, w, d, pal, rnd, density)
+  local c = ctx.details
+  -- Dust drifts are CONNECTED thin streaks, not confetti: each row's run always overlaps the run
+  -- behind it, so the mark is one piece.
+  local x = 1 + rnd(math.max(1, w - 3))
+  for y = 0, d - 1 do
+    local run = 2 + rnd(3)
+    local col = (rnd(3) == 0) and pal.pale or pal.bleached
+    stormQuad(L, c, { { i + x, j + y, 0 }, { i + x + run, j + y, 0 },
+                      { i + x + run, j + y + 1, 0 }, { i + x, j + y + 1, 0 } }, col)
+    if rnd(2) == 0 then x = math.max(0, x - 1) else x = math.min(w - run, x + 1) end
+  end
+end
+
+-- A WILTED PALM: the crown droops and the trunk leans hard, unlike the healthy palm helper whose
+-- four straight leaf quads stand out. New helper - the shared plant helper is untouched.
+local function droughtWiltedPalm(L, ctx, i, j, size, pal, rnd)
+  local c = ctx.details
+  -- leaning trunk, 2 px per step, drawn as stacked dots so it stays on the ground plane's footprint
+  local height = 5 + size
+  local lean = (rnd(2) == 0) and 1 or -1
+  for k = 0, height - 1 do
+    local shift = lean * math.floor(k / 3)
+    droughtDot(L, ctx, i + shift, j, k, pal.trunk)
+    if k % 2 == 0 then droughtDot(L, ctx, i + shift + 1, j, k, pal.trunkLit) end
+  end
+  -- Drooping crown: a CONNECTED dead head at the trunk tip, with leaves hanging from cells that
+  -- OVERLAP the head by one unit (a world unit is 2 screen px, so a 2-unit-wide cell is needed for
+  -- consecutive cells to touch).
+  local tip = i + lean * math.floor(height / 3)
+  stormQuad(L, c, { { tip, j, height - 1 }, { tip + 4, j, height - 1 },
+                    { tip + 4, j + 4, height - 1 }, { tip, j + 4, height - 1 } }, pal.dead)
+  for k = 0, 3 do
+    local dx = (k - 1) * 2
+    stormQuad(L, c, { { tip + dx, j, height - 1 }, { tip + dx + 2, j, height - 1 },
+                      { tip + dx + 2, j + 2, height - 1 - (k % 2) },
+                      { tip + dx, j + 2, height - 1 - (k % 2) } }, pal.dead)
+  end
+  droughtDot(L, ctx, tip + 1, j + 1, height, pal.deadLit)
+end
+
+-- Dead scrub / dry brush: a low clump of dead twigs. Arid gets more of these.
+local function droughtScrub(L, ctx, i, j, size, pal, rnd)
+  local c = ctx.details
+  for k = 0, 2 + size do
+    local ii = i + rnd(size + 1) - 1
+    local jj = j + rnd(2)
+    local h = 1 + rnd(2)
+    for z = 0, h do
+      stormQuad(L, c, { { ii, jj, z }, { ii + 1, jj, z }, { ii + 1, jj + 1, z },
+                        { ii, jj + 1, z } }, (z == h) and pal.deadLit or pal.dead)
+    end
+  end
+end
+
+-- A CACTUS STILL ALIVE in arid: drought makes cacti look dry at the ribs but they survive, so this
+-- is a green body with bleached rib lines, not a dead stump.
+local function droughtLiveCactus(L, ctx, i, j, size, pal, rnd)
+  local c = ctx.details
+  local green = pal.drv
+  local h = 6 + size
+  i, j = even(i), even(j)
+  -- Same footprint as the shared cactus helper, but the rib dots are BLEACHED: the drought read is
+  -- dry ribs on a plant that SURVIVES, not a dead stump. Built from stamped quads rather than L.box,
+  -- because an L.box pixel would have no owner and exact recomposition would fail.
+  for z = 0, h - 1 do
+    stormQuad(L, c, { { i - 2, j - 2, z }, { i + 2, j - 2, z },
+                      { i + 2, j + 2, z }, { i - 2, j + 2, z } }, green)
+  end
+  for z = 1, h - 1, 2 do
+    droughtDot(L, ctx, i - 2, j - 2, z, pal.pale)
+  end
+  if rnd(2) == 0 then
+    for z = 2, 4 do
+      stormQuad(L, c, { { i + 2, j - 2, z }, { i + 4, j - 2, z },
+                        { i + 4, j, z }, { i + 2, j, z } }, green)
+    end
+  end
+end
+
+-- A BARE PINE: the northern drought read is a conifer with a thinned, browning canopy, not a pile of
+-- timber. Trunk plus sparse dead needles.
+local function droughtBarePine(L, ctx, i, j, size, pal, rnd)
+  local c = ctx.details
+  local h = 7 + size
+  for z = 0, h do
+    droughtDot(L, ctx, i, j, z, pal.trunk)
+    if z % 3 == 0 then droughtDot(L, ctx, i + 1, j, z, pal.trunkLit) end
+  end
+  for tier = 0, 2 do
+    local z = h - tier * 3
+    local span = 2 + tier
+    for k = -span, span, 2 do
+      if rnd(4) ~= 0 then droughtDot(L, ctx, i + k, j, z, pal.dead) end
+    end
+  end
+end
+
+-- Dry, split timber at ground level: a pale cracked plank, no storm-style breakage.
+local function droughtSplitTimber(L, ctx, i, j, len, pal, rnd)
+  local c = ctx.details
+  stormQuad(L, c, { { i, j, 0 }, { i + len, j, 0 }, { i + len, j + 2, 0 }, { i, j + 2, 0 } },
+    pal.trunk)
+  stormQuad(L, c, { { i, j, 0 }, { i + len, j, 0 }, { i + len, j + 1, 0 }, { i, j + 1, 0 } },
+    pal.trunkLit)
+  -- a split running along the grain, and one splinter lifted
+  local k = 1 + rnd(math.max(1, len - 2))
+  stormQuad(L, c, { { i + k, j, 0 }, { i + k + 1, j, 0 }, { i + k + 1, j + 2, 0 },
+                    { i + k, j + 2, 0 } }, pal.crack)
+  if rnd(2) == 0 then
+    stormQuad(L, c, { { i + len - 1, j, 0 }, { i + len, j, 0 }, { i + len, j + 1, 0 },
+                      { i + len - 1, j + 1, 0 } }, pal.dead)
+  end
+end
+
+local function droughtDraw(L, c, theme, s)
+  local A, D = s.A, s.B
+  local gx = s.pivot.x - A + D
+  local gy = s.pivot.y - (A + D) / 2
+  local sev = DROUGHT_SEVERITY[s.visualState] or DROUGHT_SEVERITY.moderate
+  local bio = DROUGHT_BIOME[s.biome] or DROUGHT_BIOME.temperate
+  local rnd = rng(bio.seed * 7919 + s.width * 31 + s.height * 17
+    + (s.visualState == 'severe' and 3 or s.visualState == 'light' and 1 or 2))
+  -- biome dry-earth ramp, built from the live palette table (iso_lib is only available at draw time)
+  local TONE = {
+    tropical = { tone = L.C.DIRT[5], toneLight = L.C.WHEAT[4] },
+    temperate = { tone = L.C.DIRT[5], toneLight = L.C.WHEAT[4] },
+    arid = { tone = L.C.WHEAT[4], toneLight = L.C.WHEAT[5] },
+    northern = { tone = L.C.DIRT[5], toneLight = L.C.WHEAT[4] },
+  }
+  local pal = droughtPalette(L, theme, TONE[s.biome] or TONE.temperate)
+
+  -- Everything lives inside the reserved lot footprint, on the ground plane.
+  local inset = math.max(6, math.floor(math.min(A, D) / 8))
+  local i0, j0 = inset, inset
+  local i1, j1 = A - inset, D - inset
+  local span = i1 - i0
+  local depthSpan = j1 - j0
+
+  -- the dry area grows with severity: a band measured from the FRONT of the lot inward
+  local reach = math.max(4, math.floor(depthSpan * sev.reach))
+  local jFront = j1 - 2
+  local jBack = math.max(j0 + 2, j1 - 2 - reach)
+
+  -- ---- 1. DRY / BLEACHED EARTH: the base of the effect, one piece per patch so each can be
+  -- omitted on its own rather than taking the whole ground with it.
+  for n = 1, sev.patches do
+    local w = 4 + rnd(5)
+    local d = 2 + rnd(3)
+    local i = i0 + rnd(math.max(2, span - w))
+    local j = jBack + rnd(math.max(2, reach - d))
+    stormBegin('ground', 'dryEarth', { i, j, 0 })
+    droughtPatch(L, c, i, j, w, d, (n % 3 == 0) and pal.bleached or pal.soil)
+    stormEnd()
+  end
+
+  -- ---- 2. CRACK CLUSTERS: irregular fissure networks, each cluster its own piece
+  for n = 1, sev.cracks do
+    local len = math.max(3, sev.crackLen - rnd(4))
+    local i = i0 + rnd(math.max(2, span - len - 2))
+    local j = jBack + rnd(math.max(2, reach - 2))
+    stormBegin('ground', 'crack', { i, j, 0 })
+    -- One call: the fissure forks INTERNALLY (see the depth branch inside droughtCrack). A second
+    -- droughtCrack call would start at a detached point and break the piece into islands.
+    droughtCrack(L, c, i, j, len, bio.crackDepth, bio.crackWidth, pal, rnd)
+    stormEnd()
+  end
+
+  -- ---- 3. DUST DRIFTS: thin pale scatter, never a solid block
+  for n = 1, bio.dust do
+    local w, d = 5 + rnd(5), 2 + rnd(2)
+    local i = i0 + rnd(math.max(2, span - w))
+    local j = jBack + rnd(math.max(2, reach - d))
+    stormBegin('ground', 'dust', { i, j, 0 })
+    droughtDust(L, c, i, j, w, d, pal, rnd, 26)
+    stormEnd()
+  end
+
+  -- ---- 4. DRY SPLIT TIMBER at ground level
+  for n = 1, 1 + bio.scrub do
+    local len = 4 + rnd(3)
+    local i = i0 + rnd(math.max(2, span - len))
+    local j = jBack + rnd(math.max(2, reach - 2))
+    stormBegin('ground', 'dryTimber', { i, j, 0 })
+    droughtSplitTimber(L, c, i, j, len, pal, rnd)
+    stormEnd()
+  end
+
+  -- ---- 5. AFFECTED PLANTS: wilted / dead, one piece each, biome-appropriate form
+  for n = 1, sev.plants do
+    local i = i0 + 3 + rnd(math.max(2, span - 6))
+    local j = jBack + 2 + rnd(math.max(2, reach - 3))
+    if s.biome == 'arid' then
+      -- arid keeps its cactus ALIVE: the drought read is dry ribs plus dead scrub around it
+      stormBegin('ground', 'cactus', { i, j, 0 })
+      droughtLiveCactus(L, c, i, j, 3, pal, rnd)
+      stormEnd()
+      for k = 1, bio.scrub do
+        stormBegin('ground', 'scrub', { i + 4 + k, j + 2, 0 })
+        droughtScrub(L, c, i + 4 + k, j + 2, 2, pal, rnd)
+        stormEnd()
+      end
+    elseif s.biome == 'northern' then
+      stormBegin('ground', 'pine', { i, j, 0 })
+      droughtBarePine(L, c, i, j, 3, pal, rnd)
+      stormEnd()
+    else
+      stormBegin('ground', 'palm', { i, j, 0 })
+      droughtWiltedPalm(L, c, i, j, 3, pal, rnd)
+      stormEnd()
+      if n == 1 then
+        stormBegin('ground', 'scrub', { i + 4, j + 2, 0 })
+        droughtScrub(L, c, i + 4, j + 2, 2, pal, rnd)
+        stormEnd()
+      end
+    end
+  end
+
+  stormMeta(s.key, s.biome, app.params.meta, s.width, s.height, gx, gy)
+end
+
 function F.draw(L, B, c, theme, s)
   local A, D = s.A, s.B
   local gx = s.pivot.x - A + D
@@ -573,6 +894,11 @@ function F.draw(L, B, c, theme, s)
 
   if s.kind == 'flood_stain' then
     floodDraw(L, c, theme, s)
+    return
+  end
+
+  if s.kind == 'drought_ground' then
+    droughtDraw(L, c, theme, s)
     return
   end
 
