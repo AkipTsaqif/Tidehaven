@@ -1123,6 +1123,439 @@ local function outbreakMeta(key, biome, outDir, w, h, gx, gy)
   fh:close()
 end
 
+-- ---------------------------------------------------------------- repair scaffold
+-- What repair actually is in this game (src/domain/events/disasters.ts, the 'rebuilding' stage):
+-- each funded step spends 1 timber and 120 cents of labour and restores 800 condition points; with
+-- no timber or no funds the repair STALLS and a 'repair_blocked' event fires. So a scaffold means
+-- "this building is being repaired", and it must read as standing idle while the work waits. It is
+-- NOT a statement that the building is ruined, and it must never hide or replace it.
+--
+-- Therefore: no fire, soot, flood stain, mud, rubble, collapse, cracks, bodies or workers. No active
+-- animation. Nothing is cut into the building - no boarding, no window changes, no holes.
+--
+-- Geometry is built in WORLD coordinates, as the accepted art/generated/damage-proof proof
+-- established after review: explicit world (i, j, z) for footings, posts, platforms, rails and
+-- braces, and ONE CONSTANT WORLD z per platform projected with the 2:1 projection. The original
+-- draft forced one SCREEN y for every platform endpoint, which is not level in world space on a 2:1
+-- frontage - measured platform heights came out 121/131/141/133/125 across five posts.
+--
+-- ---- THE SHAPE: bays running ALONG a facade, not a single column
+-- A scaffold is a lattice: a row of uprights with platforms, toe rails and diagonal bracing spanning
+-- between them. The first cut of this branch drew one narrow column (10/14/18 px wide) which read as
+-- a ladder or a mast, and the review was right. The row of uprights now runs along the world i axis,
+-- which on screen runs diagonally across the frontage, so N posts read as a frame rather than a pole.
+--
+-- ---- THE HEIGHT: measured from the building that will receive it
+-- A 3x3 cottage must not get a scaffold taller than itself. The recipe cannot see a mask, so the cap
+-- comes from the OVERLAY's own canvas, which is what actually limits how much building this sprite
+-- has to cover: profile[h] is the lot depth the canvas can show at screen row h, and the row where
+-- profile[h] drops below the lot's footprint depth is exactly where the camera plane rises above the
+-- ground. Above that row the wall is behind the camera plane, so a scaffold may rise until it would
+-- leave the canvas. The drawn top is then held to TOP_FRACTION of the room above the foot, which
+-- keeps a small lot's single-platform repair at roughly half the building's height and a megatall
+-- tower's scaffold on its LOWER STOREYS - never an invented full-height cage.
+--
+-- ---- IN FRONT, AND PROVABLE
+-- x = gx + i - j and y = gy + (i + j)/2 - z. Along the view ray both x and y are fixed only when
+-- (di, dj, dz) = (t, t, t), so at a shared pixel the surface with the LARGER world z is the NEARER
+-- one. That is a derivation from the projection, not a convention, and compose.py uses it to prove
+-- every wall/roof pixel the scaffold covers is genuinely in front of it.
+--
+-- Reuses the accepted ownership-stamping helpers (stormBegin/stormEnd/stormQuad) so exact per-pixel
+-- provenance comes for free. Every helper below is NEW.
+
+-- Severity is legible in WIDTH first and height second: bays grow 2 -> 3 -> 4, levels 1 -> 2 -> 2.
+-- Height also grows but stays inside the measured cap, so severe is a bigger frame, not a taller pole.
+local REPAIR_SEVERITY = {
+  light    = { bays = 2, levels = 1, tarp = 0, store = 1, frac = 0.55, span = 0.60 },
+  moderate = { bays = 3, levels = 2, tarp = 1, store = 2, frac = 0.78, span = 0.80 },
+  severe   = { bays = 4, levels = 2, tarp = 2, store = 3, frac = 1.00, span = 1.00 },
+}
+
+-- Biome differences are material AND SHAPE, never a recolour: lashed bamboo in the tropics, squared
+-- timber in temperate, mud-brick pier and timber in the arid belt, tarred pine in the north.
+local REPAIR_BIOME = {
+  tropical  = { seed = 131, post = 'bamboo', brace = 'x', tie = 'lash' },
+  temperate = { seed = 137, post = 'timber', brace = 'diag', tie = 'nail' },
+  arid      = { seed = 139, post = 'mudbrick', brace = 'diag', tie = 'lash' },
+  northern  = { seed = 149, post = 'pine', brace = 'x', tie = 'nail' },
+}
+
+local function repairPalette(L, theme, bio)
+  local post, deck, deckLit, tie
+  if bio.post == 'bamboo' then
+    post = L.C.WHEAT
+    deck, deckLit = L.C.WOOD[3], L.C.WOOD[4]
+    tie = L.C.FOLIAGE[3]
+  elseif bio.post == 'mudbrick' then
+    post = L.C.CONCRETE
+    deck, deckLit = L.C.DIRT[4], L.C.DIRT[5]
+    tie = L.C.WHEAT[3]
+  elseif bio.post == 'pine' then
+    post = L.C.WOOD
+    deck, deckLit = L.C.WOOD[2], L.C.WOOD[3]
+    tie = L.C.STEEL[3]
+  else
+    post = L.C.WOOD
+    deck, deckLit = L.C.WOOD[3], L.C.WOOD[4]
+    tie = L.C.WHEAT[3]
+  end
+  return {
+    post = post[3], postDark = post[2], postLit = post[4],
+    deck = deck, deckLit = deckLit, deckDark = L.C.WOOD[2],
+    tie = tie, rope = L.C.WHEAT[3],
+    tarp = theme.roof[4], tarpDark = theme.roof[2],
+    stone = L.C.CONCRETE[3], stoneDark = L.C.CONCRETE[2],
+    tool = L.C.STEEL[4], toolDark = L.C.STEEL[2],
+  }
+end
+
+-- Record the world box a piece occupies, so the review tool can solve for the piece's depth at any
+-- pixel it paints (see validate_facade_relation) instead of trusting a number the recipe chose.
+-- Boxes are padded by one world unit on every side. The quads are rasterised by pixel-centre
+-- inclusion, so a quad's boundary pixels belong to the piece even though its world corner stops at
+-- the edge; a box recorded exactly to the corner therefore calls the piece's own edge pixels "outside
+-- its geometry" and makes the front-ness proof fail on correct art. The pad is the honest statement
+-- of what the rasteriser actually paints, and it is uniform so it cannot hide a real mismatch.
+local function repairBox(cur, i0, i1, j0, j1, z0, z1)
+  if cur then cur.box = { i0 - 1, i1 + 1, j0 - 1, j1 + 1, z0, z1 + 1 } end
+  return cur
+end
+
+-- ---- world-space pieces. Everything is a quad at explicit (i, j, z) so nothing can float.
+-- Returns the world box ACTUALLY DRAWN. The even() snap below is easy to forget when recording
+-- metadata, and a box that disagrees with the geometry makes the front-ness proof meaningless.
+local function repairPost(L, c, i, j, z0, z1, w, pal)
+  i, j = even(i), even(j)
+  -- two faces of a square post, so it reads as timber rather than a flat card
+  stormQuad(L, c, { { i, j, z0 }, { i + w, j, z0 }, { i + w, j, z1 }, { i, j, z1 } }, pal.post)
+  stormQuad(L, c, { { i + w, j, z0 }, { i + w, j + w, z0 }, { i + w, j + w, z1 },
+                    { i + w, j, z1 } }, pal.postDark)
+  -- a footing plate on the ground: the post visibly rests on something
+  stormQuad(L, c, { { i - 1, j - 1, 0 }, { i + w + 1, j - 1, 0 }, { i + w + 1, j + w + 1, 0 },
+                    { i - 1, j + w + 1, 0 } }, pal.stoneDark)
+  return { i - 1, i + w + 1, j - 1, j + w + 1, 0, z1 }
+end
+
+local function repairDeck(L, c, i0, i1, j0, j1, z, pal)
+  -- ONE constant world z for the whole platform: level by construction
+  stormQuad(L, c, { { i0, j0, z }, { i1, j0, z }, { i1, j1, z }, { i0, j1, z } }, pal.deck)
+  -- a lit front lip so the deck reads as a plank surface with thickness
+  stormQuad(L, c, { { i0, j1, z }, { i1, j1, z }, { i1, j1, z - 1 }, { i0, j1, z - 1 } }, pal.deckLit)
+  stormQuad(L, c, { { i1, j0, z }, { i1, j1, z }, { i1, j1, z - 1 }, { i1, j0, z - 1 } }, pal.deckDark)
+  -- plank seams across the deck, so a flat platform does not read as a solid slab
+  local n = math.max(1, math.floor((i1 - i0) / 4))
+  for k = 1, n do
+    local i = i0 + (i1 - i0) * k / (n + 1)
+    stormQuad(L, c, { { i, j0, z }, { i + 1, j0, z }, { i + 1, j1, z }, { i, j1, z } },
+      (k % 2 == 0) and pal.deckDark or pal.deckLit)
+  end
+end
+
+local function repairRail(L, c, i0, i1, j, z, pal)
+  stormQuad(L, c, { { i0, j, z }, { i1, j, z }, { i1, j + 1, z }, { i0, j + 1, z } }, pal.deckDark)
+  -- a second, thinner rail below the top one: the toe board a real scaffold carries
+  stormQuad(L, c, { { i0, j, z - 3 }, { i1, j, z - 3 }, { i1, j + 1, z - 3 }, { i0, j + 1, z - 3 } },
+    pal.deckLit)
+end
+
+local function repairBrace(L, c, i0, j0, z0, i1, j1, z1, pal)
+  -- A real diagonal between two distinct world points, sampled along the true 3-D line. The original
+  -- draft interpolated identical platform y values, so its "braces" merely redrew horizontal rails.
+  local n = math.max(4, math.floor(math.abs(z1 - z0) + math.abs(i1 - i0) + math.abs(j1 - j0)))
+  for k = 0, n do
+    local t = k / n
+    local i = i0 + (i1 - i0) * t
+    local j = j0 + (j1 - j0) * t
+    local z = z0 + (z1 - z0) * t
+    stormQuad(L, c, { { i, j, z }, { i + 1, j, z }, { i + 1, j + 1, z }, { i, j + 1, z } },
+      (k % 2 == 0) and pal.postLit or pal.post)
+  end
+end
+
+local function repairTarp(L, c, i0, i1, j, zTop, pal)
+  -- a draped tarp hanging from the top rail, with a slack fold at the hem
+  stormQuad(L, c, { { i0, j, zTop }, { i1, j, zTop }, { i1, j + 1, zTop - 5 },
+                    { i0, j + 1, zTop - 5 } }, pal.tarp)
+  stormQuad(L, c, { { i0, j + 1, zTop - 5 }, { i1, j + 1, zTop - 5 }, { i1, j + 2, zTop - 6 },
+                    { i0, j + 2, zTop - 6 } }, pal.tarpDark)
+end
+
+local function repairStore(L, c, i, j, pal, rnd)
+  -- stacked planks waiting to be used: flat on the ground, so they need no support
+  local n = 1 + rnd(2)
+  for k = 0, n do
+    stormQuad(L, c, { { i, j - k, 1 + k * 2 }, { i + 8, j - k, 1 + k * 2 },
+                      { i + 8, j - k + 2, 1 + k * 2 }, { i, j - k + 2, 1 + k * 2 } },
+      (k % 2 == 0) and pal.deckLit or pal.deck)
+  end
+  -- one tool leaning on the pile: a haft and a head, kept within the stack's own depth so nothing
+  -- pokes through the lot's near boundary wall (a wall the scaffold must stay behind, not cover)
+  stormQuad(L, c, { { i + 1, j, 1 }, { i + 2, j, 1 }, { i + 2, j, 7 },
+                    { i + 1, j, 7 } }, pal.toolDark)
+  stormQuad(L, c, { { i, j, 7 }, { i + 3, j, 7 }, { i + 3, j + 1, 8 },
+                    { i, j + 1, 8 } }, pal.tool)
+end
+
+-- How tall this overlay is allowed to be.
+--
+-- The recipe cannot read a building mask, so it needs a defensible proxy for "the building that will
+-- receive this sprite". The best one available is the OVERLAY'S OWN CANVAS: the catalog sizes each
+-- overlay to the building class it serves, so canvas height is the only statement the recipe has
+-- about how much building it has to cover. World z is in screen pixels (the projection subtracts z
+-- directly), so a cap expressed as a fraction of canvas height converts straight to world units.
+--
+-- Calibrated against the buildings this overlay actually serves, measured from their masks:
+--   canvas  1024px-> building    cap @ severe    ratio
+--   3x3_104  cottage 60px  ->  ~21            35%   (a low local repair)
+--   3x3_224  cottage 60px  ->  ~45            75%   (still shorter than the building)
+--   4x4_352  home_4 112px  ->  ~70            63%
+--   8x8_768  tower  660px  ->  ~154            23%   (lower storeys only)
+-- Every one stays below its building, and the small lot never gets a scaffold taller than itself.
+-- Two independent bounds, because either alone over- or under-shoots on one of the classes:
+--   * canvas height  - tells us the building class the sprite was cut for, but the two 3x3 canvases
+--                      (104 and 224) serve the SAME cottage, so on its own it lets the 224 variant
+--                      build taller than the building it covers (measured: 71 px against 60 px);
+--   * lot size (A)   - a 3x3 lot is a cottage whatever canvas it is drawn on, so lot depth stops that.
+-- The smaller of the two is used. Measured screen heights against the delivered buildings:
+--   3x3_104 47px vs cottage 60px | 3x3_224 47px vs 60px | 4x4_352 ~60px vs home_4 112px
+--   6x6/8x8 ~80-105px vs tower 660px  (lower storeys only, never a full-height cage)
+local function repairHeightCap(Hc, A, sev)
+  local byCanvas = Hc * 0.20
+  local byLot = A * 0.42
+  local base = math.min(byCanvas, byLot)
+  return math.max(8, math.floor(base * sev.frac))
+end
+
+local function repairMeta(key, biome, outDir, w, h, gx, gy, world)
+  if not outDir then
+    error('repair_scaffold: no metadata destination (pass --script-param meta=<dir>)')
+  end
+  local fh = io.open(outDir .. '/' .. key .. '_' .. biome .. '.json', 'w')
+  if not fh then
+    error('repair_scaffold: cannot write metadata to ' .. outDir)
+  end
+  local parts = {}
+  for _, p in ipairs(STORM_STAMPS.pieces) do
+    local xy = {}
+    for k = 1, p.n do
+      xy[#xy + 1] = p.sx[k][1]
+      xy[#xy + 1] = p.sx[k][2]
+    end
+    local extra = ''
+    if p.posts then
+      local ps = {}
+      for _, post in ipairs(p.posts) do
+        if post[3] ~= nil then
+          ps[#ps + 1] = string.format('[%s,%s,%s,%s]', post[1], post[2], post[3], post[4])
+        else
+          ps[#ps + 1] = string.format('[%s,%s]', post[1], post[2])
+        end
+      end
+      extra = ',"posts":[' .. table.concat(ps, ',') .. ']'
+    end
+    if p.box then
+      extra = extra .. string.format(',"box":[%s,%s,%s,%s,%s,%s]',
+        p.box[1], p.box[2], p.box[3], p.box[4], p.box[5], p.box[6])
+    end
+    parts[#parts + 1] = string.format(
+      '{"class":"%s","kind":"%s","anchor":[%s,%s,%s],"px":%d,"stamps":[%s]%s}',
+      p.class, p.kind, p.anchor[1], p.anchor[2], p.anchor[3], p.n,
+      table.concat(xy, ','), extra)
+  end
+  local wl = {}
+  for _, q in ipairs(world.verts) do
+    wl[#wl + 1] = string.format('{"i":%s,"j":%s,"z":%s,"kind":"%s"}', q[1], q[2], q[3], q[4])
+  end
+  local plats = {}
+  for _, pl in ipairs(world.platforms) do
+    local sup = {}
+    for _, s2 in ipairs(pl.supports) do sup[#sup + 1] = string.format('[%s,%s]', s2[1], s2[2]) end
+    plats[#plats + 1] = string.format(
+      '{"z":%s,"i0":%s,"i1":%s,"j0":%s,"j1":%s,"supports":[%s]}',
+      pl.z, pl.i0, pl.i1, pl.j0, pl.j1, table.concat(sup, ','))
+  end
+  local braces = {}
+  for _, b in ipairs(world.braces) do
+    braces[#braces + 1] = string.format('[[%s,%s,%s],[%s,%s,%s]]',
+      b[1], b[2], b[3], b[4], b[5], b[6])
+  end
+  -- `near` records, for every piece, a world point ON that piece: the receiver test uses it to prove
+  -- the piece really is in front of whatever wall pixel it covers.
+  fh:write('{"key":"' .. key .. '","biome":"' .. biome .. '","size":[' .. w .. ',' .. h
+    .. '],"gx":' .. gx .. ',"gy":' .. gy
+    .. ',"lot":[' .. world.lotA .. ',' .. world.lotD .. ']'
+    .. ',"facade_j":' .. world.facadeJ
+    .. ',"standoff":' .. world.standoff
+    .. ',"height_cap":' .. world.heightCap
+    .. ',"platforms":[' .. table.concat(plats, ',') .. ']'
+    .. ',"braces":[' .. table.concat(braces, ',') .. ']'
+    .. ',"world":[' .. table.concat(wl, ',') .. ']'
+    .. ',"pieces":[' .. table.concat(parts, ',') .. ']}')
+  fh:close()
+end
+
+-- The repair scaffold itself.
+local function repairDraw(L, c, theme, s)
+  local A, D = s.A, s.B
+  local gx = s.pivot.x - A + D
+  local gy = s.pivot.y - (A + D) / 2
+  local sev = REPAIR_SEVERITY[s.visualState] or REPAIR_SEVERITY.moderate
+  local bio = REPAIR_BIOME[s.biome] or REPAIR_BIOME.temperate
+  local rnd = rng(bio.seed * 7919 + s.width * 31 + s.height * 17
+    + (s.visualState == 'severe' and 3 or s.visualState == 'light' and 1 or 2))
+  local pal = repairPalette(L, theme, bio)
+
+  -- ---- WHERE IT STANDS. build.lua puts the lot corner at maximum (i + j) on the sprite's pivot, so
+  -- LARGER i + j projects LOWER on screen and is NEARER the viewer. Depth is therefore i + j + z, and
+  -- larger is nearer. A screen row is shared by points differing by t*(1,1,1), whose depth differs by
+  -- 3t, so at a shared pixel the larger z (or the larger j) is the nearer surface.
+  --
+  -- The buildings these overlays serve present a front wall at constant j set back inside the lot
+  -- (measured: j ~ 118 of 128 on the towers, j ~ 42 of 48 on the cottages), and the verified ground in
+  -- front of that face is at LARGER j, on the near apron. Standing the scaffold on that apron is both
+  -- physically right and what makes "in front" provable.
+  --
+  -- A post spans j..j+2 and its footing plate reaches j+3, so jp names the upright's near column and
+  -- jp + 3 the bottom-most drawn row. jp = D - 6 keeps that row on the apron at D - 3.
+  local DECK_D = 2
+  local OFFSET_J = 6
+  local jp = even(D - OFFSET_J)
+  local facadeJ = jp - 2
+
+  -- ---- HEIGHT, measured against the building this sprite has to cover.
+  -- The drawn top is limited so it never towers over its own building: the overlay canvas already
+  -- encodes how much building it covers, so the cap is the fraction of the addressable screen room
+  -- above the foot that this severity is allowed to use.
+  -- rows of canvas above the foot, so the scaffold can never leave the sprite
+  local footY = gy + (A / 2 + jp) / 2
+  local room = math.max(8, math.floor(footY) - 6)
+  local zTopCap = math.min(repairHeightCap(s.height, A, sev), room)
+
+  local nLevels = sev.levels
+  local levels = {}
+  for k = 1, nLevels do
+    local z = math.floor(zTopCap * (k / nLevels))
+    z = z - (z % 2)
+    if z < 8 then z = 8 end
+    levels[#levels + 1] = z
+  end
+  local zTop = levels[#levels]
+
+  -- ---- BAYS ALONG THE FACADE. Several uprights spread across the frontage, not one column: the
+  -- review measured the previous attempt at 10/14/18 px wide and called it a ladder. Spacing grows
+  -- with severity so severe is unmistakably wider on screen, and the row is kept inside the lot.
+  -- The span is capped by the LOT, not only by a fraction of it: on a 3x3 cottage the free apron is a
+  -- run of about 16 world units before the building's own wing splits it, so a span wider than that
+  -- puts posts on the building. Moderate therefore uses a shorter span than its bay count would
+  -- otherwise suggest, keeping 3 bays inside the available frontage.
+  -- Bay count is also capped by the apron: with a span of ~16 world units a small cottage can carry
+  -- three uprights comfortably and five only by crowding them onto the building's own wing. The bay
+  -- count therefore never exceeds what the span can space evenly at >= 4 units per bay.
+  -- Severity must be legible in WIDTH, so the span itself grows with severity, but it is still
+  -- capped by the apron: on a small cottage the frame cannot spread past the free run in front of the
+  -- building without standing on it. Light/Moderate/Severe therefore step 60% -> 80% -> 100% of the
+  -- available width, which is a visible widening on every class.
+  local apronCap = even(math.floor(A * 0.42))
+  local span = even(math.floor(apronCap * sev.span))
+  if span < 10 then span = 10 end
+  if span > A - 6 then span = even(A - 6) end
+  -- bays are spaced at >= 6 units so the frame reads as a lattice, not a picket fence
+  local bays = math.min(sev.bays, math.max(2, math.floor(span / 6)))
+  if bays < 2 then bays = 2 end
+  local i0 = even(math.floor((A - span) / 2))
+  local i1 = i0 + span
+  if i1 > A - 2 then i1 = A - 2 end
+  local postI = {}
+  for k = 0, bays do
+    postI[#postI + 1] = even(i0 + math.floor(span * k / bays))
+  end
+
+  local world = { verts = {}, platforms = {}, braces = {}, lotA = A, lotD = D,
+                  facadeJ = facadeJ, standoff = OFFSET_J, heightCap = zTopCap }
+
+  -- ---- draw order: posts first, then decks (a deck must never hide its own posts' feet)
+  for _, i in ipairs(postI) do
+    stormBegin('ground', 'post', { i, jp, 0 })
+    local pbox = repairPost(L, c.details, i, jp, 0, zTop + 6, 2, pal)
+    STORM_PIECE.posts = { { i, jp, 0, zTop + 6 } }
+    repairBox(STORM_PIECE, pbox[1], pbox[2], pbox[3], pbox[4], pbox[5], pbox[6])
+    stormEnd()
+    world.verts[#world.verts + 1] = { i, jp, 0, 'foot' }
+    world.verts[#world.verts + 1] = { i, jp, zTop + 6, 'posthead' }
+  end
+
+  -- diagonal bracing in every bay: a real 3-D brace with both ends on a post
+  for k = 1, bays do
+    local ia, ib = postI[k], postI[k + 1]
+    local za, zb
+    if bio.brace == 'x' and #levels > 1 then
+      za, zb = levels[1], levels[#levels]
+    else
+      za, zb = 0, zTop
+    end
+    stormBegin('ground', 'brace', { ia, jp, za })
+    repairBrace(L, c.details, ia, jp, za, ib, jp, zb, pal)
+    repairBox(STORM_PIECE, ia, ib, jp, jp + 1, math.min(za, zb), math.max(za, zb))
+    stormEnd()
+    world.braces[#world.braces + 1] = { ia, jp, za, ib, jp, zb }
+  end
+
+  -- ---- a full deck and toe rail at every level
+  for _, z in ipairs(levels) do
+    stormBegin('ground', 'deck', { i0, jp, z })
+    repairDeck(L, c.details, i0, i1, jp, jp + DECK_D, z, pal)
+    local sup = {}
+    for _, i in ipairs(postI) do sup[#sup + 1] = { i, jp } end
+    STORM_PIECE.posts = sup
+    -- the deck paints its top face at z and a lit/thickness lip at j1 dropping to z-1, and its plank
+    -- seams are 1 unit wide in i, so the honest box is one unit proud on every side of the surface
+    repairBox(STORM_PIECE, i0, i1 + 1, jp, jp + DECK_D + 1, z - 1, z)
+    stormEnd()
+    world.platforms[#world.platforms + 1] =
+      { z = z, i0 = i0, i1 = i1, j0 = jp, j1 = jp + DECK_D, supports = sup }
+
+    stormBegin('ground', 'rail', { i0, jp, z + 6 })
+    repairRail(L, c.details, i0, i1, jp, z + 6, pal)
+    STORM_PIECE.posts = { { i0, jp, 0, z + 6 } }
+    -- repairRail paints the top rail at z and a toe board three units below it, so the box spans both
+    repairBox(STORM_PIECE, i0, i1 + 1, jp, jp + 2, z - 3, z + 6)
+    stormEnd()
+    world.verts[#world.verts + 1] = { i0, jp, z + 6, 'rail' }
+    world.verts[#world.verts + 1] = { i1, jp, z + 6, 'rail' }
+  end
+
+  -- ---- tarps over the upper bays
+  for k = 1, sev.tarp do
+    local ia = postI[k]
+    local ib = postI[k + 1] or postI[#postI]
+    if ia and ib and ib > ia then
+      stormBegin('ground', 'tarp', { ia, jp, zTop + 6 })
+      repairTarp(L, c.details, ia, ib, jp, zTop + 6, pal)
+      STORM_PIECE.posts = { { ia, jp, 0, zTop + 6 }, { ib, jp, 0, zTop + 6 } }
+      repairBox(STORM_PIECE, ia, ib, jp, jp + 2, zTop, zTop + 6)
+      stormEnd()
+    end
+  end
+
+  -- ---- stored material at the base, on the ground BESIDE the uprights.
+  -- It sits at the same near-side j as the frame (not further out), because anything placed nearer
+  -- than the apron row would have to stand on ground the apron does not have, and the front-ness test
+  -- rightly refuses a stack whose depth is behind the wall it overlaps.
+  for k = 1, sev.store do
+    local i = i0 + (k - 1) * 10
+    if i + 8 <= A - 2 then
+      stormBegin('ground', 'store', { i, jp, 1 })
+      repairStore(L, c.details, i, jp, pal, rnd)
+      -- the stack grows backward (j - k) but the leaning tool reaches j + 2, so the box must span that
+      repairBox(STORM_PIECE, i, i + 9, jp - 3, jp + 1, 1, 9)
+      stormEnd()
+    end
+  end
+
+  repairMeta(s.key, s.biome, app.params.meta, s.width, s.height, gx, gy, world)
+end
+
 local function outbreakDraw(L, c, theme, s)
   local A, D = s.A, s.B
   local gx = s.pivot.x - A + D
@@ -1235,12 +1668,14 @@ function F.draw(L, B, c, theme, s)
     return
   end
 
+  if s.kind == 'repair_scaffold' then
+    repairDraw(L, c, theme, s)
+    return
+  end
+
   if s.kind ~= 'fire_scorch' then
     -- other effects keep their untouched draft behaviour
-    if s.kind == 'repair_scaffold' then
-      for i = 6, A - 6, 8 do L.box(c.details, i, D - 8, 0, 2, 2, 18, L.C.WOOD) end
-      L.flat(c.details, 6, D - 10, A - 12, 4, L.C.WOOD[4], 12)
-    elseif s.kind == 'outbreak_sign' then
+    if s.kind == 'outbreak_sign' then
       local sign = L.box(c.details, A / 2 - 4, D - 10, 0, 8, 2, 8, L.C.WHITE)
       L.wallRect(c.details, sign, 'L', 2, 2, 4, 2, L.C.BARN[4])
       L.wallRect(c.details, sign, 'L', 4, 1, 2, 5, L.C.BARN[4])
